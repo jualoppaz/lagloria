@@ -1,0 +1,380 @@
+extends layout
+
+block content
+    div#container
+        header
+            nav.navbar.navbar-default.navbar-fixed-top.navbar-red(role="navigation")
+                div.container
+                    // Brand and toggle get grouped for better mobile display
+                    div.navbar-header
+                        button.navbar-toggle(type="button", data-toggle="collapse", data-target=".navbar-collapse")
+                            span.sr-only Cambiar la navegación
+                            span.icon-bar
+                            span.icon-bar
+                            span.icon-bar
+                        a.navbar-brand(href="./EatHub_files/EatHub.htm")
+                            img.navbar-logo(src="./EatHub_files/logo_white.png")
+                    // Collect the nav links, forms, and other content for toggling
+                    div.collapse.navbar-collapse
+                        ul.nav.navbar-nav
+                            li.active
+                                a(href="./EatHub_files/EatHub.htm") Inicio
+                            li
+                                a(href="https://eat-hub.herokuapp.com/#") Recetas
+                            li
+                                a(href="https://eat-hub.herokuapp.com/#") Explora
+                            li
+                                div.input-group.navbar-input-group.fbSearch
+                            form#search-form.navbar-form.navbar-left.hidden-xs.hidden-sm(role="search", method="get", action="https://eat-hub.herokuapp.com/search/recipe/")
+                                div.form-group
+                                    input.form-control.border-search.border-rect-red(type="text", placeholder="Search...", name="srchterm")#srchterm
+                                    span.input-group-btn-red.navbar-input-group-btn
+                                        button.btn.btn-default(type="submit")
+                                            i.glyphicon.glyphicon-search
+                            div.suggest
+                                ul
+                                    li.header
+                                        span.text Recipes
+                                    li
+                                        a(href="https://eat-hub.herokuapp.com/search/recipe/")
+                                            span.glyphicon.glyphicon-search
+                                            span.text Search recipes
+                                            span.category
+                                    li.header
+                                        span.text People
+                                    li
+                                        a(href="https://eat-hub.herokuapp.com/search/person/%20")
+                                            span.glyphicon.glyphicon-search
+                                            span.text Search people
+                                            span.category
+
+                        // Button trigger modal
+
+                        button.plus.btn.btn-default.hidden-xs.hidden-sm(data-toggle="modal", data-target="#modalFeedback")
+                            i.fa.fa-comment Feedback
+
+                        ul.nav.navbar-nav.navbar-right.hidden-xs.hidden-sm
+                            a.btn.btn-default.btn-eathub-red(href="https://eat-hub.herokuapp.com/login/", role="button") Entrar
+
+        main
+            div.container
+                div.row
+                    div.col-md-12.hidden-md.hidden-lg
+                    div class="panel panel-default panel-body text-center">
+            
+                <br>
+
+                <div class="col-md-12 col-xs-12 hidden-md hidden-lg"><a class="btn btn-default btn-eathub" href="https://eat-hub.herokuapp.com/login/" role="button">Entrar</a></div>
+
+            
+        </div>
+        </div>
+
+        
+            <div class="col-sm-6 col-md-4">
+                <div class="panel panel-body main-card">
+                    <div class="main-card-picture" style="background-image: url(&#39;/media/images/tarta_de_chocolate_y_galletas_1.persist.jpg&#39;)">
+                        <a href="https://eat-hub.herokuapp.com/recipe/5357a3a08853831a502203a2/">
+                            <img src="./EatHub_files/tarta_de_chocolate_y_galletas_1.persist.jpg" style="width: 100%; height: 100%; opacity: 0">
+                        </a>
+                    </div>
+                    <div class="main-card-content" style="word-wrap: break-word;">
+                        <div class="main-card-name">
+                            <a class="recipe-title" href="https://eat-hub.herokuapp.com/recipe/5357a3a08853831a502203a2/"><span>Tarta de flan y galletas</span></a>
+                        </div>
+
+                        <div class="main-card-description">
+                            Una rica tarta de flan Potax y galletas. Recubierta de chocolate fundido y virutas de chocolate.
+                        </div>
+                    </div>
+                    <div class="recipe-time">
+                        <span class="glyphicon glyphicon-time"></span>
+                        <span>15</span>
+                    </div>
+                    <div class="recipe-author-main">
+                                <span><a class="recipe-link-main" href="https://eat-hub.herokuapp.com/profile/mariarojas/">by María</a></span>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-sm-6 col-md-4">
+                <div class="panel panel-body main-card">
+                    <div class="main-card-picture" style="background-image: url(&#39;/media/images/bikini_martini_at_warren.persist.jpg&#39;)">
+                        <a href="https://eat-hub.herokuapp.com/recipe/5357a17b8853831a5022039c/">
+                            <img src="./EatHub_files/bikini_martini_at_warren.persist.jpg" style="width: 100%; height: 100%; opacity: 0">
+                        </a>
+                    </div>
+                    <div class="main-card-content" style="word-wrap: break-word;">
+                        <div class="main-card-name">
+                            <a class="recipe-title" href="https://eat-hub.herokuapp.com/recipe/5357a17b8853831a5022039c/"><span>Bikini Martini Whiskey</span></a>
+                        </div>
+
+                        <div class="main-card-description">
+                            A very delicious drink. It's ideal for impartant ocassions.
+                        </div>
+                    </div>
+                    <div class="recipe-time">
+                        <span class="glyphicon glyphicon-time"></span>
+                        <span>5</span>
+                    </div>
+                    <div class="recipe-author-main">
+                                <span><a class="recipe-link-main" href="https://eat-hub.herokuapp.com/profile/james17/">by James</a></span>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-sm-6 col-md-4">
+                <div class="panel panel-body main-card">
+                    <div class="main-card-picture" style="background-image: url(&#39;/media/images/166_bolitas_de_batata.persist.jpg&#39;)">
+                        <a href="https://eat-hub.herokuapp.com/recipe/5357a0ac8853831a5022039a/">
+                            <img src="./EatHub_files/166_bolitas_de_batata.persist.jpg" style="width: 100%; height: 100%; opacity: 0">
+                        </a>
+                    </div>
+                    <div class="main-card-content" style="word-wrap: break-word;"><div class="main-card-name">
+                            <a class="recipe-title" href="https://eat-hub.herokuapp.com/recipe/5357a0ac8853831a5022039a/"><span>Bolitas de batata</span></a>
+                        </div><div class="main-card-description">
+                            La receta de este postre navideño la he sacado en un antiguo recetario familiar, es un dulce que hacía mi abuela, a ella le encantaba la batata y la utilizaba mucho en sus postres. En esta ocasión... </div></div>
+                    <div class="recipe-time">
+                        <span class="glyphicon glyphicon-time"></span>
+                        <span>10</span>
+                    </div>
+                    <div class="recipe-author-main">
+                                <span><a class="recipe-link-main" href="https://eat-hub.herokuapp.com/profile/james17/">by James</a></span>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-sm-6 col-md-4">
+                <div class="panel panel-body main-card">
+                    <div class="main-card-picture" style="background-image: url(&#39;/media/images/eggnog_smoothie_with_1_minute_vanilla_whip_4.persist.jpg&#39;)">
+                        <a href="https://eat-hub.herokuapp.com/recipe/53579e338853831a50220393/">
+                            <img src="./EatHub_files/eggnog_smoothie_with_1_minute_vanilla_whip_4.persist.jpg" style="width: 100%; height: 100%; opacity: 0">
+                        </a>
+                    </div>
+                    <div class="main-card-content" style="word-wrap: break-word;"><div class="main-card-name">
+                            <a class="recipe-title" href="https://eat-hub.herokuapp.com/recipe/53579e338853831a50220393/"><span>Amazingly Good Eggnog</span></a>
+                        </div><div class="main-card-description">
+                            Holiday beverage (contains alcohol; not for children). I haven't tried this yet, but it sounds... </div></div>
+                    <div class="recipe-time">
+                        <span class="glyphicon glyphicon-time"></span>
+                        <span>0</span>
+                    </div>
+                    <div class="recipe-author-main">
+                                <span><a class="recipe-link-main" href="https://eat-hub.herokuapp.com/profile/james17/">by James</a></span>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-sm-6 col-md-4">
+                <div class="panel panel-body main-card">
+                    <div class="main-card-picture" style="background-image: url(&#39;/media/images/piru_limon.persist.jpg&#39;)">
+                        <a href="https://eat-hub.herokuapp.com/recipe/53567d30c54d2d14f943ad33/">
+                            <img src="./EatHub_files/piru_limon.persist.jpg" style="width: 100%; height: 100%; opacity: 0">
+                        </a>
+                    </div>
+                    <div class="main-card-content" style="word-wrap: break-word;"><div class="main-card-name">
+                            <a class="recipe-title" href="https://eat-hub.herokuapp.com/recipe/53567d30c54d2d14f943ad33/"><span>Piruletas caseras de limón</span></a>
+                        </div><div class="main-card-description">
+                            Tengo muchos primos pequeños, y casi siempre que vienen a casa, me piden alguna golosina... </div></div>
+                    <div class="recipe-time">
+                        <span class="glyphicon glyphicon-time"></span>
+                        <span>10</span>
+                    </div>
+                    <div class="recipe-author-main">
+                                <span><a class="recipe-link-main" href="https://eat-hub.herokuapp.com/profile/sloydev/">by Rafa</a></span>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-sm-6 col-md-4">
+                <div class="panel panel-body main-card">
+                    <div class="main-card-picture" style="background-image: url(&#39;/media/images/tarta_de_chocolate_y_galletas_2.persist.jpg&#39;)">
+                        <a href="https://eat-hub.herokuapp.com/recipe/5357a2d18853831a502203a0/">
+                            <img src="./EatHub_files/tarta_de_chocolate_y_galletas_2.persist.jpg" style="width: 100%; height: 100%; opacity: 0">
+                        </a>
+                    </div>
+                    <div class="main-card-content" style="word-wrap: break-word;">
+                        <div class="main-card-name">
+                            <a class="recipe-title" href="https://eat-hub.herokuapp.com/recipe/5357a2d18853831a502203a0/"><span>Tarta de flan y galletas</span></a>
+                        </div>
+
+                        <div class="main-card-description">
+                            Una rica tarta de flan Potax y galletas. He añadido mi toque personal de virutas de regaliz.
+                        </div>
+                    </div>
+                    <div class="recipe-time">
+                        <span class="glyphicon glyphicon-time"></span>
+                        <span>15</span>
+                    </div>
+                    <div class="recipe-author-main">
+                                <span><a class="recipe-link-main" href="https://eat-hub.herokuapp.com/profile/james17/">by James</a></span>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-sm-6 col-md-4">
+                <div class="panel panel-body main-card">
+                    <div class="main-card-picture" style="background-image: url(&#39;/media/images/pirus_0.persist.jpg&#39;)">
+                        <a href="https://eat-hub.herokuapp.com/recipe/53524d5fc54d2d087132cf6d/">
+                            <img src="./EatHub_files/pirus_0.persist.jpg" style="width: 100%; height: 100%; opacity: 0">
+                        </a>
+                    </div>
+                    <div class="main-card-content" style="word-wrap: break-word;"><div class="main-card-name">
+                            <a class="recipe-title" href="https://eat-hub.herokuapp.com/recipe/53524d5fc54d2d087132cf6d/"><span>Piruletas caseras</span></a>
+                        </div><div class="main-card-description">
+                            Tengo muchos primos pequeños, y casi siempre que vienen a casa, me piden alguna golosina para comer, pero yo nunca las compro, así que los pobres siempre se quedaban sin comerlas, hasta... </div></div>
+                    <div class="recipe-time">
+                        <span class="glyphicon glyphicon-time"></span>
+                        <span>10</span>
+                    </div>
+                    <div class="recipe-author-main">
+                                <span><a class="recipe-link-main" href="https://eat-hub.herokuapp.com/profile/virsfc/">by Virgi</a></span>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-sm-6 col-md-4">
+                <div class="panel panel-body main-card">
+                    <div class="main-card-picture" style="background-image: url(&#39;/media/images/brown_0.persist.jpg&#39;)">
+                        <a href="https://eat-hub.herokuapp.com/recipe/53558f05c54d2d43ef5211d3/">
+                            <img src="./EatHub_files/brown_0.persist.jpg" style="width: 100%; height: 100%; opacity: 0">
+                        </a>
+                    </div>
+                    <div class="main-card-content" style="word-wrap: break-word;">
+                        <div class="main-card-name">
+                            <a class="recipe-title" href="https://eat-hub.herokuapp.com/recipe/53558f05c54d2d43ef5211d3/"><span>Brownie de chocolate</span></a>
+                        </div>
+
+                        <div class="main-card-description">
+                            Pensemos en un postre que sea rápido y que guste a todo el mundo, que no exija frío para cuajar, que no haya que esperar a que pierda temperatura para comerlo…ya lo tengo, ¡Brownie de chocolate!
+                        </div>
+                    </div>
+                    <div class="recipe-time">
+                        <span class="glyphicon glyphicon-time"></span>
+                        <span>30</span>
+                    </div>
+                    <div class="recipe-author-main">
+                                <span><a class="recipe-link-main" href="https://eat-hub.herokuapp.com/profile/Ana/">by Ana Fuentes</a></span>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-sm-6 col-md-4">
+                <div class="panel panel-body main-card">
+                    <div class="main-card-picture" style="background-image: url(&#39;/media/images/salad_0.persist.jpg&#39;)">
+                        <a href="https://eat-hub.herokuapp.com/recipe/53556ba6c54d2d3e2d9f840a/">
+                            <img src="./EatHub_files/salad_0.persist.jpg" style="width: 100%; height: 100%; opacity: 0">
+                        </a>
+                    </div>
+                    <div class="main-card-content" style="word-wrap: break-word;"><div class="main-card-name">
+                            <a class="recipe-title" href="https://eat-hub.herokuapp.com/recipe/53556ba6c54d2d3e2d9f840a/"><span>Ensalada Cheeseburguer</span></a>
+                        </div><div class="main-card-description">
+                            El otro día tenía antojo de una hamburguesa con queso, pero no tenía pan para hamburguesa, y... </div></div>
+                    <div class="recipe-time">
+                        <span class="glyphicon glyphicon-time"></span>
+                        <span>10</span>
+                    </div>
+                    <div class="recipe-author-main">
+                                <span><a class="recipe-link-main" href="https://eat-hub.herokuapp.com/profile/virsfc/">by Virgi</a></span>
+                    </div>
+                </div>
+            </div>
+        
+    </div>
+
+
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="modalFeedback" tabindex="-1" role="dialog" aria-labelledby="myModalFeedback" aria-hidden="true">
+
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title" id="myModalFeedback">Feedback</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Esta web se encuentra en desarrollo por parte de los miembros del grupo 5 de la asignatura de Ingeniería del Software y Práctica Profesional.</p>
+
+
+                    <p>Como tal, todo el feedback que nos puedan aportan es de gran utilidad, ya sea para sugerencias, bugs, etc. Para ello, envíe un correo a la dirección <b>eathub.contact@gmail.com</b> o pulse el botón de la parte inferior donde se abrirá su cliente de correo y podrá enviarnos su feedback.
+                        </p>
+
+
+                    <p>Gracias por su feedback</p>
+
+                </div>
+                <div class="modal-footer">
+                    <a class="plus btn btn-default" href="mailto:eathub.contact@gmail.com?subject=Feedback%20sobre%20eathub!">Enviar correo</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</main>
+<footer class="hidden-xs hidden-sm">
+    <div class="footer">
+        <div class="col-md-4 footer-logo-container">
+            <span class="footer-logo-helper"></span>
+            <img class="footer-logo" src="./EatHub_files/logo_footer.png">
+        </div>
+        <div class="col-md-8 footer-content">
+            <div class="row">
+                <div class="col-md-2 text-center"><a href="https://eat-hub.herokuapp.com/about/terms/" class="footer-link">Términos y condiciones</a></div>
+                <div class="col-md-2 text-center"><a href="https://eat-hub.herokuapp.com/about/" class="footer-link">Sobre nosotros</a></div>
+                <div class="col-md-2 text-center"><a href="https://eat-hub.herokuapp.com/about/team/" class="footer-link">The team</a></div>
+                <div class="col-md-2 text-center"><a href="https://eat-hub.herokuapp.com/about/contact/" class="footer-link">Contacto</a></div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./EatHub_files/jquery.min.js"></script>
+    <script src="./EatHub_files/bootstrap.min.js"></script>
+    <script src="./EatHub_files/lightbox.min.js"></script>
+    <script>
+        $().ready(function () {
+            //XXX Cuidado, valores puestos a mano. Se podría animar con una clase usando jQueryUI
+                        $(".footer-logo").hover(
+                                function () {
+                                    $(".footer-logo").animate({"margin-bottom": "-35px"}, 150)
+                                },
+                                function () {
+                                    $(".footer-logo").animate({"margin-bottom": "-70px"}, 150)
+                                }
+                        );
+        });
+        var hideSuggest = function(event){
+            $(".suggest").css("display","none").fadeOut(2000);
+        }
+        $("#srchterm").focus(function(){
+           $(".suggest").css("display","block").fadeIn(2000);
+        });
+        $(".suggest").find("a").mouseenter(function(){
+           $("#srchterm").off("blur");
+        }).mouseleave(function(){
+           $("#srchterm").blur(hideSuggest);
+        });
+        $("#srchterm").blur(hideSuggest);
+        $("#srchterm").bind("input",function(){
+           var urlR = '/search/recipe/?srchterm=' +$(this).val();
+           $(".suggest").find(".category")[0].textContent=$(this).val();
+           $(".suggest").find("a")[0].href=urlR;
+           $(".suggest").find(".category")[1].textContent=$(this).val();
+           $(".suggest").find("a")[1].href='/search/person/' +$(this).val();
+        });
+    </script>
+    
+    <script src="./EatHub_files/jquery.dotdotdot.min.js"></script>
+    <script>
+        $().ready(function () {
+            $(".main-card-content").dotdotdot();
+        });
+    </script>
+
+</footer>
+</div>
+
+
+<div id="lightboxOverlay" class="lightboxOverlay" style="display: none;"></div><div id="lightbox" class="lightbox" style="display: none;"><div class="lb-outerContainer"><div class="lb-container"><img class="lb-image" src=""><div class="lb-nav"><a class="lb-prev" href=""></a><a class="lb-next" href=""></a></div><div class="lb-loader"><a class="lb-cancel"></a></div></div></div><div class="lb-dataContainer"><div class="lb-data"><div class="lb-details"><span class="lb-caption"></span><span class="lb-number"></span></div><div class="lb-closeContainer"><a class="lb-close"></a></div></div></div></div></body></html>

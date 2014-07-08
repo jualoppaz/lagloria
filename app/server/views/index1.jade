@@ -1,0 +1,39 @@
+extends layout
+
+block content
+    div(ng-controller="mainController")
+        div.container-fluid
+            div#logos.divLogos
+                div#logoEmpresa.divLogoEmpresa
+                    a(href="/")
+                        img(src="/public/images/logoLaGloria.png")
+                div#logosMenu.divLogosMenu
+                    div.divLogoBarraPrincipal.divLogoGamaPropia
+                        a(href="/gamaPropia/blandos")
+                            img(src="/public/images/logoGamaPropiaConTexto.png")
+                    div.divLogoBarraPrincipal.divLogoPublicitarios
+                        img(src="/public/images/logoPublicitariosConTexto.png")
+                    div.divLogoBarraPrincipal.divLogoNosotros
+                        img(src="/public/images/logoNosotrosConTexto.png")
+                    div.divLogoBarraPrincipal.divLogoContacto
+                        img(src="/public/images/logoContactoConTexto.png")
+                    div.divLogoBarraPrincipal.divLogoCarrito
+                        img(src="/public/images/carrito.png")
+            div.row-fluid(style="clear:both")
+                //Panel caramelos tofee
+                div#bienvenida.fondo.fondoTurquesa.panelPrincipal
+                    h1 Bienvenido a Caramelos La Gloria
+                    p.
+                        Aqu&iacute; encontrar&aacute; los mejores caramelos del mercado. Adem&aacute;s podr&aacute; personalizar
+                        sus caramelos con el logo de su empresa.
+
+        footer#redesSociales.footer
+            div#facebook.divRedesSociales
+                img(src="/public/images/logoFacebook.png").logoSocial
+            div#twitter.divRedesSociales
+                img(src="/public/images/logoTwitter.png").logoSocial
+
+block scripts
+    script(src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js")
+    script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js")
+    script(src="main.js")
