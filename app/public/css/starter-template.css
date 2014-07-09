@@ -1,5 +1,5 @@
 body {
-    padding-top: 90px;
+    padding-top: 50px;
     background-color: #eeeeee;
     padding-bottom: 80px;
 }
@@ -414,14 +414,17 @@ header .container {
     stroke-dashoffset: 2257;
 }
 
-.main-card-description {
-    text-overflow: ellipsis !important;
-    overflow:hidden !important;
-    white-space: nowrap;
-}
 
 .main-card-description p{
+    text-overflow: ellipsis !important;
+    overflow:hidden !important;
+    /*white-space: nowrap;*/
 }
+
+/*
+.main-card-description p{
+}
+*/
 
 
 .main-card-content {
@@ -1313,12 +1316,11 @@ header .container {
     transform: matrix(-1, -0.12, 0, 1, 0, 0);
 }
 
-/*
+
 .main-card {
     height: 400px;
     position: relative;
 }
-*/
 
 
 /* Footer shit */

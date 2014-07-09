@@ -18,6 +18,14 @@ module.exports = function(app){
         res.render('blandos2');
     });
 
+    app.get('/webAntigua/blandos', function(req, res) {
+        res.sendfile('app/server/views/webAntigua/blandos.html');
+    });
+
+    app.get('/webAntigua/blandos2', function(req, res) {
+        res.sendfile('app/server/views/webAntigua/blandos2.html');
+    });
+
     app.get('*', function(req, res) {
         res.render('index');
     });

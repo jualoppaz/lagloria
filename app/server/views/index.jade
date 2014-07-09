@@ -1,7 +1,7 @@
 extends layout
 
 block content
-    div#container
+    div#container.fondoCaramelos
         header
             nav.navbar.navbar-fixed-top.fondoTurquesa(role="navigation")
                 div.navbar-inner
@@ -12,13 +12,15 @@ block content
                                 span.icon-bar
                                 span.icon-bar
                                 span.icon-bar
-                            a(href="#").navbar-brand.white.middle Inicio
+                            a(href="/index").navbar-brand.white.middle Inicio
                         div.collapse.navbar-collapse
                             ul.nav.navbar-nav
-                                li.active
-                                    a(href="#").middle Gama propia
+                                li
+                                    a(href="/gamaPropia").middle Gama propia
                                 li
                                     a(href="#").middle Publicitarios
+                                li
+                                    a(href="#").middle Nosotros
                                 li
                                     a(href="#").middle Contacto
                                 //li
@@ -57,38 +59,44 @@ block content
                             br
                             div.col-md-12.col-xs-12.hidden-md.hidden-lg
                                 a.btn.btn-default.btn-eathub(href="#", role="button") Entrar
-
-                    div.col-sm-6.col-md-4
-                        div.panel.panel-body.main-card
+                    div.col-md-4.col-md-offset-4
+                        //div.panel.panel-body.main-card
                             div.main-card-picture
+                        //a(href="#")
+                        img(src="/img/logoblanco.png", style="width:100%; height: 100%")
+                    div.col-sm-6.col-md-3.col-md-offset-2
+                        div.panel.panel-body.main-card#gamaPropia
+                            //div.main-card-picture
                                 a(href="#")
                                     img(src="/img/surtido.jpg", style="width: 100%; height: 100%;")
                             div.main-card-content(style="word-wrap: break-word;")
                                 div.main-card-name
-                                    a.recipe-title(href="#")
-                                        span.caramelo Toffees y masticables
+                                    a.recipe-title(href="/gamaPropia")
+                                        span.caramelo Gama propia
                                 div.main-card-description
-                                    | Descripción de toffees y masticables
-                            div.recipe-time
+                                    p.
+                                       Caramelos ofrecidos por La Gloria, con multitud de sabores a elegir.
+                            //div.recipe-time
                                 span
                                     i.fa.fa-bars
                                 span  M&aacute;s info
-                    div.col-sm-6.col-md-4
-                        div.panel.panel-body.main-card
-                            div.main-card-picture
+                    div.col-sm-6.col-md-3.col-md-offset-2
+                        div.panel.panel-body.main-card#publicitarios
+                            //div.main-card-picture
                                 a(href="#")
                                     img(src="/img/cola.jpg", style="width: 100%; height: 100%;")
                             div.main-card-content(style="word-wrap: break-word;")
                                 div.main-card-name
                                     a.recipe-title(href="#")
-                                        span.caramelo Grageados
+                                        span.caramelo Publicitarios
                                 div.main-card-description
-                                    | Descripción de grageados...
-                            div.recipe-time
+                                    p.
+                                       Caramelos personalizados con el logo de su empresa.
+                            //div.recipe-time
                                 span
                                     i.fa.fa-bars
                                 span  M&aacute;s info
-                    div.col-sm-6.col-md-4
+                    //div.col-sm-6.col-md-4
                         div.panel.panel-body.main-card
                             div.main-card-picture
                                 a(href="#")
@@ -103,21 +111,3 @@ block content
                                 span
                                     i.fa.fa-bars
                                 span  M&aacute;s info
-
-        div#lightboxOverlay.lightboxOverlay(style="display: none;")
-        div#lightbox.lightbox(style="display: none;")
-            div.lb-outerContainer
-                div.lb-container
-                    img.lb-image(src="")
-                    div.lb-nav
-                        a.lb-prev(href="")
-                        a.lb-next(href="")
-                    div.lb-loader
-                        a.lb-cancel
-            div.lb-dataContainer
-                div.lb-data
-                    div.lb-details
-                        span.lb-caption
-                        span.lb-number
-                    div.lb-closeContainer
-                        a.lb-close
