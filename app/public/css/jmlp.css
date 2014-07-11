@@ -18,7 +18,7 @@
     font-style: Italic;
 }
 
-.tituloBarra{
+.tituloBarra, .abel{
     font-family: 'Abel', sans-serif;
     font-weight: bold;
     font-size: 30px;
@@ -331,12 +331,6 @@ body{
     padding-top: 50px;
 }
 
-.fondoCaramelos{
-    background-image: url('/img/gominolas.jpg') !important;
-    width: 100%;
-    height: 100%;
-}
-
 .main-card#gamaPropia, .main-card#publicitarios{
     height: 140px;
 }
@@ -351,8 +345,66 @@ body{
     text-align: justify;
     margin-left: 3px;
     margin-right: 3px;
+    height: auto;
 }
 
 .main-card-content{
     height: auto;
+}
+
+main{
+    padding-bottom: 0px !important;
+}
+
+#toffees, #masticables{
+    height: auto;
+}
+
+.imagenCategoria{
+    display:block;
+    margin:auto;
+}
+
+.imagenCategoria.duros{
+    padding-top: 15%;
+}
+
+.main-card-picture{
+
+}
+
+.imagenToffee{
+    float:left;
+}
+
+.panel-toffee{
+    height: 450px;
+}
+
+.toffeeDescription{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.margenInferior-30{
+    margin-bottom: 30px;
+}
+
+h3{
+    font-size: 18px;
+}
+
+.panel-toffee > div{
+    margin-top:10px;
+}
+
+.col-md-right-offset-3 {
+    margin-right: 25%;
+}
+
+.modelo-toffee > a{
+    padding-left: 15px;
+    font-size: 25px !important;
+    font-weight: bold;
+    color: #41B19C !important;
 }

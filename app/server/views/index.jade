@@ -1,5 +1,9 @@
 extends layout
 
+block head
+    title Caramelos La Gloria
+    link(rel="stylesheet", href="/css/backgroundImage.css")
+
 block content
     div#container.fondoCaramelos
         header
@@ -64,7 +68,7 @@ block content
                             div.main-card-picture
                         //a(href="#")
                         img(src="/img/logoblanco.png", style="width:100%; height: 100%")
-                    div.col-sm-6.col-md-3.col-md-offset-2
+                    div.col-sm-6.col-md-4.col-md-offset-1(style="clear:both")
                         div.panel.panel-body.main-card#gamaPropia
                             //div.main-card-picture
                                 a(href="#")
@@ -80,7 +84,7 @@ block content
                                 span
                                     i.fa.fa-bars
                                 span  M&aacute;s info
-                    div.col-sm-6.col-md-3.col-md-offset-2
+                    div.col-sm-6.col-md-4.col-md-offset-2
                         div.panel.panel-body.main-card#publicitarios
                             //div.main-card-picture
                                 a(href="#")

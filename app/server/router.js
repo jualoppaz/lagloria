@@ -1,3 +1,5 @@
+var DBM           = require('./modules/data-base-manager');
+
 module.exports = function(app){
 
     // Vistas de la web
@@ -6,7 +8,9 @@ module.exports = function(app){
         res.render('blandos');
     });
 
-    app.get('/index', function(req, res) {
+    // Barra principal
+
+    app.get('/', function(req, res) {
        res.render('index');
     });
 
@@ -14,8 +18,15 @@ module.exports = function(app){
        res.render('gamaPropia');
     });
 
-    app.get('/gamaPropia/blandos2', function(req, res) {
-        res.render('blandos2');
+
+    // Gama propia
+
+    app.get('/gamaPropia/toffeesYMasticables', function(req, res) {
+        res.render('gamaPropia/toffeesYMasticables');
+    });
+
+    app.get('/gamaPropia/toffeesYMasticables/toffees', function(req, res) {
+        res.render('gamaPropia/toffeesYMasticables/toffees');
     });
 
     app.get('/webAntigua/blandos', function(req, res) {
@@ -26,11 +37,16 @@ module.exports = function(app){
         res.sendfile('app/server/views/webAntigua/blandos2.html');
     });
 
-    app.get('*', function(req, res) {
-        res.render('index');
-    });
-
     // API REST
 
 
+    app.get('/api/toffees', function(req, res) {
+        DBM.getAllProductsByCategoryType('Toffee', function(err, toffees){
+            res.send(toffees);
+        });
+    });
+
+    app.get('*', function(req, res) {
+        res.render('index');
+    });
 }
