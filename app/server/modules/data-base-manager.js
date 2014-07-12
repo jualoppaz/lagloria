@@ -213,6 +213,10 @@ var getObjectId = function(id)
 	return accounts.db.bson_serializer.ObjectID.createFromHexString(id)
 }
 
+var getToffeeId = function(id){
+    return toffees.db.bson_serializer.ObjectID.createFromHexString(id)
+}
+
 var findById = function(id, callback)
 {
 	accounts.findOne({_id: getObjectId(id)},
@@ -311,11 +315,25 @@ var toffees = db.collection('toffees');
 
 exports.getAllProductsByCategoryType = function(categoryType, callback)
 {
-    console.log("Categoria: " + categoryType);
     if(categoryType == "Toffee"){
         toffees.find({ $query: {type:categoryType}, $orderby: {position:1}}).toArray(
             function(e, res) {
                 if (e){
+                    callback(e);
+                }else{
+                    callback(null, res);
+                }
+            });
+    }else{
+        callback(null, {message: "La categoria no existe."});
+    }
+}
+
+exports.getProductByCategoryTypeAndId = function(categoryType, toffeeId, callback){
+    if(categoryType == "Toffee"){
+        toffees.find({ $query: {type:categoryType, _id: getToffeeId(toffeeId)}}).toArray(
+            function(e, res){
+                if(e){
                     callback(e);
                 }else{
                     callback(null, res);

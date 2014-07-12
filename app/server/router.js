@@ -29,6 +29,10 @@ module.exports = function(app){
         res.render('gamaPropia/toffeesYMasticables/toffees');
     });
 
+    app.get('/gamaPropia/toffeesYMasticables/toffees/:id', function(req, res) {
+        res.render('gamaPropia/toffeesYMasticables/toffees/info');
+    });
+
     app.get('/webAntigua/blandos', function(req, res) {
         res.sendfile('app/server/views/webAntigua/blandos.html');
     });
@@ -43,6 +47,12 @@ module.exports = function(app){
     app.get('/api/toffees', function(req, res) {
         DBM.getAllProductsByCategoryType('Toffee', function(err, toffees){
             res.send(toffees);
+        });
+    });
+
+    app.get('/api/toffees/:id', function(req, res) {
+        DBM.getProductByCategoryTypeAndId('Toffee', req.params.id, function(err, toffee){
+            res.send(toffee[0]);
         });
     });
 

@@ -1,0 +1,161 @@
+extends ../../../layout
+block head
+    title Información
+    link(rel="stylesheet", href="/css/backgroundImage.css")
+block content
+    div#container
+        header
+            nav.navbar.navbar-fixed-top.fondoTurquesa(role="navigation")
+                div.navbar-inner
+                    div.container-fluid
+                        div.navbar-header
+                            button.navbar-toggle(type="button", data-toggle="collapse", data-target=".navbar-collapse")
+                                span.sr-only Cambiar la navegación
+                                span.icon-bar
+                                span.icon-bar
+                                span.icon-bar
+                            a(href="/index").navbar-brand.white.middle Inicio
+                        div.collapse.navbar-collapse
+                            ul.nav.navbar-nav
+                                li.active
+                                    a(href="/gamaPropia").middle Gama propia
+                                li
+                                    a(href="#").middle Publicitarios
+                                li
+                                    a(href="#").middle Contacto
+                                //li
+                                    div.input-group.navbar-input-group.fbSearch
+                                        form#search-form.navbar-form.navbar-left.hidden-xs.hidden-sm(role="search", method="get", action="#")
+                                            div.form-group
+                                                input.form-control.border-search.border-rect-red#srchterm(type="text", placeholder="Buscar...", name="srchterm")
+                                                span.input-group-btn-red.navbar-input-group-btn
+                                                    button.btn.btn-default(type="submit")
+                                                        i.fa.fa-search
+                                            div.suggest
+                                                ul
+                                                    li.header
+                                                        span.text Recipes
+                                                    li
+                                                        a(href="#")
+                                                            span.fa.fa-search
+                                                            span.text Search recipes
+                                                            span.category
+                                                    li.header
+                                                        span.text People
+                                                    li
+                                                        a(href="#")
+                                                            span.fa.fa-search
+                                                            span.text Search people
+                                                            span.category
+                            ul.nav.navbar-nav.navbar-right.hidden-xs.hidden-sm
+                                a.btn.btn-default.btn-eathub-red(href="#", role="button")#entrar Entrar
+        main.margen-superior-50
+            div.container
+                div.row
+                    //div.col-md-12.hidden-md.hidden-lg
+                        div.panel.panel-default.panel-body.text-center
+                            br
+                            div.col-md-12.col-xs-12.hidden-md.hidden-lg
+                                a.btn.btn-default.btn-eathub(href="#", role="button") Entrar
+                    div.col-md-12
+                        div.panel.panel-body
+                            div.main-card-content
+                                div.main-card-description
+                                    div.main-card-name
+                                        a(href="/gamaPropia")
+                                            span.caramelo Gama propia
+                                        b.abel(style="margin-left:10px; margin-right: 10px") >
+                                        a(href="../toffeesYMasticables")
+                                            span.caramelo Toffees y Masticables
+                                        b.abel(style="margin-left:10px; margin-right: 10px") >
+                                        a(href="../toffees")
+                                            span.caramelo Toffees
+                    div(ng-app="angularToffeeInfo")
+                        div(ng-controller="mainController")
+                            div.col-md-12
+                                div.panel.panel-body
+                                    div.main-card-content(style="word-wrap: break-word;")
+                                        div.main-card-name
+                                            a.recipe-title(href="#")
+                                                span.caramelo {{toffee.model}}
+                            div(ng-show="esSurtido(toffee)")
+                                div.col-md-12
+                                    div.panel.panel-body.panel-toffee-info
+                                        div(style="text-align:left;")
+                                            h1(style="margin-bottom:30px").modelo-toffee
+                                                a(ng-href="toffees/{{toffee._id}}", ng-bind-template="{{$index + 1}}. {{toffee.model}}").green.hover-red
+                                        div.col-md-4.col-sm-12
+                                            div(style="float:left; margin-right: 20px; width: 70%; height: 400px")
+                                                img(ng-src="/img/imagenesMias/{{toffee.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
+                                        div.col-md-8.col-sm-12
+                                            h1(style="text-align: left;").separador-horizontal.green Detalles
+                                            div.row.blue
+                                                div.col-md-4.col-sm-4
+                                                    h3 Categoría
+                                                div.col-md-4.col-sm-4
+                                                    h3 Tipo
+                                                div.col-md-4.col-sm-4
+                                                    h3 Modelo
+                                            div.row
+                                                div.col-md-4.col-sm-4
+                                                    h3(ng-bind-template="{{toffee.category}}")
+                                                div.col-md-4.col-sm-4
+                                                    h3(ng-bind-template="{{toffee.type}}")
+                                                div.col-md-4.col-sm-4
+                                                    h3(ng-bind-template="{{toffee.model}}")
+                                            div.row.blue
+                                                div.col-md-4.col-sm-4
+                                                    h3 Pedido mínimo
+                                                div.col-md-4.col-sm-4
+                                                    h3 Precio
+                                            div.row
+                                                div.col-md-4.col-sm-4
+                                                    h3(ng-bind-template="{{toffee.minimunOrder}} Kg")
+                                                div.col-md-4.col-sm-4
+                                                    h3(ng-bind-template="{{toffee.price}} € / Kg")
+                                    div.panel.panel-body
+                                        div.toffee-description
+                                            h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{toffee.description}}")
+                            div(ng-show="!esSurtido(toffee)")
+                                div.col-md-12
+                                    div.panel.panel-body.panel-toffee-info
+                                        div(style="text-align:left;")
+                                            h1(style="margin-bottom:30px").modelo-toffee
+                                                a(ng-href="toffees/{{toffee._id}}", ng-bind-template="{{$index + 1}}. {{toffee.model}}").green.hover-red
+                                        div.col-md-6.col-sm-12
+                                            div(style="float:left; margin-right: 20px; width: 70%; height: 400px")
+                                                img(ng-src="/img/imagenesMias/{{toffee.image}}", height="30%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
+                                        div.col-md-6.col-sm-12
+                                            h1(style="text-align: left;").separador-horizontal.green Detalles
+                                            div.row.blue
+                                                div.col-md-4.col-sm-4
+                                                    h3 Categoría
+                                                div.col-md-4.col-sm-4
+                                                    h3 Tipo
+                                                div.col-md-4.col-sm-4
+                                                    h3 Modelo
+                                            div.row
+                                                div.col-md-4.col-sm-4
+                                                    h3(ng-bind-template="{{toffee.category}}")
+                                                div.col-md-4.col-sm-4
+                                                    h3(ng-bind-template="{{toffee.type}}")
+                                                div.col-md-4.col-sm-4
+                                                    h3(ng-bind-template="{{toffee.model}}")
+                                            div.row.blue
+                                                div.col-md-4.col-sm-4
+                                                    h3 Pedido mínimo
+                                                div.col-md-4.col-sm-4
+                                                    h3 Precio
+                                            div.row
+                                                div.col-md-4.col-sm-4
+                                                    h3(ng-bind-template="{{toffee.minimunOrder}} Kg")
+                                                div.col-md-4.col-sm-4
+                                                    h3(ng-bind-template="{{toffee.price}} € / Kg")
+                                    div.panel.panel-body
+                                        div.toffee-description
+                                            h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{toffee.description}}")
+
+
+block scripts
+    script(src='/js/angular.js')
+    script(src='/js/angular/angularToffeeInfo.js')

@@ -93,7 +93,7 @@ block content
                         div(ng-controller="mainController")
                             div(ng-repeat="toffee in toffees", style="text-align:center")
                                 div(ng-show="esSurtido(toffee)")
-                                    div.col-md-12
+                                    div.col-md-12.col-sm-12
                                         div.panel.panel-body.panel-toffee
                                             div(style="text-align:left;")
                                                 h1(style="margin-bottom:30px").modelo-toffee
@@ -103,7 +103,7 @@ block content
                                             div(style="margin-left: 10px;").toffee-description
                                                 h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{toffee.description}}").blue
                                 div(ng-show="!esSurtido(toffee)")
-                                    div.col-md-3(style="float:left")
+                                    div.col-md-3.col-sm-6
                                         div.panel.panel-body.panel-toffee
                                             div(style="text-align:left")
                                                 h1(style="margin-bottom:30px").modelo-toffee
