@@ -98,10 +98,12 @@ block content
                                             div(style="text-align:left;")
                                                 h1(style="margin-bottom:30px").modelo-toffee
                                                     a(ng-href="toffees/{{toffee._id}}", ng-bind-template="{{$index + 1}}. {{toffee.model}}").green.hover-red
-                                            div(style="float:left; margin-right: 20px; width:20%; height: 200px")
-                                                img(ng-src="/img/imagenesMias/{{toffee.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
-                                            div(style="margin-left: 10px;").toffee-description
-                                                h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{toffee.description}}").blue
+                                            div.col-md-2
+                                                div(style="float:left; margin-right: 20px; width:100%; height: 260px")
+                                                    img(ng-src="/img/imagenesMias/{{toffee.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
+                                            div.col-md-10
+                                                div(style="margin-left: 15px;").toffee-description
+                                                    h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{toffee.description}}").blue
                                 div(ng-show="!esSurtido(toffee)")
                                     div.col-md-3.col-sm-6
                                         div.panel.panel-body.panel-toffee
@@ -110,7 +112,7 @@ block content
                                                     a(ng-href="toffees/{{toffee._id}}", ng-bind-template="{{$index + 1}}. {{toffee.model}}").green.hover-red
                                             div(style="margin-right: 20px; height: 100px; max-height: 200px;").margenInferior-30
                                                 img(ng-src="/img/imagenesMias/{{toffee.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
-                                            div(style="margin-left: 10px;").toffee-description
+                                            div.toffee-description
                                                 h3(style="text-align: justify; margin-top: 5px", ng-bind-template="{{toffee.description}}").blue
 
 

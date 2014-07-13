@@ -382,8 +382,13 @@ main{
 }
 
 .toffee-description{
-    margin-top: 10px;
-    margin-left: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.toffee-info-description{
+    padding-left: 30px;
+    padding-top: 10px;
 }
 
 .margenInferior-30{
@@ -414,7 +419,7 @@ h3{
 }
 
 .panel-toffee-info{
-
+    padding-top: 30px;
 }
 
 .separador-horizontal{
@@ -458,5 +463,3 @@ div.row div h3{
     font-weight: bold;
     font-size: 22px;
 }
-
-.toffee

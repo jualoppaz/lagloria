@@ -81,40 +81,37 @@ block content
                             div(ng-show="esSurtido(toffee)")
                                 div.col-md-12
                                     div.panel.panel-body.panel-toffee-info
-                                        div(style="text-align:left;")
-                                            h1(style="margin-bottom:30px").modelo-toffee
-                                                a(ng-href="toffees/{{toffee._id}}", ng-bind-template="{{$index + 1}}. {{toffee.model}}").green.hover-red
                                         div.col-md-4.col-sm-12
                                             div(style="float:left; margin-right: 20px; width: 70%; height: 400px")
                                                 img(ng-src="/img/imagenesMias/{{toffee.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
                                         div.col-md-8.col-sm-12
                                             h1(style="text-align: left;").separador-horizontal.green Detalles
                                             div.row.blue
-                                                div.col-md-4.col-sm-4
+                                                div.col-md-4.col-sm-4.col-xs-4
                                                     h3 Categoría
-                                                div.col-md-4.col-sm-4
+                                                div.col-md-4.col-sm-4.col-xs-4
                                                     h3 Tipo
-                                                div.col-md-4.col-sm-4
+                                                div.col-md-4.col-sm-4.col-xs-4
                                                     h3 Modelo
                                             div.row
-                                                div.col-md-4.col-sm-4
+                                                div.col-md-4.col-sm-4.col-xs-4
                                                     h3(ng-bind-template="{{toffee.category}}")
-                                                div.col-md-4.col-sm-4
+                                                div.col-md-4.col-sm-4.col-xs-4
                                                     h3(ng-bind-template="{{toffee.type}}")
-                                                div.col-md-4.col-sm-4
+                                                div.col-md-4.col-sm-4.col-xs-4
                                                     h3(ng-bind-template="{{toffee.model}}")
                                             div.row.blue
-                                                div.col-md-4.col-sm-4
+                                                div.col-md-4.col-sm-4.col-xs-4
                                                     h3 Pedido mínimo
-                                                div.col-md-4.col-sm-4
+                                                div.col-md-4.col-sm-4.col-xs-4
                                                     h3 Precio
                                             div.row
-                                                div.col-md-4.col-sm-4
+                                                div.col-md-4.col-sm-4.col-xs-4
                                                     h3(ng-bind-template="{{toffee.minimunOrder}} Kg")
-                                                div.col-md-4.col-sm-4
+                                                div.col-md-4.col-sm-4.col-xs-4
                                                     h3(ng-bind-template="{{toffee.price}} € / Kg")
                                     div.panel.panel-body
-                                        div.toffee-description
+                                        div.toffee-info-description.blue
                                             h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{toffee.description}}")
                             div(ng-show="!esSurtido(toffee)")
                                 div.col-md-12
