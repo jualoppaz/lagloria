@@ -77,7 +77,7 @@ block content
                                     div.main-card-content(style="word-wrap: break-word;")
                                         div.main-card-name
                                             a.recipe-title(href="#")
-                                                span.caramelo {{toffee.model}}
+                                                span.caramelo(ng-bind-template="{{toffee.model}}")
                             div(ng-show="esSurtido(toffee)")
                                 div.col-md-12
                                     div.panel.panel-body.panel-toffee-info

@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="10f8a809-813f-448f-8ef1-b4cf12576758" name="Default" comment="">
       <change type="DELETED" beforePath="D:\WS\carameloslagloria\app\public\img\bolsa masticables.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/public/css/backgroundImage.css" afterPath="$PROJECT_DIR$/app/public/css/backgroundImage.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/toffees/info.jade" afterPath="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/toffees/info.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/toffees.jade" afterPath="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/toffees.jade" />
     </list>
     <ignored path="angular-users-api.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,34 +30,25 @@
       <file leaf-file-name="jmlp.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/public/css/jmlp.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="325" column="17" selection-start="4693" selection-end="4706" vertical-scroll-proportion="-7.8" vertical-offset="5330" max-vertical-offset="7990">
+            <state line="325" column="17" selection-start="4693" selection-end="4706" vertical-scroll-proportion="75.2" vertical-offset="7405" max-vertical-offset="7990">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="backgroundImage.css" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="backgroundImage.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/public/css/backgroundImage.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="26" selection-start="231" selection-end="231" vertical-scroll-proportion="0.19508196" vertical-offset="0" max-vertical-offset="610">
+            <state line="7" column="26" selection-start="231" selection-end="231" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="238">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="info.jade" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/toffees/info.jade">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="151" column="72" selection-start="10586" selection-end="10586" vertical-scroll-proportion="-33.08" vertical-offset="1740" max-vertical-offset="2771">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="toffees.jade" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="toffees.jade" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/toffees.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="114" column="47" selection-start="7647" selection-end="7647" vertical-scroll-proportion="0.0" vertical-offset="1587" max-vertical-offset="2159">
+            <state line="91" column="42" selection-start="5502" selection-end="5502" vertical-scroll-proportion="0.6433566" vertical-offset="1179" max-vertical-offset="2312">
               <folding />
             </state>
           </provider>
@@ -130,10 +121,10 @@
         <option value="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/toffees/caramelo.jade" />
         <option value="$PROJECT_DIR$/app/server/router.js" />
         <option value="$PROJECT_DIR$/app/public/js/angular/angularToffeeInfo.js" />
-        <option value="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/toffees.jade" />
-        <option value="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/toffees/info.jade" />
         <option value="$PROJECT_DIR$/app/public/css/jmlp.css" />
         <option value="$PROJECT_DIR$/app/public/css/backgroundImage.css" />
+        <option value="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/toffees/info.jade" />
+        <option value="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/toffees.jade" />
       </list>
     </option>
   </component>
@@ -783,13 +774,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/toffees.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="114" column="47" selection-start="7647" selection-end="7647" vertical-scroll-proportion="0.0" vertical-offset="1587" max-vertical-offset="2159">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/server/views/gamaPropia.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state line="63" column="30" selection-start="3658" selection-end="3658" vertical-scroll-proportion="0.4755245" vertical-offset="799" max-vertical-offset="2669">
@@ -799,21 +783,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/toffees/info.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="151" column="72" selection-start="10586" selection-end="10586" vertical-scroll-proportion="-33.08" vertical-offset="1740" max-vertical-offset="2771">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/public/css/jmlp.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="325" column="17" selection-start="4693" selection-end="4706" vertical-scroll-proportion="-7.8" vertical-offset="5330" max-vertical-offset="7990">
+        <state line="74" column="41" selection-start="4594" selection-end="4594" vertical-scroll-proportion="0.31643358" vertical-offset="1077" max-vertical-offset="2771">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/public/css/backgroundImage.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="26" selection-start="231" selection-end="231" vertical-scroll-proportion="0.19508196" vertical-offset="0" max-vertical-offset="610">
+        <state line="7" column="26" selection-start="231" selection-end="231" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="238">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/public/css/jmlp.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="325" column="17" selection-start="4693" selection-end="4706" vertical-scroll-proportion="75.2" vertical-offset="7405" max-vertical-offset="7990">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/toffees.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="91" column="42" selection-start="5502" selection-end="5502" vertical-scroll-proportion="0.6433566" vertical-offset="1179" max-vertical-offset="2312">
           <folding />
         </state>
       </provider>

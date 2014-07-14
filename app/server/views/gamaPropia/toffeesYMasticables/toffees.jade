@@ -53,8 +53,8 @@ block content
                             ul.nav.navbar-nav.navbar-right.hidden-xs.hidden-sm
                                 a.btn.btn-default.btn-eathub-red(href="#", role="button")#entrar Entrar
         main.margen-superior-50
-            div.container
-                div.row
+            div.container(ng-app="angularToffees")
+                div.row(ng-controller="mainController")
                     div.col-md-12.hidden-md.hidden-lg
                         div.panel.panel-default.panel-body.text-center
                             br
@@ -73,7 +73,7 @@ block content
                                         b.abel(style="margin-left:10px; margin-right: 10px") >
                                         a(href="#")
                                             span.caramelo Toffees
-                    div.col-md-12
+                    div.col-md-6.col-sm-12
                         div.panel.panel-body.main-card#toffees
                             //div.main-card-picture
                                 a(href="#")
@@ -89,9 +89,18 @@ block content
                                 span
                                     i.fa.fa-bars
                                 span  M&aacute;s info
-                    div(ng-app="angularToffees")
-                        div(ng-controller="mainController")
-                            div(ng-repeat="toffee in toffees", style="text-align:center")
+                    div.col-md-6.col-sm-12
+                        div.panel.panel-body(style="min-height: 124px")
+                            div.main-card-content
+                                div.main-card-name.col-md-12
+                                    div.col-md-4
+                                        a.recipe-title(href="#")
+                                            span.caramelo Buscar
+                                    div.col-md-6(style="margin-top:7px")
+                                        input(type="text", placeholder="Introduzca un texto", ng-model="toffeeSearch").form-control
+                    div
+                        div
+                            div(ng-repeat="toffee in toffees | filter:toffeeSearch", style="text-align:center")
                                 div(ng-show="esSurtido(toffee)")
                                     div.col-md-12.col-sm-12
                                         div.panel.panel-body.panel-toffee
