@@ -33,6 +33,14 @@ module.exports = function(app){
         res.render('gamaPropia/toffeesYMasticables/toffees/info');
     });
 
+    app.get('/gamaPropia/toffeesYMasticables/masticables', function(req, res) {
+        res.render('gamaPropia/toffeesYMasticables/masticables');
+    });
+
+    app.get('/gamaPropia/toffeesYMasticables/masticables/:id', function(req, res) {
+        res.render('gamaPropia/toffeesYMasticables/masticables/info');
+    });
+
     app.get('/webAntigua/blandos', function(req, res) {
         res.sendfile('app/server/views/webAntigua/blandos.html');
     });
@@ -53,6 +61,19 @@ module.exports = function(app){
     app.get('/api/toffees/:id', function(req, res) {
         DBM.getProductByCategoryTypeAndId('Toffee', req.params.id, function(err, toffee){
             res.send(toffee[0]);
+        });
+    });
+
+    app.get('/api/masticables', function(req, res) {
+        DBM.getAllProductsByCategoryType('Masticable', function(err, masticables){
+            res.send(masticables);
+        });
+    });
+
+    app.get('/api/masticables/:id', function(req, res) {
+        DBM.getProductByCategoryTypeAndId('Masticable', req.params.id, function(err, masticable){
+            res.send(masticable[0]);
+            console.log(masticable[0]);
         });
     });
 

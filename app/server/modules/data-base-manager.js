@@ -312,11 +312,21 @@ exports.addNewCommentToTrip = function(tripId, user, comment, callback)
 // Products
 
 var toffees = db.collection('toffees');
+var masticables = db.collection('masticables');
 
 exports.getAllProductsByCategoryType = function(categoryType, callback)
 {
     if(categoryType == "Toffee"){
         toffees.find({ $query: {type:categoryType}, $orderby: {position:1}}).toArray(
+            function(e, res) {
+                if (e){
+                    callback(e);
+                }else{
+                    callback(null, res);
+                }
+            });
+    }else if(categoryType == "Masticable"){
+        masticables.find({ $query: {type:categoryType}, $orderby: {position:1}}).toArray(
             function(e, res) {
                 if (e){
                     callback(e);
@@ -332,6 +342,15 @@ exports.getAllProductsByCategoryType = function(categoryType, callback)
 exports.getProductByCategoryTypeAndId = function(categoryType, toffeeId, callback){
     if(categoryType == "Toffee"){
         toffees.find({ $query: {type:categoryType, _id: getToffeeId(toffeeId)}}).toArray(
+            function(e, res){
+                if(e){
+                    callback(e);
+                }else{
+                    callback(null, res);
+                }
+            });
+    }else if(categoryType == "Masticable"){
+        masticables.find({ $query: {type:categoryType, _id: getToffeeId(toffeeId)}}).toArray(
             function(e, res){
                 if(e){
                     callback(e);
