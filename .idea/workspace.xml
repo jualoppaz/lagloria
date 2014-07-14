@@ -2,17 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10f8a809-813f-448f-8ef1-b4cf12576758" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/public/js/angular/angularMasticableInfo.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/public/js/angular/angularMasticables.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/masticables/info.jade" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/masticables.jade" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/public/img/bolsa toffees.JPG" />
       <change type="DELETED" beforePath="D:\WS\carameloslagloria\app\public\img\bolsa masticables.jpg" afterPath="" />
       <change type="DELETED" beforePath="D:\WS\carameloslagloria\app\public\img\bolsaMasticables.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/modules/data-base-manager.js" afterPath="$PROJECT_DIR$/app/server/modules/data-base-manager.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/toffees/info.jade" afterPath="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/toffees/info.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/router.js" afterPath="$PROJECT_DIR$/app/server/router.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/toffees.jade" afterPath="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/toffees.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables.jade" afterPath="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables.jade" />
+      <change type="DELETED" beforePath="D:\WS\carameloslagloria\app\public\img\surtido.jpg" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/public/img/imagenesMias/masticables/surtido.png" afterPath="$PROJECT_DIR$/app/public/img/imagenesMias/masticables/surtido.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="angular-users-api.iws" />
@@ -63,12 +57,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="info.jade" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="info.jade" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/toffees/info.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="53" selection-start="4119" selection-end="4119" vertical-scroll-proportion="0.4755245" vertical-offset="867" max-vertical-offset="2771">
+            <state line="67" column="53" selection-start="4119" selection-end="4119" vertical-scroll-proportion="-10.88" vertical-offset="867" max-vertical-offset="2771">
               <folding />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="surtido.png" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/public/img/imagenesMias/masticables/surtido.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
           </provider>
         </entry>
       </file>
@@ -434,6 +435,84 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web-angular" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="carameloslagloria" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web-angular" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="carameloslagloria" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="imagenesMias" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web-angular" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="carameloslagloria" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="imagenesMias" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="masticables" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope">
@@ -455,11 +534,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\WS\carameloslagloria\app\public\img" />
       <recent name="D:\WS\carameloslagloria\app\public\js\angular" />
       <recent name="D:\WS\carameloslagloria\app\server\views\gamaPropia\toffeesYMasticables\masticables" />
       <recent name="D:\WS\carameloslagloria\app\server\views\gamaPropia\toffeesYMasticables" />
       <recent name="D:\WS\carameloslagloria\app\public\js" />
-      <recent name="D:\WS\carameloslagloria\app\server\modules" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\WS\carameloslagloria\app\public\img\imagenesMias\toffees" />
@@ -714,11 +793,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/public/img/surtido.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/public/img/chocoblanco-02.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -854,9 +928,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/toffees/info.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="53" selection-start="4119" selection-end="4119" vertical-scroll-proportion="0.4755245" vertical-offset="867" max-vertical-offset="2771">
+        <state line="67" column="53" selection-start="4119" selection-end="4119" vertical-scroll-proportion="-10.88" vertical-offset="867" max-vertical-offset="2771">
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/public/img/imagenesMias/masticables/surtido.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
   </component>
