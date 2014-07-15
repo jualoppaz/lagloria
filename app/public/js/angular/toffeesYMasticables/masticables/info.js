@@ -1,16 +1,16 @@
-var angularToffeeInfo = angular.module('angularToffeeInfo', []);
+var masticablesInfo = angular.module('masticablesInfo', []);
 
 function mainController($scope, $http) {
-    $scope.toffee = {};
+    $scope.masticable = {};
     $scope.loguedUser = {};
 
     var url = window.location.href.split("/");
-    var toffeeId = url[url.length - 1];
+    var masticableId = url[url.length - 1];
 
     // Cuando se cargue la página, pide del API todas las excursiones
-    $http.get('/api/toffees/' + String(toffeeId))
+    $http.get('/api/masticables/' + String(masticableId))
         .success(function(data) {
-            $scope.toffee = data;
+            $scope.masticable = data;
         })
         .error(function(data) {
             alert("No se ha podido cargar la página correctamente. Recargue la página. Gracias.");
@@ -26,9 +26,8 @@ function mainController($scope, $http) {
         });
     */
 
-    $scope.esSurtido = function(toffee){
-        //alert("Modelo: " + toffee.model);
-        return toffee.model == "Surtido";
+    $scope.esSurtido = function(masticable){
+        return masticable.model == "Surtido";
     }
 
 }

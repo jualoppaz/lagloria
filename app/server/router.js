@@ -41,6 +41,14 @@ module.exports = function(app){
         res.render('gamaPropia/toffeesYMasticables/masticables/info');
     });
 
+    app.get('/gamaPropia/duros', function(req, res) {
+        res.render('gamaPropia/duros');
+    });
+
+    app.get('/gamaPropia/duros/crystals', function(req, res) {
+        res.render('gamaPropia/duros/crystals');
+    });
+
     app.get('/webAntigua/blandos', function(req, res) {
         res.sendfile('app/server/views/webAntigua/blandos.html');
     });
@@ -73,7 +81,18 @@ module.exports = function(app){
     app.get('/api/masticables/:id', function(req, res) {
         DBM.getProductByCategoryTypeAndId('Masticable', req.params.id, function(err, masticable){
             res.send(masticable[0]);
-            console.log(masticable[0]);
+        });
+    });
+
+    app.get('/api/crystals', function(req, res) {
+        DBM.getAllProductsByCategoryType('Crystal', function(err, crystals){
+            res.send(crystals);
+        });
+    });
+
+    app.get('/api/crystals/:id', function(req, res) {
+        DBM.getProductByCategoryTypeAndId('Crystal', req.params.id, function(err, crystal){
+            res.send(crystal[0]);
         });
     });
 

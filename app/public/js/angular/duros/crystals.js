@@ -1,17 +1,16 @@
-var angularToffees = angular.module('angularToffees', []);
+var crystals = angular.module('crystals', []);
 
 function mainController($scope, $http) {
-    $scope.toffees = {};
+    $scope.crystals = {};
     $scope.loguedUser = {};
 
     // Cuando se cargue la página, pide del API todas las excursiones
-    $http.get('/api/toffees')
+    $http.get('/api/crystals')
         .success(function(data) {
-            $scope.toffees = data;
-            console.log(data);
+            $scope.crystals = data;
         })
         .error(function(data) {
-            console.log('Error: ' + data);
+            alert("Ha sucedido algún error. Recargue la página de nuevo. Disculpe las molestias.");
         });
 
     /*
@@ -24,7 +23,9 @@ function mainController($scope, $http) {
         });
     */
 
-    $scope.esSurtido = function(toffee){
-        return toffee.model == "Surtido";
+    /*
+    $scope.esSurtido = function(duro){
+        return duro.model == "Surtido";
     }
+    */
 }

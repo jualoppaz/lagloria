@@ -1,16 +1,16 @@
-var angularMasticableInfo = angular.module('angularMasticableInfo', []);
+var crystalInfo = angular.module('crystalInfo', []);
 
 function mainController($scope, $http) {
-    $scope.masticable = {};
+    $scope.crystal = {};
     $scope.loguedUser = {};
 
     var url = window.location.href.split("/");
     var masticableId = url[url.length - 1];
 
     // Cuando se cargue la página, pide del API todas las excursiones
-    $http.get('/api/masticables/' + String(masticableId))
+    $http.get('/api/crystals/' + String(masticableId))
         .success(function(data) {
-            $scope.masticable = data;
+            $scope.crystal = data;
         })
         .error(function(data) {
             alert("No se ha podido cargar la página correctamente. Recargue la página. Gracias.");
@@ -26,8 +26,10 @@ function mainController($scope, $http) {
         });
     */
 
+    /*
     $scope.esSurtido = function(masticable){
         return masticable.model == "Surtido";
     }
+    */
 
 }

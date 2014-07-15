@@ -47,7 +47,11 @@ var db = new MongoDB(dbName, new Server(dbHost, dbPort, {auto_reconnect: true}),
 	}
 });
 
-var accounts = db.collection('accounts');
+// Collections definition
+
+var accounts                = db.collection('accounts');
+var toffeesYMasticables     = db.collection('toffeesYMasticables');
+var duros                   = db.collection('duros');
 
 /* login validation methods */
 
@@ -214,8 +218,18 @@ var getObjectId = function(id)
 }
 
 var getToffeeId = function(id){
-    return toffees.db.bson_serializer.ObjectID.createFromHexString(id)
+    return toffeesYMasticables.db.bson_serializer.ObjectID.createFromHexString(id)
 }
+
+var getMasticableId = function(id){
+    return toffeesYMasticables.db.bson_serializer.ObjectID.createFromHexString(id)
+}
+
+var getDuroId = function(id){
+    return duros.db.bson_serializer.ObjectID.createFromHexString(id)
+}
+
+
 
 var findById = function(id, callback)
 {
@@ -311,13 +325,10 @@ exports.addNewCommentToTrip = function(tripId, user, comment, callback)
 
 // Products
 
-var toffees = db.collection('toffees');
-var masticables = db.collection('masticables');
-
 exports.getAllProductsByCategoryType = function(categoryType, callback)
 {
-    if(categoryType == "Toffee"){
-        toffees.find({ $query: {type:categoryType}, $orderby: {position:1}}).toArray(
+    if(categoryType == "Toffee" || categoryType == "Masticable"){
+        toffeesYMasticables.find({ $query: {type:categoryType}, $orderby: {position:1}}).toArray(
             function(e, res) {
                 if (e){
                     callback(e);
@@ -325,8 +336,8 @@ exports.getAllProductsByCategoryType = function(categoryType, callback)
                     callback(null, res);
                 }
             });
-    }else if(categoryType == "Masticable"){
-        masticables.find({ $query: {type:categoryType}, $orderby: {position:1}}).toArray(
+    }else if(categoryType == "Crystal"){
+        duros.find({ $query: {type:categoryType}, $orderby: {position:1}}).toArray(
             function(e, res) {
                 if (e){
                     callback(e);
@@ -340,8 +351,8 @@ exports.getAllProductsByCategoryType = function(categoryType, callback)
 }
 
 exports.getProductByCategoryTypeAndId = function(categoryType, toffeeId, callback){
-    if(categoryType == "Toffee"){
-        toffees.find({ $query: {type:categoryType, _id: getToffeeId(toffeeId)}}).toArray(
+    if(categoryType == "Toffee" || categoryType == "Masticable"){
+        toffeesYMasticables.find({ $query: {type:categoryType, _id: getToffeeId(toffeeId)}}).toArray(
             function(e, res){
                 if(e){
                     callback(e);
@@ -349,8 +360,8 @@ exports.getProductByCategoryTypeAndId = function(categoryType, toffeeId, callbac
                     callback(null, res);
                 }
             });
-    }else if(categoryType == "Masticable"){
-        masticables.find({ $query: {type:categoryType, _id: getToffeeId(toffeeId)}}).toArray(
+    }else if(categoryType == "Crystal"){
+        duros.find({ $query: {type:categoryType, _id: getToffeeId(toffeeId)}}).toArray(
             function(e, res){
                 if(e){
                     callback(e);

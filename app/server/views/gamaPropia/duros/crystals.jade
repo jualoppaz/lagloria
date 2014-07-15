@@ -1,7 +1,7 @@
 extends ../../layout
 
 block head
-    title Toffees
+    title Crystal
     link(rel="stylesheet", href="/css/backgroundImage.css")
 
 block content
@@ -53,7 +53,7 @@ block content
                             ul.nav.navbar-nav.navbar-right.hidden-xs.hidden-sm
                                 a.btn.btn-default.btn-eathub-red(href="#", role="button")#entrar Entrar
         main.margen-superior-50
-            div.container(ng-app="toffees")
+            div.container(ng-app="crystals")
                 div.row(ng-controller="mainController")
                     //div.col-md-12.hidden-md.hidden-lg
                         div.panel.panel-default.panel-body.text-center
@@ -68,66 +68,76 @@ block content
                                         a(href="/gamaPropia")
                                             span.caramelo Gama propia
                                         b.abel(style="margin-left:10px; margin-right: 10px") >
-                                        a(href="../toffeesYMasticables")
-                                            span.caramelo Toffees y Masticables
+                                        a(href="../duros")
+                                            span.caramelo Duros
                                         b.abel(style="margin-left:10px; margin-right: 10px") >
                                         a(href="#")
-                                            span.caramelo Toffees
-                    div.col-md-6.col-sm-12
-                        div.panel.panel-body.main-card#toffees
-                            //div.main-card-picture
-                                a(href="#")
-                                    img(src="/img/toffessYMasticables.png", style="width: 100%; height: 100%;")
-                            div.main-card-content(style="word-wrap: break-word;")
-                                div.main-card-name
-                                    a.recipe-title(href="#")
-                                        span.caramelo Toffees
-                                div.main-card-description
-                                    p.
-                                        Aqu&iacute; encontrar&aacute;s todos los Toffees de los que disponemos actualmente.
-                            //div.recipe-time
-                                span
-                                    i.fa.fa-bars
-                                span  M&aacute;s info
-                    div.col-md-6.col-sm-12
-                        div.panel.panel-body(style="min-height: 124px")
-                            div.main-card-content
-                                div.main-card-name.col-md-12
-                                    div.col-md-4
-                                        a.recipe-title(href="#")
-                                            span.caramelo Buscar
-                                    div.col-md-6(style="margin-top:7px")
-                                        input(type="text", placeholder="Introduzca un texto", ng-model="toffeeSearch").form-control
+                                            span.caramelo Crystals
+                    div.col-md-12
+                        div.panel.panel-body
+                            div.col-md-6.col-sm-12(style="padding-left:0px")
+                                div.main-card#crystals
+                                    //div.main-card-picture
+                                        a(href="#")
+                                            img(src="/img/toffessYMasticables.png", style="width: 100%; height: 100%;")
+                                    div.main-card-content(style="word-wrap: break-word;")
+                                        div.main-card-name
+                                            a.recipe-title(href="#")
+                                                span.caramelo Crystals
+                                        div.main-card-description
+                                            p.
+                                                Aqu&iacute; encontrar&aacute;s todos los crystals de los que disponemos actualmente.
+                                    //div.recipe-time
+                                        span
+                                            i.fa.fa-bars
+                                        span  M&aacute;s info
+                            div.col-md-6.col-sm-12(style="padding-left:0px")
+                                div.main-card#crystals(style="min-height: 124px")
+                                    div.main-card-content
+                                        div.main-card-name
+                                            div(style="float:left")
+                                                a.recipe-title(href="#")
+                                                    span.caramelo Buscar
+                                            div(style="margin-top:7px; float:left; margin-left: 20px; margin-top: 10px;")
+                                                input(type="text", placeholder="Introduzca un texto", ng-model="crystalSearch").form-control
                     div
                         div
-                            div(ng-repeat="toffee in toffees | filter:toffeeSearch", style="text-align:center")
-                                div(ng-show="esSurtido(toffee)")
+                            div(ng-repeat="crystal in crystals | filter:crystalSearch", style="text-align:center")
+                                //div(ng-show="esSurtido(duro)")
                                     div.col-md-12.col-sm-12
-                                        div.panel.panel-body.panel-toffee
+                                        div.panel.panel-body.panel-duro
                                             div(style="text-align:left;")
-                                                h1(style="margin-bottom:30px").modelo-toffee
-                                                    a(ng-href="toffees/{{toffee._id}}", ng-bind-template="{{$index + 1}}. {{toffee.model}}").green.hover-red
+                                                h1(style="margin-bottom:30px").modelo-duro
+                                                    a(ng-href="duros/{{duro._id}}", ng-bind-template="{{$index + 1}}. {{duro.model}}").green.hover-red
                                             div.col-md-2
                                                 div(style="float:left; margin-right: 20px; width:100%; height: 260px").hidden-sm
-                                                    img(ng-src="/img/imagenesMias/{{toffee.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
+                                                    img(ng-src="/img/imagenesMias/{{duro.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
                                                 div(style="float:left; margin-right: 20px; width:100%; height: 260px").hidden-md.hidden-lg
-                                                    img(ng-src="/img/imagenesMias/{{toffee.image}}", height="100%", width="30%", style="margin-left: 10px; margin-bottom: 10px")
+                                                    img(ng-src="/img/imagenesMias/{{duro.image}}", height="100%", width="30%", style="margin-left: 10px; margin-bottom: 10px")
                                             div.col-md-10
-                                                div(style="margin-left: 15px;").toffee-description
-                                                    h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{toffee.description}}").blue
-                                div(ng-show="!esSurtido(toffee)")
+                                                div(style="margin-left: 15px;").duro-description
+                                                    h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{duro.description}}").blue
+                                //div(ng-show="!esSurtido(duro)")
                                     div.col-md-3.col-sm-6
-                                        div.panel.panel-body.panel-toffee
+                                        div.panel.panel-body.panel-duro
                                             div(style="text-align:left")
-                                                h1(style="margin-bottom:30px").modelo-toffee
-                                                    a(ng-href="toffees/{{toffee._id}}", ng-bind-template="{{$index + 1}}. {{toffee.model}}").green.hover-red
+                                                h1(style="margin-bottom:30px").modelo-duro
+                                                    a(ng-href="duros/{{duro._id}}", ng-bind-template="{{$index + 1}}. {{duro.model}}").green.hover-red
                                             div(style="margin-right: 20px; height: 100px; max-height: 200px;").margenInferior-30
-                                                img(ng-src="/img/imagenesMias/{{toffee.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
-                                            div.toffee-description
-                                                h3(style="text-align: justify; margin-top: 5px", ng-bind-template="{{toffee.description}}").blue
-
+                                                img(ng-src="/img/imagenesMias/{{duro.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
+                                            div.duro-description
+                                                h3(style="text-align: justify; margin-top: 5px", ng-bind-template="{{duro.description}}").blue
+                                div.col-md-3.col-sm-6
+                                    div.panel.panel-body.panel-crystal
+                                        div(style="text-align:left")
+                                            h1(style="margin-bottom:30px").modelo-crystal
+                                                a(ng-href="crystal/{{crystal._id}}", ng-bind-template="{{$index + 1}}. {{crystal.model}}").green.hover-red
+                                        div(style="margin-right: 20px; height: 100px; max-height: 200px;").margenInferior-30
+                                            img(ng-src="/img/imagenesMias/{{crystal.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
+                                        div.crystal-description
+                                            h3(style="text-align: justify; margin-top: 5px", ng-bind-template="{{crystal.description}}").blue
 
 
 block scripts
     script(src='/js/angular.js')
-    script(src='/js/angular/toffeesYMasticables/toffees.js')
+    script(src='/js/angular/duros/crystals.js')

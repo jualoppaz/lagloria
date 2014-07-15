@@ -335,7 +335,8 @@ body{
     height: 140px;
 }
 
-.main-card#blandos, .main-card#duros, .main-card#grageados, .main-card#conPalo{
+
+.main-card#gama-propia-toffeesYMasticables, .main-card#gama-propia-duros, .main-card#gama-propia-grageados, .main-card#gama-propia-conPalo{
     height: 320px;
 }
 
@@ -356,7 +357,7 @@ main{
     padding-bottom: 0px !important;
 }
 
-#toffees, #masticables{
+#toffees, #masticables, #crystals, #glorias, #ponnies{
     height: auto;
 }
 
@@ -373,20 +374,20 @@ main{
 
 }
 
-.imagenToffee{
+.imagenToffee, .imagenMasticable, .imagenCrystal{
     float:left;
 }
 
-.panel-toffee{
+.panel-toffee, .panel-masticable, .panel-crystal{
     height: 450px;
 }
 
-.toffee-description{
+.toffee-description, .masticable-description, .crystal-description{
     padding-top: 10px;
     padding-left: 10px;
 }
 
-.toffee-info-description{
+.toffee-info-description, .masticable-info-description, .crystal-info-description{
     padding-left: 30px;
     padding-top: 10px;
 }
@@ -411,14 +412,14 @@ h3{
     margin-right: 25%;
 }
 
-.modelo-toffee > a{
+.modelo-toffee > a, .modelo-masticable > a, .modelo-crystal > a{
     padding-left: 15px;
     font-size: 25px !important;
     font-weight: bold;
     color: #41B19C !important;
 }
 
-.panel-toffee-info{
+.panel-toffee-info, .panel-masticable-info, .panel-crystal-info{
     padding-top: 30px;
 }
 
