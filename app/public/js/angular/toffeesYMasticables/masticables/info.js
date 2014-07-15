@@ -1,4 +1,4 @@
-var masticablesInfo = angular.module('masticablesInfo', []);
+var masticableInfo = angular.module('masticableInfo', []);
 
 function mainController($scope, $http) {
     $scope.masticable = {};

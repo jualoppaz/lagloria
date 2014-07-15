@@ -1,4 +1,4 @@
-var toffeesInfo = angular.module('toffeesInfo', []);
+var toffeeInfo = angular.module('toffeeInfo', []);
 
 function mainController($scope, $http) {
     $scope.toffee = {};
