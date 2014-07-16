@@ -1,5 +1,5 @@
 // Surtidos: ordenadores, tablets y moviles.
-// Otros:    ordenaores, tablets y moviles.
+// Otros:    ordenadores, tablets y moviles.
 
 extends ../../../layout
 block head
@@ -91,33 +91,31 @@ block content
                                         div.col-md-2
                                             div(style="float:left; width: 100%; height: 260px").hidden-sm.hidden-xs.text-center
                                                 img(ng-src="/img/imagenesMias/{{toffee.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
-                                            div(style="float:left; margin-right: 20px; width: 100%; height: 260px").hidden-md.hidden-lg.text-center
-                                                img(ng-src="/img/imagenesMias/{{toffee.image}}", height="100%", width="30%", style="margin-left: 10px; margin-bottom: 10px")
                                         div.col-md-9.col-md-offset-1
                                             h1(style="text-align: left;").separador-horizontal.green Detalles
                                             div.row.blue
-                                                div.col-md-4.col-sm-4.col-xs-4
+                                                div.col-md-4
                                                     h3 Categoría
-                                                div.col-md-4.col-sm-4.col-xs-4
+                                                div.col-md-4
                                                     h3 Tipo
-                                                div.col-md-4.col-sm-4.col-xs-4
+                                                div.col-md-4
                                                     h3 Modelo
                                             div.row
-                                                div.col-md-4.col-sm-4.col-xs-4
+                                                div.col-md-4
                                                     h3(ng-bind-template="{{toffee.category}}")
-                                                div.col-md-4.col-sm-4.col-xs-4
+                                                div.col-md-4
                                                     h3(ng-bind-template="{{toffee.type}}")
-                                                div.col-md-4.col-sm-4.col-xs-4
+                                                div.col-md-4
                                                     h3(ng-bind-template="{{toffee.model}}")
                                             div.row.blue
-                                                div.col-md-4.col-sm-4.col-xs-4
+                                                div.col-md-4
                                                     h3 Pedido mínimo
-                                                div.col-md-4.col-sm-4.col-xs-4
+                                                div.col-md-4
                                                     h3 Precio
                                             div.row
-                                                div.col-md-4.col-sm-4.col-xs-4
+                                                div.col-md-4
                                                     h3(ng-bind-template="{{toffee.minimumOrder}} Kg")
-                                                div.col-md-4.col-sm-4.col-xs-4
+                                                div.col-md-4
                                                     h3(ng-bind-template="{{toffee.price}} € / Kg")
                                     div.panel.panel-body
                                         div.toffee-info-description.blue
