@@ -1,7 +1,7 @@
 extends ../../layout
 
 block head
-    title Crystal
+    title Gloria
     link(rel="stylesheet", href="/css/backgroundImage.css")
 
 block content
@@ -55,7 +55,7 @@ block content
                             ul.nav.navbar-nav.navbar-right.hidden-xs
                                 a.btn.btn-default.btn-eathub-red(href="#", role="button")#entrar Entrar
         main.margen-superior-50
-            div.container(ng-app="crystals")
+            div.container(ng-app="glorias")
                 div.row(ng-controller="mainController")
                     //div.col-md-12.hidden-md.hidden-lg
                         div.panel.panel-default.panel-body.text-center
@@ -74,12 +74,12 @@ block content
                                             span.caramelo Duros
                                         b.abel(style="margin-left:10px; margin-right: 10px") >
                                         a(href="#")
-                                            span.caramelo Crystal
+                                            span.caramelo Gloria
 
                     //Este col es con la tarjeta unificada para el modelo y la caja de busqueda
 
                     //TARJETAS SEPARADAS
-
+                    
                     //div.col-md-12
                         div.panel.panel-body
                             div.col-md-6.col-sm-12(style="padding-left:0px")
@@ -111,17 +111,17 @@ block content
                     //Esta version tiene el modelo y la caja de busqueda separados
 
                     div.col-md-6.col-sm-12
-                        div.panel.panel-body.main-card#crystals
+                        div.panel.panel-body.main-card#glorias
                             //div.main-card-picture
                                 a(href="#")
                                     img(src="/img/toffessYMasticables.png", style="width: 100%; height: 100%;")
                             div.main-card-content(style="word-wrap: break-word;")
                                 div.main-card-name
                                     a.recipe-title(href="#")
-                                        span.caramelo Crystal
+                                        span.caramelo Gloria
                                 div.main-card-description
                                     p.
-                                        Aqu&iacute; encontrar&aacute;s todos los caramelos crystal de los que disponemos actualmente.
+                                        Aqu&iacute; encontrar&aacute;s todos los caramelos gloria de los que disponemos actualmente.
                             //div.recipe-time
                                 span
                                     i.fa.fa-bars
@@ -134,12 +134,12 @@ block content
                                         a.recipe-title(href="#")
                                             span.caramelo Buscar
                                     div.col-md-6(style="margin-top:7px")
-                                        input(type="text", placeholder="Introduzca un texto", ng-model="crystalSearch").form-control
+                                        input(type="text", placeholder="Introduzca un texto", ng-model="gloriaSearch").form-control
 
 
                     div(style="clear:both")
                         div
-                            div(ng-repeat="crystal in crystals | filter:crystalSearch", style="text-align:center")
+                            div(ng-repeat="gloria in glorias | filter:gloriaSearch", style="text-align:center")
                                 //div(ng-show="esSurtido(duro)")
                                     div.col-md-12.col-sm-12
                                         div.panel.panel-body.panel-duro
@@ -165,18 +165,18 @@ block content
                                             div.duro-description
                                                 h3(style="text-align: justify; margin-top: 5px", ng-bind-template="{{duro.description}}").blue
                                 div.col-md-3.col-sm-6
-                                    div.panel.panel-body.panel-crystal
+                                    div.panel.panel-body.panel-gloria
                                         div(style="text-align:left")
-                                            h1(style="margin-bottom:30px").modelo-crystal
-                                                a(ng-href="crystal/{{crystal._id}}", ng-bind-template="{{$index + 1}}. {{crystal.model}}").green.hover-red
+                                            h1(style="margin-bottom:30px").modelo-gloria
+                                                a(ng-href="gloria/{{gloria._id}}", ng-bind-template="{{$index + 1}}. {{gloria.model}}").green.hover-red
                                         div(style="margin-right: 20px; height: 100px; max-height: 200px;").margenInferior-30
-                                            img(ng-src="/img/imagenesMias/{{crystal.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
-                                        div.crystal-description
-                                            h3(style="text-align: justify; margin-top: 5px", ng-bind-template="{{crystal.description}}").blue
+                                            img(ng-src="/img/imagenesMias/{{gloria.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
+                                        div.gloria-description
+                                            h3(style="text-align: justify; margin-top: 5px", ng-bind-template="{{gloria.description}}").blue
 
 
 block scripts
     script(src='/js/angular.js')
-    script(src='/js/angular/duros/crystals.js')
+    script(src='/js/angular/duros/glorias.js')
     script(src='/js/jquery.min.js')
     script(src='/js/bootstrap.js')

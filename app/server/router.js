@@ -45,12 +45,20 @@ module.exports = function(app){
         res.render('gamaPropia/duros');
     });
 
-    app.get('/gamaPropia/duros/crystals', function(req, res) {
+    app.get('/gamaPropia/duros/crystal', function(req, res) {
         res.render('gamaPropia/duros/crystals');
     });
 
-    app.get('/gamaPropia/duros/crystals/:id', function(req, res) {
+    app.get('/gamaPropia/duros/crystal/:id', function(req, res) {
         res.render('gamaPropia/duros/crystals/info');
+    });
+
+    app.get('/gamaPropia/duros/gloria', function(req, res) {
+        res.render('gamaPropia/duros/glorias');
+    });
+
+    app.get('/gamaPropia/duros/gloria/:id', function(req, res) {
+        res.render('gamaPropia/duros/glorias/info');
     });
 
     app.get('/webAntigua/blandos', function(req, res) {
@@ -97,6 +105,18 @@ module.exports = function(app){
     app.get('/api/crystals/:id', function(req, res) {
         DBM.getProductByCategoryTypeAndId('Crystal', req.params.id, function(err, crystal){
             res.send(crystal[0]);
+        });
+    });
+
+    app.get('/api/glorias', function(req, res) {
+        DBM.getAllProductsByCategoryType('Gloria', function(err, glorias){
+            res.send(glorias);
+        });
+    });
+
+    app.get('/api/glorias/:id', function(req, res) {
+        DBM.getProductByCategoryTypeAndId('Gloria', req.params.id, function(err, gloria){
+            res.send(gloria[0]);
         });
     });
 

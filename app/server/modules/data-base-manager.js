@@ -336,7 +336,7 @@ exports.getAllProductsByCategoryType = function(categoryType, callback)
                     callback(null, res);
                 }
             });
-    }else if(categoryType == "Crystal"){
+    }else if(categoryType == "Crystal" || categoryType == "Gloria"){
         duros.find({ $query: {type:categoryType}, $orderby: {position:1}}).toArray(
             function(e, res) {
                 if (e){
@@ -350,9 +350,9 @@ exports.getAllProductsByCategoryType = function(categoryType, callback)
     }
 }
 
-exports.getProductByCategoryTypeAndId = function(categoryType, toffeeId, callback){
+exports.getProductByCategoryTypeAndId = function(categoryType, id, callback){
     if(categoryType == "Toffee" || categoryType == "Masticable"){
-        toffeesYMasticables.find({ $query: {type:categoryType, _id: getToffeeId(toffeeId)}}).toArray(
+        toffeesYMasticables.find({ $query: {type:categoryType, _id: getToffeeId(id)}}).toArray(
             function(e, res){
                 if(e){
                     callback(e);
@@ -360,8 +360,8 @@ exports.getProductByCategoryTypeAndId = function(categoryType, toffeeId, callbac
                     callback(null, res);
                 }
             });
-    }else if(categoryType == "Crystal"){
-        duros.find({ $query: {type:categoryType, _id: getToffeeId(toffeeId)}}).toArray(
+    }else if(categoryType == "Crystal" || categoryType == "Gloria"){
+        duros.find({ $query: {type:categoryType, _id: getDuroId(id)}}).toArray(
             function(e, res){
                 if(e){
                     callback(e);

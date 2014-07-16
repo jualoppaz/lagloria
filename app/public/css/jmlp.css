@@ -374,20 +374,20 @@ main{
 
 }
 
-.imagenToffee, .imagenMasticable, .imagenCrystal{
+.imagenToffee, .imagenMasticable, .imagenCrystal, .imagenGloria{
     float:left;
 }
 
-.panel-toffee, .panel-masticable, .panel-crystal{
+.panel-toffee, .panel-masticable, .panel-crystal, .panel-gloria{
     height: 450px;
 }
 
-.toffee-description, .masticable-description, .crystal-description{
+.toffee-description, .masticable-description, .crystal-description, .gloria-description{
     padding-top: 10px;
     padding-left: 10px;
 }
 
-.toffee-info-description, .masticable-info-description, .crystal-info-description{
+.toffee-info-description, .masticable-info-description, .crystal-info-description, .gloria-info-description{
     padding-left: 30px;
     padding-top: 10px;
 }
@@ -412,14 +412,25 @@ h3{
     margin-right: 25%;
 }
 
-.modelo-toffee > a, .modelo-masticable > a, .modelo-crystal > a{
+.modelo-toffee > a, .modelo-masticable > a, .modelo-crystal > a, .modelo-gloria > a{
     padding-left: 15px;
     font-size: 25px !important;
     font-weight: bold;
     color: #41B19C !important;
+    font-family: 'Abel', sans-serif;
 }
 
-.panel-toffee-info, .panel-masticable-info, .panel-crystal-info{
+/*
+.modelo-toffee > h1, .modelo-masticable > h1, .modelo-crystal > h1, .modelo-gloria > h1{
+    padding-left: 15px;
+    font-size: 25px !important;
+    font-weight: bold;
+    color: #41B19C !important;
+    font-family: 'Abel', sans-serif;
+}
+*/
+
+.panel-toffee-info, .panel-masticable-info, .panel-crystal-info, .panel-gloria-info{
     padding-top: 30px;
 }
 
@@ -477,13 +488,25 @@ div.row div h3{
     border-color: #FFFFFF !important;
 }
 
-.navbar-default:hover .navbar-toggle:hover, .navbar-default .navbar-toggle:focus{
+/* Para que se inviertan los colores cuando nos ponemos encima */
+.navbar-default:hover .navbar-toggle:hover{
     background-color: #FFFFFF !important;
     border-color: #ffffff !important;
     color: #41B19C !important;
 }
 
-.navbar-default:hover .navbar-toggle:hover .icon-bar, .navbar-default .navbar-toggle:focus .icon-bar{
-    background-color: #FFFFFF !important;
+/* Para que se inviertan los colores cuando nos ponemos encima */
+.navbar-default:hover .navbar-toggle:hover .icon-bar{
     background-color: #41B19C !important;
+}
+
+/* Para que cuando tenga el foco los colores sean los mismos que los iniciales */
+.navbar-default .navbar-toggle:focus{
+    background-color: #41B19C !important;
+    border-color: #ffffff !important;
+}
+
+/* Para que cuando tenga el foco los colores sean los mismos que los iniciales */
+.navbar-default .navbar-toggle:focus .icon-bar{
+    background-color: #FFFFFF !important;
 }

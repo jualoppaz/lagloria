@@ -71,22 +71,22 @@ block content
                                         a(href="../../duros")
                                             span.caramelo Duros
                                         b.abel(style="margin-left:10px; margin-right: 10px") >
-                                        a(href="../crystals")
-                                            span.caramelo Crystals
-                    div(ng-app="crystalInfo")
+                                        a(href="../gloria")
+                                            span.caramelo Gloria
+                    div(ng-app="gloriaInfo")
                         div(ng-controller="mainController")
                             div.col-md-12
                                 div.panel.panel-body
                                     div.main-card-content(style="word-wrap: break-word;")
                                         div.main-card-name
                                             a.recipe-title(href="#")
-                                                span.caramelo(ng-bind-template="{{crystal.model}}")
-                            div(ng-show="esSurtido(crystal)")
+                                                span.caramelo(ng-bind-template="{{gloria.model}}")
+                            div(ng-show="esSurtido(gloria)")
                                 div.col-md-12
                                     div.panel.panel-body.panel-toffee-info
                                         div.col-md-4.col-sm-12
                                             div(style="float:left; margin-right: 20px; width: 70%; height: 400px")
-                                                img(ng-src="/img/imagenesMias/{{crystal.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
+                                                img(ng-src="/img/imagenesMias/{{gloria.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
                                         div.col-md-8.col-sm-12
                                             h1(style="text-align: left;").separador-horizontal.green Detalles
                                             div.row.blue
@@ -98,11 +98,11 @@ block content
                                                     h3 Modelo
                                             div.row
                                                 div.col-md-4.col-sm-4.col-xs-4
-                                                    h3(ng-bind-template="{{crystal.category}}")
+                                                    h3(ng-bind-template="{{gloria.category}}")
                                                 div.col-md-4.col-sm-4.col-xs-4
-                                                    h3(ng-bind-template="{{crystal.type}}")
+                                                    h3(ng-bind-template="{{gloria.type}}")
                                                 div.col-md-4.col-sm-4.col-xs-4
-                                                    h3(ng-bind-template="{{crystal.model}}")
+                                                    h3(ng-bind-template="{{gloria.model}}")
                                             div.row.blue
                                                 div.col-md-4.col-sm-4.col-xs-4
                                                     h3 Pedido mínimo
@@ -110,21 +110,20 @@ block content
                                                     h3 Precio
                                             div.row
                                                 div.col-md-4.col-sm-4.col-xs-4
-                                                    h3(ng-bind-template="{{crystal.minimumOrder}} Kg")
+                                                    h3(ng-bind-template="{{gloria.minimumOrder}} Kg")
                                                 div.col-md-4.col-sm-4.col-xs-4
-                                                    h3(ng-bind-template="{{crystal.price}} € / Kg")
+                                                    h3(ng-bind-template="{{gloria.price}} € / Kg")
                                     div.panel.panel-body
                                         div.toffee-info-description.blue
-                                            h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{crystal.description}}")
-                            div(ng-show="!esSurtido(crystal)")
+                                            h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{gloria.description}}")
+                            div(ng-show="!esSurtido(gloria)")
                                 div.col-md-12
                                     div.panel.panel-body.panel-toffee-info
-                                        //div(style="text-align:left;")
-                                            h1(style="margin-bottom:30px").modelo-toffee
-                                                a(ng-href="crystals/{{crystak._id}}", ng-bind-template="{{$index + 1}}. {{crystal.model}}").green.hover-red
+                                        //div(style="text-align:left;").modelo-gloria
+                                            h1(style="margin-bottom:30px", ng-bind-template="{{$index + 1}}. {{gloria.model}}")
                                         div.col-md-6.col-sm-12
                                             div(style="float:left; margin-right: 20px; width: 70%; height: 400px")
-                                                img(ng-src="/img/imagenesMias/{{crystal.image}}", height="30%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
+                                                img(ng-src="/img/imagenesMias/{{gloria.image}}", height="30%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
                                         div.col-md-6.col-sm-12
                                             h1(style="text-align: left;").separador-horizontal.green Detalles
                                             div.row.blue
@@ -136,11 +135,11 @@ block content
                                                     h3 Modelo
                                             div.row
                                                 div.col-md-4.col-sm-4
-                                                    h3(ng-bind-template="{{crystal.category}}")
+                                                    h3(ng-bind-template="{{gloria.category}}")
                                                 div.col-md-4.col-sm-4
-                                                    h3(ng-bind-template="{{crystal.type}}")
+                                                    h3(ng-bind-template="{{gloria.type}}")
                                                 div.col-md-4.col-sm-4
-                                                    h3(ng-bind-template="{{crystal.model}}")
+                                                    h3(ng-bind-template="{{gloria.model}}")
                                             div.row.blue
                                                 div.col-md-4.col-sm-4
                                                     h3 Pedido mínimo
@@ -148,16 +147,16 @@ block content
                                                     h3 Precio
                                             div.row
                                                 div.col-md-4.col-sm-4
-                                                    h3(ng-bind-template="{{crystal.minimumOrder}} Kg")
+                                                    h3(ng-bind-template="{{gloria.minimumOrder}} Kg")
                                                 div.col-md-4.col-sm-4
-                                                    h3(ng-bind-template="{{crystal.price}} € / Kg")
+                                                    h3(ng-bind-template="{{gloria.price}} € / Kg")
                                     div.panel.panel-body
                                         div.toffee-info-description.blue
-                                            h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{crystal.description}}")
+                                            h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{gloria.description}}")
 
 
 block scripts
     script(src='/js/angular.js')
-    script(src='/js/angular/duros/crystals/info.js')
+    script(src='/js/angular/duros/glorias/info.js')
     script(src='/js/jquery.min.js')
     script(src='/js/bootstrap.js')
