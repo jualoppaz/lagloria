@@ -341,7 +341,7 @@ body{
 }
 
 .main-card-description > p{
-    padding-left: 0px;
+    padding-left: 15px;
     font-size: 16px;
     text-align: justify;
     margin-left: 3px;
@@ -378,16 +378,16 @@ main{
     float:left;
 }
 
-.panel-toffee, .panel-masticable, .panel-crystal, .panel-gloria{
+.panel-toffee, .panel-masticable, .panel-crystal, .panel-gloria, .panel-ponny{
     height: 450px;
 }
 
-.toffee-description, .masticable-description, .crystal-description, .gloria-description{
+.toffee-description, .masticable-description, .crystal-description, .gloria-description, .ponny-description{
     padding-top: 10px;
     padding-left: 10px;
 }
 
-.toffee-info-description, .masticable-info-description, .crystal-info-description, .gloria-info-description{
+.toffee-info-description, .masticable-info-description, .crystal-info-description, .gloria-info-description, .ponny-info-description{
     padding-left: 15px;
     padding-top: 10px;
 }
@@ -412,7 +412,7 @@ h3{
     margin-right: 25%;
 }
 
-.modelo-toffee > a, .modelo-masticable > a, .modelo-crystal > a, .modelo-gloria > a{
+.modelo-toffee > a, .modelo-masticable > a, .modelo-crystal > a, .modelo-gloria > a, .modelo-ponny > a{
     padding-left: 15px;
     font-size: 25px !important;
     font-weight: bold;
@@ -430,7 +430,7 @@ h3{
 }
 */
 
-.panel-toffee-info, .panel-masticable-info, .panel-crystal-info, .panel-gloria-info{
+.panel-toffee-info, .panel-masticable-info, .panel-crystal-info, .panel-gloria-info, .panel-ponny-info{
     padding-top: 30px;
 }
 

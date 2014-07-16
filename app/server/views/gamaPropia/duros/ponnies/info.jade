@@ -1,6 +1,3 @@
-// Surtido: ordenadores y moviles
-// Otros:   ordenadores y moviles
-
 extends ../../../layout
 block head
     title Información
@@ -71,62 +68,62 @@ block content
                                         a(href="/gamaPropia")
                                             span.caramelo Gama propia
                                         b.abel(style="margin-left:10px; margin-right: 10px") >
-                                        a(href="../../toffeesYMasticables")
-                                            span.caramelo Toffees y Masticables
+                                        a(href="../../duros")
+                                            span.caramelo Duros
                                         b.abel(style="margin-left:10px; margin-right: 10px") >
-                                        a(href="../masticables")
-                                            span.caramelo Masticables
-                    div(ng-app="masticableInfo")
+                                        a(href="../ponny")
+                                            span.caramelo Ponny
+                    div(ng-app="ponnyInfo")
                         div(ng-controller="mainController")
                             div.col-md-12
                                 div.panel.panel-body
                                     div.main-card-content(style="word-wrap: break-word;")
                                         div.main-card-name
                                             a.recipe-title(href="#")
-                                                span.caramelo(ng-bind-template="{{masticable.model}}")
-                            div(ng-show="esSurtido(masticable)")
+                                                span.caramelo(ng-bind-template="{{ponny.model}}")
+                            div(ng-show="esSurtido(ponny)")
                                 // Vista para ordenadores
                                 div.col-md-12.hidden-sm.hidden-xs
-                                    div.panel.panel-body.panel-masticable-info
-                                        div.col-md-2
-                                            div(style="float:left; margin-right: 20px; width: 100%; height: 260px").text-center
-                                                img(ng-src="/img/imagenesMias/{{masticable.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
-                                        div.col-md-9.col-md-offset-1
+                                    div.panel.panel-body.panel-ponny-info
+                                        div.col-md-4
+                                            div(style="float:left; margin-right: 20px; width: 70%; height: 400px")
+                                                img(ng-src="/img/imagenesMias/{{ponny.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
+                                        div.col-md-8
                                             h1(style="text-align: left;").separador-horizontal.green Detalles
                                             div.row.blue
-                                                div.col-md-4.col-sm-4.col-xs-4
+                                                div.col-md-4
                                                     h3 Categoría
-                                                div.col-md-4.col-sm-4.col-xs-4
+                                                div.col-md-4
                                                     h3 Tipo
-                                                div.col-md-4.col-sm-4.col-xs-4
+                                                div.col-md-4
                                                     h3 Modelo
                                             div.row
-                                                div.col-md-4.col-sm-4.col-xs-4
-                                                    h3(ng-bind-template="{{masticable.category}}")
-                                                div.col-md-4.col-sm-4.col-xs-4
-                                                    h3(ng-bind-template="{{masticable.type}}")
-                                                div.col-md-4.col-sm-4.col-xs-4
-                                                    h3(ng-bind-template="{{masticable.model}}")
+                                                div.col-md-4
+                                                    h3(ng-bind-template="{{ponny.category}}")
+                                                div.col-md-4
+                                                    h3(ng-bind-template="{{ponny.type}}")
+                                                div.col-md-4
+                                                    h3(ng-bind-template="{{ponny.model}}")
                                             div.row.blue
-                                                div.col-md-4.col-sm-4.col-xs-4
+                                                div.col-md-4
                                                     h3 Pedido mínimo
-                                                div.col-md-4.col-sm-4.col-xs-4
+                                                div.col-md-4
                                                     h3 Precio
                                             div.row
-                                                div.col-md-4.col-sm-4.col-xs-4
-                                                    h3(ng-bind-template="{{masticable.minimumOrder}} Kg")
-                                                div.col-md-4.col-sm-4.col-xs-4
-                                                    h3(ng-bind-template="{{masticable.price}} € / Kg")
+                                                div.col-md-4
+                                                    h3(ng-bind-template="{{ponny.minimumOrder}} Kg")
+                                                div.col-md-4
+                                                    h3(ng-bind-template="{{ponny.price}} € / Kg")
                                     div.panel.panel-body
-                                        div.masticable-info-description.blue
-                                            h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{masticable.description}}")
+                                        div.ponnies-info-description.blue
+                                            h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{ponny.description}}")
 
-                                // Vista para moviles
+                                // Vista para tablets y moviles
                                 div.col-sm-12.hidden-lg.hidden-md
-                                    div.panel.panel-body.panel-masticable-info
-                                        div.col-sm-4.col-sm-offset-4
-                                            div(style="float:left; margin-right: 20px; width: 100%; height: 260px").text-center
-                                                img(ng-src="/img/imagenesMias/{{masticable.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
+                                    div.panel.panel-body.panel-ponny-info
+                                        div.col-sm-12
+                                            div(style="float:left; margin-right: 20px; width: 70%; height: 400px")
+                                                img(ng-src="/img/imagenesMias/{{ponny.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
                                         div.col-sm-12
                                             h1(style="text-align: left;").separador-horizontal.green Detalles
                                             div.row.blue
@@ -138,11 +135,11 @@ block content
                                                     h3 Modelo
                                             div.row
                                                 div.col-sm-4.col-xs-4
-                                                    h3(ng-bind-template="{{masticable.category}}")
+                                                    h3(ng-bind-template="{{ponny.category}}")
                                                 div.col-sm-4.col-xs-4
-                                                    h3(ng-bind-template="{{masticable.type}}")
+                                                    h3(ng-bind-template="{{ponny.type}}")
                                                 div.col-sm-4.col-xs-4
-                                                    h3(ng-bind-template="{{masticable.model}}")
+                                                    h3(ng-bind-template="{{ponny.model}}")
                                             div.row.blue
                                                 div.col-sm-4.col-xs-4
                                                     h3 Pedido mínimo
@@ -150,20 +147,19 @@ block content
                                                     h3 Precio
                                             div.row
                                                 div.col-sm-4.col-xs-4
-                                                    h3(ng-bind-template="{{masticable.minimumOrder}} Kg")
+                                                    h3(ng-bind-template="{{ponny.minimumOrder}} Kg")
                                                 div.col-sm-4.col-xs-4
-                                                    h3(ng-bind-template="{{masticable.price}} € / Kg")
+                                                    h3(ng-bind-template="{{ponny.price}} € / Kg")
                                     div.panel.panel-body
-                                        div.masticable-info-description.blue
-                                            h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{masticable.description}}")
-
-                            div(ng-show="!esSurtido(masticable)")
+                                        div.ponny-info-description.blue
+                                            h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{ponny.description}}")
+                            div(ng-show="!esSurtido(ponny)")
                                 // Vista para ordenadores
                                 div.col-md-12.hidden-sm.hidden-xs
-                                    div.panel.panel-body.panel-masticable-info
+                                    div.panel.panel-body.panel-ponny-info
                                         div.col-md-5.text-center
                                             div(style="float:left; margin-right: 20px; width: 100%; height: 400px")
-                                                img(ng-src="/img/imagenesMias/{{masticable.image}}", height="30%", width="70%", style="margin-left: 10px; margin-bottom: 10px; margin-top:60px")
+                                                img(ng-src="/img/imagenesMias/{{ponny.image}}", height="30%", width="70%", style="margin-left: 10px; margin-bottom: 10px; margin-top:60px")
                                         div.col-md-7
                                             h1(style="text-align: left;").separador-horizontal.green Detalles
                                             div.row.blue
@@ -175,11 +171,11 @@ block content
                                                     h3 Modelo
                                             div.row
                                                 div.col-md-4
-                                                    h3(ng-bind-template="{{masticable.category}}")
+                                                    h3(ng-bind-template="{{ponny.category}}")
                                                 div.col-md-4
-                                                    h3(ng-bind-template="{{masticable.type}}")
+                                                    h3(ng-bind-template="{{ponny.type}}")
                                                 div.col-md-4
-                                                    h3(ng-bind-template="{{masticable.model}}")
+                                                    h3(ng-bind-template="{{ponny.model}}")
                                             div.row.blue
                                                 div.col-md-4
                                                     h3 Pedido mínimo
@@ -187,52 +183,52 @@ block content
                                                     h3 Precio
                                             div.row
                                                 div.col-md-4
-                                                    h3(ng-bind-template="{{masticable.minimumOrder}} Kg")
+                                                    h3(ng-bind-template="{{ponny.minimumOrder}} Kg")
                                                 div.col-md-4
-                                                    h3(ng-bind-template="{{masticable.price}} € / Kg")
+                                                    h3(ng-bind-template="{{ponny.price}} € / Kg")
                                     div.panel.panel-body
-                                        div.masticable-info-description.blue
-                                            h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{masticable.description}}")
+                                        div.ponny-info-description.blue
+                                            h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{ponny.description}}")
 
-                                // Vista para moviles
+                                // Vista para tablets y moviles
                                 div.col-sm-12.hidden-md.hidden-lg
-                                    div.panel.panel-body.panel-masticable-info
+                                    div.panel.panel-body.panel-ponny-info
                                         div.col-sm-12
                                             div(style="float:left; margin-right: 20px; margin-bottom: 30px; width: 100%; height: 150px").text-center
-                                                img(ng-src="/img/imagenesMias/{{masticable.image}}", height="100%", width="70%", style="margin-left: 10px; margin-bottom: 30px")
+                                                img(ng-src="/img/imagenesMias/{{ponny.image}}", height="100%", width="70%", style="margin-left: 10px; margin-bottom: 30px")
                                         div.col-sm-12
                                             h1(style="text-align: left;").separador-horizontal.green Detalles
                                             div.row.blue
-                                                div.col-sm-4
+                                                div.col-sm-4.col-xs-4
                                                     h3 Categoría
-                                                div.col-sm-4
+                                                div.col-sm-4.col-xs-4
                                                     h3 Tipo
-                                                div.col-sm-4
+                                                div.col-sm-4.col-xs-4
                                                     h3 Modelo
                                             div.row
-                                                div.col-sm-4
-                                                    h3(ng-bind-template="{{masticable.category}}")
-                                                div.col-sm-4
-                                                    h3(ng-bind-template="{{masticable.type}}")
-                                                div.col-sm-4
-                                                    h3(ng-bind-template="{{masticable.model}}")
+                                                div.col-sm-4.col-xs-4
+                                                    h3(ng-bind-template="{{ponny.category}}")
+                                                div.col-sm-4.col-xs-4
+                                                    h3(ng-bind-template="{{ponny.type}}")
+                                                div.col-sm-4.col-xs-4
+                                                    h3(ng-bind-template="{{ponny.model}}")
                                             div.row.blue
-                                                div.col-sm-4
+                                                div.col-sm-4.col-xs-4
                                                     h3 Pedido mínimo
-                                                div.col-sm-4
+                                                div.col-sm-4.col-xs-4
                                                     h3 Precio
                                             div.row
-                                                div.col-sm-4
-                                                    h3(ng-bind-template="{{masticable.minimumOrder}} Kg")
-                                                div.col-sm-4
-                                                    h3(ng-bind-template="{{masticable.price}} € / Kg")
+                                                div.col-sm-4.col-xs-4
+                                                    h3(ng-bind-template="{{ponny.minimumOrder}} Kg")
+                                                div.col-sm-4.col-xs-4
+                                                    h3(ng-bind-template="{{ponny.price}} € / Kg")
                                     div.panel.panel-body
-                                        div.masticable-info-description.blue
-                                            h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{masticable.description}}")
+                                        div.ponny-info-description.blue
+                                            h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{ponny.description}}")
 
 
 block scripts
     script(src='/js/angular.js')
-    script(src='/js/angular/toffeesYMasticables/masticables/info.js')
+    script(src='/js/angular/duros/ponnies/info.js')
     script(src='/js/jquery.min.js')
     script(src='/js/bootstrap.js')

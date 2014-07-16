@@ -61,6 +61,14 @@ module.exports = function(app){
         res.render('gamaPropia/duros/glorias/info');
     });
 
+    app.get('/gamaPropia/duros/ponny', function(req, res) {
+        res.render('gamaPropia/duros/ponnies');
+    });
+
+    app.get('/gamaPropia/duros/ponny/:id', function(req, res) {
+        res.render('gamaPropia/duros/ponnies/info');
+    });
+
     app.get('/webAntigua/blandos', function(req, res) {
         res.sendfile('app/server/views/webAntigua/blandos.html');
     });
@@ -116,6 +124,18 @@ module.exports = function(app){
 
     app.get('/api/glorias/:id', function(req, res) {
         DBM.getProductByCategoryTypeAndId('Gloria', req.params.id, function(err, gloria){
+            res.send(gloria[0]);
+        });
+    });
+
+    app.get('/api/ponnies', function(req, res) {
+        DBM.getAllProductsByCategoryType('Ponny', function(err, glorias){
+            res.send(glorias);
+        });
+    });
+
+    app.get('/api/ponnies/:id', function(req, res) {
+        DBM.getProductByCategoryTypeAndId('Ponny', req.params.id, function(err, gloria){
             res.send(gloria[0]);
         });
     });
