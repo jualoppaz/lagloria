@@ -388,7 +388,7 @@ main{
 }
 
 .toffee-info-description, .masticable-info-description, .crystal-info-description, .gloria-info-description{
-    padding-left: 30px;
+    padding-left: 15px;
     padding-top: 10px;
 }
 
@@ -509,4 +509,8 @@ div.row div h3{
 /* Para que cuando tenga el foco los colores sean los mismos que los iniciales */
 .navbar-default .navbar-toggle:focus .icon-bar{
     background-color: #FFFFFF !important;
+}
+
+.main-card-name{
+    padding-left: 15px;
 }
