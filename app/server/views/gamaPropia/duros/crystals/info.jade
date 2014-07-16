@@ -68,25 +68,25 @@ block content
                                         a(href="/gamaPropia")
                                             span.caramelo Gama propia
                                         b.abel(style="margin-left:10px; margin-right: 10px") >
-                                        a(href="../../toffeesYMasticables")
-                                            span.caramelo Toffees y Masticables
+                                        a(href="../../duros")
+                                            span.caramelo Duros
                                         b.abel(style="margin-left:10px; margin-right: 10px") >
-                                        a(href="../toffees")
-                                            span.caramelo Toffees
-                    div(ng-app="toffeeInfo")
+                                        a(href="../crystals")
+                                            span.caramelo Crystals
+                    div(ng-app="crystalInfo")
                         div(ng-controller="mainController")
                             div.col-md-12
                                 div.panel.panel-body
                                     div.main-card-content(style="word-wrap: break-word;")
                                         div.main-card-name
                                             a.recipe-title(href="#")
-                                                span.caramelo(ng-bind-template="{{toffee.model}}")
-                            div(ng-show="esSurtido(toffee)")
+                                                span.caramelo(ng-bind-template="{{crystal.model}}")
+                            div(ng-show="esSurtido(crystal)")
                                 div.col-md-12
                                     div.panel.panel-body.panel-toffee-info
                                         div.col-md-4.col-sm-12
                                             div(style="float:left; margin-right: 20px; width: 70%; height: 400px")
-                                                img(ng-src="/img/imagenesMias/{{toffee.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
+                                                img(ng-src="/img/imagenesMias/{{crystal.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
                                         div.col-md-8.col-sm-12
                                             h1(style="text-align: left;").separador-horizontal.green Detalles
                                             div.row.blue
@@ -98,11 +98,11 @@ block content
                                                     h3 Modelo
                                             div.row
                                                 div.col-md-4.col-sm-4.col-xs-4
-                                                    h3(ng-bind-template="{{toffee.category}}")
+                                                    h3(ng-bind-template="{{crystal.category}}")
                                                 div.col-md-4.col-sm-4.col-xs-4
-                                                    h3(ng-bind-template="{{toffee.type}}")
+                                                    h3(ng-bind-template="{{crystal.type}}")
                                                 div.col-md-4.col-sm-4.col-xs-4
-                                                    h3(ng-bind-template="{{toffee.model}}")
+                                                    h3(ng-bind-template="{{crystal.model}}")
                                             div.row.blue
                                                 div.col-md-4.col-sm-4.col-xs-4
                                                     h3 Pedido mínimo
@@ -110,21 +110,21 @@ block content
                                                     h3 Precio
                                             div.row
                                                 div.col-md-4.col-sm-4.col-xs-4
-                                                    h3(ng-bind-template="{{toffee.minimumOrder}} Kg")
+                                                    h3(ng-bind-template="{{crystal.minimumOrder}} Kg")
                                                 div.col-md-4.col-sm-4.col-xs-4
-                                                    h3(ng-bind-template="{{toffee.price}} € / Kg")
+                                                    h3(ng-bind-template="{{crystal.price}} € / Kg")
                                     div.panel.panel-body
                                         div.toffee-info-description.blue
-                                            h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{toffee.description}}")
-                            div(ng-show="!esSurtido(toffee)")
+                                            h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{crystal.description}}")
+                            div(ng-show="!esSurtido(crystal)")
                                 div.col-md-12
                                     div.panel.panel-body.panel-toffee-info
                                         div(style="text-align:left;")
                                             h1(style="margin-bottom:30px").modelo-toffee
-                                                a(ng-href="toffees/{{toffee._id}}", ng-bind-template="{{$index + 1}}. {{toffee.model}}").green.hover-red
+                                                a(ng-href="crystals/{{crystak._id}}", ng-bind-template="{{$index + 1}}. {{crystal.model}}").green.hover-red
                                         div.col-md-6.col-sm-12
                                             div(style="float:left; margin-right: 20px; width: 70%; height: 400px")
-                                                img(ng-src="/img/imagenesMias/{{toffee.image}}", height="30%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
+                                                img(ng-src="/img/imagenesMias/{{crystal.image}}", height="30%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
                                         div.col-md-6.col-sm-12
                                             h1(style="text-align: left;").separador-horizontal.green Detalles
                                             div.row.blue
@@ -136,11 +136,11 @@ block content
                                                     h3 Modelo
                                             div.row
                                                 div.col-md-4.col-sm-4
-                                                    h3(ng-bind-template="{{toffee.category}}")
+                                                    h3(ng-bind-template="{{crystal.category}}")
                                                 div.col-md-4.col-sm-4
-                                                    h3(ng-bind-template="{{toffee.type}}")
+                                                    h3(ng-bind-template="{{crystal.type}}")
                                                 div.col-md-4.col-sm-4
-                                                    h3(ng-bind-template="{{toffee.model}}")
+                                                    h3(ng-bind-template="{{crystal.model}}")
                                             div.row.blue
                                                 div.col-md-4.col-sm-4
                                                     h3 Pedido mínimo
@@ -148,16 +148,16 @@ block content
                                                     h3 Precio
                                             div.row
                                                 div.col-md-4.col-sm-4
-                                                    h3(ng-bind-template="{{toffee.minimumOrder}} Kg")
+                                                    h3(ng-bind-template="{{crystal.minimumOrder}} Kg")
                                                 div.col-md-4.col-sm-4
-                                                    h3(ng-bind-template="{{toffee.price}} € / Kg")
+                                                    h3(ng-bind-template="{{crystal.price}} € / Kg")
                                     div.panel.panel-body
                                         div.toffee-info-description.blue
-                                            h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{toffee.description}}")
+                                            h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{crystal.description}}")
 
 
 block scripts
     script(src='/js/angular.js')
-    script(src='/js/angular/toffeesYMasticables/toffees/info.js')
+    script(src='/js/angular/duros/crystals/info.js')
     script(src='/js/jquery.min.js')
     script(src='/js/bootstrap.js')

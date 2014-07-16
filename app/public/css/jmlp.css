@@ -464,3 +464,26 @@ div.row div h3{
     font-weight: bold;
     font-size: 22px;
 }
+
+.navbar-toggle{
+    color: #FFFFFF !important;
+}
+
+.navbar-default .navbar-brand{
+    color: white;
+}
+
+.navbar-default .navbar-toggle{
+    border-color: #FFFFFF !important;
+}
+
+.navbar-default:hover .navbar-toggle:hover, .navbar-default .navbar-toggle:focus{
+    background-color: #FFFFFF !important;
+    border-color: #ffffff !important;
+    color: #41B19C !important;
+}
+
+.navbar-default:hover .navbar-toggle:hover .icon-bar, .navbar-default .navbar-toggle:focus .icon-bar{
+    background-color: #FFFFFF !important;
+    background-color: #41B19C !important;
+}

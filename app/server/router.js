@@ -49,6 +49,10 @@ module.exports = function(app){
         res.render('gamaPropia/duros/crystals');
     });
 
+    app.get('/gamaPropia/duros/crystals/:id', function(req, res) {
+        res.render('gamaPropia/duros/crystals/info');
+    });
+
     app.get('/webAntigua/blandos', function(req, res) {
         res.sendfile('app/server/views/webAntigua/blandos.html');
     });

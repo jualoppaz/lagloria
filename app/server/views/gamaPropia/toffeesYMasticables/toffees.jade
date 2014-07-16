@@ -7,24 +7,26 @@ block head
 block content
     div#container
         header
-            nav.navbar.navbar-fixed-top.fondoTurquesa(role="navigation")
+            nav.navbar.navbar-fixed-top.navbar-default.fondoTurquesa(role="navigation")
                 div.navbar-inner
                     div.container-fluid
                         div.navbar-header
-                            button.navbar-toggle(type="button", data-toggle="collapse", data-target=".navbar-collapse")
+                            button.navbar-toggle.collapsed(type="button", data-toggle="collapse", data-target=".navbar-collapse")
                                 span.sr-only Cambiar la navegación
                                 span.icon-bar
                                 span.icon-bar
                                 span.icon-bar
                             a(href="/index").navbar-brand.white.middle Inicio
-                        div.collapse.navbar-collapse
+                        div.collapse.navbar-collapse.fondoTurquesa(role="navigation")
                             ul.nav.navbar-nav
-                                li.active
-                                    a(href="/gamaPropia").middle Gama propia
                                 li
-                                    a(href="#").middle Publicitarios
+                                    a(href="/gamaPropia") Gama propia
                                 li
-                                    a(href="#").middle Contacto
+                                    a(href="#") Publicitarios
+                                li
+                                    a(href="#") Nosotros
+                                li
+                                    a(href="#") Contacto
                                 //li
                                     div.input-group.navbar-input-group.fbSearch
                                         form#search-form.navbar-form.navbar-left.hidden-xs.hidden-sm(role="search", method="get", action="#")
@@ -50,7 +52,7 @@ block content
                                                             span.text Search people
                                                             span.category
 
-                            ul.nav.navbar-nav.navbar-right.hidden-xs.hidden-sm
+                            ul.nav.navbar-nav.navbar-right.hidden-xs
                                 a.btn.btn-default.btn-eathub-red(href="#", role="button")#entrar Entrar
         main.margen-superior-50
             div.container(ng-app="toffees")
@@ -131,3 +133,5 @@ block content
 block scripts
     script(src='/js/angular.js')
     script(src='/js/angular/toffeesYMasticables/toffees.js')
+    script(src='/js/jquery.min.js')
+    script(src='/js/bootstrap.js')
