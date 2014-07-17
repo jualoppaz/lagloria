@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10f8a809-813f-448f-8ef1-b4cf12576758" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/public/js/jquery.js" />
       <change type="DELETED" beforePath="D:\WS\carameloslagloria\app\public\img\bolsa masticables.jpg" afterPath="" />
       <change type="DELETED" beforePath="D:\WS\carameloslagloria\app\public\img\bolsa toffees.JPG" afterPath="" />
       <change type="DELETED" beforePath="D:\WS\carameloslagloria\app\public\img\bolsaMasticables.jpg" afterPath="" />
@@ -12,21 +11,7 @@
       <change type="DELETED" beforePath="D:\WS\carameloslagloria\app\public\img\toffee chocolate.jpg" afterPath="" />
       <change type="DELETED" beforePath="D:\WS\carameloslagloria\app\public\img\toffee nata.jpg" afterPath="" />
       <change type="DELETED" beforePath="D:\WS\carameloslagloria\app\public\img\toffee regaliz.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/views/gamaPropia/duros/crystals.jade" afterPath="$PROJECT_DIR$/app/server/views/gamaPropia/duros/crystals.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/views/gamaPropia/duros/glorias.jade" afterPath="$PROJECT_DIR$/app/server/views/gamaPropia/duros/glorias.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/views/index.jade" afterPath="$PROJECT_DIR$/app/server/views/index.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/views/gamaPropia/duros/crystals/infoCrystal.jade" afterPath="$PROJECT_DIR$/app/server/views/gamaPropia/duros/crystals/infoCrystal.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/views/gamaPropia/duros/glorias/infoGloria.jade" afterPath="$PROJECT_DIR$/app/server/views/gamaPropia/duros/glorias/infoGloria.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/masticables/infoMasticable.jade" afterPath="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/masticables/infoMasticable.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/views/gamaPropia/duros/ponnies/infoPonny.jade" afterPath="$PROJECT_DIR$/app/server/views/gamaPropia/duros/ponnies/infoPonny.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/views/gamaPropia/duros/sinGrupo/infoSinGrupo.jade" afterPath="$PROJECT_DIR$/app/server/views/gamaPropia/duros/sinGrupo/infoSinGrupo.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/toffees/infoToffee.jade" afterPath="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/toffees/infoToffee.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/masticables.jade" afterPath="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/masticables.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/views/gamaPropia/duros/ponnies.jade" afterPath="$PROJECT_DIR$/app/server/views/gamaPropia/duros/ponnies.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/views/gamaPropia/duros/sinGrupo.jade" afterPath="$PROJECT_DIR$/app/server/views/gamaPropia/duros/sinGrupo.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/toffees.jade" afterPath="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/toffees.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables.jade" afterPath="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/views/gamaPropia/duros.jade" afterPath="$PROJECT_DIR$/app/server/views/gamaPropia/duros.jade" />
     </list>
     <ignored path="angular-users-api.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -58,19 +43,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="infoToffee.jade" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="infoToffee.jade" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/toffees/infoToffee.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="236" column="26" selection-start="16169" selection-end="16169" vertical-scroll-proportion="0.7251462" vertical-offset="3764" max-vertical-offset="4131">
+            <state line="236" column="26" selection-start="16169" selection-end="16169" vertical-scroll-proportion="-17.28" vertical-offset="3580" max-vertical-offset="4131">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ponnies.jade" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/server/views/gamaPropia/duros/ponnies.jade">
+      <file leaf-file-name="duros.jade" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/server/views/gamaPropia/duros.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="180" column="26" selection-start="12087" selection-end="12087" vertical-scroll-proportion="-8.92" vertical-offset="2837" max-vertical-offset="3179">
+            <state line="140" column="26" selection-start="8081" selection-end="8081" vertical-scroll-proportion="0.7251462" vertical-offset="2132" max-vertical-offset="2499">
               <folding />
             </state>
           </provider>
@@ -176,7 +161,6 @@
         <option value="$PROJECT_DIR$/app/public/js/angular/duros/glorias/info.js" />
         <option value="$PROJECT_DIR$/app/public/js/angular/duros/glorias.js" />
         <option value="$PROJECT_DIR$/app/public/js/angular/duros/ponnies/info.js" />
-        <option value="$PROJECT_DIR$/app/server/views/gamaPropia/duros.jade" />
         <option value="$PROJECT_DIR$/app/public/js/angular/duros/ponnies.js" />
         <option value="$PROJECT_DIR$/app/server/views/gamaPropia/duros/glorias/info.jade" />
         <option value="$PROJECT_DIR$/app/server/views/gamaPropia/duros/ponnies/info.jade" />
@@ -203,6 +187,7 @@
         <option value="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/toffees.jade" />
         <option value="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/masticables/infoMasticable.jade" />
         <option value="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/toffees/infoToffee.jade" />
+        <option value="$PROJECT_DIR$/app/server/views/gamaPropia/duros.jade" />
       </list>
     </option>
   </component>
@@ -1242,13 +1227,6 @@
         <state line="9" column="26" selection-start="301" selection-end="301" vertical-scroll-proportion="0.25081968" vertical-offset="0" max-vertical-offset="612" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/server/views/gamaPropia/duros.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="117" column="79" selection-start="6896" selection-end="6896" vertical-scroll-proportion="0.8" vertical-offset="1501" max-vertical-offset="2499">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/public/js/angular/duros/sinGrupo/info.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="28" selection-start="340" selection-end="340" vertical-scroll-proportion="0.27868852" vertical-offset="0" max-vertical-offset="680">
@@ -1398,7 +1376,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/toffees/infoToffee.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="236" column="26" selection-start="16169" selection-end="16169" vertical-scroll-proportion="0.7251462" vertical-offset="3764" max-vertical-offset="4131">
+        <state line="236" column="26" selection-start="16169" selection-end="16169" vertical-scroll-proportion="-17.28" vertical-offset="3580" max-vertical-offset="4131">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/server/views/gamaPropia/duros.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="140" column="26" selection-start="8081" selection-end="8081" vertical-scroll-proportion="0.7251462" vertical-offset="2132" max-vertical-offset="2499">
           <folding />
         </state>
       </provider>
