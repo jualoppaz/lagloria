@@ -1,0 +1,234 @@
+extends ../../../layout
+block head
+    title Información
+    link(rel="stylesheet", href="/css/backgroundImage.css")
+block content
+    div#container
+        header
+            nav.navbar.navbar-fixed-top.navbar-default.fondoTurquesa(role="navigation")
+                div.navbar-inner
+                    div.container-fluid
+                        div.navbar-header
+                            button.navbar-toggle.collapsed(type="button", data-toggle="collapse", data-target=".navbar-collapse")
+                                span.sr-only Cambiar la navegación
+                                span.icon-bar
+                                span.icon-bar
+                                span.icon-bar
+                            a(href="/index").navbar-brand.white.middle Inicio
+                        div.collapse.navbar-collapse.fondoTurquesa(role="navigation")
+                            ul.nav.navbar-nav
+                                li
+                                    a(href="/gamaPropia") Gama propia
+                                li
+                                    a(href="#") Publicitarios
+                                li
+                                    a(href="#") Nosotros
+                                li
+                                    a(href="#") Contacto
+                                //li
+                                    div.input-group.navbar-input-group.fbSearch
+                                        form#search-form.navbar-form.navbar-left.hidden-xs.hidden-sm(role="search", method="get", action="#")
+                                            div.form-group
+                                                input.form-control.border-search.border-rect-red#srchterm(type="text", placeholder="Buscar...", name="srchterm")
+                                                span.input-group-btn-red.navbar-input-group-btn
+                                                    button.btn.btn-default(type="submit")
+                                                        i.fa.fa-search
+                                            div.suggest
+                                                ul
+                                                    li.header
+                                                        span.text Recipes
+                                                    li
+                                                        a(href="#")
+                                                            span.fa.fa-search
+                                                            span.text Search recipes
+                                                            span.category
+                                                    li.header
+                                                        span.text People
+                                                    li
+                                                        a(href="#")
+                                                            span.fa.fa-search
+                                                            span.text Search people
+                                                            span.category
+
+                            ul.nav.navbar-nav.navbar-right.hidden-xs
+                                a.btn.btn-default.btn-eathub-red(href="#", role="button")#entrar Entrar
+        main.margen-superior-50
+            div.container
+                div.row
+                    //div.col-md-12.hidden-md.hidden-lg
+                        div.panel.panel-default.panel-body.text-center
+                            br
+                            div.col-md-12.col-xs-12.hidden-md.hidden-lg
+                                a.btn.btn-default.btn-eathub(href="#", role="button") Entrar
+                    div.col-md-12
+                        div.panel.panel-body
+                            div.main-card-content
+                                div.main-card-description
+                                    div.main-card-name
+                                        a(href="/gamaPropia")
+                                            span.caramelo Gama propia
+                                        b.abel(style="margin-left:10px; margin-right: 10px") >
+                                        a(href="../../duros")
+                                            span.caramelo Duros
+                                        b.abel(style="margin-left:10px; margin-right: 10px") >
+                                        a(href="../sinGrupo")
+                                            span.caramelo Sin grupo
+                    div(ng-app="sinGrupoInfo")
+                        div(ng-controller="mainController")
+                            div.col-md-12
+                                div.panel.panel-body
+                                    div.main-card-content(style="word-wrap: break-word;")
+                                        div.main-card-name
+                                            a.recipe-title(href="#")
+                                                span.caramelo(ng-bind-template="{{sinGrupo.model}}")
+                            div(ng-show="esSurtido(sinGrupo)")
+                                // Vista para ordenadores
+                                div.col-md-12.hidden-sm.hidden-xs
+                                    div.panel.panel-body.panel-sinGrupo-info
+                                        div.col-md-4
+                                            div(style="float:left; margin-right: 20px; width: 70%; height: 400px")
+                                                img(ng-src="/img/imagenesMias/{{sinGrupo.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
+                                        div.col-md-8
+                                            h1(style="text-align: left;").separador-horizontal.green Detalles
+                                            div.row.blue
+                                                div.col-md-4
+                                                    h3 Categoría
+                                                div.col-md-4
+                                                    h3 Tipo
+                                                div.col-md-4
+                                                    h3 Modelo
+                                            div.row
+                                                div.col-md-4
+                                                    h3(ng-bind-template="{{sinGrupo.category}}")
+                                                div.col-md-4
+                                                    h3(ng-bind-template="{{sinGrupo.type}}")
+                                                div.col-md-4
+                                                    h3(ng-bind-template="{{sinGrupo.model}}")
+                                            div.row.blue
+                                                div.col-md-4
+                                                    h3 Pedido mínimo
+                                                div.col-md-4
+                                                    h3 Precio
+                                            div.row
+                                                div.col-md-4
+                                                    h3(ng-bind-template="{{sinGrupo.minimumOrder}} Kg")
+                                                div.col-md-4
+                                                    h3(ng-bind-template="{{sinGrupo.price}} € / Kg")
+                                    div.panel.panel-body
+                                        div.ponnies-info-description.blue
+                                            h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{sinGrupo.description}}")
+
+                                // Vista para tablets y moviles
+                                div.col-sm-12.hidden-lg.hidden-md
+                                    div.panel.panel-body.panel-sinGrupo-info
+                                        div.col-sm-12
+                                            div(style="float:left; margin-right: 20px; width: 70%; height: 400px")
+                                                img(ng-src="/img/imagenesMias/{{sinGrupo.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
+                                        div.col-sm-12
+                                            h1(style="text-align: left;").separador-horizontal.green Detalles
+                                            div.row.blue
+                                                div.col-sm-4.col-xs-4
+                                                    h3 Categoría
+                                                div.col-sm-4.col-xs-4
+                                                    h3 Tipo
+                                                div.col-sm-4.col-xs-4
+                                                    h3 Modelo
+                                            div.row
+                                                div.col-sm-4.col-xs-4
+                                                    h3(ng-bind-template="{{sinGrupo.category}}")
+                                                div.col-sm-4.col-xs-4
+                                                    h3(ng-bind-template="{{sinGrupo.type}}")
+                                                div.col-sm-4.col-xs-4
+                                                    h3(ng-bind-template="{{sinGrupo.model}}")
+                                            div.row.blue
+                                                div.col-sm-4.col-xs-4
+                                                    h3 Pedido mínimo
+                                                div.col-sm-4.col-xs-4
+                                                    h3 Precio
+                                            div.row
+                                                div.col-sm-4.col-xs-4
+                                                    h3(ng-bind-template="{{sinGrupo.minimumOrder}} Kg")
+                                                div.col-sm-4.col-xs-4
+                                                    h3(ng-bind-template="{{sinGrupo.price}} € / Kg")
+                                    div.panel.panel-body
+                                        div.sinGrupo-info-description.blue
+                                            h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{sinGrupo.description}}")
+                            div(ng-show="!esSurtido(sinGrupo)")
+                                // Vista para ordenadores
+                                div.col-md-12.hidden-sm.hidden-xs
+                                    div.panel.panel-body.panel-sinGrupo-info
+                                        div.col-md-5.text-center
+                                            div(style="float:left; margin-right: 20px; width: 100%; height: 400px")
+                                                img(ng-src="/img/imagenesMias/{{sinGrupo.image}}", height="30%", width="70%", style="margin-left: 10px; margin-bottom: 10px; margin-top:60px")
+                                        div.col-md-7
+                                            h1(style="text-align: left;").separador-horizontal.green Detalles
+                                            div.row.blue
+                                                div.col-md-4
+                                                    h3 Categoría
+                                                div.col-md-4
+                                                    h3 Tipo
+                                                div.col-md-4
+                                                    h3 Modelo
+                                            div.row
+                                                div.col-md-4
+                                                    h3(ng-bind-template="{{sinGrupo.category}}")
+                                                div.col-md-4
+                                                    h3(ng-bind-template="{{sinGrupo.type}}")
+                                                div.col-md-4
+                                                    h3(ng-bind-template="{{sinGrupo.model}}")
+                                            div.row.blue
+                                                div.col-md-4
+                                                    h3 Pedido mínimo
+                                                div.col-md-4
+                                                    h3 Precio
+                                            div.row
+                                                div.col-md-4
+                                                    h3(ng-bind-template="{{sinGrupo.minimumOrder}} Kg")
+                                                div.col-md-4
+                                                    h3(ng-bind-template="{{sinGrupo.price}} € / Kg")
+                                    div.panel.panel-body
+                                        div.sinGrupo-info-description.blue
+                                            h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{sinGrupo.description}}")
+
+                                // Vista para tablets y moviles
+                                div.col-sm-12.hidden-md.hidden-lg
+                                    div.panel.panel-body.panel-sinGrupo-info
+                                        div.col-sm-12
+                                            div(style="float:left; margin-right: 20px; margin-bottom: 30px; width: 100%; height: 150px").text-center
+                                                img(ng-src="/img/imagenesMias/{{sinGrupo.image}}", height="100%", width="70%", style="margin-left: 10px; margin-bottom: 30px")
+                                        div.col-sm-12
+                                            h1(style="text-align: left;").separador-horizontal.green Detalles
+                                            div.row.blue
+                                                div.col-sm-4.col-xs-4
+                                                    h3 Categoría
+                                                div.col-sm-4.col-xs-4
+                                                    h3 Tipo
+                                                div.col-sm-4.col-xs-4
+                                                    h3 Modelo
+                                            div.row
+                                                div.col-sm-4.col-xs-4
+                                                    h3(ng-bind-template="{{sinGrupo.category}}")
+                                                div.col-sm-4.col-xs-4
+                                                    h3(ng-bind-template="{{sinGrupo.type}}")
+                                                div.col-sm-4.col-xs-4
+                                                    h3(ng-bind-template="{{sinGrupo.model}}")
+                                            div.row.blue
+                                                div.col-sm-4.col-xs-4
+                                                    h3 Pedido mínimo
+                                                div.col-sm-4.col-xs-4
+                                                    h3 Precio
+                                            div.row
+                                                div.col-sm-4.col-xs-4
+                                                    h3(ng-bind-template="{{sinGrupo.minimumOrder}} Kg")
+                                                div.col-sm-4.col-xs-4
+                                                    h3(ng-bind-template="{{sinGrupo.price}} € / Kg")
+                                    div.panel.panel-body
+                                        div.sinGrupo-info-description.blue
+                                            h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{sinGrupo.description}}")
+
+
+block scripts
+    script(src='/js/angular.js')
+    script(src='/js/angular/duros/sinGrupo/info.js')
+    script(src='/js/jquery.min.js')
+    script(src='/js/bootstrap.js')

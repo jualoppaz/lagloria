@@ -357,7 +357,7 @@ main{
     padding-bottom: 0px !important;
 }
 
-#toffees, #masticables, #crystals, #glorias, #ponnies{
+#toffees, #masticables, #crystals, #glorias, #ponnies, #sinGrupo{
     height: auto;
 }
 
@@ -378,16 +378,17 @@ main{
     float:left;
 }
 
-.panel-toffee, .panel-masticable, .panel-crystal, .panel-gloria, .panel-ponny{
+.panel-toffee, .panel-masticable, .panel-crystal, .panel-gloria, .panel-ponny, .panel-sinGrupo{
     height: 450px;
 }
 
-.toffee-description, .masticable-description, .crystal-description, .gloria-description, .ponny-description{
+.toffee-description, .masticable-description, .crystal-description, .gloria-description, .ponny-description, .sinGrupo-description{
     padding-top: 10px;
     padding-left: 10px;
 }
 
-.toffee-info-description, .masticable-info-description, .crystal-info-description, .gloria-info-description, .ponny-info-description{
+.toffee-info-description, .masticable-info-description, .crystal-info-description, .gloria-info-description, .ponny-info-description,
+.sinGrupo-info-description{
     padding-left: 15px;
     padding-top: 10px;
 }
@@ -412,7 +413,7 @@ h3{
     margin-right: 25%;
 }
 
-.modelo-toffee > a, .modelo-masticable > a, .modelo-crystal > a, .modelo-gloria > a, .modelo-ponny > a{
+.modelo-toffee > a, .modelo-masticable > a, .modelo-crystal > a, .modelo-gloria > a, .modelo-ponny > a, .modelo-sinGrupo > a{
     padding-left: 15px;
     font-size: 25px !important;
     font-weight: bold;
@@ -430,7 +431,7 @@ h3{
 }
 */
 
-.panel-toffee-info, .panel-masticable-info, .panel-crystal-info, .panel-gloria-info, .panel-ponny-info{
+.panel-toffee-info, .panel-masticable-info, .panel-crystal-info, .panel-gloria-info, .panel-ponny-info, .panel-sinGrupo-info{
     padding-top: 30px;
 }
 
@@ -513,4 +514,13 @@ div.row div h3{
 
 .main-card-name{
     padding-left: 15px;
+}
+
+.reset-padding-left{
+    padding-left: 0px !important;
+}
+
+.navbar .container .navbar-brand{
+    padding: 13px 15px 0px 15px;
+    margin-left: 0px;
 }

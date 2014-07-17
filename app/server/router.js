@@ -30,7 +30,7 @@ module.exports = function(app){
     });
 
     app.get('/gamaPropia/toffeesYMasticables/toffees/:id', function(req, res) {
-        res.render('gamaPropia/toffeesYMasticables/toffees/info');
+        res.render('gamaPropia/toffeesYMasticables/toffees/infoToffee');
     });
 
     app.get('/gamaPropia/toffeesYMasticables/masticables', function(req, res) {
@@ -38,7 +38,7 @@ module.exports = function(app){
     });
 
     app.get('/gamaPropia/toffeesYMasticables/masticables/:id', function(req, res) {
-        res.render('gamaPropia/toffeesYMasticables/masticables/info');
+        res.render('gamaPropia/toffeesYMasticables/masticables/infoMasticable');
     });
 
     app.get('/gamaPropia/duros', function(req, res) {
@@ -50,7 +50,7 @@ module.exports = function(app){
     });
 
     app.get('/gamaPropia/duros/crystal/:id', function(req, res) {
-        res.render('gamaPropia/duros/crystals/info');
+        res.render('gamaPropia/duros/crystals/infoCrystal');
     });
 
     app.get('/gamaPropia/duros/gloria', function(req, res) {
@@ -58,7 +58,7 @@ module.exports = function(app){
     });
 
     app.get('/gamaPropia/duros/gloria/:id', function(req, res) {
-        res.render('gamaPropia/duros/glorias/info');
+        res.render('gamaPropia/duros/glorias/infoGloria');
     });
 
     app.get('/gamaPropia/duros/ponny', function(req, res) {
@@ -66,7 +66,15 @@ module.exports = function(app){
     });
 
     app.get('/gamaPropia/duros/ponny/:id', function(req, res) {
-        res.render('gamaPropia/duros/ponnies/info');
+        res.render('gamaPropia/duros/ponnies/infoPonny');
+    });
+
+    app.get('/gamaPropia/duros/sinGrupo', function(req, res) {
+        res.render('gamaPropia/duros/sinGrupo');
+    });
+
+    app.get('/gamaPropia/duros/sinGrupo/:id', function(req, res) {
+        res.render('gamaPropia/duros/sinGrupo/infoSinGrupo');
     });
 
     app.get('/webAntigua/blandos', function(req, res) {
@@ -137,6 +145,18 @@ module.exports = function(app){
     app.get('/api/ponnies/:id', function(req, res) {
         DBM.getProductByCategoryTypeAndId('Ponny', req.params.id, function(err, gloria){
             res.send(gloria[0]);
+        });
+    });
+
+    app.get('/api/sinGrupo', function(req, res) {
+        DBM.getAllProductsByCategoryType('Sin grupo', function(err, sinGrupo){
+            res.send(sinGrupo);
+        });
+    });
+
+    app.get('/api/sinGrupo/:id', function(req, res) {
+        DBM.getProductByCategoryTypeAndId('Sin grupo', req.params.id, function(err, sinGrupo){
+            res.send(sinGrupo[0]);
         });
     });
 
