@@ -281,6 +281,8 @@ a{
 
 span.caramelo{
     font-size: 42px !important;
+    display: block;
+    float:left;
 }
 
 .white{
@@ -357,7 +359,7 @@ main{
     padding-bottom: 0px !important;
 }
 
-#toffees, #masticables, #crystals, #glorias, #ponnies, #sinGrupo{
+#toffees, #masticables, #crystals, #glorias, #ponnies, #sinGrupo, #grageados{
     height: auto;
 }
 
@@ -374,21 +376,22 @@ main{
 
 }
 
-.imagenToffee, .imagenMasticable, .imagenCrystal, .imagenGloria{
+.imagenToffee, .imagenMasticable, .imagenCrystal, .imagenGloria, .imagenPonny, .imagenSinGrupo, .imagenGrageado{
     float:left;
 }
 
-.panel-toffee, .panel-masticable, .panel-crystal, .panel-gloria, .panel-ponny, .panel-sinGrupo{
+.panel-toffee, .panel-masticable, .panel-crystal, .panel-gloria, .panel-ponny, .panel-sinGrupo, .panel-grageado{
     height: 450px;
 }
 
-.toffee-description, .masticable-description, .crystal-description, .gloria-description, .ponny-description, .sinGrupo-description{
+.toffee-description, .masticable-description, .crystal-description, .gloria-description, .ponny-description, .sinGrupo-description,
+.grageado-description{
     padding-top: 10px;
     padding-left: 10px;
 }
 
 .toffee-info-description, .masticable-info-description, .crystal-info-description, .gloria-info-description, .ponny-info-description,
-.sinGrupo-info-description{
+.sinGrupo-info-description, .grageado-info-description{
     padding-left: 15px;
     padding-top: 10px;
 }
@@ -413,7 +416,8 @@ h3{
     margin-right: 25%;
 }
 
-.modelo-toffee > a, .modelo-masticable > a, .modelo-crystal > a, .modelo-gloria > a, .modelo-ponny > a, .modelo-sinGrupo > a{
+.modelo-toffee > a, .modelo-masticable > a, .modelo-crystal > a, .modelo-gloria > a, .modelo-ponny > a, .modelo-sinGrupo > a,
+.modelo-grageado > a{
     padding-left: 15px;
     font-size: 25px !important;
     font-weight: bold;
@@ -431,7 +435,8 @@ h3{
 }
 */
 
-.panel-toffee-info, .panel-masticable-info, .panel-crystal-info, .panel-gloria-info, .panel-ponny-info, .panel-sinGrupo-info{
+.panel-toffee-info, .panel-masticable-info, .panel-crystal-info, .panel-gloria-info, .panel-ponny-info, .panel-sinGrupo-info,
+.panel-grageado-info{
     padding-top: 30px;
 }
 
@@ -523,4 +528,11 @@ div.row div h3{
 .navbar .container .navbar-brand{
     padding: 13px 15px 0px 15px;
     margin-left: 0px;
+}
+
+.mayorQue{
+    margin-left:10px;
+    margin-right: 10px;
+    margin-top: 5px;
+    float:left
 }

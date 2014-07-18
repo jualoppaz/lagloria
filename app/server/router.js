@@ -77,6 +77,14 @@ module.exports = function(app){
         res.render('gamaPropia/duros/sinGrupo/infoSinGrupo');
     });
 
+    app.get('/gamaPropia/grageados', function(req, res) {
+        res.render('gamaPropia/grageados');
+    });
+
+    app.get('/gamaPropia/grageados/:id', function(req, res) {
+        res.render('gamaPropia/grageados/infoGrageados');
+    });
+
     app.get('/webAntigua/blandos', function(req, res) {
         res.sendfile('app/server/views/webAntigua/blandos.html');
     });
@@ -157,6 +165,18 @@ module.exports = function(app){
     app.get('/api/sinGrupo/:id', function(req, res) {
         DBM.getProductByCategoryTypeAndId('Sin grupo', req.params.id, function(err, sinGrupo){
             res.send(sinGrupo[0]);
+        });
+    });
+
+    app.get('/api/grageados', function(req, res) {
+        DBM.getAllProductsByCategoryType('Grageados', function(err, grageados){
+            res.send(grageados);
+        });
+    });
+
+    app.get('/api/grageados/:id', function(req, res) {
+        DBM.getProductByCategoryTypeAndId('Grageados', req.params.id, function(err, grageados){
+            res.send(grageados[0]);
         });
     });
 

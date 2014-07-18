@@ -52,6 +52,7 @@ var db = new MongoDB(dbName, new Server(dbHost, dbPort, {auto_reconnect: true}),
 var accounts                = db.collection('accounts');
 var toffeesYMasticables     = db.collection('toffeesYMasticables');
 var duros                   = db.collection('duros');
+var grageados               = db.collection('grageados');
 
 /* login validation methods */
 
@@ -217,16 +218,16 @@ var getObjectId = function(id)
 	return accounts.db.bson_serializer.ObjectID.createFromHexString(id)
 }
 
-var getToffeeId = function(id){
-    return toffeesYMasticables.db.bson_serializer.ObjectID.createFromHexString(id)
-}
-
-var getMasticableId = function(id){
+var getToffeeYMasticableId = function(id){
     return toffeesYMasticables.db.bson_serializer.ObjectID.createFromHexString(id)
 }
 
 var getDuroId = function(id){
     return duros.db.bson_serializer.ObjectID.createFromHexString(id)
+}
+
+var getGrageadoId = function(id){
+    return grageados.db.bson_serializer.ObjectID.createFromHexString(id)
 }
 
 
@@ -345,6 +346,15 @@ exports.getAllProductsByCategoryType = function(categoryType, callback)
                     callback(null, res);
                 }
             });
+    }else if(categoryType == "Grageados"){
+        grageados.find({ $query: {}, $orderby: {position:1}}).toArray(
+            function(e, res){
+                if(e){
+                    callback(e);
+                }else{
+                    callback(null, res);
+                }
+            });
     }else{
         callback(null, {message: "La categoria no existe."});
     }
@@ -352,7 +362,7 @@ exports.getAllProductsByCategoryType = function(categoryType, callback)
 
 exports.getProductByCategoryTypeAndId = function(categoryType, id, callback){
     if(categoryType == "Toffee" || categoryType == "Masticable"){
-        toffeesYMasticables.find({ $query: {type:categoryType, _id: getToffeeId(id)}}).toArray(
+        toffeesYMasticables.find({ $query: {type:categoryType, _id: getToffeeYMasticableId(id)}}).toArray(
             function(e, res){
                 if(e){
                     callback(e);
@@ -362,6 +372,15 @@ exports.getProductByCategoryTypeAndId = function(categoryType, id, callback){
             });
     }else if(categoryType == "Crystal" || categoryType == "Gloria" || categoryType == "Ponny" || categoryType == "Sin grupo"){
         duros.find({ $query: {type:categoryType, _id: getDuroId(id)}}).toArray(
+            function(e, res){
+                if(e){
+                    callback(e);
+                }else{
+                    callback(null, res);
+                }
+            });
+    }else if(categoryType == "Grageados"){
+        grageados.find({ $query: {_id: getGrageadoId(id)}}).toArray(
             function(e, res){
                 if(e){
                     callback(e);

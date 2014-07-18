@@ -1,11 +1,11 @@
-extends layout
+extends ../layout
 
 block head
-    title Gama propia
+    title Grageados
     link(rel="stylesheet", href="/css/backgroundImage.css")
 
 block content
-    div#container.fondoCaramelos
+    div#container
         header
             nav.navbar.navbar-fixed-top.navbar-default.fondoTurquesa(role="navigation")
                 div.navbar-inner
@@ -55,8 +55,8 @@ block content
                             ul.nav.navbar-nav.navbar-right.hidden-xs
                                 a.btn.btn-default.btn-eathub-red(href="#", role="button")#entrar Entrar
         main.margen-superior-50
-            div.container
-                div.row
+            div.container(ng-app="grageados")
+                div.row(ng-controller="mainController")
                     //div.col-md-12.hidden-md.hidden-lg
                         div.panel.panel-default.panel-body.text-center
                             br
@@ -69,85 +69,67 @@ block content
                                     div.main-card-name
                                         a(href="/gamaPropia")
                                             span.caramelo Gama propia
-                    div.col-sm-6.col-md-3
-                        div.panel.panel-body.main-card#gama-propia-toffeesYMasticables
-                            div.main-card-picture
-                                a(href="/gamaPropia/toffeesYMasticables")
-                                    img(src="/img/toffessYMasticables2.png", style="width: 90%; height: 90%;").imagenCategoria
+                                        b.abel.mayorQue >
+                                        a(href="#")
+                                            span.caramelo Grageados
+
+                    div.col-md-6.col-sm-12
+                        div.panel.panel-body.main-card#grageados
+                            //div.main-card-picture
+                                a(href="#")
+                                    img(src="/img/toffessYMasticables.png", style="width: 100%; height: 100%;")
                             div.main-card-content(style="word-wrap: break-word;")
-                                //div.main-card-name
-                                    a.recipe-title(href="#")
-                                        span.caramelo Blandos
-                                div.main-card-description
-                                    p.
-                                        Si te gustan los caramelos que se deshacen en la boca &eacute;stos son los tuyos.
-                            //div.recipe-time
-                                span
-                                    i.fa.fa-bars
-                                span  M&aacute;s info
-                    div.col-sm-6.col-md-3
-                        div.panel.panel-body.main-card#gama-propia-duros
-                            div.main-card-picture
-                                a(href="/gamaPropia/duros")
-                                    img(src="/img/duros2.png", style="width: 100%; height: 85%;").imagenCategoria.duros
-                            div.main-card-content(style="word-wrap: break-word;")
-                                //div.main-card-name
-                                    a.recipe-title(href="#")
-                                        span.caramelo Duros
-                                div.main-card-description
-                                    p.
-                                        Los caramelos de toda la vida.
-                            //div.recipe-time
-                                span
-                                    i.fa.fa-bars
-                                span  M&aacute;s info
-                    div.col-sm-6.col-md-3
-                        div.panel.panel-body.main-card#gama-propia-grageados
-                            div.main-card-picture
-                                a(href="/gamaPropia/grageados")
-                                    img(src="/img/grageados2.png", style="width: 100%; height: 80%;").imagenCategoria.grageados
-                            div.main-card-content(style="word-wrap: break-word;")
-                                //div.main-card-name
+                                div.main-card-name
                                     a.recipe-title(href="#")
                                         span.caramelo Grageados
                                 div.main-card-description
                                     p.
-                                        Caramelos ideales para fiestas de cumpleaños.
+                                        Aqu&iacute; encontrar&aacute;s todos los grageados de los que disponemos actualmente.
                             //div.recipe-time
                                 span
                                     i.fa.fa-bars
                                 span  M&aacute;s info
-                    div.col-sm-6.col-md-3
-                        div.panel.panel-body.main-card#gama-propia-conPalo
-                            div.main-card-picture
-                                a(href="#")
-                                    img(src="/img/conPalo2.png", style="width: 100%; height: 100%;")
-                            div.main-card-content(style="word-wrap: break-word;")
-                                //div.main-card-name
-                                    a.recipe-title(href="#")
-                                        span.caramelo Con palo
-                                div.main-card-description
-                                    p.
-                                        Si prefieres los novedosos caramelos con palo ésta es tu sección.
-                            //div.recipe-time
-                                span
-                                    i.fa.fa-bars
-                                span  M&aacute;s info
+                    div.col-md-6.col-sm-12
+                        div.panel.panel-body(style="min-height: 124px")
+                            div.main-card-content
+                                div.main-card-name.col-md-12
+                                    div.col-md-4.reset-padding-left
+                                        a.recipe-title(href="#")
+                                            span.caramelo Buscar
+                                    div.col-md-6(style="margin-top:7px")
+                                        input(type="text", placeholder="Introduzca un texto", ng-model="grageadoSearch").form-control
 
-        //div#lightboxOverlay.lightboxOverlay(style="display: none;")
-        //div#lightbox.lightbox(style="display: none;")
-            div.lb-outerContainer
-                div.lb-container
-                    img.lb-image(src="")
-                    div.lb-nav
-                        a.lb-prev(href="")
-                        a.lb-next(href="")
-                    div.lb-loader
-                        a.lb-cancel
-            div.lb-dataContainer
-                div.lb-data
-                    div.lb-details
-                        span.lb-caption
-                        span.lb-number
-                    div.lb-closeContainer
-                        a.lb-close
+                    div(style="clear:both")
+                        div
+                            div(ng-repeat="grageado in grageados | filter:grageadoSearch", style="text-align:center")
+                                div(ng-show="esSurtido(grageado)")
+                                    div.col-md-12.col-sm-12
+                                        div.panel.panel-body.panel-grageado-info
+                                            div(style="text-align:left;")
+                                                h1(style="margin-bottom:30px").modelo-grageado
+                                                    a(ng-href="grageados/{{grageado._id}}", ng-bind-template="{{$index + 1}}. {{grageado.model}}").green.hover-red
+                                            div.col-md-2
+                                                div(style="float:left; margin-right: 20px; width:100%; height: 260px").hidden-sm.hidden-xs
+                                                    img(ng-src="/img/imagenesMias/{{grageado.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
+                                                div(style="float:left; margin-right: 20px; width:100%; height: 260px").hidden-md.hidden-lg
+                                                    img(ng-src="/img/imagenesMias/{{grageado.image}}", height="100%", width="30%", style="margin-left: 10px; margin-bottom: 10px")
+                                            div.col-md-10
+                                                div(style="margin-left: 15px;").grageado-description
+                                                    h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{grageado.description}}").blue
+                                div(ng-show="!esSurtido(grageado)")
+                                    div.col-md-4.col-sm-6
+                                        div.panel.panel-body.panel-grageado
+                                            div(style="text-align:left")
+                                                h1(style="margin-bottom:30px").modelo-grageado
+                                                    a(ng-href="grageados/{{grageado._id}}", ng-bind-template="{{$index + 1}}. {{grageado.model}}").green.hover-red
+                                            div(style="margin-right: 20px; height: 100px; max-height: 200px;").margenInferior-30
+                                                img(ng-src="/img/imagenesMias/{{grageado.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
+                                            div.grageado-description
+                                                h3(style="text-align: justify; margin-top: 5px", ng-bind-template="{{grageado.description}}").blue
+
+
+block scripts
+    script(src='/js/jquery.js')
+    script(src='/js/bootstrap.js')
+    script(src='/js/angular.js')
+    script(src='/js/angular/grageados.js')

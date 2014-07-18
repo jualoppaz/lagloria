@@ -1,4 +1,7 @@
-extends ../../../layout
+// Surtidos: ordenadores, tablets y moviles.
+// Otros:    ordenadores, tablets y moviles.
+
+extends ../../layout
 block head
     title Información
     link(rel="stylesheet", href="/css/backgroundImage.css")
@@ -68,63 +71,61 @@ block content
                                         a(href="/gamaPropia")
                                             span.caramelo Gama propia
                                         b.abel.mayorQue >
-                                        a(href="../../duros")
-                                            span.caramelo Duros
-                                        b.abel.mayorQue >
-                                        a(href="../crystal")
-                                            span.caramelo Crystal
-                    div(ng-app="crystalInfo")
+                                        a(href="../grageados")
+                                            span.caramelo Grageados
+                    div(ng-app="grageadoInfo")
                         div(ng-controller="mainController")
                             div.col-md-12
                                 div.panel.panel-body
                                     div.main-card-content(style="word-wrap: break-word;")
                                         div.main-card-name
                                             a.recipe-title(href="#")
-                                                span.caramelo(ng-bind-template="{{crystal.model}}")
-                            div(ng-show="esSurtido(crystal)")
-                                // Vista para ordenadores
+                                                span.caramelo(ng-bind-template="{{grageado.model}}")
+                            div(ng-show="esSurtido(grageado)")
+                                // Vista para ordenador
                                 div.col-md-12.hidden-sm.hidden-xs
-                                    div.panel.panel-body.panel-crystal-info
+                                    div.panel.panel-body.panel-grageado-info
                                         div.col-md-2
-                                            div(style="float:left; margin-right: 20px; width: 100%; height: 260px").text-center
-                                                img(ng-src="/img/imagenesMias/{{crystal.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
+                                            div(style="float:left; width: 100%; height: 260px").hidden-sm.hidden-xs.text-center
+                                                img(ng-src="/img/imagenesMias/{{grageado.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
                                         div.col-md-9.col-md-offset-1
                                             h1(style="text-align: left;").separador-horizontal.green Detalles
                                             div.row.blue
-                                                div.col-md-4.col-sm-4.col-xs-4
+                                                div.col-md-4
                                                     h3 Categoría
-                                                div.col-md-4.col-sm-4.col-xs-4
+                                                div.col-md-4
                                                     h3 Tipo
-                                                div.col-md-4.col-sm-4.col-xs-4
+                                                div.col-md-4
                                                     h3 Modelo
                                             div.row
-                                                div.col-md-4.col-sm-4.col-xs-4
-                                                    h3(ng-bind-template="{{crystal.category}}")
-                                                div.col-md-4.col-sm-4.col-xs-4
-                                                    h3(ng-bind-template="{{crystal.type}}")
-                                                div.col-md-4.col-sm-4.col-xs-4
-                                                    h3(ng-bind-template="{{crystal.model}}")
+                                                div.col-md-4
+                                                    h3(ng-bind-template="{{grageado.category}}")
+                                                div.col-md-4
+                                                    h3(ng-bind-template="{{grageado.type}}")
+                                                div.col-md-4
+                                                    h3(ng-bind-template="{{grageado.model}}")
                                             div.row.blue
-                                                div.col-md-4.col-sm-4.col-xs-4
+                                                div.col-md-4
                                                     h3 Pedido mínimo
-                                                div.col-md-4.col-sm-4.col-xs-4
+                                                div.col-md-4
                                                     h3 Precio
                                             div.row
-                                                div.col-md-4.col-sm-4.col-xs-4
-                                                    h3(ng-bind-template="{{crystal.minimumOrder}} Kg")
-                                                div.col-md-4.col-sm-4.col-xs-4
-                                                    h3(ng-bind-template="{{crystal.price}} € / Kg")
+                                                div.col-md-4
+                                                    h3(ng-bind-template="{{grageado.minimumOrder}} Kg")
+                                                div.col-md-4
+                                                    h3(ng-bind-template="{{grageado.price}} € / Kg")
                                     div.panel.panel-body
-                                        div.crystal-info-description.blue
-                                            h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{crystal.description}}")
+                                        div.grageado-info-description.blue
+                                            h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{grageado.description}}")
 
                                 // Vista para tablets y moviles
+
                                 div.col-sm-12.hidden-lg.hidden-md
-                                    div.panel.panel-body.panel-crystal-info
-                                        div.col-sm-4.col-sm-offset-4
-                                            div(style="float:left; margin-right: 20px; width: 100%; height: 260px").text-center
-                                                img(ng-src="/img/imagenesMias/{{crystal.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
-                                        div.col-sm-12
+                                    div.panel.panel-body.panel-grageado-info
+                                        div.col-sm-4.col-sm-offset-4.col-xs-4.col-xs-offset-4
+                                            div(style="float:left; margin-right: 20px; width: 100%; height: 260px").hidden-md.hidden-lg.text-center
+                                                img(ng-src="/img/imagenesMias/{{grageado.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
+                                        div.col-sm-12.col-xs-12
                                             h1(style="text-align: left;").separador-horizontal.green Detalles
                                             div.row.blue
                                                 div.col-sm-4.col-xs-4
@@ -135,11 +136,11 @@ block content
                                                     h3 Modelo
                                             div.row
                                                 div.col-sm-4.col-xs-4
-                                                    h3(ng-bind-template="{{crystal.category}}")
+                                                    h3(ng-bind-template="{{grageado.category}}")
                                                 div.col-sm-4.col-xs-4
-                                                    h3(ng-bind-template="{{crystal.type}}")
+                                                    h3(ng-bind-template="{{grageado.type}}")
                                                 div.col-sm-4.col-xs-4
-                                                    h3(ng-bind-template="{{crystal.model}}")
+                                                    h3(ng-bind-template="{{grageado.model}}")
                                             div.row.blue
                                                 div.col-sm-4.col-xs-4
                                                     h3 Pedido mínimo
@@ -147,20 +148,19 @@ block content
                                                     h3 Precio
                                             div.row
                                                 div.col-sm-4.col-xs-4
-                                                    h3(ng-bind-template="{{crystal.minimumOrder}} Kg")
+                                                    h3(ng-bind-template="{{grageado.minimumOrder}} Kg")
                                                 div.col-sm-4.col-xs-4
-                                                    h3(ng-bind-template="{{crystal.price}} € / Kg")
+                                                    h3(ng-bind-template="{{grageado.price}} € / Kg")
                                     div.panel.panel-body
-                                        div.crystal-info-description.blue
-                                            h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{crystal.description}}")
-
-                            div(ng-show="!esSurtido(crystal)")
+                                        div.grageado-info-description.blue
+                                            h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{grageado.description}}")
+                            div(ng-show="!esSurtido(grageado)")
                                 // Vista para ordenadores
                                 div.col-md-12.hidden-sm.hidden-xs
-                                    div.panel.panel-body.panel-crystal-info
+                                    div.panel.panel-body.panel-grageado-info
                                         div.col-md-5.text-center
                                             div(style="float:left; margin-right: 20px; width: 100%; height: 400px")
-                                                img(ng-src="/img/imagenesMias/{{crystal.image}}", height="30%", width="70%", style="margin-left: 10px; margin-bottom: 10px; margin-top:60px")
+                                                img(ng-src="/img/imagenesMias/{{grageado.image}}", height="30%", width="70%", style="margin-left: 10px; margin-bottom: 10px; margin-top:60px")
                                         div.col-md-7
                                             h1(style="text-align: left;").separador-horizontal.green Detalles
                                             div.row.blue
@@ -172,11 +172,11 @@ block content
                                                     h3 Modelo
                                             div.row
                                                 div.col-md-4
-                                                    h3(ng-bind-template="{{crystal.category}}")
+                                                    h3(ng-bind-template="{{grageado.category}}")
                                                 div.col-md-4
-                                                    h3(ng-bind-template="{{crystal.type}}")
+                                                    h3(ng-bind-template="{{grageado.type}}")
                                                 div.col-md-4
-                                                    h3(ng-bind-template="{{crystal.model}}")
+                                                    h3(ng-bind-template="{{grageado.model}}")
                                             div.row.blue
                                                 div.col-md-4
                                                     h3 Pedido mínimo
@@ -184,19 +184,20 @@ block content
                                                     h3 Precio
                                             div.row
                                                 div.col-md-4
-                                                    h3(ng-bind-template="{{crystal.minimumOrder}} Kg")
+                                                    h3(ng-bind-template="{{grageado.minimumOrder}} Kg")
                                                 div.col-md-4
-                                                    h3(ng-bind-template="{{crystal.price}} € / Kg")
+                                                    h3(ng-bind-template="{{grageado.price}} € / Kg")
                                     div.panel.panel-body
-                                        div.crystal-info-description.blue
-                                            h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{crystal.description}}")
+                                        div.grageado-info-description.blue
+                                            h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{grageado.description}}")
 
-                                // Vista para tablets y moviles
+
+                                // Vista para moviles
                                 div.col-sm-12.hidden-md.hidden-lg
-                                    div.panel.panel-body.panel-crystal-info
+                                    div.panel.panel-body.panel-grageado-info
                                         div.col-sm-12
                                             div(style="float:left; margin-right: 20px; margin-bottom: 30px; width: 100%; height: 150px").text-center
-                                                img(ng-src="/img/imagenesMias/{{crystal.image}}", height="100%", width="70%", style="margin-left: 10px; margin-bottom: 30px")
+                                                img(ng-src="/img/imagenesMias/{{grageado.image}}", height="100%", width="70%", style="margin-left: 10px; margin-bottom: 30px")
                                         div.col-sm-12
                                             h1(style="text-align: left;").separador-horizontal.green Detalles
                                             div.row.blue
@@ -208,11 +209,11 @@ block content
                                                     h3 Modelo
                                             div.row
                                                 div.col-sm-4.col-xs-4
-                                                    h3(ng-bind-template="{{crystal.category}}")
+                                                    h3(ng-bind-template="{{grageado.category}}")
                                                 div.col-sm-4.col-xs-4
-                                                    h3(ng-bind-template="{{crystal.type}}")
+                                                    h3(ng-bind-template="{{grageado.type}}")
                                                 div.col-sm-4.col-xs-4
-                                                    h3(ng-bind-template="{{crystal.model}}")
+                                                    h3(ng-bind-template="{{grageado.model}}")
                                             div.row.blue
                                                 div.col-sm-4.col-xs-4
                                                     h3 Pedido mínimo
@@ -220,15 +221,15 @@ block content
                                                     h3 Precio
                                             div.row
                                                 div.col-sm-4.col-xs-4
-                                                    h3(ng-bind-template="{{crystal.minimumOrder}} Kg")
+                                                    h3(ng-bind-template="{{grageado.minimumOrder}} Kg")
                                                 div.col-sm-4.col-xs-4
-                                                    h3(ng-bind-template="{{crystal.price}} € / Kg")
+                                                    h3(ng-bind-template="{{grageado.price}} € / Kg")
                                     div.panel.panel-body
-                                        div.crystal-info-description.blue
-                                            h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{crystal.description}}")
+                                        div.grageado-info-description.blue
+                                            h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{grageado.description}}")
 
 block scripts
     script(src='/js/angular.js')
-    script(src='/js/angular/duros/crystals/info.js')
+    script(src='/js/angular/grageados/info.js')
     script(src='/js/jquery.js')
     script(src='/js/bootstrap.js')
