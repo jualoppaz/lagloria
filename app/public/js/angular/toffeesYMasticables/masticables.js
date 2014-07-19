@@ -7,7 +7,11 @@ function mainController($scope, $http) {
     // Cuando se cargue la página, pide del API todas las excursiones
     $http.get('/api/masticables')
         .success(function(data) {
-            $scope.masticables = data;
+            if(data.message){
+                $scope.masticables = {};
+            }else{
+                $scope.masticables = data;
+            }
         })
         .error(function(data) {
             alert("Hay algún error. Recargue de nuevo la página. Disculpe las molestias.");

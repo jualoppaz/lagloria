@@ -7,8 +7,11 @@ function mainController($scope, $http) {
     // Cuando se cargue la página, pide del API todas las excursiones
     $http.get('/api/toffees')
         .success(function(data) {
-            $scope.toffees = data;
-            console.log(data);
+            if(data.message){
+                $scope.toffees = {};
+            }else{
+                $scope.toffees = data;
+            }
         })
         .error(function(data) {
             console.log('Error: ' + data);

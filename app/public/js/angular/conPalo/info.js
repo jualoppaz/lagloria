@@ -1,16 +1,19 @@
-var grageados = angular.module('grageados', []);
+var conPaloInfo = angular.module('conPaloInfo', []);
 
 function mainController($scope, $http) {
-    $scope.grageados = {};
+    $scope.conPalo = {};
     $scope.loguedUser = {};
 
+    var url = window.location.href.split("/");
+    var conPaloId = url[url.length - 1];
+
     // Cuando se cargue la página, pide del API todas las excursiones
-    $http.get('/api/grageados')
+    $http.get('/api/conPalo/' + String(conPaloId))
         .success(function(data) {
             if(data.message){
-                $scope.grageados = {};
+                $scope.conPalo = {};
             }else{
-                $scope.grageados = data;
+                $scope.conPalo = data;
             }
         })
         .error(function(data) {
@@ -27,7 +30,8 @@ function mainController($scope, $http) {
         });
     */
 
-    $scope.esSurtido = function(grageado){
-        return grageado.model == "Surtido";
+    $scope.esSurtido = function(conPalo){
+        return conPalo.model == "Surtido";
     }
+
 }

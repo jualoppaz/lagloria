@@ -85,6 +85,14 @@ module.exports = function(app){
         res.render('gamaPropia/grageados/infoGrageados');
     });
 
+    app.get('/gamaPropia/conPalo', function(req, res) {
+        res.render('gamaPropia/conPalo');
+    });
+
+    app.get('/gamaPropia/conPalo/:id', function(req, res) {
+        res.render('gamaPropia/conPalo/infoConPalo');
+    });
+
     app.get('/webAntigua/blandos', function(req, res) {
         res.sendfile('app/server/views/webAntigua/blandos.html');
     });
@@ -177,6 +185,18 @@ module.exports = function(app){
     app.get('/api/grageados/:id', function(req, res) {
         DBM.getProductByCategoryTypeAndId('Grageados', req.params.id, function(err, grageados){
             res.send(grageados[0]);
+        });
+    });
+
+    app.get('/api/conPalo', function(req, res) {
+        DBM.getAllProductsByCategoryType('Con palo', function(err, conPalo){
+            res.send(conPalo);
+        });
+    });
+
+    app.get('/api/conPalo/:id', function(req, res) {
+        DBM.getProductByCategoryTypeAndId('Con palo', req.params.id, function(err, conPalo){
+            res.send(conPalo[0]);
         });
     });
 

@@ -53,6 +53,7 @@ var accounts                = db.collection('accounts');
 var toffeesYMasticables     = db.collection('toffeesYMasticables');
 var duros                   = db.collection('duros');
 var grageados               = db.collection('grageados');
+var conPalo                 = db.collection('conPalo');
 
 /* login validation methods */
 
@@ -230,6 +231,10 @@ var getGrageadoId = function(id){
     return grageados.db.bson_serializer.ObjectID.createFromHexString(id)
 }
 
+var getConPaloId = function(id){
+    return conPalo.db.bson_serializer.ObjectID.createFromHexString(id)
+}
+
 
 
 var findById = function(id, callback)
@@ -355,6 +360,15 @@ exports.getAllProductsByCategoryType = function(categoryType, callback)
                     callback(null, res);
                 }
             });
+    }else if(categoryType == "Con palo"){
+        conPalo.find({ $query: {}, $orderby: {position:1}}).toArray(
+            function(e, res){
+                if(e){
+                    callback(e);
+                }else{
+                    callback(null, res);
+                }
+            });
     }else{
         callback(null, {message: "La categoria no existe."});
     }
@@ -381,6 +395,15 @@ exports.getProductByCategoryTypeAndId = function(categoryType, id, callback){
             });
     }else if(categoryType == "Grageados"){
         grageados.find({ $query: {_id: getGrageadoId(id)}}).toArray(
+            function(e, res){
+                if(e){
+                    callback(e);
+                }else{
+                    callback(null, res);
+                }
+            });
+    }else if(categoryType == "Con palo"){
+        conPalo.find({ $query: {_id: getConPaloId(id)}}).toArray(
             function(e, res){
                 if(e){
                     callback(e);

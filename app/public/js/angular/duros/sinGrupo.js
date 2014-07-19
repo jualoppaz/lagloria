@@ -7,7 +7,11 @@ function mainController($scope, $http) {
     // Cuando se cargue la página, pide del API todas las excursiones
     $http.get('/api/sinGrupo')
         .success(function(data) {
-            $scope.sinGrupos = data;
+            if(data.message){
+                $scope.sinGrupos = {};
+            }else{
+                $scope.sinGrupos = data;
+            }
         })
         .error(function(data) {
             alert("Ha sucedido algún error. Recargue la página de nuevo. Disculpe las molestias.");

@@ -7,7 +7,11 @@ function mainController($scope, $http) {
     // Cuando se cargue la página, pide del API todas las excursiones
     $http.get('/api/ponnies')
         .success(function(data) {
-            $scope.ponnies = data;
+            if(data.message){
+                $scope.ponnies = {};
+            }else{
+                $scope.ponnies = data;
+            }
         })
         .error(function(data) {
             alert("Ha sucedido algún error. Recargue la página de nuevo. Disculpe las molestias.");

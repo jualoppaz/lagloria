@@ -1,20 +1,20 @@
-var crystals = angular.module('crystals', []);
+var conPalo = angular.module('conPalo', []);
 
 function mainController($scope, $http) {
-    $scope.crystals = {};
+    $scope.conPalos = {};
     $scope.loguedUser = {};
 
     // Cuando se cargue la página, pide del API todas las excursiones
-    $http.get('/api/crystals')
+    $http.get('/api/conPalo')
         .success(function(data) {
             if(data.message){
-                $scope.crystals = {};
+                $scope.conPalos = {};
             }else{
-                $scope.crystals = data;
+                $scope.conPalos = data;
             }
         })
         .error(function(data) {
-            alert("Ha sucedido algún error. Recargue la página de nuevo. Disculpe las molestias.");
+            alert("No se ha podido cargar la página correctamente. Recargue la página. Gracias.");
         });
 
     /*
@@ -27,9 +27,7 @@ function mainController($scope, $http) {
         });
     */
 
-    /*
-    $scope.esSurtido = function(duro){
-        return duro.model == "Surtido";
+    $scope.esSurtido = function(conPalo){
+        return conPalo.model == "Surtido";
     }
-    */
 }

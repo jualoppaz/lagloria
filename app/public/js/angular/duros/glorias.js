@@ -7,7 +7,11 @@ function mainController($scope, $http) {
     // Cuando se cargue la página, pide del API todas las excursiones
     $http.get('/api/glorias')
         .success(function(data) {
-            $scope.glorias = data;
+            if(data.message){
+                $scope.glorias = {};
+            }else{
+                $scope.glorias = data;
+            }
         })
         .error(function(data) {
             alert("Ha sucedido algún error. Recargue la página de nuevo. Disculpe las molestias.");
