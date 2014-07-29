@@ -96,6 +96,10 @@ module.exports = function(app){
         res.render('gamaPropia/conPalo/infoConPalo');
     });
 
+    app.get('/buscar', function(req, res) {
+        res.render('buscar');
+    });
+
     app.get('/webAntigua/blandos', function(req, res) {
         res.sendfile('app/server/views/webAntigua/blandos.html');
     });
@@ -103,6 +107,7 @@ module.exports = function(app){
     app.get('/webAntigua/blandos2', function(req, res) {
         res.sendfile('app/server/views/webAntigua/blandos2.html');
     });
+
 
     // API REST
 

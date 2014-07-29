@@ -61,7 +61,7 @@ block content
                 div.row(ng-controller="mainController")
                     include ../botonesMovil
 
-                    div.col-md-12
+                    div.col-md-12.col-xs-12
                         div.panel.panel-body
                             div.main-card-content
                                 div.main-card-description
@@ -72,11 +72,8 @@ block content
                                         a(href="#")
                                             span.caramelo Grageados
 
-                    div.col-md-6.col-sm-12
+                    div.col-md-6.col-sm-12.col-xs-12
                         div.panel.panel-body.main-card#grageados
-                            //div.main-card-picture
-                                a(href="#")
-                                    img(src="/img/toffessYMasticables.png", style="width: 100%; height: 100%;")
                             div.main-card-content(style="word-wrap: break-word;")
                                 div.main-card-name
                                     a.recipe-title(href="#")
@@ -84,18 +81,14 @@ block content
                                 div.main-card-description
                                     p.
                                         Aqu&iacute; encontrar&aacute;s todos los grageados de los que disponemos actualmente.
-                            //div.recipe-time
-                                span
-                                    i.fa.fa-bars
-                                span  M&aacute;s info
-                    div.col-md-6.col-sm-12
+                    div.col-md-6.col-sm-12.col-xs-12
                         div.panel.panel-body(style="min-height: 124px")
                             div.main-card-content
                                 div.main-card-name.col-md-12
                                     div.col-md-4.reset-padding-left
                                         a.recipe-title(href="#")
                                             span.caramelo Buscar
-                                    div.col-md-6(style="margin-top:7px")
+                                    div.col-md-6.col-xs-6(style="margin-top:7px")
                                         input(type="text", placeholder="Introduzca un texto", ng-model="grageadoSearch").form-control
 
                     div(style="clear:both")
@@ -121,10 +114,12 @@ block content
                                             div(style="text-align:left")
                                                 h1(style="margin-bottom:30px").modelo-grageado
                                                     a(ng-href="grageados/{{grageado._id}}", ng-bind-template="{{$index + 1}}. {{grageado.model}}").green.hover-red
-                                            div(style="margin-right: 20px; height: 100px; max-height: 200px;").margenInferior-30
-                                                img(ng-src="/img/imagenesMias/{{grageado.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
-                                            div.grageado-description
-                                                h3(style="text-align: justify; margin-top: 5px", ng-bind-template="{{grageado.description}}").blue
+                                            div.col-md-12
+                                                div(style="margin-right: 20px; height: 100px; max-height: 200px;").margenInferior-30
+                                                    img(ng-src="/img/imagenesMias/{{grageado.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
+                                            div.col-md-12
+                                                div.grageado-description
+                                                    h3(style="text-align: justify; margin-top: 5px", ng-bind-template="{{grageado.description}}").blue
 
 
 block scripts

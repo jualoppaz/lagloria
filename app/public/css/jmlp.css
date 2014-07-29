@@ -389,7 +389,7 @@ main{
 .toffee-description, .masticable-description, .crystal-description, .gloria-description, .ponny-description, .sinGrupo-description,
 .grageado-description, .conPalo-description{
     padding-top: 10px;
-    padding-left: 10px;
+    /*padding-left: 10px;*/
 }
 
 .toffee-info-description, .masticable-info-description, .crystal-info-description, .gloria-info-description, .ponny-info-description,
