@@ -7,7 +7,7 @@ block head
     link(rel="stylesheet", href="/css/backgroundImage.css")
 block content
     div#container
-        header
+        //header
             nav.navbar.navbar-fixed-top.navbar-default.fondoTurquesa(role="navigation")
                 div.navbar-inner
                     div.container-fluid
@@ -55,6 +55,8 @@ block content
 
                             ul.nav.navbar-nav.navbar-right.hidden-xs
                                 a.btn.btn-default.btn-eathub-red(href="#", role="button")#entrar Entrar
+        include ../../../navbar
+
         main.margen-superior-50
             div.container
                 div.row

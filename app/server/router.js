@@ -18,6 +18,9 @@ module.exports = function(app){
        res.render('gamaPropia');
     });
 
+    app.get('/gamaPropia2', function(req, res) {
+        res.render('gamaPropia2');
+    });
 
     // Gama propia
 

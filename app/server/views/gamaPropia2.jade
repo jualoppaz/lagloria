@@ -1,61 +1,12 @@
 extends layout
 
 block head
-    title Gama propia
+    title Gama propia 2
     link(rel="stylesheet", href="/css/backgroundImage.css")
 
 block content
     div#container.fondoCaramelos
-        //header
-            nav.navbar.navbar-fixed-top.navbar-default.fondoTurquesa(role="navigation")
-                div.navbar-inner
-                    div.container-fluid
-                        div.navbar-header
-                            button.navbar-toggle.collapsed(type="button", data-toggle="collapse", data-target=".navbar-collapse")
-                                span.sr-only Cambiar la navegación
-                                span.icon-bar
-                                span.icon-bar
-                                span.icon-bar
-                            a(href="/").navbar-brand.white.middle Inicio
-                        div.collapse.navbar-collapse.fondoTurquesa(role="navigation")
-                            ul.nav.navbar-nav
-                                li
-                                    a(href="/gamaPropia") Gama propia
-                                li
-                                    a(href="#") Publicitarios
-                                li
-                                    a(href="#") Nosotros
-                                li
-                                    a(href="#") Contacto
-                                //li
-                                    div.input-group.navbar-input-group.fbSearch
-                                        form#search-form.navbar-form.navbar-left.hidden-xs.hidden-sm(role="search", method="get", action="#")
-                                            div.form-group
-                                                input.form-control.border-search.border-rect-red#srchterm(type="text", placeholder="Buscar...", name="srchterm")
-                                                span.input-group-btn-red.navbar-input-group-btn
-                                                    button.btn.btn-default(type="submit")
-                                                        i.fa.fa-search
-                                            div.suggest
-                                                ul
-                                                    li.header
-                                                        span.text Recipes
-                                                    li
-                                                        a(href="#")
-                                                            span.fa.fa-search
-                                                            span.text Search recipes
-                                                            span.category
-                                                    li.header
-                                                        span.text People
-                                                    li
-                                                        a(href="#")
-                                                            span.fa.fa-search
-                                                            span.text Search people
-                                                            span.category
-
-                            ul.nav.navbar-nav.navbar-right.hidden-xs
-                                a.btn.btn-default.btn-eathub-red(href="#", role="button")#entrar Entrar
         include navbar
-
         main.margen-superior-50
             div.container
                 div.row
