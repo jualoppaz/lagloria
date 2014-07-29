@@ -538,3 +538,7 @@ div.row div h3{
     margin-top: 5px;
     float:left
 }
+
+.main-card-name{
+    margin-bottom: 0px !important;
+}
