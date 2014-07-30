@@ -36,37 +36,37 @@ block content
                             div.col-md-12
                                 h3.abel Variables auxiliares para realizar la consulta
                             div.col-md-12(style="text-align:center")
-                                div.col-md-4(ng-bind-template="Sección: {{seccionSeleccionada}}")
-                                div.col-md-4(ng-bind-template="Criterio: {{criterioSeleccionado}}")
-                                div.col-md-4(ng-bind-template="Categoría: {{categoriaSeleccionada}}")
-                                div.col-md-4(ng-bind-template="Nombre: {{nombreIntroducido}}")
+                                div.col-md-4(ng-bind-template="Sección: {{seccionSeleccionada.name}}")
+                                div.col-md-4(ng-bind-template="Criterio: {{criterioSeleccionado.name}}")
+                                div.col-md-4(ng-bind-template="Categoría: {{categoriaSeleccionada.name}}")
+                                div.col-md-4(ng-bind-template="Nombre: {{nombreIntroducido.name}}")
 
                             div(style="padding-left:15px").col-md-6#seccionABuscar
                                 div.col-md-4(style="padding-left:0px")
                                     h3(style="float:left").abel Buscar en:
                                 div.col-md-8(style="margin-top:15px")
-                                    select(ng-model="mySection", ng-options="section.name for section in sections",
-                                    ng-init="mySection = sections[0]", ng-selected="mySection", ng-change="actualizarSeccion()").form-control#selectSeccionABuscar
+                                    select(ng-model="seccionSeleccionada", ng-options="section.name for section in sections",
+                                    ng-init="seccionSeleccionada = sections[0]", ng-selected="seccionSeleccionada").form-control#selectSeccionABuscar
 
                             div(style="padding-left:15px").col-md-6#criterioDeBusqueda
                                 div.col-md-4(style="padding-left:0px")
                                     h3(style="float:left").abel Buscar por:
                                 div.col-md-8(style="margin-top:15px")
-                                    select(ng-model="myCriteria", ng-options="criteria.name for criteria in criterias",
-                                    ng-init="myCriteria = criterias[0]", ng-selected="myCriteria", ng-change="actualizarCriterio()").form-control#selectCriterioDeBusqueda
+                                    select(ng-model="criterioSeleccionado", ng-options="criteria.name for criteria in criterias",
+                                    ng-init="criterioSeleccionado = criterias[0]", ng-selected="criterioSeleccionado", ng-change="actualizarCriterio()").form-control#selectCriterioDeBusqueda
 
-                            div(style="padding-left:15px", ng-show="myCriteria==criterias[1]").col-md-6#categorias
+                            div(style="padding-left:15px", ng-show="criterioSeleccionado==criterias[1]").col-md-6#categorias
                                 div.col-md-4(style="padding-left:0px")
                                     h3(style="float:left").abel Categoría:
                                 div.col-md-8(style="margin-top:15px")
-                                    select(ng-model="miCategoria", ng-options="categoria.name for categoria in categorias",
-                                    ng-init="miCategoria = categorias[0]", ng-selected="miCategoria", ng-change="actualizarCategoria()").form-control#selectCategoria
+                                    select(ng-model="categoriaSeleccionada", ng-options="categoria.name for categoria in categorias",
+                                    ng-init="categoriaSeleccionada = categorias[0]", ng-selected="categoriaSeleccionada").form-control#selectCategoria
 
-                            div(style="padding-left:15px", ng-show="myCriteria==criterias[0]").col-md-6
+                            div(style="padding-left:15px", ng-show="criterioSeleccionado==criterias[0]").col-md-6
                                 div.col-md-4(style="padding-left:0px")
                                     h3(style="float:left").abel Nombre:
                                 div.col-md-8(style="margin-top:15px;")
-                                    input(type="text", ng-change="actualizarNombre()", ng-model="nombreIntroducido").form-control#inputNombre
+                                    input(type="text", ng-model="nombreIntroducido.name", ng-init="nombreIntroducido = nombreIntroducido.name").form-control#inputNombre
 
                             div.col-md-6.col-md-offset-3(style="text-align:center; margin-top: 15px")
                                 a.btn.btn-default.btn-eathub-red(href="#", role="button", ng-click="buscar()")#buscar Buscar
