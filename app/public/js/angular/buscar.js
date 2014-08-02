@@ -9,18 +9,31 @@ function mainController($scope, $http) {
     $scope.categoriaSeleccionada = {name: '---'};
     $scope.nombreIntroducido = {name: ''};
 
+
+    // Variables con los resultados de la busqueda
+
+    $scope.toffees = {};
+    $scope.masticables = {};
+    $scope.duros = {};
+    $scope.conPalo = {};
+
+    // Opciones de los selects
+
     $scope.sections = [
-        {name: 'Toda la web'},
-        {name: 'Gama propia'},
-        {name: 'Publicitarios'}
+        {name: '--- Elige una sección ---'},
+        //{name: 'Toda la web'},
+        {name: 'Gama propia'}//,
+        //{name: 'Publicitarios'}
     ];
 
     $scope.criterias = [
+        {name: '--- Elige un criterio de búsqueda ---'},
         {name: 'Nombre'},
         {name: 'Categoría'}
     ];
 
     $scope.categorias = [
+        {name: '--- Elige una categoría ---'},
         {name: 'Toffees y Masticables'},
         {name: 'Duros'},
         {name: 'Grageados'},
@@ -37,28 +50,44 @@ function mainController($scope, $http) {
         }
     };
 
-    /*
-    $scope.actualizarNombre = function(){
-        var input = angular.element("#inputNombre");
-        //alert("Input: " + input.val());
-    };*/
-
-    // Cuando se cargue la página, pide del API todas las excursiones
-    $http.get('/api/conPalo')
-        .success(function(data) {
-            if(data.message){
-                $scope.conPalos = {};
-            }else{
-                $scope.conPalos = data;
-            }
-        })
-        .error(function(data) {
-            alert("No se ha podido cargar la página correctamente. Recargue la página. Gracias.");
-        });
-
     $scope.buscar = function(){
-        var seccion = angular.element("#selectSeccionABuscar");
-        alert("Seccion: " + seccion.val);
+        var json = {
+            seccion: {
+                texto: $scope.seccionSeleccionada.name,
+                numero: angular.element("#selectSeccionABuscar :selected").val()
+            },
+            criterio: {
+                texto: $scope.criterioSeleccionado.name,
+                numero: angular.element("#selectCriterio :selected").val()
+            },
+            categoria: {
+                texto: $scope.categoriaSeleccionada.name,
+                numero: angular.element("#selectCategoria :selected").val()
+            },
+            nombre: {
+                texto: $scope.nombreIntroducido.name
+            }
+        };
+        $http.post('/api/buscar', json)
+            .success(function(data) {
+                if(data.toffees){
+                    $scope.toffees      = data.toffees;
+                    $scope.masticables  = data.masticables;
+                }else if(data.duros){
+                    $scope.duros        = data.duros;
+                }else if(data.grageados){
+                    $scope.grageados    = data.grageados;
+                }else if(data.conPalo){
+                    $scope.conPalo      = data.conPalo;
+                }
+            })
+            .error(function(data) {
+                alert("Error en la búsqueda");
+            });
+    };
+
+    $scope.esSurtido = function(caramelo){
+        return caramelo.model == "Surtido";
     }
 
 }

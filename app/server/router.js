@@ -208,6 +208,39 @@ module.exports = function(app){
         });
     });
 
+    app.post('/api/buscar', function(req, res) {
+        var seccion = req.body.seccion.texto;
+        var criterio = req.body.criterio.texto;
+        var categoria = req.body.categoria.texto;
+        var nombre = req.body.nombre.texto;
+        console.log("Datos recibidos:");
+        console.log("Seccion: " + seccion);
+        console.log("Criterio: " + criterio);
+        console.log("Categoria: " + categoria);
+        console.log("Nombre: " + nombre);
+
+        if(seccion == "Gama propia"){
+            if(criterio == "Categoría"){
+                if(categoria == "Toffees y Masticables"){
+                    DBM.getAllProductsByCategoryType('Toffee', function(err, toffees){
+
+                        DBM.getAllProductsByCategoryType('Masticable', function(err, masticables){
+
+                            var json = {
+                                toffees: toffees,
+                                masticables: masticables
+                            };
+
+                            res.json(json);
+                        });
+                    });
+                }else if(categoria == "Duros"){
+                    DBM.getAllProductsByCategoryType('')
+                }
+            }
+        }
+    });
+
     app.get('*', function(req, res) {
         res.render('index');
     });
