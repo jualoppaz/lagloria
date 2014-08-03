@@ -100,6 +100,10 @@ module.exports = function(app){
         res.render('buscar');
     });
 
+    app.get('/login', function(req, res){
+        res.render('login');
+    });
+
     app.get('/webAntigua/blandos', function(req, res) {
         res.sendfile('app/server/views/webAntigua/blandos.html');
     });
@@ -108,9 +112,7 @@ module.exports = function(app){
         res.sendfile('app/server/views/webAntigua/blandos2.html');
     });
 
-
     // API REST
-
 
     app.get('/api/toffees', function(req, res) {
         DBM.getAllProductsByCategoryType('Toffee', function(err, toffees){
