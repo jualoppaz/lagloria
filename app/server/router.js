@@ -235,7 +235,37 @@ module.exports = function(app){
                         });
                     });
                 }else if(categoria == "Duros"){
-                    DBM.getAllProductsByCategoryType('')
+                    DBM.getAllProductsByCategoryType('Crystal', function(err, crystals){
+                        DBM.getAllProductsByCategoryType('Gloria', function(err, glorias){
+                            DBM.getAllProductsByCategoryType('Ponny', function(err, ponnies){
+                                DBM.getAllProductsByCategoryType('Sin grupo', function(err, sinGrupo){
+
+                                    var json = {
+                                        crystals: crystals,
+                                        glorias: glorias,
+                                        ponnies: ponnies,
+                                        sinGrupo: sinGrupo
+                                    };
+
+                                    res.json(json);
+                                });
+                            });
+                        });
+                    });
+                }else if(categoria == "Grageados"){
+                    DBM.getAllProductsByCategoryType('Grageados', function(err, grageados){
+                        var json = {
+                            grageados: grageados
+                        };
+                        res.json(json);
+                    });
+                }else if(categoria == "Con palo"){
+                    DBM.getAllProductsByCategoryType('Con palo', function(err, conPalo){
+                        var json = {
+                            conPalo: conPalo
+                        };
+                        res.json(json);
+                    });
                 }
             }
         }

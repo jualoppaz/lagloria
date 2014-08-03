@@ -14,7 +14,11 @@ function mainController($scope, $http) {
 
     $scope.toffees = {};
     $scope.masticables = {};
-    $scope.duros = {};
+    $scope.crystals = {};
+    $scope.glorias = {};
+    $scope.ponnies = {};
+    $scope.sinGrupo = {};
+    $scope.grageados = {};
     $scope.conPalo = {};
 
     // Opciones de los selects
@@ -50,7 +54,24 @@ function mainController($scope, $http) {
         }
     };
 
+    $scope.limpiarBusquedas = function(){
+        // Toffees y masticables
+        $scope.toffees = {};
+        $scope.masticables = {};
+        // Duros
+        $scope.crystals = {};
+        $scope.glorias = {};
+        $scope.ponnies = {};
+        $scope.sinGrupo = {};
+
+        $scope.grageados = {};
+
+        $scope.conPalo = {};
+    }
+
     $scope.buscar = function(){
+        $scope.limpiarBusquedas();
+
         var json = {
             seccion: {
                 texto: $scope.seccionSeleccionada.name,
@@ -73,8 +94,11 @@ function mainController($scope, $http) {
                 if(data.toffees){
                     $scope.toffees      = data.toffees;
                     $scope.masticables  = data.masticables;
-                }else if(data.duros){
-                    $scope.duros        = data.duros;
+                }else if(data.crystals){
+                    $scope.crystals = data.crystals;
+                    $scope.glorias = data.glorias;
+                    $scope.ponnies = data.ponnies;
+                    $scope.sinGrupo = data.sinGrupo;
                 }else if(data.grageados){
                     $scope.grageados    = data.grageados;
                 }else if(data.conPalo){
