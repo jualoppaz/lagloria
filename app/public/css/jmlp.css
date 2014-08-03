@@ -546,3 +546,13 @@ div.row div h3{
 .panel-toffee-buscar{
     height: 300px;
 }
+
+nav{
+    height: auto !important;
+}
+
+/* Grosor de la linea blanca bajo la barra de navegacion*/
+
+.navbar-fixed-top{
+    border-width: 0 0 2px;
+}
