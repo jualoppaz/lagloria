@@ -2,6 +2,13 @@
     color: #41B19C !important;
 }
 
+.textoTurquesa label{
+    font-family: 'Abel', sans-serif !important;
+    font-size: 18px;
+    font-weight: normal;
+    text-align: left !important;
+}
+
 .textoBlanco{
     color: #FFFFFF;
     padding-top: 20px;
