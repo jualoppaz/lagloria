@@ -48,5 +48,7 @@ header
                         li(style="margin-right: 15px")
                             a(href="/buscar") Buscar
                                 i.fa.fa-search(style="margin-left:15px")
-                        li
+                        li(ng-show="usuarioEstaLogueado == true")
+                            a.btn.btn-default.btn-eathub-red(href="/logout", role="button")#entrar Cerrar sesión
+                        li(ng-show="usuarioEstaLogueado == false")
                             a.btn.btn-default.btn-eathub-red(href="/login", role="button")#entrar Entrar

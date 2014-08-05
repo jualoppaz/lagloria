@@ -4,6 +4,19 @@ function mainController($scope, $http) {
     $scope.sinGrupo = {};
     $scope.loguedUser = {};
 
+    $scope.usuarioEstaLogueado = false;
+
+    $http.get('/api/user')
+        .success(function(data){
+            $scope.usuarioEstaLogueado = true;
+            $scope.loguedUser = data;
+        })
+        .error(function(data){
+            if(data == "not-loguedin-user"){
+                $scope.usuarioEstaLogueado = false;
+            }
+        });
+
     var url = window.location.href.split("/");
     var sinGrupoId = url[url.length - 1];
 

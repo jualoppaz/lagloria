@@ -1,5 +1,7 @@
 var DBM           = require('./modules/data-base-manager');
 
+var roles = ['provider', 'admin'];
+
 module.exports = function(app){
 
     // Vistas de la web
@@ -284,6 +286,8 @@ module.exports = function(app){
             if (!o){
                 res.send(e, 400);
             }	else{
+                console.log("Usuario: " + o.user);
+                console.log("Pass: " + o.pass);
                 req.session.user = o;
                 if (req.param('remember-me') == 'true'){
                     res.cookie('user', o.user, { maxAge: 900000 });
@@ -302,15 +306,31 @@ module.exports = function(app){
             //name 	: req.param('name'),
             //email 	: req.param('email'),
             user 	: req.param('user'),
-            pass	: req.param('pass')
+            pass	: req.param('pass'),
+            active  : false,
+            role    : roles[0]
             //country : req.param('country')
         }, function(e){
             if (e){
+                console.log(e, 400);
                 res.send(e, 400);
             }	else{
+                console.log('ok', 200);
                 res.send('ok', 200);
             }
         });
+    });
+
+    app.get('/api/user', function(req, res) {
+        if(req.session.user == null){
+            res.send("not-loguedin-user", 400);
+        }else{
+            var data = {
+                user : req.session.user.user,
+                name : req.session.user.name
+            };
+            res.send(JSON.stringify(data), 200);
+        }
     });
 
     app.get('*', function(req, res) {

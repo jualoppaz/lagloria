@@ -4,7 +4,19 @@ function mainController($scope, $http) {
     $scope.grageados = {};
     $scope.loguedUser = {};
 
-    // Cuando se cargue la página, pide del API todas las excursiones
+    $scope.usuarioEstaLogueado = false;
+
+    $http.get('/api/user')
+        .success(function(data){
+            $scope.usuarioEstaLogueado = true;
+            $scope.loguedUser = data;
+        })
+        .error(function(data){
+            if(data == "not-loguedin-user"){
+                $scope.usuarioEstaLogueado = false;
+            }
+        });
+
     $http.get('/api/grageados')
         .success(function(data) {
             if(data.message){

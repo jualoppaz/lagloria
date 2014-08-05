@@ -6,105 +6,62 @@ block head
 
 block content
     div#container.fondoCaramelos
-        //header
-            nav.navbar.navbar-fixed-top.navbar-default.fondoTurquesa(role="navigation")
-                div.navbar-inner
-                    div.container-fluid
-                        div.navbar-header
-                            button.navbar-toggle.collapsed(type="button", data-toggle="collapse", data-target=".navbar-collapse")
-                                span.sr-only Cambiar la navegación
-                                span.icon-bar
-                                span.icon-bar
-                                span.icon-bar
-                            a(href="/").navbar-brand.white.middle Inicio
-                        div.collapse.navbar-collapse.fondoTurquesa(role="navigation")
-                            ul.nav.navbar-nav
-                                li
-                                    a(href="/gamaPropia") Gama propia
-                                li
-                                    a(href="#") Publicitarios
-                                li
-                                    a(href="#") Nosotros
-                                li
-                                    a(href="#") Contacto
-                                //li
-                                    div.input-group.navbar-input-group.fbSearch
-                                        form#search-form.navbar-form.navbar-left.hidden-xs.hidden-sm(role="search", method="get", action="#")
-                                            div.form-group
-                                                input.form-control.border-search.border-rect-red#srchterm(type="text", placeholder="Buscar...", name="srchterm")
-                                                span.input-group-btn-red.navbar-input-group-btn
-                                                    button.btn.btn-default(type="submit")
-                                                        i.fa.fa-search
-                                            div.suggest
-                                                ul
-                                                    li.header
-                                                        span.text Recipes
-                                                    li
-                                                        a(href="#")
-                                                            span.fa.fa-search
-                                                            span.text Search recipes
-                                                            span.category
-                                                    li.header
-                                                        span.text People
-                                                    li
-                                                        a(href="#")
-                                                            span.fa.fa-search
-                                                            span.text Search people
-                                                            span.category
 
-                            ul.nav.navbar-nav.navbar-right.hidden-xs
-                                a.btn.btn-default.btn-eathub-red(href="#", role="button")#entrar Entrar
-        include navbar
+        div(ng-app="gamaPropia")
+            div(ng-controller="mainController")
+                include navbar
 
-        main.margen-superior-50
-            div.container
-                div.row
-                    include botonesMovil
+                main.margen-superior-50
+                    div.container
+                        div.row
+                            include botonesMovil
 
-                    div.col-md-12.col-xs-12
-                        div.panel.panel-body
-                            div.main-card-content
-                                div.main-card-description
-                                    div.main-card-name
-                                        a(href="/gamaPropia")
-                                            span.caramelo Gama propia
-                    div.col-sm-6.col-md-3.col-xs-12
-                        div.panel.panel-body.main-card#gama-propia-toffeesYMasticables
-                            div.main-card-picture
-                                a(href="/gamaPropia/toffeesYMasticables")
-                                    img(src="/img/toffessYMasticables2.png", style="width: 90%; height: 90%;").imagenCategoria
-                            div.main-card-content(style="word-wrap: break-word;")
-                                div.main-card-description
-                                    p.
-                                        Si te gustan los caramelos que se deshacen en la boca &eacute;stos son los tuyos.
-                    div.col-sm-6.col-md-3.col-xs-12
-                        div.panel.panel-body.main-card#gama-propia-duros
-                            div.main-card-picture
-                                a(href="/gamaPropia/duros")
-                                    img(src="/img/duros2.png", style="width: 100%; height: 85%;").imagenCategoria.duros
-                            div.main-card-content(style="word-wrap: break-word;")
-                                div.main-card-description
-                                    p.
-                                        Los caramelos de toda la vida.
-                    div.col-sm-6.col-md-3.col-xs-12
-                        div.panel.panel-body.main-card#gama-propia-grageados
-                            div.main-card-picture
-                                a(href="/gamaPropia/grageados")
-                                    img(src="/img/grageados2.png", style="width: 100%; height: 80%;").imagenCategoria.grageados
-                            div.main-card-content(style="word-wrap: break-word;")
-                                div.main-card-description
-                                    p.
-                                        Caramelos ideales para fiestas de cumpleaños.
-                    div.col-sm-6.col-md-3.col-xs-12
-                        div.panel.panel-body.main-card#gama-propia-conPalo
-                            div.main-card-picture
-                                a(href="/gamaPropia/conPalo")
-                                    img(src="/img/conPalo2.png", style="width: 100%; height: 100%;")
-                            div.main-card-content(style="word-wrap: break-word;")
-                                div.main-card-description
-                                    p.
-                                        Si prefieres los novedosos caramelos con palo ésta es tu sección.
+                            div.col-md-12.col-xs-12
+                                div.panel.panel-body
+                                    div.main-card-content
+                                        div.main-card-description
+                                            div.main-card-name
+                                                a(href="/gamaPropia")
+                                                    span.caramelo Gama propia
+                            div.col-sm-6.col-md-3.col-xs-12
+                                div.panel.panel-body.main-card#gama-propia-toffeesYMasticables
+                                    div.main-card-picture
+                                        a(href="/gamaPropia/toffeesYMasticables")
+                                            img(src="/img/toffessYMasticables2.png", style="width: 90%; height: 90%;").imagenCategoria
+                                    div.main-card-content(style="word-wrap: break-word;")
+                                        div.main-card-description
+                                            p.
+                                                Si te gustan los caramelos que se deshacen en la boca &eacute;stos son los tuyos.
+                            div.col-sm-6.col-md-3.col-xs-12
+                                div.panel.panel-body.main-card#gama-propia-duros
+                                    div.main-card-picture
+                                        a(href="/gamaPropia/duros")
+                                            img(src="/img/duros2.png", style="width: 100%; height: 85%;").imagenCategoria.duros
+                                    div.main-card-content(style="word-wrap: break-word;")
+                                        div.main-card-description
+                                            p.
+                                                Los caramelos de toda la vida.
+                            div.col-sm-6.col-md-3.col-xs-12
+                                div.panel.panel-body.main-card#gama-propia-grageados
+                                    div.main-card-picture
+                                        a(href="/gamaPropia/grageados")
+                                            img(src="/img/grageados2.png", style="width: 100%; height: 80%;").imagenCategoria.grageados
+                                    div.main-card-content(style="word-wrap: break-word;")
+                                        div.main-card-description
+                                            p.
+                                                Caramelos ideales para fiestas de cumpleaños.
+                            div.col-sm-6.col-md-3.col-xs-12
+                                div.panel.panel-body.main-card#gama-propia-conPalo
+                                    div.main-card-picture
+                                        a(href="/gamaPropia/conPalo")
+                                            img(src="/img/conPalo2.png", style="width: 100%; height: 100%;")
+                                    div.main-card-content(style="word-wrap: break-word;")
+                                        div.main-card-description
+                                            p.
+                                                Si prefieres los novedosos caramelos con palo ésta es tu sección.
 
 block scripts
     script(src='/js/jquery.js')
     script(src='/js/bootstrap.js')
+    script(src='/js/angular.js')
+    script(src='/js/angular/gamaPropia.js')

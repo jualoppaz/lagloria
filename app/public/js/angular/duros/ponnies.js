@@ -4,7 +4,19 @@ function mainController($scope, $http) {
     $scope.ponnies = {};
     $scope.loguedUser = {};
 
-    // Cuando se cargue la página, pide del API todas las excursiones
+    $scope.usuarioEstaLogueado = false;
+
+    $http.get('/api/user')
+        .success(function(data){
+            $scope.usuarioEstaLogueado = true;
+            $scope.loguedUser = data;
+        })
+        .error(function(data){
+            if(data == "not-loguedin-user"){
+                $scope.usuarioEstaLogueado = false;
+            }
+        });
+
     $http.get('/api/ponnies')
         .success(function(data) {
             if(data.message){

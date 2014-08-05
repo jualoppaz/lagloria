@@ -6,126 +6,82 @@ block head
 
 block content
     div#container
-        //header
-            nav.navbar.navbar-fixed-top.navbar-default.fondoTurquesa(role="navigation")
-                div.navbar-inner
-                    div.container-fluid
-                        div.navbar-header
-                            button.navbar-toggle.collapsed(type="button", data-toggle="collapse", data-target=".navbar-collapse")
-                                span.sr-only Cambiar la navegación
-                                span.icon-bar
-                                span.icon-bar
-                                span.icon-bar
-                            a(href="/").navbar-brand.white.middle Inicio
-                        div.collapse.navbar-collapse.fondoTurquesa(role="navigation")
-                            ul.nav.navbar-nav
-                                li
-                                    a(href="/gamaPropia") Gama propia
-                                li
-                                    a(href="#") Publicitarios
-                                li
-                                    a(href="#") Nosotros
-                                li
-                                    a(href="#") Contacto
-                                //li
-                                    div.input-group.navbar-input-group.fbSearch
-                                        form#search-form.navbar-form.navbar-left.hidden-xs.hidden-sm(role="search", method="get", action="#")
-                                            div.form-group
-                                                input.form-control.border-search.border-rect-red#srchterm(type="text", placeholder="Buscar...", name="srchterm")
-                                                span.input-group-btn-red.navbar-input-group-btn
-                                                    button.btn.btn-default(type="submit")
-                                                        i.fa.fa-search
-                                            div.suggest
-                                                ul
-                                                    li.header
-                                                        span.text Recipes
-                                                    li
-                                                        a(href="#")
-                                                            span.fa.fa-search
-                                                            span.text Search recipes
-                                                            span.category
-                                                    li.header
-                                                        span.text People
-                                                    li
-                                                        a(href="#")
-                                                            span.fa.fa-search
-                                                            span.text Search people
-                                                            span.category
 
-                            ul.nav.navbar-nav.navbar-right.hidden-xs
-                                a.btn.btn-default.btn-eathub-red(href="#", role="button")#entrar Entrar
-        include ../../navbar
+        div(ng-app="masticables")
+            div(ng-controller="mainController")
 
-        main.margen-superior-50
-            div.container(ng-app="masticables")
-                div.row(ng-controller="mainController")
-                    include ../../botonesMovil
+                include ../../navbar
 
-                    div.col-md-12.col-xs-12
-                        div.panel.panel-body
-                            div.main-card-content
-                                div.main-card-description
-                                    div.main-card-name
-                                        a(href="/gamaPropia")
-                                            span.caramelo Gama propia
-                                        b.abel.mayorQue >
-                                        a(href="../toffeesYMasticables")
-                                            span.caramelo Toffees y Masticables
-                                        b.abel.mayorQue >
+                main.margen-superior-50
+                    div.container
+                        div.row
+                            include ../../botonesMovil
+
+                            div.col-md-12.col-xs-12
+                                div.panel.panel-body
+                                    div.main-card-content
+                                        div.main-card-description
+                                            div.main-card-name
+                                                a(href="/gamaPropia")
+                                                    span.caramelo Gama propia
+                                                b.abel.mayorQue >
+                                                a(href="../toffeesYMasticables")
+                                                    span.caramelo Toffees y Masticables
+                                                b.abel.mayorQue >
+                                                a(href="#")
+                                                    span.caramelo Masticables
+                            div.col-md-6.col-sm-12.col-xs-12
+                                div.panel.panel-body.main-card#masticables
+                                    //div.main-card-picture
                                         a(href="#")
-                                            span.caramelo Masticables
-                    div.col-md-6.col-sm-12.col-xs-12
-                        div.panel.panel-body.main-card#masticables
-                            //div.main-card-picture
-                                a(href="#")
-                                    img(src="/img/toffessYMasticables.png", style="width: 100%; height: 100%;")
-                            div.main-card-content(style="word-wrap: break-word;")
-                                div.main-card-name
-                                    a.recipe-title(href="#")
-                                        span.caramelo Masticables
-                                div.main-card-description
-                                    p.
-                                        Aqu&iacute; encontrar&aacute;s todos los masticables de los que disponemos actualmente.
-                            //div.recipe-time
-                                span
-                                    i.fa.fa-bars
-                                span  M&aacute;s info
-                    div.col-md-6.col-sm-12.col-xs-12
-                        div.panel.panel-body(style="min-height: 124px")
-                            div.main-card-content
-                                div.main-card-name.col-md-12
-                                    div.col-md-4.reset-padding-left
-                                        a.recipe-title(href="#")
-                                            span.caramelo Buscar
-                                    div.col-md-6.col-xs-6(style="margin-top:7px")
-                                        input(type="text", placeholder="Introduzca un texto", ng-model="masticableSearch").form-control
-                    div(style="clear:both")
-                        div
-                            div(ng-repeat="masticable in masticables | filter:masticableSearch", style="text-align:center")
-                                div(ng-show="esSurtido(masticable)")
-                                    div.col-md-12.col-sm-12
-                                        div.panel.panel-body.panel-masticable
-                                            div(style="text-align:left;")
-                                                h1(style="margin-bottom:30px").modelo-masticable
-                                                    a(ng-href="masticables/{{masticable._id}}", ng-bind-template="{{$index + 1}}. {{masticable.model}}").green.hover-red
-                                            div.col-md-2
-                                                div(style="float:left; margin-right: 20px; width:100%; height: 260px").hidden-sm.hidden-xs
-                                                    img(ng-src="/img/imagenesMias/{{masticable.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
-                                                div(style="float:left; margin-right: 20px; width:100%; height: 260px").hidden-md.hidden-lg
-                                                    img(ng-src="/img/imagenesMias/{{masticable.image}}", height="100%", width="30%", style="margin-left: 10px; margin-bottom: 10px")
-                                            div.col-md-10
-                                                div.masticable-description
-                                                    h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{masticable.description}}").blue
-                                div(ng-show="!esSurtido(masticable)")
-                                    div.col-md-3.col-sm-6
-                                        div.panel.panel-body.panel-masticable
-                                            div(style="text-align:left")
-                                                h1(style="margin-bottom:30px").modelo-masticable
-                                                    a(ng-href="masticables/{{masticable._id}}", ng-bind-template="{{$index + 1}}. {{masticable.model}}").green.hover-red
-                                            div(style="margin-right: 20px; height: 100px; max-height: 200px;").margenInferior-30
-                                                img(ng-src="/img/imagenesMias/{{masticable.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
-                                            div.masticable-description
-                                                h3(style="text-align: justify; margin-top: 5px", ng-bind-template="{{masticable.description}}").blue
+                                            img(src="/img/toffessYMasticables.png", style="width: 100%; height: 100%;")
+                                    div.main-card-content(style="word-wrap: break-word;")
+                                        div.main-card-name
+                                            a.recipe-title(href="#")
+                                                span.caramelo Masticables
+                                        div.main-card-description
+                                            p.
+                                                Aqu&iacute; encontrar&aacute;s todos los masticables de los que disponemos actualmente.
+                                    //div.recipe-time
+                                        span
+                                            i.fa.fa-bars
+                                        span  M&aacute;s info
+                            div.col-md-6.col-sm-12.col-xs-12
+                                div.panel.panel-body(style="min-height: 124px")
+                                    div.main-card-content
+                                        div.main-card-name.col-md-12
+                                            div.col-md-4.reset-padding-left
+                                                a.recipe-title(href="#")
+                                                    span.caramelo Buscar
+                                            div.col-md-6.col-xs-6(style="margin-top:7px")
+                                                input(type="text", placeholder="Introduzca un texto", ng-model="masticableSearch").form-control
+                            div(style="clear:both")
+                                div
+                                    div(ng-repeat="masticable in masticables | filter:masticableSearch", style="text-align:center")
+                                        div(ng-show="esSurtido(masticable)")
+                                            div.col-md-12.col-sm-12
+                                                div.panel.panel-body.panel-masticable
+                                                    div(style="text-align:left;")
+                                                        h1(style="margin-bottom:30px").modelo-masticable
+                                                            a(ng-href="masticables/{{masticable._id}}", ng-bind-template="{{$index + 1}}. {{masticable.model}}").green.hover-red
+                                                    div.col-md-2
+                                                        div(style="float:left; margin-right: 20px; width:100%; height: 260px").hidden-sm.hidden-xs
+                                                            img(ng-src="/img/imagenesMias/{{masticable.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
+                                                        div(style="float:left; margin-right: 20px; width:100%; height: 260px").hidden-md.hidden-lg
+                                                            img(ng-src="/img/imagenesMias/{{masticable.image}}", height="100%", width="30%", style="margin-left: 10px; margin-bottom: 10px")
+                                                    div.col-md-10
+                                                        div.masticable-description
+                                                            h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{masticable.description}}").blue
+                                        div(ng-show="!esSurtido(masticable)")
+                                            div.col-md-3.col-sm-6
+                                                div.panel.panel-body.panel-masticable
+                                                    div(style="text-align:left")
+                                                        h1(style="margin-bottom:30px").modelo-masticable
+                                                            a(ng-href="masticables/{{masticable._id}}", ng-bind-template="{{$index + 1}}. {{masticable.model}}").green.hover-red
+                                                    div(style="margin-right: 20px; height: 100px; max-height: 200px;").margenInferior-30
+                                                        img(ng-src="/img/imagenesMias/{{masticable.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
+                                                    div.masticable-description
+                                                        h3(style="text-align: justify; margin-top: 5px", ng-bind-template="{{masticable.description}}").blue
 
 
 

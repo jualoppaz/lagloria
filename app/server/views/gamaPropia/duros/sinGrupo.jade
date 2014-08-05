@@ -6,174 +6,130 @@ block head
 
 block content
     div#container
-        //header
-            nav.navbar.navbar-fixed-top.navbar-default.fondoTurquesa(role="navigation")
-                div.navbar-inner
-                    div.container-fluid
-                        div.navbar-header
-                            button.navbar-toggle.collapsed(type="button", data-toggle="collapse", data-target=".navbar-collapse")
-                                span.sr-only Cambiar la navegación
-                                span.icon-bar
-                                span.icon-bar
-                                span.icon-bar
-                            a(href="/").navbar-brand.white.middle Inicio
-                        div.collapse.navbar-collapse.fondoTurquesa(role="navigation")
-                            ul.nav.navbar-nav
-                                li
-                                    a(href="/gamaPropia") Gama propia
-                                li
-                                    a(href="#") Publicitarios
-                                li
-                                    a(href="#") Nosotros
-                                li
-                                    a(href="#") Contacto
-                                //li
-                                    div.input-group.navbar-input-group.fbSearch
-                                        form#search-form.navbar-form.navbar-left.hidden-xs.hidden-sm(role="search", method="get", action="#")
-                                            div.form-group
-                                                input.form-control.border-search.border-rect-red#srchterm(type="text", placeholder="Buscar...", name="srchterm")
-                                                span.input-group-btn-red.navbar-input-group-btn
-                                                    button.btn.btn-default(type="submit")
-                                                        i.fa.fa-search
-                                            div.suggest
-                                                ul
-                                                    li.header
-                                                        span.text Recipes
-                                                    li
-                                                        a(href="#")
-                                                            span.fa.fa-search
-                                                            span.text Search recipes
-                                                            span.category
-                                                    li.header
-                                                        span.text People
-                                                    li
-                                                        a(href="#")
-                                                            span.fa.fa-search
-                                                            span.text Search people
-                                                            span.category
 
-                            ul.nav.navbar-nav.navbar-right.hidden-xs
-                                a.btn.btn-default.btn-eathub-red(href="#", role="button")#entrar Entrar
-        include ../../navbar
+        div(ng-app="sinGrupo")
+            div(ng-controller="mainController")
 
-        main.margen-superior-50
-            div.container(ng-app="sinGrupo")
-                div.row(ng-controller="mainController")
-                    include ../../botonesMovil
+                include ../../navbar
 
-                    div.col-md-12.col-xs-12
-                        div.panel.panel-body
-                            div.main-card-content
-                                div.main-card-description
-                                    div.main-card-name
-                                        a(href="/gamaPropia")
-                                            span.caramelo Gama propia
-                                        b.abel.mayorQue >
-                                        a(href="../duros")
-                                            span.caramelo Duros
-                                        b.abel.mayorQue >
-                                        a(href="#")
-                                            span.caramelo Sin grupo
+                main.margen-superior-50
+                    div.container(ng-app="sinGrupo")
+                        div.row(ng-controller="mainController")
+                            include ../../botonesMovil
 
-                    //Este col es con la tarjeta unificada para el modelo y la caja de busqueda
+                            div.col-md-12.col-xs-12
+                                div.panel.panel-body
+                                    div.main-card-content
+                                        div.main-card-description
+                                            div.main-card-name
+                                                a(href="/gamaPropia")
+                                                    span.caramelo Gama propia
+                                                b.abel.mayorQue >
+                                                a(href="../duros")
+                                                    span.caramelo Duros
+                                                b.abel.mayorQue >
+                                                a(href="#")
+                                                    span.caramelo Sin grupo
 
-                    //TARJETAS SEPARADAS
+                            //Este col es con la tarjeta unificada para el modelo y la caja de busqueda
 
-                    //div.col-md-12
-                        div.panel.panel-body
-                            div.col-md-6.col-sm-12(style="padding-left:0px")
-                                div.main-card#crystals
+                            //TARJETAS SEPARADAS
+
+                            //div.col-md-12
+                                div.panel.panel-body
+                                    div.col-md-6.col-sm-12(style="padding-left:0px")
+                                        div.main-card#crystals
+                                            //div.main-card-picture
+                                                a(href="#")
+                                                    img(src="/img/toffessYMasticables.png", style="width: 100%; height: 100%;")
+                                            div.main-card-content(style="word-wrap: break-word;")
+                                                div.main-card-name
+                                                    a.recipe-title(href="#")
+                                                        span.caramelo Crystals
+                                                div.main-card-description
+                                                    p.
+                                                        Aqu&iacute; encontrar&aacute;s todos los crystals de los que disponemos actualmente.
+                                            //div.recipe-time
+                                                span
+                                                    i.fa.fa-bars
+                                                span  M&aacute;s info
+                                    div.col-md-6.col-sm-12(style="padding-left:0px")
+                                        div.main-card#crystals(style="min-height: 124px")
+                                            div.main-card-content
+                                                div.main-card-name
+                                                    div(style="float:left")
+                                                        a.recipe-title(href="#")
+                                                            span.caramelo Buscar
+                                                    div(style="margin-top:7px; float:left; margin-left: 20px; margin-top: 10px;")
+                                                        input(type="text", placeholder="Introduzca un texto", ng-model="crystalSearch").form-control
+
+                            //Esta version tiene el modelo y la caja de busqueda separados
+
+                            div.col-md-6.col-sm-12.col-xs-12
+                                div.panel.panel-body.main-card#sinGrupo
                                     //div.main-card-picture
                                         a(href="#")
                                             img(src="/img/toffessYMasticables.png", style="width: 100%; height: 100%;")
                                     div.main-card-content(style="word-wrap: break-word;")
                                         div.main-card-name
                                             a.recipe-title(href="#")
-                                                span.caramelo Crystals
+                                                span.caramelo Sin grupo
                                         div.main-card-description
                                             p.
-                                                Aqu&iacute; encontrar&aacute;s todos los crystals de los que disponemos actualmente.
+                                                Aqu&iacute; encontrar&aacute;s todos los caramelos sin grupo de los que disponemos actualmente.
                                     //div.recipe-time
                                         span
                                             i.fa.fa-bars
                                         span  M&aacute;s info
-                            div.col-md-6.col-sm-12(style="padding-left:0px")
-                                div.main-card#crystals(style="min-height: 124px")
+                            div.col-md-6.col-sm-12.col-xs-12
+                                div.panel.panel-body(style="min-height: 124px")
                                     div.main-card-content
-                                        div.main-card-name
-                                            div(style="float:left")
+                                        div.main-card-name.col-md-12
+                                            div.col-md-4.reset-padding-left
                                                 a.recipe-title(href="#")
                                                     span.caramelo Buscar
-                                            div(style="margin-top:7px; float:left; margin-left: 20px; margin-top: 10px;")
-                                                input(type="text", placeholder="Introduzca un texto", ng-model="crystalSearch").form-control
-
-                    //Esta version tiene el modelo y la caja de busqueda separados
-
-                    div.col-md-6.col-sm-12.col-xs-12
-                        div.panel.panel-body.main-card#sinGrupo
-                            //div.main-card-picture
-                                a(href="#")
-                                    img(src="/img/toffessYMasticables.png", style="width: 100%; height: 100%;")
-                            div.main-card-content(style="word-wrap: break-word;")
-                                div.main-card-name
-                                    a.recipe-title(href="#")
-                                        span.caramelo Sin grupo
-                                div.main-card-description
-                                    p.
-                                        Aqu&iacute; encontrar&aacute;s todos los caramelos sin grupo de los que disponemos actualmente.
-                            //div.recipe-time
-                                span
-                                    i.fa.fa-bars
-                                span  M&aacute;s info
-                    div.col-md-6.col-sm-12.col-xs-12
-                        div.panel.panel-body(style="min-height: 124px")
-                            div.main-card-content
-                                div.main-card-name.col-md-12
-                                    div.col-md-4.reset-padding-left
-                                        a.recipe-title(href="#")
-                                            span.caramelo Buscar
-                                    div.col-md-6.col-xs-6(style="margin-top:7px")
-                                        input(type="text", placeholder="Introduzca un texto", ng-model="sinGrupoSearch").form-control
+                                            div.col-md-6.col-xs-6(style="margin-top:7px")
+                                                input(type="text", placeholder="Introduzca un texto", ng-model="sinGrupoSearch").form-control
 
 
-                    div(style="clear:both")
-                        div
-                            div(ng-repeat="sinGrupo in sinGrupos | filter:sinGrupoSearch", style="text-align:center")
-                                //div(ng-show="esSurtido(duro)")
-                                    div.col-md-12.col-sm-12
-                                        div.panel.panel-body.panel-duro
-                                            div(style="text-align:left;")
-                                                h1(style="margin-bottom:30px").modelo-duro
-                                                    a(ng-href="duros/{{duro._id}}", ng-bind-template="{{$index + 1}}. {{duro.model}}").green.hover-red
-                                            div.col-md-2
-                                                div(style="float:left; margin-right: 20px; width:100%; height: 260px").hidden-sm
-                                                    img(ng-src="/img/imagenesMias/{{duro.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
-                                                div(style="float:left; margin-right: 20px; width:100%; height: 260px").hidden-md.hidden-lg
-                                                    img(ng-src="/img/imagenesMias/{{duro.image}}", height="100%", width="30%", style="margin-left: 10px; margin-bottom: 10px")
-                                            div.col-md-10
-                                                div(style="margin-left: 15px;").duro-description
-                                                    h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{duro.description}}").blue
-                                //div(ng-show="!esSurtido(duro)")
-                                    div.col-md-3.col-sm-6
-                                        div.panel.panel-body.panel-duro
-                                            div(style="text-align:left")
-                                                h1(style="margin-bottom:30px").modelo-duro
-                                                    a(ng-href="duros/{{duro._id}}", ng-bind-template="{{$index + 1}}. {{duro.model}}").green.hover-red
-                                            div(style="margin-right: 20px; height: 100px; max-height: 200px;").margenInferior-30
-                                                img(ng-src="/img/imagenesMias/{{duro.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
-                                            div.duro-description
-                                                h3(style="text-align: justify; margin-top: 5px", ng-bind-template="{{duro.description}}").blue
-                                div.col-md-3.col-sm-6
-                                    div.panel.panel-body.panel-sinGrupo
-                                        div(style="text-align:left")
-                                            h1(style="margin-bottom:30px").modelo-sinGrupo
-                                                a(ng-href="sinGrupo/{{sinGrupo._id}}", ng-bind-template="{{$index + 1}}. {{sinGrupo.model}}").green.hover-red
-                                        div.col-md-12
-                                            div(style="margin-right: 20px; height: 100px; max-height: 200px;").margenInferior-30
-                                                img(ng-src="/img/imagenesMias/{{sinGrupo.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
-                                        div.col-md-12
-                                            div.sinGrupo-description
-                                                h3(style="text-align: justify; margin-top: 5px", ng-bind-template="{{sinGrupo.description}}").blue
+                            div(style="clear:both")
+                                div
+                                    div(ng-repeat="sinGrupo in sinGrupos | filter:sinGrupoSearch", style="text-align:center")
+                                        //div(ng-show="esSurtido(duro)")
+                                            div.col-md-12.col-sm-12
+                                                div.panel.panel-body.panel-duro
+                                                    div(style="text-align:left;")
+                                                        h1(style="margin-bottom:30px").modelo-duro
+                                                            a(ng-href="duros/{{duro._id}}", ng-bind-template="{{$index + 1}}. {{duro.model}}").green.hover-red
+                                                    div.col-md-2
+                                                        div(style="float:left; margin-right: 20px; width:100%; height: 260px").hidden-sm
+                                                            img(ng-src="/img/imagenesMias/{{duro.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
+                                                        div(style="float:left; margin-right: 20px; width:100%; height: 260px").hidden-md.hidden-lg
+                                                            img(ng-src="/img/imagenesMias/{{duro.image}}", height="100%", width="30%", style="margin-left: 10px; margin-bottom: 10px")
+                                                    div.col-md-10
+                                                        div(style="margin-left: 15px;").duro-description
+                                                            h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{duro.description}}").blue
+                                        //div(ng-show="!esSurtido(duro)")
+                                            div.col-md-3.col-sm-6
+                                                div.panel.panel-body.panel-duro
+                                                    div(style="text-align:left")
+                                                        h1(style="margin-bottom:30px").modelo-duro
+                                                            a(ng-href="duros/{{duro._id}}", ng-bind-template="{{$index + 1}}. {{duro.model}}").green.hover-red
+                                                    div(style="margin-right: 20px; height: 100px; max-height: 200px;").margenInferior-30
+                                                        img(ng-src="/img/imagenesMias/{{duro.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
+                                                    div.duro-description
+                                                        h3(style="text-align: justify; margin-top: 5px", ng-bind-template="{{duro.description}}").blue
+                                        div.col-md-3.col-sm-6
+                                            div.panel.panel-body.panel-sinGrupo
+                                                div(style="text-align:left")
+                                                    h1(style="margin-bottom:30px").modelo-sinGrupo
+                                                        a(ng-href="sinGrupo/{{sinGrupo._id}}", ng-bind-template="{{$index + 1}}. {{sinGrupo.model}}").green.hover-red
+                                                div.col-md-12
+                                                    div(style="margin-right: 20px; height: 100px; max-height: 200px;").margenInferior-30
+                                                        img(ng-src="/img/imagenesMias/{{sinGrupo.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
+                                                div.col-md-12
+                                                    div.sinGrupo-description
+                                                        h3(style="text-align: justify; margin-top: 5px", ng-bind-template="{{sinGrupo.description}}").blue
 
 
 block scripts

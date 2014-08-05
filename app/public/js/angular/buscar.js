@@ -4,6 +4,19 @@ function mainController($scope, $http) {
     $scope.caramelos = {};
     $scope.loguedUser = {};
 
+    $scope.usuarioEstaLogueado = false;
+
+    $http.get('/api/user')
+        .success(function(data){
+            $scope.usuarioEstaLogueado = true;
+            $scope.loguedUser = data;
+        })
+        .error(function(data){
+            if(data == "not-loguedin-user"){
+                $scope.usuarioEstaLogueado = false;
+            }
+        });
+
     $scope.seccionSeleccionada = {name:'Toda la web'};
     $scope.criterioSeleccionado = {name: 'Nombre'};
     $scope.categoriaSeleccionada = {name: '---'};

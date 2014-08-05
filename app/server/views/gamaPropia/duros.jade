@@ -6,136 +6,67 @@ block head
 
 block content
     div#container
-        //header
-            nav.navbar.navbar-fixed-top.navbar-default.fondoTurquesa(role="navigation")
-                div.navbar-inner
-                    div.container-fluid
-                        div.navbar-header
-                            button.navbar-toggle.collapsed(type="button", data-toggle="collapse", data-target=".navbar-collapse")
-                                span.sr-only Cambiar la navegación
-                                span.icon-bar
-                                span.icon-bar
-                                span.icon-bar
-                            a(href="/").navbar-brand.white.middle Inicio
-                        div.collapse.navbar-collapse.fondoTurquesa(role="navigation")
-                            ul.nav.navbar-nav
-                                li
-                                    a(href="/gamaPropia") Gama propia
-                                li
-                                    a(href="#") Publicitarios
-                                li
-                                    a(href="#") Nosotros
-                                li
-                                    a(href="#") Contacto
-                                //li
-                                    div.input-group.navbar-input-group.fbSearch
-                                        form#search-form.navbar-form.navbar-left.hidden-xs.hidden-sm(role="search", method="get", action="#")
-                                            div.form-group
-                                                input.form-control.border-search.border-rect-red#srchterm(type="text", placeholder="Buscar...", name="srchterm")
-                                                span.input-group-btn-red.navbar-input-group-btn
-                                                    button.btn.btn-default(type="submit")
-                                                        i.fa.fa-search
-                                            div.suggest
-                                                ul
-                                                    li.header
-                                                        span.text Recipes
-                                                    li
-                                                        a(href="#")
-                                                            span.fa.fa-search
-                                                            span.text Search recipes
-                                                            span.category
-                                                    li.header
-                                                        span.text People
-                                                    li
-                                                        a(href="#")
-                                                            span.fa.fa-search
-                                                            span.text Search people
-                                                            span.category
 
-                            ul.nav.navbar-nav.navbar-right.hidden-xs
-                                a.btn.btn-default.btn-eathub-red(href="#", role="button")#entrar Entrar
-        include ../navbar
+        div(ng-app="duros")
+            div(ng-controller="mainController")
 
-        main.margen-superior-50
-            div.container
-                div.row
-                    include ../botonesMovil
+                include ../navbar
 
-                    div.col-md-12.col-xs-12
-                        div.panel.panel-body
-                            div.main-card-content
-                                div.main-card-description
-                                    div.main-card-name
-                                        a(href="/gamaPropia")
-                                            span.caramelo Gama propia
-                                        b.abel.mayorQue >
-                                        a(href="#")
-                                            span.caramelo Duros
-                    div.col-sm-6.col-md-6.col-xs-12
-                        div.panel.panel-body.main-card#crystals
-                            //div.main-card-picture
-                                a(href="#")
-                                    img(src="/img/toffessYMasticables.png", style="width: 100%; height: 100%;")
-                            div.main-card-content(style="word-wrap: break-word;")
-                                div.main-card-name
-                                    a.recipe-title(href="duros/crystal")
-                                        span.caramelo Crystal
-                                div.main-card-description
-                                    p.
-                                        Una delicia para el paladar.
-                            //div.recipe-time
-                                span
-                                    i.fa.fa-bars
-                                span  M&aacute;s info
-                    div.col-sm-6.col-md-6.col-xs-12
-                        div.panel.panel-body.main-card#glorias
-                            //div.main-card-picture
-                                a(href="#")
-                                    img(src="/img/duros.png", style="width: 100%; height: 100%;")
-                            div.main-card-content(style="word-wrap: break-word;")
-                                div.main-card-name
-                                    a.recipe-title(href="duros/gloria")
-                                        span.caramelo Gloria
-                                div.main-card-description
-                                    p.
-                                        Los caramelos que mejor identifican a la empresa.
-                            //div.recipe-time
-                                span
-                                    i.fa.fa-bars
-                                span  M&aacute;s info
-                    div.col-sm-6.col-md-6.col-xs-12
-                        div.panel.panel-body.main-card#ponnies
-                            //div.main-card-picture
-                                a(href="#")
-                                    img(src="/img/duros.png", style="width: 100%; height: 100%;")
-                            div.main-card-content(style="word-wrap: break-word;")
-                                div.main-card-name
-                                    a.recipe-title(href="duros/ponny")
-                                        span.caramelo Ponny
-                                div.main-card-description
-                                    p.
-                                        Caramelos ideales para los más pequeños.
-                            //div.recipe-time
-                                span
-                                    i.fa.fa-bars
-                                span  M&aacute;s info
-                    div.col-sm-6.col-md-6.col-xs-12
-                        div.panel.panel-body.main-card#sinGrupo
-                            //div.main-card-picture
-                                a(href="#")
-                                    img(src="/img/duros.png", style="width: 100%; height: 100%;")
-                            div.main-card-content(style="word-wrap: break-word;")
-                                div.main-card-name
-                                    a.recipe-title(href="duros/sinGrupo")
-                                        span.caramelo Sin grupo
-                                div.main-card-description
-                                    p.
-                                        Si no te ha convencido ninguno, seguro que éstos lo harán.
-                            //div.recipe-time
-                                span
-                                    i.fa.fa-bars
-                                span  M&aacute;s info
+                main.margen-superior-50
+                    div.container
+                        div.row
+                            include ../botonesMovil
+
+                            div.col-md-12.col-xs-12
+                                div.panel.panel-body
+                                    div.main-card-content
+                                        div.main-card-description
+                                            div.main-card-name
+                                                a(href="/gamaPropia")
+                                                    span.caramelo Gama propia
+                                                b.abel.mayorQue >
+                                                a(href="#")
+                                                    span.caramelo Duros
+                            div.col-sm-6.col-md-6.col-xs-12
+                                div.panel.panel-body.main-card#crystals
+                                    div.main-card-content(style="word-wrap: break-word;")
+                                        div.main-card-name
+                                            a.recipe-title(href="duros/crystal")
+                                                span.caramelo Crystal
+                                        div.main-card-description
+                                            p.
+                                                Una delicia para el paladar.
+                            div.col-sm-6.col-md-6.col-xs-12
+                                div.panel.panel-body.main-card#glorias
+                                    div.main-card-content(style="word-wrap: break-word;")
+                                        div.main-card-name
+                                            a.recipe-title(href="duros/gloria")
+                                                span.caramelo Gloria
+                                        div.main-card-description
+                                            p.
+                                                Los caramelos que mejor identifican a la empresa.
+                            div.col-sm-6.col-md-6.col-xs-12
+                                div.panel.panel-body.main-card#ponnies
+                                    div.main-card-content(style="word-wrap: break-word;")
+                                        div.main-card-name
+                                            a.recipe-title(href="duros/ponny")
+                                                span.caramelo Ponny
+                                        div.main-card-description
+                                            p.
+                                                Caramelos ideales para los más pequeños.
+
+                            div.col-sm-6.col-md-6.col-xs-12
+                                div.panel.panel-body.main-card#sinGrupo
+                                    div.main-card-content(style="word-wrap: break-word;")
+                                        div.main-card-name
+                                            a.recipe-title(href="duros/sinGrupo")
+                                                span.caramelo Sin grupo
+                                        div.main-card-description
+                                            p.
+                                                Si no te ha convencido ninguno, seguro que éstos lo harán.
 
 block scripts
     script(src='/js/jquery.js')
     script(src='/js/bootstrap.js')
+    script(src='/js/angular.js')
+    script(src='/js/angular/duros.js')
