@@ -17,6 +17,19 @@ function mainController($scope, $http) {
             }
         });
 
+    $scope.cerrarSesion = function(){
+        $http.get('/api/logout')
+            .success(function(data){
+                if(data == "ok"){
+                    alert("Ha cerrado sesión correctamente");
+                    $scope.usuarioEstaLogueado = false;
+                }
+            })
+            .error(function(data){
+
+            });
+    }
+
     $http.get('/api/sinGrupo')
         .success(function(data) {
             if(data.message){

@@ -49,6 +49,6 @@ header
                             a(href="/buscar") Buscar
                                 i.fa.fa-search(style="margin-left:15px")
                         li(ng-show="usuarioEstaLogueado == true")
-                            a.btn.btn-default.btn-eathub-red(href="/logout", role="button")#entrar Cerrar sesión
+                            a.btn.btn-default.btn-eathub-red(href="#", role="button", ng-click="cerrarSesion()")#entrar Cerrar sesión
                         li(ng-show="usuarioEstaLogueado == false")
                             a.btn.btn-default.btn-eathub-red(href="/login", role="button")#entrar Entrar

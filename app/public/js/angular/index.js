@@ -16,4 +16,19 @@ function mainController($scope, $http){
                 $scope.usuarioEstaLogueado = false;
             }
         });
+
+    // Llamada AJAX para cerrar sesion
+
+    $scope.cerrarSesion = function(){
+        $http.get('/api/logout')
+            .success(function(data){
+                if(data == "ok"){
+                    alert("Ha cerrado sesión correctamente");
+                    $scope.usuarioEstaLogueado = false;
+                }
+            })
+            .error(function(data){
+
+            });
+    }
 }

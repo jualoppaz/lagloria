@@ -4,6 +4,7 @@ function mainController($scope, $http) {
     $scope.loguedUser = {};
     $scope.usuarioEstaLogueado = false;
 
+    /*
     $http.get('/api/user')
         .success(function(data){
             $scope.usuarioEstaLogueado = true;
@@ -13,7 +14,7 @@ function mainController($scope, $http) {
             if(data == "not-loguedin-user"){
                 $scope.usuarioEstaLogueado = false;
             }
-        });
+        });*/
 
 
     $scope.form = {};
@@ -38,7 +39,14 @@ function mainController($scope, $http) {
             $http.post('/api/login', $scope.form)
                 .success(function(data){
                     alert("Login correcto: \n" + "Usuario: " + data.user + "\nPass: " + data.pass);
-                    window.location.href = "/";
+                    $http.get('/api/lastURL')
+                        .success(function(data){
+                            window.location.href = data;
+                        })
+                        .error(function(data){
+
+                        })
+                    //window.location.href = "/";
                 })
                 .error(function(data){
                     alert(data);

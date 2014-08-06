@@ -13,92 +13,114 @@ module.exports = function(app){
     // Barra principal
 
     app.get('/', function(req, res) {
-       res.render('index');
+        funcionesComunes(req);
+        res.render('index');
     });
 
     app.get('/gamaPropia', function(req, res) {
-       res.render('gamaPropia');
+        funcionesComunes(req);
+        res.render('gamaPropia');
     });
 
     app.get('/gamaPropia2', function(req, res) {
+        funcionesComunes(req);
         res.render('gamaPropia2');
     });
 
     // Gama propia
 
     app.get('/gamaPropia/toffeesYMasticables', function(req, res) {
+        funcionesComunes(req);
         res.render('gamaPropia/toffeesYMasticables');
     });
 
     app.get('/gamaPropia/toffeesYMasticables/toffees', function(req, res) {
+        funcionesComunes(req);
         res.render('gamaPropia/toffeesYMasticables/toffees');
     });
 
     app.get('/gamaPropia/toffeesYMasticables/toffees/:id', function(req, res) {
+        funcionesComunes(req);
         res.render('gamaPropia/toffeesYMasticables/toffees/infoToffee');
     });
 
     app.get('/gamaPropia/toffeesYMasticables/masticables', function(req, res) {
+        actualizarUltimaPagina(req);
         res.render('gamaPropia/toffeesYMasticables/masticables');
     });
 
     app.get('/gamaPropia/toffeesYMasticables/masticables/:id', function(req, res) {
+        funcionesComunes(req);
         res.render('gamaPropia/toffeesYMasticables/masticables/infoMasticable');
     });
 
     app.get('/gamaPropia/duros', function(req, res) {
+        funcionesComunes(req);
         res.render('gamaPropia/duros');
     });
 
     app.get('/gamaPropia/duros/crystal', function(req, res) {
+        funcionesComunes(req);
         res.render('gamaPropia/duros/crystals');
     });
 
     app.get('/gamaPropia/duros/crystal/:id', function(req, res) {
+        funcionesComunes(req);
         res.render('gamaPropia/duros/crystals/infoCrystal');
     });
 
     app.get('/gamaPropia/duros/gloria', function(req, res) {
+        funcionesComunes(req);
         res.render('gamaPropia/duros/glorias');
     });
 
     app.get('/gamaPropia/duros/gloria/:id', function(req, res) {
+        funcionesComunes(req);
         res.render('gamaPropia/duros/glorias/infoGloria');
     });
 
     app.get('/gamaPropia/duros/ponny', function(req, res) {
+        funcionesComunes(req);
         res.render('gamaPropia/duros/ponnies');
     });
 
     app.get('/gamaPropia/duros/ponny/:id', function(req, res) {
+        funcionesComunes(req);
         res.render('gamaPropia/duros/ponnies/infoPonny');
     });
 
     app.get('/gamaPropia/duros/sinGrupo', function(req, res) {
+        funcionesComunes(req);
         res.render('gamaPropia/duros/sinGrupo');
     });
 
     app.get('/gamaPropia/duros/sinGrupo/:id', function(req, res) {
+        funcionesComunes(req);
         res.render('gamaPropia/duros/sinGrupo/infoSinGrupo');
     });
 
     app.get('/gamaPropia/grageados', function(req, res) {
+        funcionesComunes(req);
         res.render('gamaPropia/grageados');
     });
 
     app.get('/gamaPropia/grageados/:id', function(req, res) {
+        funcionesComunes(req);
         res.render('gamaPropia/grageados/infoGrageados');
     });
 
     app.get('/gamaPropia/conPalo', function(req, res) {
+        funcionesComunes(req);
         res.render('gamaPropia/conPalo');
     });
 
     app.get('/gamaPropia/conPalo/:id', function(req, res) {
+        funcionesComunes(req);
         res.render('gamaPropia/conPalo/infoConPalo');
     });
 
     app.get('/buscar', function(req, res) {
+        funcionesComunes(req);
         res.render('buscar');
     });
 
@@ -298,6 +320,21 @@ module.exports = function(app){
         });
     });
 
+    // Cierre de sesion
+
+    app.get('/api/logout', function(req, res){
+        res.clearCookie('user');
+        res.clearCookie('pass');
+        req.session.destroy(function(e){
+            res.send('ok', 200);
+        });
+    });
+
+    app.get('/api/lastURL', function(req, res){
+        res.send(req.session.ultimaPagina, 200);
+    })
+
+
     // Registrarse como nuevo usuario
 
     app.post('/api/signup', function(req, res){
@@ -332,6 +369,19 @@ module.exports = function(app){
             res.send(JSON.stringify(data), 200);
         }
     });
+
+    var actualizarUltimaPagina = function(req){
+        // El if se podria omitir, pero lo dejamos para tener un mayor control
+
+        console.log("Ruta previa: " + req.path);
+        if(req.path.indexOf("api") == -1 && req.path.indexOf("login") == -1){
+            req.session.ultimaPagina = req.path;
+        }
+    };
+
+    var funcionesComunes = function(req){
+        actualizarUltimaPagina(req);
+    };
 
     app.get('*', function(req, res) {
         res.render('index');
