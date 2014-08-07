@@ -16532,6 +16532,11 @@ function numberInputType(scope, element, attr, ctrl, $sniffer, $browser) {
   }
 
   ctrl.$formatters.push(function(value) {
+    /*If anadido de GitHub*/
+    // Convert string model to number, if the result is not NaN
+    if (isString(value) && !isNaN(value)) {
+        value = Number(value);
+    }
     return validate(ctrl, 'number', ctrl.$isEmpty(value) || isNumber(value), value);
   });
 }

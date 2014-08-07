@@ -132,6 +132,10 @@ module.exports = function(app){
         res.render('signup');
     });
 
+    app.get('/carrito', function(req, res){
+        res.render('carrito');
+    });
+
     app.get('/webAntigua/blandos', function(req, res) {
         res.sendfile('app/server/views/webAntigua/blandos.html');
     });
@@ -367,6 +371,92 @@ module.exports = function(app){
                 name : req.session.user.name
             };
             res.send(JSON.stringify(data), 200);
+        }
+    });
+
+    // Carrito de la compra
+
+    app.get('/api/shoppingCart', function(req, res){
+        var productos = req.session.shoppingCartProducts;
+        var json = [{}];
+        for(i=0;i<productos.length;i++){
+            json[i] = productos[i];
+        }
+        console.log(JSON.stringify(json));
+        res.send(json, 200);
+    });
+
+    // Comprar producto
+
+    app.post('/api/shoppingCart', function(req, res){
+        var id = req.body.id;
+        var category = req.body.category;
+        var type = req.body.type;
+
+        DBM.getProductByCategoryTypeAndId(type, id, function(err, query){
+            /*if(!req.session.shoppingCart){ // El carrito aún no se ha creado
+
+            }*/
+            var productos = req.session.shoppingCartProducts;
+            var productoDuplicado = false;
+
+            console.log("Resultado de la busqueda: " + JSON.stringify(query));
+
+            if(productos == undefined){ // El carrito esta vacio
+                console.log("El carrito esta vacio.");
+                req.session.shoppingCartProducts = [];
+                req.session.shoppingCartProducts[0] = query[0];
+                res.send(query[0], 200);
+            }else{ // Ya hay productos en el carrito
+                console.log("El carrito tiene productos.");
+                for(i=0;i<productos.length;i++){// Comprobamos si el producto a añadir ya estaba en el carrito
+                    if(productos[i]._id == id){
+                        productoDuplicado = true;
+                    }
+                }
+                if(productoDuplicado){
+                    console.log("El producto ya estaba en el carrito.");
+                    res.send("product-already-exists", 400);
+                }else{
+                    console.log("Añadimos el producto al carrito.");
+                    req.session.shoppingCartProducts[req.session.shoppingCartProducts.length] = query[0];
+
+                    res.send(query[0], 200);
+                }
+            }
+        });
+    });
+
+    app.put('/api/shoppingCart', function(req, res){
+        var productos = req.body.productos;
+
+        var validado = true;
+
+        for(i=0;i<req.session.shoppingCartProducts.length;i++){
+            if(req.session.shoppingCartProducts[i].minimumOrder > productos[i].quantity){
+                validado = false;
+            }
+        }
+
+        if(validado){
+            console.log("Validado correctamente.");
+
+            req.session.shoppingCartProducts = [];
+            for(i=0;i<productos.length;i++){
+                try{
+                    if(req.session.shoppingCartProducts[i].quantity){
+                        console.log("Cantidad anterior: " + req.session.shoppingCartProducts[i].quantity);
+                    }
+                }catch(Exception){
+                    console.log(Exception);
+                }
+
+                console.log("Cantidad posterior: " + productos[i].quantity);
+                req.session.shoppingCartProducts[i] = productos[i];
+            }
+            res.send("saved", 200);
+        }else{
+            res.send("error", 400);
         }
     });
 

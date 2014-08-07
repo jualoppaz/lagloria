@@ -1,0 +1,82 @@
+extends layout
+
+block head
+    title Login
+    link(rel="stylesheet", href="/css/backgroundImage.css")
+
+block content
+    div#container.fondoCaramelos
+
+        div(ng-app="carrito")
+            div(ng-controller="mainController")
+                include navbar
+
+                main
+                    div.container
+                        //div.row
+                            //div.col-md-4.col-md-offset-4.col-sm-6.col-sm-offset-3.col-xs-8.col-xs-offset-2
+                                img(src="/img/logoblanco.png", style="width:100%; height: 100%")
+                    div.col-md-12.col-sm-12.col-xs-12(style="clear:both; margin-top:50px; margin-left:0px")
+                        div.panel.panel-body.main-card(style="height: auto")
+                            div.main-card-content(style="word-wrap: break-word;")
+                                div.main-card-name
+                                    p.recipe-title(style="text-align:center; padding-left: 0px")
+                                        span Carrito
+                                //div.col-md-12.col-sm-12
+                                    ul(ng-repeat="producto in productos")
+                                        li(ng-bind-template="{{producto.category}}, {{producto.type}}, {{producto.model}}")
+                                div.col-md-12.col-sm-12
+                                    table.table
+                                        thead
+                                            tr
+                                                th Número
+                                                th Categoría
+                                                th Tipo
+                                                th Modelo
+                                                th Precio / Kg
+                                                th Cantidad
+                                                th Precio por producto
+                                        tbody(ng-repeat="producto in productos")
+                                            tr
+                                                td(ng-bind-template="{{$index + 1}}")
+                                                td(ng-bind-template="{{producto.category}}")
+                                                td(ng-bind-template="{{producto.type}}")
+                                                td(ng-bind-template="{{producto.model}}")
+                                                td(ng-bind-template="{{producto.price}} €")
+                                                //td
+                                                    input(type="number", ng-model="producto.quantity", ng-init="producto.quantity = producto.minimumOrder", min="{{producto.minimumOrder}}", ng-change="actualizarPrecios(producto)")
+                                                //td
+                                                    input(type="number", ng-model="producto.total", ng-init="precioSubTotal = producto.quantity * producto.price", disabled)
+                                                td
+                                                    div
+                                                        label(style="font-weight: normal", ng-model="producto.quantity", ng-init="producto.quantity = producto.quantity || producto.minimumOrder", min="{{producto.minimumOrder}}", ng-change="actualizarPrecios(producto)", ng-bind-template="{{producto.quantity}} uds.")
+                                                        a(href="#", style="margin-left:15px", ng-click="aumentarCantidad(producto)")
+                                                            i.fa.fa-plus-circle.green
+                                                        a(href="#", style="margin-left: 10px", ng-click="reducirCantidad(producto)")
+                                                            i.fa.fa-minus-circle.red
+                                                td
+                                                    div(ng-model="producto.total", ng-init="producto.total = producto.quantity * producto.price", disabled, ng-bind-template="{{producto.total}} €")
+
+                                        tbody
+                                            tr
+                                                td
+                                                td
+                                                td
+                                                td
+                                                td
+                                                td
+                                                td Total: {{precioTotal()}} €
+
+                                div.col-md-12
+                                    div.col-md-6
+                                        a.btn.btn-default.btn-lagloria(href="#", role="button", ng-click="guardarCambios()")#guardarCambiosCarrito Guardar cambios
+
+
+
+
+block scripts
+    script(src='/js/jquery.js')
+    script(src='/js/bootstrap.js')
+    script(src='/js/angular.js')
+    script(src='/js/angular/carrito.js')
+

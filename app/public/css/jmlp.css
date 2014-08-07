@@ -229,12 +229,28 @@
 }
 
 .btn-eathub-red.btn.btn-default:hover, .btn-eathub-red.btn.btn-default:focus, .btn-eathub-red.btn.btn-default:active{
-    background-color: #41B19C !important;
+    background-color: #CC3E27 !important;
 }
 
 .btn-eathub-red {
+    background-color: #CC3E27 !important;
+    border-color: #eeeeee !important;
+}
+/*
+.btn-lagloria.btn.btn-default:hover, .btn-lagloria.btn.btn-default:focus, .btn-lagloria.btn.btn-default:active{
+    background-color: #41B19C !important;
+}*/
+
+.btn-lagloria{
     background-color: #41B19C !important;
     border-color: #eeeeee !important;
+    color: #eeeeee;
+}
+
+.btn-lagloria:hover{
+    background-color: #eeeeee;
+    color: #41B19C;
+    border-color: #41B19C !important;
 }
 
 .navbar-default{
@@ -301,9 +317,14 @@ span.caramelo{
     font-weight: bold;
 }
 
-li > a:hover, .navbar-brand:hover, .btn-eathub-red:hover, .btn-default:hover, .btn:hover{
+li > a:hover, .navbar-brand:hover, .btn-default:hover, .btn:hover{
     color: #41B19C !important;
     background-color: #FFFFFF !important;
+}
+
+.btn-eathub-red:hover{
+    color: #CC3E27 !important;
+    background-color: #eeeeee !important;
 }
 
 #entrar:hover, #buscar:hover{
@@ -311,7 +332,13 @@ li > a:hover, .navbar-brand:hover, .btn-eathub-red:hover, .btn-default:hover, .b
     background-color: #FFFFFF !important;
 }
 
-#entrar, #buscar{
+#comprar:hover{
+    color: #CC3E27 !important;
+    background-color: white !important;
+    border-color: #CC3E27 !important;
+}
+
+#entrar, #buscar, #comprar{
     margin-top: 5px;
     margin-right: 10px;
     padding-top: 8px;
@@ -562,4 +589,9 @@ nav{
 
 .navbar-fixed-top{
     border-width: 0 0 2px;
+}
+
+th, td{
+    text-align: center !important;
+    max-width: 200px  !important;
 }

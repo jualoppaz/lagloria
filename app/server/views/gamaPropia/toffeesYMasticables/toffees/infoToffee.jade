@@ -71,6 +71,9 @@ block content
                                                             h3(ng-bind-template="{{toffee.minimumOrder}} Kg")
                                                         div.col-md-4
                                                             h3(ng-bind-template="{{toffee.price}} € / Kg")
+                                                div.col-md-6.col-md-offset-3.col-sm-6.col-sm-offset-3(style="text-align:center; margin-top:15px", ng-show="usuarioEstaLogueado")
+                                                    a.btn.btn-default.btn-eathub-red(href="#", role="button", ng-click="anadirAlCarrito()")#comprar Comprar
+                                                        i.fa.fa-shopping-cart(style="margin-left:15px")
                                             div.panel.panel-body
                                                 div.toffee-info-description.blue
                                                     h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{toffee.description}}")
@@ -144,6 +147,9 @@ block content
                                                             h3(ng-bind-template="{{toffee.minimumOrder}} Kg")
                                                         div.col-md-4
                                                             h3(ng-bind-template="{{toffee.price}} € / Kg")
+                                                div.col-md-6.col-md-offset-3.col-sm-6.col-sm-offset-3(style="text-align:center; margin-top:15px", ng-show="usuarioEstaLogueado")
+                                                    a.btn.btn-default.btn-eathub-red(href="#", role="button", ng-click="anadirAlCarrito()")#comprar Comprar
+                                                        i.fa.fa-shopping-cart(style="margin-left:15px")
                                             div.panel.panel-body
                                                 div.toffee-info-description.blue
                                                     h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{toffee.description}}")

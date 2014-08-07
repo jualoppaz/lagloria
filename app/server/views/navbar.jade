@@ -45,10 +45,13 @@ header
                                                     span.category
 
                     ul.nav.navbar-nav.navbar-right.hidden-xs
-                        li(style="margin-right: 15px")
+                        li
                             a(href="/buscar") Buscar
                                 i.fa.fa-search(style="margin-left:15px")
                         li(ng-show="usuarioEstaLogueado == true")
-                            a.btn.btn-default.btn-eathub-red(href="#", role="button", ng-click="cerrarSesion()")#entrar Cerrar sesión
-                        li(ng-show="usuarioEstaLogueado == false")
-                            a.btn.btn-default.btn-eathub-red(href="/login", role="button")#entrar Entrar
+                            a(href="/carrito") Carrito
+                                i.fa.fa-shopping-cart(style="margin-left:15px")
+                        li(ng-show="usuarioEstaLogueado == true", style="margin-left:15px")
+                            a.btn.btn-default.btn-lagloria(href="#", role="button", ng-click="cerrarSesion()")#entrar Cerrar sesión
+                        li(ng-show="usuarioEstaLogueado == false", style="margin-left:15px")
+                            a.btn.btn-default.btn-lagloria(href="/login", role="button")#entrar Entrar
