@@ -5,16 +5,17 @@ block head
     link(rel="stylesheet", href="/css/backgroundImage.css")
 
 block content
-    div#container.fondoCaramelos
+    div#container.fondoCaramelos(ng-app="gamaPropia")
 
-        div(ng-app="gamaPropia")
+        div(ng-controller="loginNavbarController")
             div(ng-controller="mainController")
-                include navbar
+
+                include partials/navbar
 
                 main.margen-superior-50
                     div.container
                         div.row
-                            include botonesMovil
+                            include partials/botonesMovil
 
                             div.col-md-12.col-xs-12
                                 div.panel.panel-body
@@ -65,3 +66,4 @@ block scripts
     script(src='/js/bootstrap.js')
     script(src='/js/angular.js')
     script(src='/js/angular/gamaPropia.js')
+    script(src='/js/angular/loginNavbar.js')

@@ -2,6 +2,8 @@ var DBM           = require('./modules/data-base-manager');
 
 var roles = ['provider', 'admin'];
 
+var ultimaPagina = "";
+
 module.exports = function(app){
 
     // Vistas de la web
@@ -335,7 +337,11 @@ module.exports = function(app){
     });
 
     app.get('/api/lastURL', function(req, res){
-        res.send(req.session.ultimaPagina, 200);
+        //console.log("Ultima pagina: " + req.session.ultimaPagina);
+        //res.send(req.session.ultimaPagina, 200);
+
+        console.log("Ultima pagina: " + ultimaPagina);
+        res.send(ultimaPagina, 200);
     })
 
 
@@ -393,6 +399,10 @@ module.exports = function(app){
         var category = req.body.category;
         var type = req.body.type;
 
+        if(category == "Grageados" || category == "Con palo"){
+            type = category;
+        }
+
         DBM.getProductByCategoryTypeAndId(type, id, function(err, query){
             /*if(!req.session.shoppingCart){ // El carrito aún no se ha creado
 
@@ -433,7 +443,7 @@ module.exports = function(app){
         var validado = true;
 
         for(i=0;i<req.session.shoppingCartProducts.length;i++){
-            if(req.session.shoppingCartProducts[i].minimumOrder > productos[i].quantity){
+            if(Number(req.session.shoppingCartProducts[i].minimumOrder) > Number(productos[i].quantity)){
                 validado = false;
             }
         }
@@ -464,8 +474,10 @@ module.exports = function(app){
         // El if se podria omitir, pero lo dejamos para tener un mayor control
 
         console.log("Ruta previa: " + req.path);
-        if(req.path.indexOf("api") == -1 && req.path.indexOf("login") == -1){
-            req.session.ultimaPagina = req.path;
+        if(req.path.indexOf("/api/") == -1 && req.path.indexOf("login") == -1){
+            console.log("Ultima pagina actualizada: " + req.path);
+            //req.session.ultimaPagina = req.path;
+            ultimaPagina = req.path;
         }
     };
 

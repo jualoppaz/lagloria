@@ -1,9 +1,10 @@
 var sinGrupoInfo = angular.module('sinGrupoInfo', []);
 
 function mainController($scope, $http) {
-    $scope.sinGrupo = {};
+    $scope.producto = {};
     $scope.loguedUser = {};
 
+    /*
     $scope.usuarioEstaLogueado = false;
 
     $http.get('/api/user')
@@ -28,7 +29,7 @@ function mainController($scope, $http) {
             .error(function(data){
 
             });
-    }
+    }*/
 
     var url = window.location.href.split("/");
     var sinGrupoId = url[url.length - 1];
@@ -36,7 +37,7 @@ function mainController($scope, $http) {
     // Cuando se cargue la página, pide del API todas las excursiones
     $http.get('/api/sinGrupo/' + String(sinGrupoId))
         .success(function(data) {
-            $scope.sinGrupo = data;
+            $scope.producto = data;
         })
         .error(function(data) {
             alert("No se ha podido cargar la página correctamente. Recargue la página. Gracias.");

@@ -1,45 +1,30 @@
-var index = angular.module('index', []);
+//var loginNavbar = angular.module('loginNavbar', [])
 
-function mainController($scope, $http){
+function loginNavbarController($scope, $http){
 
-    $scope.loguedUser = {};
+    $scope.usuarioEstaLogueadoParent = false;
 
-    $scope.usuarioEstaLogueado = false;
-
-    /*
     $http.get('/api/user')
         .success(function(data){
-            $scope.usuarioEstaLogueado = true;
+            $scope.usuarioEstaLogueadoParent = true;
             $scope.loguedUser = data;
         })
         .error(function(data){
             if(data == "not-loguedin-user"){
-                $scope.usuarioEstaLogueado = false;
+                $scope.usuarioEstaLogueadoParent = false;
             }
         });
 
-    */
-
-    // Llamada AJAX para cerrar sesion
-
-    /*
     $scope.cerrarSesion = function(){
         $http.get('/api/logout')
             .success(function(data){
                 if(data == "ok"){
                     alert("Ha cerrado sesión correctamente");
-                    $scope.usuarioEstaLogueado = false;
+                    $scope.usuarioEstaLogueadoParent = false;
                 }
             })
             .error(function(data){
 
             });
-    }*/
-
-    /*
-    $scope.cerrarSesion = function(){
-        $scope.$parent.cerrarSesion();
-    };
-    */
-
+    }
 }

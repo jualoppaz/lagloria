@@ -4,6 +4,7 @@ function mainController($scope, $http) {
     $scope.ponnies = {};
     $scope.loguedUser = {};
 
+    /*
     $scope.usuarioEstaLogueado = false;
 
     $http.get('/api/user')
@@ -28,7 +29,7 @@ function mainController($scope, $http) {
             .error(function(data){
 
             });
-    }
+    }*/
 
     $http.get('/api/ponnies')
         .success(function(data) {

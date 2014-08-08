@@ -1,9 +1,10 @@
 var toffeeInfo = angular.module('toffeeInfo', []);
 
 function mainController($scope, $http) {
-    $scope.toffee = {};
+    $scope.producto = {};
     $scope.loguedUser = {};
 
+    /*
     $scope.usuarioEstaLogueado = false;
 
     $http.get('/api/user')
@@ -28,13 +29,14 @@ function mainController($scope, $http) {
             .error(function(data){
 
             });
-    }
+    }*/
 
+    /*
     $scope.anadirAlCarrito = function(){
         var json = {
-            id: $scope.toffee._id,
-            category: $scope.toffee.category,
-            type: $scope.toffee.type
+            id: $scope.producto._id,
+            category: $scope.producto.category,
+            type: $scope.producto.type
         };
 
         $http.post('/api/shoppingCart', json)
@@ -50,6 +52,7 @@ function mainController($scope, $http) {
                 }
             });
     };
+    */
 
     var url = window.location.href.split("/");
     var toffeeId = url[url.length - 1];
@@ -57,7 +60,7 @@ function mainController($scope, $http) {
     // Cuando se cargue la página, pide del API todas las excursiones
     $http.get('/api/toffees/' + String(toffeeId))
         .success(function(data) {
-            $scope.toffee = data;
+            $scope.producto = data;
         })
         .error(function(data) {
             alert("No se ha podido cargar la página correctamente. Recargue la página. Gracias.");

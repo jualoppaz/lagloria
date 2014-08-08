@@ -5,16 +5,16 @@ block head
     link(rel="stylesheet", href="/css/backgroundImage.css")
 
 block content
-    div#container
+    div#container(ng-app="toffees")
 
-        div(ng-app="toffees")
+        div(ng-controller="loginNavbarController")
             div(ng-controller="mainController")
-                include ../../navbar
+                include ../../partials/navbar
 
                 main.margen-superior-50
                     div.container
                         div.row
-                            include ../../botonesMovil
+                            include ../../partials/botonesMovil
 
                             div.col-md-12.col-xs-12
                                 div.panel.panel-body
@@ -49,33 +49,33 @@ block content
                                                 input(type="text", placeholder="Introduzca un texto", ng-model="toffeeSearch").form-control
                             div(style="clear:both")
                                 div
-                                    div(ng-repeat="toffee in toffees | filter:toffeeSearch", style="text-align:center")
-                                        div(ng-show="esSurtido(toffee)")
+                                    div(ng-repeat="producto in toffees | filter:toffeeSearch", style="text-align:center")
+                                        div(ng-show="esSurtido(producto)")
                                             div.col-md-12.col-sm-12
                                                 div.panel.panel-body.panel-toffee-info
                                                     div(style="text-align:left;")
                                                         h1(style="margin-bottom:30px").modelo-toffee
-                                                            a(ng-href="toffees/{{toffee._id}}", ng-bind-template="{{$index + 1}}. {{toffee.model}}").green.hover-red
+                                                            a(ng-href="toffees/{{producto._id}}", ng-bind-template="{{$index + 1}}. {{producto.model}}").green.hover-red
                                                     div.col-md-2
                                                         div(style="float:left; margin-right: 20px; width:100%; height: 260px").hidden-sm.hidden-xs
-                                                            img(ng-src="/img/imagenesMias/{{toffee.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
+                                                            img(ng-src="/img/imagenesMias/{{producto.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
                                                         div(style="float:left; margin-right: 20px; width:100%; height: 260px").hidden-md.hidden-lg
-                                                            img(ng-src="/img/imagenesMias/{{toffee.image}}", height="100%", width="30%", style="margin-left: 10px; margin-bottom: 10px")
+                                                            img(ng-src="/img/imagenesMias/{{producto.image}}", height="100%", width="30%", style="margin-left: 10px; margin-bottom: 10px")
                                                     div.col-md-10
                                                         div
-                                                            h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{toffee.description}}").blue
-                                        div(ng-show="!esSurtido(toffee)")
+                                                            h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{producto.description}}").blue
+                                        div(ng-show="!esSurtido(producto)")
                                             div.col-md-3.col-sm-6
                                                 div.panel.panel-body.panel-toffee
                                                     div(style="text-align:left")
                                                         h1(style="margin-bottom:30px").modelo-toffee
-                                                            a(ng-href="toffees/{{toffee._id}}", ng-bind-template="{{$index + 1}}. {{toffee.model}}").green.hover-red
+                                                            a(ng-href="toffees/{{producto._id}}", ng-bind-template="{{$index + 1}}. {{producto.model}}").green.hover-red
                                                     div.col-md-12
                                                         div(style="margin-right: 20px; height: 100px; max-height: 200px;").margenInferior-30
-                                                            img(ng-src="/img/imagenesMias/{{toffee.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
+                                                            img(ng-src="/img/imagenesMias/{{producto.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
                                                     div.col-md-12
                                                         div.toffee-description
-                                                            h3(style="text-align: justify; margin-top: 5px", ng-bind-template="{{toffee.description}}").blue
+                                                            h3(style="text-align: justify; margin-top: 5px", ng-bind-template="{{producto.description}}").blue
 
 
 
@@ -84,3 +84,4 @@ block scripts
     script(src='/js/bootstrap.js')
     script(src='/js/angular.js')
     script(src='/js/angular/toffeesYMasticables/toffees.js')
+    script(src='/js/angular/loginNavbar.js')

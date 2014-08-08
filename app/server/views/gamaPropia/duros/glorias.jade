@@ -5,17 +5,17 @@ block head
     link(rel="stylesheet", href="/css/backgroundImage.css")
 
 block content
-    div#container
+    div#container(ng-app="glorias")
 
-        div(ng-app="glorias")
+        div(ng-controller="loginNavbarController")
             div(ng-controller="mainController")
 
-                include ../../navbar
+                include ../../partials/navbar
 
                 main.margen-superior-50
                     div.container
                         div.row
-                            include ../../botonesMovil
+                            include ../../partials/botonesMovil
 
                             div.col-md-12.col-xs-12
                                 div.panel.panel-body
@@ -133,7 +133,8 @@ block content
 
 
 block scripts
-    script(src='/js/angular.js')
-    script(src='/js/angular/duros/glorias.js')
     script(src='/js/jquery.js')
     script(src='/js/bootstrap.js')
+    script(src='/js/angular.js')
+    script(src='/js/angular/duros/glorias.js')
+    script(src='/js/angular/loginNavbar.js')

@@ -3,19 +3,19 @@ block head
     title Información
     link(rel="stylesheet", href="/css/backgroundImage.css")
 block content
-    div#container
+    div#container(ng-app="sinGrupoInfo")
 
-        div(ng-app="sinGrupoInfo")
+        div(ng-controller="loginNavbarController")
             div(ng-controller="mainController")
 
-                include ../../../navbar
+                include ../../../partials/navbar
 
                 main.margen-superior-50
                     div.container
                         div.row
-                            include ../../../botonesMovil
+                            include ../../../partials/botonesMovil
 
-                            div.col-md-12
+                            div.col-md-12.col-sm-12.col-xs-12
                                 div.panel.panel-body
                                     div.main-card-content
                                         div.main-card-description
@@ -30,19 +30,19 @@ block content
                                                     span.caramelo Sin grupo
                             div
                                 div
-                                    div.col-md-12
+                                    div.col-md-12.col-sm-12.col-xs-12
                                         div.panel.panel-body
                                             div.main-card-content(style="word-wrap: break-word;")
                                                 div.main-card-name
                                                     a.recipe-title(href="#")
-                                                        span.caramelo(ng-bind-template="{{sinGrupo.model}}")
-                                    div(ng-show="esSurtido(sinGrupo)")
+                                                        span.caramelo(ng-bind-template="{{producto.model}}")
+                                    div(ng-show="esSurtido(producto)")
                                         // Vista para ordenadores
                                         div.col-md-12.hidden-sm.hidden-xs
                                             div.panel.panel-body.panel-sinGrupo-info
                                                 div.col-md-4
                                                     div(style="float:left; margin-right: 20px; width: 70%; height: 400px")
-                                                        img(ng-src="/img/imagenesMias/{{sinGrupo.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
+                                                        img(ng-src="/img/imagenesMias/{{producto.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
                                                 div.col-md-8
                                                     h1(style="text-align: left;").separador-horizontal.green Detalles
                                                     div.row.blue
@@ -54,11 +54,11 @@ block content
                                                             h3 Modelo
                                                     div.row
                                                         div.col-md-4
-                                                            h3(ng-bind-template="{{sinGrupo.category}}")
+                                                            h3(ng-bind-template="{{producto.category}}")
                                                         div.col-md-4
-                                                            h3(ng-bind-template="{{sinGrupo.type}}")
+                                                            h3(ng-bind-template="{{producto.type}}")
                                                         div.col-md-4
-                                                            h3(ng-bind-template="{{sinGrupo.model}}")
+                                                            h3(ng-bind-template="{{producto.model}}")
                                                     div.row.blue
                                                         div.col-md-4
                                                             h3 Pedido mínimo
@@ -66,15 +66,15 @@ block content
                                                             h3 Precio
                                                     div.row
                                                         div.col-md-4
-                                                            h3(ng-bind-template="{{sinGrupo.minimumOrder}} Kg")
+                                                            h3(ng-bind-template="{{producto.minimumOrder}} Kg")
                                                         div.col-md-4
-                                                            h3(ng-bind-template="{{sinGrupo.price}} € / Kg")
+                                                            h3(ng-bind-template="{{producto.price}} € / Kg")
                                             div.panel.panel-body
                                                 div.ponnies-info-description.blue
-                                                    h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{sinGrupo.description}}")
+                                                    h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{producto.description}}")
 
                                         // Vista para tablets y moviles
-                                        div.col-sm-12.hidden-lg.hidden-md
+                                        //div.col-sm-12.hidden-lg.hidden-md
                                             div.panel.panel-body.panel-sinGrupo-info
                                                 div.col-sm-12
                                                     div(style="float:left; margin-right: 20px; width: 70%; height: 400px")
@@ -108,45 +108,48 @@ block content
                                             div.panel.panel-body
                                                 div.sinGrupo-info-description.blue
                                                     h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{sinGrupo.description}}")
-                                    div(ng-show="!esSurtido(sinGrupo)")
+                                    div(ng-show="!esSurtido(producto)")
                                         // Vista para ordenadores
-                                        div.col-md-12.hidden-sm.hidden-xs
+                                        div.col-md-12.col-sm-12.col-xs-12
                                             div.panel.panel-body.panel-sinGrupo-info
-                                                div.col-md-5.text-center
-                                                    div(style="float:left; margin-right: 20px; width: 100%; height: 400px")
-                                                        img(ng-src="/img/imagenesMias/{{sinGrupo.image}}", height="30%", width="70%", style="margin-left: 10px; margin-bottom: 10px; margin-top:60px")
-                                                div.col-md-7
+                                                div.col-md-5.text-center.col-sm-12.col-xs-12
+                                                    div(style="float:left; margin-right: 20px; width: 100%; height: 300px")
+                                                        img(ng-src="/img/imagenesMias/{{producto.image}}", height="30%", width="70%", style="margin-left: 10px; margin-bottom: 10px; margin-top:60px")
+                                                div.col-md-7.col-sm-12.col-xs-12
                                                     h1(style="text-align: left;").separador-horizontal.green Detalles
                                                     div.row.blue
-                                                        div.col-md-4
+                                                        div.col-md-4.col-sm-4.col-xs-4
                                                             h3 Categoría
-                                                        div.col-md-4
+                                                        div.col-md-4.col-sm-4.col-xs-4
                                                             h3 Tipo
-                                                        div.col-md-4
+                                                        div.col-md-4.col-sm-4.col-xs-4
                                                             h3 Modelo
                                                     div.row
-                                                        div.col-md-4
-                                                            h3(ng-bind-template="{{sinGrupo.category}}")
-                                                        div.col-md-4
-                                                            h3(ng-bind-template="{{sinGrupo.type}}")
-                                                        div.col-md-4
-                                                            h3(ng-bind-template="{{sinGrupo.model}}")
+                                                        div.col-md-4.col-sm-4.col-xs-4
+                                                            h3(ng-bind-template="{{producto.category}}")
+                                                        div.col-md-4.col-sm-4.col-xs-4
+                                                            h3(ng-bind-template="{{producto.type}}")
+                                                        div.col-md-4.col-sm-4.col-xs-4
+                                                            h3(ng-bind-template="{{producto.model}}")
                                                     div.row.blue
-                                                        div.col-md-4
+                                                        div.col-md-4.col-sm-4.col-xs-4
                                                             h3 Pedido mínimo
-                                                        div.col-md-4
+                                                        div.col-md-4.col-sm-4.col-xs-4
                                                             h3 Precio
                                                     div.row
-                                                        div.col-md-4
-                                                            h3(ng-bind-template="{{sinGrupo.minimumOrder}} Kg")
-                                                        div.col-md-4
-                                                            h3(ng-bind-template="{{sinGrupo.price}} € / Kg")
+                                                        div.col-md-4.col-sm-4.col-xs-4
+                                                            h3(ng-bind-template="{{producto.minimumOrder}} Kg")
+                                                        div.col-md-4.col-sm-4.col-xs-4
+                                                            h3(ng-bind-template="{{producto.price}} € / Kg")
+
+                                                include ../../../partials/botonComprar
+
                                             div.panel.panel-body
                                                 div.sinGrupo-info-description.blue
-                                                    h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{sinGrupo.description}}")
+                                                    h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{producto.description}}")
 
                                         // Vista para tablets y moviles
-                                        div.col-sm-12.hidden-md.hidden-lg
+                                        //div.col-sm-12.hidden-md.hidden-lg
                                             div.panel.panel-body.panel-sinGrupo-info
                                                 div.col-sm-12
                                                     div(style="float:left; margin-right: 20px; margin-bottom: 30px; width: 100%; height: 150px").text-center
@@ -183,7 +186,9 @@ block content
 
 
 block scripts
-    script(src='/js/angular.js')
-    script(src='/js/angular/duros/sinGrupo/info.js')
     script(src='/js/jquery.js')
     script(src='/js/bootstrap.js')
+    script(src='/js/angular.js')
+    script(src='/js/angular/duros/sinGrupo/info.js')
+    script(src='/js/angular/loginNavbar.js')
+    script(src='/js/angular/comprar.js')

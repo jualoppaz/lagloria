@@ -19,7 +19,7 @@ if (process.env.MONGOHQ_URL){
 // Configuración
 app.configure(function() {
     app.set('port', port);
-    app.set('views', __dirname + '/app/server/views');
+    app.set('views', path.join(__dirname + '/app/server/views'));
     app.set('view engine', 'jade');
 	app.use(express.static(__dirname + '/public'));		// Localización de los ficheros estáticos
 	app.use(express.logger('dev'));						// Muestra un log de todos los request en la consola

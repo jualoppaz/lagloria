@@ -1,9 +1,10 @@
 var grageadoInfo = angular.module('grageadoInfo', []);
 
 function mainController($scope, $http) {
-    $scope.grageado = {};
+    $scope.producto = {};
     $scope.loguedUser = {};
 
+    /*
     $scope.usuarioEstaLogueado = false;
 
     $http.get('/api/user')
@@ -28,14 +29,14 @@ function mainController($scope, $http) {
             .error(function(data){
 
             });
-    }
+    }*/
 
     var url = window.location.href.split("/");
     var grageadoId = url[url.length - 1];
 
     $http.get('/api/grageados/' + String(grageadoId))
         .success(function(data) {
-            $scope.grageado = data;
+            $scope.producto = data;
         })
         .error(function(data) {
             alert("No se ha podido cargar la página correctamente. Recargue la página. Gracias.");

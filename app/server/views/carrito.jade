@@ -5,11 +5,10 @@ block head
     link(rel="stylesheet", href="/css/backgroundImage.css")
 
 block content
-    div#container.fondoCaramelos
-
-        div(ng-app="carrito")
+    div#container.fondoCaramelos(ng-app="carrito")
+        div(ng-controller="loginNavbarController")
             div(ng-controller="mainController")
-                include navbar
+                include partials/navbar
 
                 main
                     div.container
@@ -79,4 +78,5 @@ block scripts
     script(src='/js/bootstrap.js')
     script(src='/js/angular.js')
     script(src='/js/angular/carrito.js')
+    script(src='/js/angular/loginNavbar.js')
 

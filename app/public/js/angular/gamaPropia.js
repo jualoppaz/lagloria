@@ -6,6 +6,7 @@ function mainController($scope, $http){
 
     $scope.usuarioEstaLogueado = false;
 
+    /*
     $http.get('/api/user')
         .success(function(data){
             $scope.usuarioEstaLogueado = true;
@@ -28,5 +29,5 @@ function mainController($scope, $http){
             .error(function(data){
 
             });
-    }
+    }*/
 }

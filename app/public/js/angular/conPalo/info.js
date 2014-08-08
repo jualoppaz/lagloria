@@ -1,9 +1,10 @@
 var conPaloInfo = angular.module('conPaloInfo', []);
 
 function mainController($scope, $http) {
-    $scope.conPalo = {};
+    $scope.producto = {};
     $scope.loguedUser = {};
 
+    /*
     $scope.usuarioEstaLogueado = false;
 
     $http.get('/api/user')
@@ -28,7 +29,7 @@ function mainController($scope, $http) {
             .error(function(data){
 
             });
-    }
+    }*/
 
     var url = window.location.href.split("/");
     var conPaloId = url[url.length - 1];
@@ -36,9 +37,9 @@ function mainController($scope, $http) {
     $http.get('/api/conPalo/' + String(conPaloId))
         .success(function(data) {
             if(data.message){
-                $scope.conPalo = {};
+                $scope.producto = {};
             }else{
-                $scope.conPalo = data;
+                $scope.producto = data;
             }
         })
         .error(function(data) {

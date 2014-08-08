@@ -6,12 +6,12 @@ block head
 
 block content
     div#container.fondoCaramelos
-        include navbar
+        include partials/navbar
 
         main.margen-superior-50
             div.container(ng-app="buscar")
                 div.row(ng-controller="mainController")
-                    include botonesMovil
+                    include partials/botonesMovil
 
                     div.col-md-12.col-xs-12
                         div.panel.panel-body

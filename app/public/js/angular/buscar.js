@@ -4,6 +4,7 @@ function mainController($scope, $http) {
     $scope.caramelos = {};
     $scope.loguedUser = {};
 
+    /*
     $scope.usuarioEstaLogueado = false;
 
     $http.get('/api/user')
@@ -28,7 +29,7 @@ function mainController($scope, $http) {
             .error(function(data){
 
             });
-    }
+    }*/
 
     $scope.seccionSeleccionada = {name:'Toda la web'};
     $scope.criterioSeleccionado = {name: 'Nombre'};

@@ -3,17 +3,17 @@ block head
     title Información
     link(rel="stylesheet", href="/css/backgroundImage.css")
 block content
-    div#container
+    div#container(ng-app="gloriaInfo")
 
-        div(ng-app="gloriaInfo")
+        div(ng-controller="loginNavbarController")
             div(ng-controller="mainController")
 
-                include ../../../navbar
+                include ../../../partials/navbar
 
                 main.margen-superior-50
                     div.container
                         div.row
-                            include ../../../botonesMovil
+                            include ../../../partials/botonesMovil
 
                             div.col-md-12.col-xs-12
                                 div.panel.panel-body
@@ -35,50 +35,53 @@ block content
                                             div.main-card-content(style="word-wrap: break-word;")
                                                 div.main-card-name
                                                     a.recipe-title(href="#")
-                                                        span.caramelo(ng-bind-template="{{gloria.model}}")
-                                    div(ng-show="esSurtido(gloria)")
+                                                        span.caramelo(ng-bind-template="{{producto.model}}")
+                                    div(ng-show="esSurtido(producto)")
                                         // Vista para ordenadores
-                                        div.col-md-12.hidden-sm.hidden-xs
+                                        div.col-md-12.col-sm-12.col-xs-12
                                             div.panel.panel-body.panel-gloria-info
-                                                div.col-md-2
+                                                div.col-md-2.col-sm-12.col-xs-12
                                                     div(style="float:left; margin-right: 20px; width: 100%; height: 260px").text-center
-                                                        img(ng-src="/img/imagenesMias/{{gloria.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
-                                                div.col-md-9.col-md-offset-1
+                                                        img(ng-src="/img/imagenesMias/{{producto.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
+                                                div.col-md-9.col-md-offset-1.col-sm-12.col-xs-12
                                                     h1(style="text-align: left;").separador-horizontal.green Detalles
                                                     div.row.blue
-                                                        div.col-md-4
+                                                        div.col-md-4.col-sm-4.col-xs-4
                                                             h3 Categoría
-                                                        div.col-md-4
+                                                        div.col-md-4.col-sm-4.col-xs-4
                                                             h3 Tipo
-                                                        div.col-md-4
+                                                        div.col-md-4.col-sm-4.col-xs-4
                                                             h3 Modelo
                                                     div.row
-                                                        div.col-md-4
-                                                            h3(ng-bind-template="{{gloria.category}}")
-                                                        div.col-md-4
-                                                            h3(ng-bind-template="{{gloria.type}}")
-                                                        div.col-md-4
-                                                            h3(ng-bind-template="{{gloria.model}}")
+                                                        div.col-md-4.col-sm-4.col-xs-4
+                                                            h3(ng-bind-template="{{producto.category}}")
+                                                        div.col-md-4.col-sm-4.col-xs-4
+                                                            h3(ng-bind-template="{{producto.type}}")
+                                                        div.col-md-4.col-sm-4.col-xs-4
+                                                            h3(ng-bind-template="{{producto.model}}")
                                                     div.row.blue
-                                                        div.col-md-4
+                                                        div.col-md-4.col-sm-4.col-xs-4
                                                             h3 Pedido mínimo
-                                                        div.col-md-4
+                                                        div.col-md-4.col-sm-4.col-xs-4
                                                             h3 Precio
                                                     div.row
-                                                        div.col-md-4
-                                                            h3(ng-bind-template="{{gloria.minimumOrder}} Kg")
-                                                        div.col-md-4
-                                                            h3(ng-bind-template="{{gloria.price}} € / Kg")
+                                                        div.col-md-4.col-sm-4.col-xs-4
+                                                            h3(ng-bind-template="{{producto.minimumOrder}} Kg")
+                                                        div.col-md-4.col-sm-4.col-xs-4
+                                                            h3(ng-bind-template="{{producto.price}} € / Kg")
+
+                                                include ../../../partials/botonComprar
+
                                             div.panel.panel-body
                                                 div.gloria-info-description.blue
-                                                    h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{gloria.description}}")
+                                                    h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{producto.description}}")
 
                                         // Vista para tablets y moviles
                                         div.col-sm-12.hidden-lg.hidden-md.col-xs-12
                                             div.panel.panel-body.panel-gloria-info
                                                 div.col-sm-4.col-sm-offset-4
                                                     div(style="float:left; margin-right: 20px; width: 100%; height: 260px").text-center
-                                                        img(ng-src="/img/imagenesMias/{{gloria.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
+                                                        img(ng-src="/img/imagenesMias/{{producto.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
                                                 div.col-sm-12.col-xs-12
                                                     h1(style="text-align: left;").separador-horizontal.green Detalles
                                                     div.row.blue
@@ -90,11 +93,11 @@ block content
                                                             h3 Modelo
                                                     div.row
                                                         div.col-sm-4.col-xs-4
-                                                            h3(ng-bind-template="{{gloria.category}}")
+                                                            h3(ng-bind-template="{{producto.category}}")
                                                         div.col-sm-4.col-xs-4
-                                                            h3(ng-bind-template="{{gloria.type}}")
+                                                            h3(ng-bind-template="{{producto.type}}")
                                                         div.col-sm-4.col-xs-4
-                                                            h3(ng-bind-template="{{gloria.model}}")
+                                                            h3(ng-bind-template="{{producto.model}}")
                                                     div.row.blue
                                                         div.col-sm-4.col-xs-4
                                                             h3 Pedido mínimo
@@ -102,53 +105,56 @@ block content
                                                             h3 Precio
                                                     div.row
                                                         div.col-sm-4.col-xs-4
-                                                            h3(ng-bind-template="{{gloria.minimumOrder}} Kg")
+                                                            h3(ng-bind-template="{{producto.minimumOrder}} Kg")
                                                         div.col-sm-4.col-xs-4
-                                                            h3(ng-bind-template="{{gloria.price}} € / Kg")
+                                                            h3(ng-bind-template="{{producto.price}} € / Kg")
                                             div.panel.panel-body
                                                 div.gloria-info-description.blue
-                                                    h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{gloria.description}}")
+                                                    h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{producto.description}}")
 
 
-                                    div(ng-show="!esSurtido(gloria)")
+                                    div(ng-show="!esSurtido(producto)")
                                         // Vista para ordenadores
-                                        div.col-md-12.hidden-sm.hidden-xs
+                                        div.col-md-12.col-sm-12.col-xs-12
                                             div.panel.panel-body.panel-gloria-info
-                                                div.col-md-5.text-center
-                                                    div(style="float:left; margin-right: 20px; width: 100%; height: 400px")
-                                                        img(ng-src="/img/imagenesMias/{{gloria.image}}", height="30%", width="70%", style="margin-left: 10px; margin-bottom: 10px; margin-top:60px")
-                                                div.col-md-7
+                                                div.col-md-5.text-center.col-sm-12.col-xs-12
+                                                    div(style="float:left; margin-right: 20px; width: 100%; height: 300px")
+                                                        img(ng-src="/img/imagenesMias/{{producto.image}}", height="30%", width="70%", style="margin-left: 10px; margin-bottom: 10px; margin-top:60px")
+                                                div.col-md-7.col-sm-12.col-xs-12
                                                     h1(style="text-align: left;").separador-horizontal.green Detalles
                                                     div.row.blue
-                                                        div.col-md-4
+                                                        div.col-md-4.col-sm-4.col-xs-4
                                                             h3 Categoría
-                                                        div.col-md-4
+                                                        div.col-md-4.col-sm-4.col-xs-4
                                                             h3 Tipo
-                                                        div.col-md-4
+                                                        div.col-md-4.col-sm-4.col-xs-4
                                                             h3 Modelo
                                                     div.row
-                                                        div.col-md-4
-                                                            h3(ng-bind-template="{{gloria.category}}")
-                                                        div.col-md-4
-                                                            h3(ng-bind-template="{{gloria.type}}")
-                                                        div.col-md-4
-                                                            h3(ng-bind-template="{{gloria.model}}")
+                                                        div.col-md-4.col-sm-4.col-xs-4
+                                                            h3(ng-bind-template="{{producto.category}}")
+                                                        div.col-md-4.col-sm-4.col-xs-4
+                                                            h3(ng-bind-template="{{producto.type}}")
+                                                        div.col-md-4.col-sm-4.col-xs-4
+                                                            h3(ng-bind-template="{{producto.model}}")
                                                     div.row.blue
-                                                        div.col-md-4
+                                                        div.col-md-4.col-sm-4.col-xs-4
                                                             h3 Pedido mínimo
-                                                        div.col-md-4
+                                                        div.col-md-4.col-sm-4.col-xs-4
                                                             h3 Precio
                                                     div.row
-                                                        div.col-md-4
-                                                            h3(ng-bind-template="{{gloria.minimumOrder}} Kg")
-                                                        div.col-md-4
-                                                            h3(ng-bind-template="{{gloria.price}} € / Kg")
+                                                        div.col-md-4.col-sm-4.col-xs-4
+                                                            h3(ng-bind-template="{{producto.minimumOrder}} Kg")
+                                                        div.col-md-4.col-sm-4.col-xs-4
+                                                            h3(ng-bind-template="{{producto.price}} € / Kg")
+
+                                                include ../../../partials/botonComprar
+
                                             div.panel.panel-body
                                                 div.gloria-info-description.blue
-                                                    h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{gloria.description}}")
+                                                    h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{producto.description}}")
 
                                         // Vista para moviles
-                                        div.col-sm-12.hidden-md.hidden-lg.col-xs-12
+                                        //div.col-sm-12.hidden-md.hidden-lg.col-xs-12
                                             div.panel.panel-body.panel-gloria-info
                                                 div.col-sm-12.col-xs-12
                                                     div(style="float:left; margin-right: 20px; margin-bottom: 30px; width: 100%; height: 150px").text-center
@@ -179,12 +185,17 @@ block content
                                                             h3(ng-bind-template="{{gloria.minimumOrder}} Kg")
                                                         div.col-sm-4.col-xs-4
                                                             h3(ng-bind-template="{{gloria.price}} € / Kg")
+
+                                                include ../../../partials/botonComprar
+
                                             div.panel.panel-body
                                                 div.gloria-info-description.blue
                                                     h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{gloria.description}}")
 
 block scripts
-    script(src='/js/angular.js')
-    script(src='/js/angular/duros/glorias/info.js')
     script(src='/js/jquery.js')
     script(src='/js/bootstrap.js')
+    script(src='/js/angular.js')
+    script(src='/js/angular/duros/glorias/info.js')
+    script(src='/js/angular/loginNavbar.js')
+    script(src='/js/angular/comprar.js')

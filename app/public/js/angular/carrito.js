@@ -5,6 +5,7 @@ function mainController($scope, $http){
     $scope.loguedUser = {};
     $scope.productos = {};
 
+    /*
     $scope.usuarioEstaLogueado = false;
 
     $http.get('/api/user')
@@ -31,7 +32,7 @@ function mainController($scope, $http){
             .error(function(data){
 
             });
-    };
+    };*/
 
     $scope.aumentarCantidad = function(producto){
         for(i=0; i<$scope.productos.length;i++){
@@ -45,7 +46,7 @@ function mainController($scope, $http){
     };
 
     $scope.reducirCantidad = function(producto){
-        if(producto.quantity > producto.minimumOrder){
+        if(Number(producto.quantity) > Number(producto.minimumOrder)){
             for(i=0; i<$scope.productos.length;i++){
                 if($scope.productos[i]==producto){
                     var anterior = $scope.productos[i].quantity;
@@ -69,7 +70,8 @@ function mainController($scope, $http){
     $scope.precioTotal = function(){
         var precioTotal = 0;
         for(i=0; i<$scope.productos.length;i++){
-            precioTotal += $scope.productos[i].quantity * $scope.productos[i].price;
+            //precioTotal += $scope.productos[i].quantity * $scope.productos[i].price;
+            precioTotal += $scope.productos[i].total;
         }
         return precioTotal;
     };
@@ -90,6 +92,10 @@ function mainController($scope, $http){
         var json = {
             productos : $scope.productos
         };
+        alert("JSON: ");
+        for(i=0;i<$scope.productos.length;i++){
+
+        }
         $http.put('/api/shoppingCart', json)
             .success(function(data){
                 if(data == "saved"){
