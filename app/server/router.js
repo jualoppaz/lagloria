@@ -127,7 +127,13 @@ module.exports = function(app){
     });
 
     app.get('/login', function(req, res){
-        res.render('login');
+        if(req.session.user == null){
+            res.render('login');
+        }else{
+            res.render('error',{
+                message : 'No puede acceder de nuevo a la aplicación porque ya está logueado.'
+            });
+        }
     });
 
     app.get('/signup', function(req, res){
@@ -331,8 +337,15 @@ module.exports = function(app){
     app.get('/api/logout', function(req, res){
         res.clearCookie('user');
         res.clearCookie('pass');
+        //console.log("redirect: " + ultimaPagina);
+        //res.redirect('/');
+
+        // Recordar que por cada peticion solo puede haber una respuesta. De ahi que el redirect no funcione.
         req.session.destroy(function(e){
-            res.send('ok', 200);
+            // Solo he conseguido redirigir de forma estatica. Usando la variable ultimaPagina no funciona la redireccion
+            res.send('ok',{
+                'Location': '/'
+            }, 200);
         });
     });
 

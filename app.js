@@ -3,7 +3,7 @@
 var express 	= require('express');
 var app 		= express();
 var mongoose 	= require('mongoose');
-var path = require("path");
+var path        = require("path");
 
 var port = process.env.PORT || 8888;
 // Conexión con la base de datos

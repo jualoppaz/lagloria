@@ -595,3 +595,7 @@ th, td{
     text-align: center !important;
     max-width: 200px  !important;
 }
+
+.error{
+    color: #CC3E27 !important;
+}

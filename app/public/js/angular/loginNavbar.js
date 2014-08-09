@@ -21,7 +21,12 @@ function loginNavbarController($scope, $http){
                 if(data == "ok"){
                     alert("Ha cerrado sesión correctamente");
                     $scope.usuarioEstaLogueadoParent = false;
+
+                    // La redireccion esta hecha en cliente, pero seria ideal conseguir hacerla desde el servidor.
+                    // El problema es que la redireccion no se lleva bien con las peticiones AJAX.
+                    location.href = "/";
                 }
+
             })
             .error(function(data){
 
