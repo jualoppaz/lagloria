@@ -316,20 +316,33 @@ module.exports = function(app){
     // Login como usuario proveedor o administrador
 
     app.post('/api/login', function(req, res){
-        DBM.manualLogin(req.param('user'), req.param('pass'), function(e, o){
-            if (!o){
-                res.send(e, 400);
-            }	else{
-                console.log("Usuario: " + o.user);
-                console.log("Pass: " + o.pass);
-                req.session.user = o;
-                if (req.param('remember-me') == 'true'){
-                    res.cookie('user', o.user, { maxAge: 900000 });
-                    res.cookie('pass', o.pass, { maxAge: 900000 });
+        if(req.cookies.user == undefined || req.cookies.pass == undefined){
+            DBM.manualLogin(req.param('user'), req.param('pass'), function(e, o){
+                if (!o){
+                    res.send(e, 400);
+                }	else{
+                    console.log("Usuario: " + o.user);
+                    console.log("Pass: " + o.pass);
+                    req.session.user = o;
+                    if (req.param('recordar') == true){
+                        console.log("Guardamos las cookies");
+                        console.log("User: " + o.user);
+                        console.log("Pass: " + o.pass);
+                        res.cookie('user', o.user, { maxAge: 900000 });
+                        res.cookie('pass', o.pass, { maxAge: 900000 });
+                    }
+                    res.send(o, 200);
                 }
-                res.send(o, 200);
-            }
-        });
+            });
+        }else{
+            DBM.autoLogin(req.cookies.user, req.cookies.pass, function(o){
+                if(o != null){
+                    res.send(o, 200);
+                }else{
+                    res.render('login');
+                }
+            });
+        }
     });
 
     // Cierre de sesion
@@ -381,6 +394,8 @@ module.exports = function(app){
         });
     });
 
+    // Datos del usuario logueado
+
     app.get('/api/user', function(req, res) {
         if(req.session.user == null){
             res.send("not-loguedin-user", 400);
@@ -392,6 +407,23 @@ module.exports = function(app){
             res.send(JSON.stringify(data), 200);
         }
     });
+
+    // Datos del usuario en las cookies
+
+    /*
+    app.get('/api/userCookies', function(req, res){
+        console.log("Cookies: " + req.cookies.user + ", " + req.cookies.pass);
+        if(req.cookies.user != undefined && req.cookies.pass != undefined){
+            var data = {
+                user : req.cookies.user,
+                pass : req.cookies.pass
+            };
+            res.send(JSON.stringify(data), 200);
+        }else{
+            res.send("empty-cookies", 400);
+        }
+    });
+    */
 
     // Carrito de la compra
 
