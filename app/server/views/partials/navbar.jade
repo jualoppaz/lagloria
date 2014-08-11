@@ -10,7 +10,8 @@ header
                         span.icon-bar
                     a(href="/").navbar-brand.white.middle Inicio
                 div.collapse.navbar-collapse.fondoTurquesa(role="navigation")
-                    ul.nav.navbar-nav(ng-show="loguedUser.role != 'admin'")
+                    //ul.nav.navbar-nav(ng-show="loguedUser.role != 'admin'")
+                    ul.nav.navbar-nav
                         li
                             a(href="/gamaPropia") Gama propia
                         li
@@ -20,15 +21,20 @@ header
                         li
                             a(href="/contacto") Contacto
 
-                    ul.nav.navbar-nav(ng-show="loguedUser.role == 'admin'", role="menu").dropdown-menu
-                        li
-                            a(href="/gamaPropia") Gama propia
-                        li
-                            a(href="#") Publicitarios
-                        li
-                            a(href="#") Nosotros
-                        li
-                            a(href="/contacto") Contacto
+                    //ul.nav.navbar-nav(ng-show="loguedUser.role == 'admin'")
+                        li.dropdown
+                            a(href="#", data-toggle="dropdown").dropdown-toggle Secciones Usuario
+                                span.caret
+                            ul.dropdown-menu(role="menu")
+                                li
+                                    a(href="/gamaPropia") Gama propia
+                                li
+                                    a(href="#") Publicitarios
+                                li
+                                    a(href="#") Nosotros
+                                li
+                                    a(href="/contacto") Contacto
+
 
                     ul.nav.navbar-nav.navbar-right.hidden-xs
                         li

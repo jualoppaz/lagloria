@@ -16,7 +16,15 @@ module.exports = function(app){
 
     app.get('/', function(req, res) {
         funcionesComunes(req);
-        res.render('index');
+        if(req.session.user == null){
+            res.render('index');
+        }else{
+            if(req.session.user.role == "admin"){
+                res.render('admin/dashboard');
+            }else{
+                res.render('index');
+            }
+        }
     });
 
     app.get('/gamaPropia', function(req, res) {

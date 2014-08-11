@@ -640,3 +640,13 @@ th, td{
 .eathub{
     color: #CC3E27 !important;
 }
+
+
+/* Tipografia Abel de Google fonts */
+
+@font-face {
+    font-family: 'Abel';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Abel'), local('Abel-Regular'), url(/fonts/brdGGFwqYJxjg2CD1E9o7g.woff2) format('woff2'), url(/fonts/EAqh528fFdbUek8UOky4sA.woff) format('woff');
+}
