@@ -10,7 +10,7 @@ header
                         span.icon-bar
                     a(href="/").navbar-brand.white.middle Inicio
                 div.collapse.navbar-collapse.fondoTurquesa(role="navigation")
-                    ul.nav.navbar-nav
+                    ul.nav.navbar-nav(ng-show="loguedUser.role != 'admin'")
                         li
                             a(href="/gamaPropia") Gama propia
                         li
@@ -18,31 +18,17 @@ header
                         li
                             a(href="#") Nosotros
                         li
-                            a(href="#") Contacto
-                        //li
-                            div.input-group.navbar-input-group.fbSearch
-                                form#search-form.navbar-form.navbar-left.hidden-xs.hidden-sm(role="search", method="get", action="#")
-                                    div.form-group
-                                        input.form-control.border-search.border-rect-red#srchterm(type="text", placeholder="Buscar...", name="srchterm")
-                                        span.input-group-btn-red.navbar-input-group-btn
-                                            button.btn.btn-default(type="submit")
-                                                i.fa.fa-search
-                                    div.suggest
-                                        ul
-                                            li.header
-                                                span.text Recipes
-                                            li
-                                                a(href="#")
-                                                    span.fa.fa-search
-                                                    span.text Search recipes
-                                                    span.category
-                                            li.header
-                                                span.text People
-                                            li
-                                                a(href="#")
-                                                    span.fa.fa-search
-                                                    span.text Search people
-                                                    span.category
+                            a(href="/contacto") Contacto
+
+                    ul.nav.navbar-nav(ng-show="loguedUser.role == 'admin'", role="menu").dropdown-menu
+                        li
+                            a(href="/gamaPropia") Gama propia
+                        li
+                            a(href="#") Publicitarios
+                        li
+                            a(href="#") Nosotros
+                        li
+                            a(href="/contacto") Contacto
 
                     ul.nav.navbar-nav.navbar-right.hidden-xs
                         li

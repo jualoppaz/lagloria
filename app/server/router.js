@@ -141,7 +141,17 @@ module.exports = function(app){
     });
 
     app.get('/carrito', function(req, res){
-        res.render('carrito');
+        if(req.session.user == null){
+            res.render('error',{
+                message : 'No puede acceder al carrito de la compra si no está logueado.'
+            });
+        }else{
+            res.render('carrito');
+        }
+    });
+
+    app.get('/contacto', function(req, res){
+        res.render('contacto');
     });
 
     app.get('/webAntigua/blandos', function(req, res) {
@@ -156,97 +166,161 @@ module.exports = function(app){
 
     app.get('/api/toffees', function(req, res) {
         DBM.getAllProductsByCategoryType('Toffee', function(err, toffees){
-            res.send(toffees);
+            if(err){
+                console.log(err);
+            }else{
+                res.send(toffees);
+            }
         });
     });
 
     app.get('/api/toffees/:id', function(req, res) {
         DBM.getProductByCategoryTypeAndId('Toffee', req.params.id, function(err, toffee){
-            res.send(toffee[0]);
+            if(err){
+                console.log(err);
+            }else{
+                res.send(toffee[0]);
+            }
         });
     });
 
     app.get('/api/masticables', function(req, res) {
         DBM.getAllProductsByCategoryType('Masticable', function(err, masticables){
-            res.send(masticables);
+            if(err){
+                console.log(err);
+            }else{
+                res.send(masticables);
+            }
         });
     });
 
     app.get('/api/masticables/:id', function(req, res) {
         DBM.getProductByCategoryTypeAndId('Masticable', req.params.id, function(err, masticable){
-            res.send(masticable[0]);
+            if(err){
+                console.log(err);
+            }else{
+                res.send(masticable[0]);
+            }
         });
     });
 
     app.get('/api/crystals', function(req, res) {
         DBM.getAllProductsByCategoryType('Crystal', function(err, crystals){
-            res.send(crystals);
+            if(err){
+                console.log(err);
+            }else{
+                res.send(crystals);
+            }
         });
     });
 
     app.get('/api/crystals/:id', function(req, res) {
         DBM.getProductByCategoryTypeAndId('Crystal', req.params.id, function(err, crystal){
-            res.send(crystal[0]);
+            if(err){
+                console.log(err);
+            }else{
+                res.send(crystal[0]);
+            }
         });
     });
 
     app.get('/api/glorias', function(req, res) {
         DBM.getAllProductsByCategoryType('Gloria', function(err, glorias){
-            res.send(glorias);
+            if(err){
+                console.log(err);
+            }else{
+                res.send(glorias);
+            }
         });
     });
 
     app.get('/api/glorias/:id', function(req, res) {
         DBM.getProductByCategoryTypeAndId('Gloria', req.params.id, function(err, gloria){
-            res.send(gloria[0]);
+            if(err){
+                console.log(err);
+            }else{
+                res.send(gloria[0]);
+            }
         });
     });
 
     app.get('/api/ponnies', function(req, res) {
         DBM.getAllProductsByCategoryType('Ponny', function(err, glorias){
-            res.send(glorias);
+            if(err){
+                console.log(err);
+            }else{
+                res.send(glorias);
+            }
         });
     });
 
     app.get('/api/ponnies/:id', function(req, res) {
         DBM.getProductByCategoryTypeAndId('Ponny', req.params.id, function(err, gloria){
-            res.send(gloria[0]);
+            if(err){
+                console.log(err);
+            }else{
+                res.send(gloria[0]);
+            }
         });
     });
 
     app.get('/api/sinGrupo', function(req, res) {
         DBM.getAllProductsByCategoryType('Sin grupo', function(err, sinGrupo){
-            res.send(sinGrupo);
+            if(err){
+                console.log(err);
+            }else{
+                res.send(sinGrupo);
+            }
         });
     });
 
     app.get('/api/sinGrupo/:id', function(req, res) {
         DBM.getProductByCategoryTypeAndId('Sin grupo', req.params.id, function(err, sinGrupo){
-            res.send(sinGrupo[0]);
+            if(err){
+                console.log(err);
+            }else{
+                res.send(sinGrupo[0]);
+            }
         });
     });
 
     app.get('/api/grageados', function(req, res) {
         DBM.getAllProductsByCategoryType('Grageados', function(err, grageados){
-            res.send(grageados);
+            if(err){
+                console.log(err);
+            }else{
+                res.send(grageados);
+            }
         });
     });
 
     app.get('/api/grageados/:id', function(req, res) {
         DBM.getProductByCategoryTypeAndId('Grageados', req.params.id, function(err, grageados){
-            res.send(grageados[0]);
+            if(err){
+                console.log(err);
+            }else{
+                res.send(grageados[0]);
+            }
         });
     });
 
     app.get('/api/conPalo', function(req, res) {
         DBM.getAllProductsByCategoryType('Con palo', function(err, conPalo){
-            res.send(conPalo);
+            if(err){
+                console.log(err);
+            }else{
+                res.send(conPalo);
+            }
         });
     });
 
     app.get('/api/conPalo/:id', function(req, res) {
         DBM.getProductByCategoryTypeAndId('Con palo', req.params.id, function(err, conPalo){
-            res.send(conPalo[0]);
+            if(err){
+                console.log(err);
+            }else{
+                res.send(conPalo[0]);
+            }
         });
     });
 
@@ -273,14 +347,18 @@ module.exports = function(app){
                                 masticables: masticables
                             };
 
-                            res.json(json);
+                            if(err){
+                                console.log(err);
+                            }else{
+                                res.json(json, 200);
+                            }
                         });
                     });
                 }else if(categoria == "Duros"){
-                    DBM.getAllProductsByCategoryType('Crystal', function(err, crystals){
-                        DBM.getAllProductsByCategoryType('Gloria', function(err, glorias){
-                            DBM.getAllProductsByCategoryType('Ponny', function(err, ponnies){
-                                DBM.getAllProductsByCategoryType('Sin grupo', function(err, sinGrupo){
+                    DBM.getAllProductsByCategoryType('Crystal', function(err1, crystals){
+                        DBM.getAllProductsByCategoryType('Gloria', function(err2, glorias){
+                            DBM.getAllProductsByCategoryType('Ponny', function(err3, ponnies){
+                                DBM.getAllProductsByCategoryType('Sin grupo', function(err4, sinGrupo){
 
                                     var json = {
                                         crystals: crystals,
@@ -288,25 +366,42 @@ module.exports = function(app){
                                         ponnies: ponnies,
                                         sinGrupo: sinGrupo
                                     };
-
-                                    res.json(json);
+                                    if(err1){
+                                        console.log(err1);
+                                    }else if(err2){
+                                        console.log(err2);
+                                    }else if(err3){
+                                        console.log(err3);
+                                    }else if(err4){
+                                        console.log(err4);
+                                    }else{
+                                        res.json(json, 200);
+                                    }
                                 });
                             });
                         });
                     });
                 }else if(categoria == "Grageados"){
                     DBM.getAllProductsByCategoryType('Grageados', function(err, grageados){
-                        var json = {
-                            grageados: grageados
-                        };
-                        res.json(json);
+                        if(err){
+                            console.log(err);
+                        }else{
+                            var json = {
+                                grageados: grageados
+                            };
+                            res.json(json, 200);
+                        }
                     });
                 }else if(categoria == "Con palo"){
                     DBM.getAllProductsByCategoryType('Con palo', function(err, conPalo){
-                        var json = {
-                            conPalo: conPalo
-                        };
-                        res.json(json);
+                        if(err){
+                            console.log(err);
+                        }else{
+                            var json = {
+                                conPalo: conPalo
+                            };
+                            res.json(json, 200);
+                        }
                     });
                 }
             }
@@ -402,7 +497,8 @@ module.exports = function(app){
         }else{
             var data = {
                 user : req.session.user.user,
-                name : req.session.user.name
+                name : req.session.user.name,
+                role : req.session.user.role
             };
             res.send(JSON.stringify(data), 200);
         }
@@ -429,12 +525,19 @@ module.exports = function(app){
 
     app.get('/api/shoppingCart', function(req, res){
         var productos = req.session.shoppingCartProducts;
-        var json = [{}];
-        for(i=0;i<productos.length;i++){
-            json[i] = productos[i];
+        var json = [
+            {
+
+            }];
+        if(productos == undefined){
+            res.send({}, 200);
+        }else{
+            for(i=0;i<productos.length;i++){
+                json[i] = productos[i];
+            }
+            console.log(JSON.stringify(json));
+            res.send(json, 200);
         }
-        console.log(JSON.stringify(json));
-        res.send(json, 200);
     });
 
     // Comprar producto
@@ -514,6 +617,51 @@ module.exports = function(app){
             res.send("error", 400);
         }
     });
+
+    app.get('/api/emails', function(req, res){
+        if(req.session.user == null){
+            res.send('unauthorized',400);
+        }else{
+            if(req.session.user.role == "admin"){
+                DBM.getAllEmails(function(err, mails){
+                    if(err){
+                        console.log(err);
+                    }else{
+                        res.send(mails, 200);
+                    }
+                });
+            }else{
+                res.send('unauthorized', 400);
+            }
+        }
+    });
+
+    app.post('/api/emails', function(req, res){
+        var nombre = req.body.nombre;
+        var email = req.body.email;
+        var mensaje = req.body.mensaje;
+
+        var hayErrores = false;
+
+        // Hay que validar los campos al igual que se hace en el cliente
+
+        if(!hayErrores){
+            DBM.addNewEmail({
+                nombre  : nombre,
+                email   : email,
+                mensaje : mensaje,
+                leido   : false
+            }, function(e){
+                if(e){
+                    console.log("Error al enviar email");
+                }else{
+                    res.send("ok", 200);
+                }
+            });
+        }
+    });
+
+
 
     var actualizarUltimaPagina = function(req){
         // El if se podria omitir, pero lo dejamos para tener un mayor control

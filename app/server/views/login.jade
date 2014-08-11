@@ -27,15 +27,21 @@ block content
                                             div.col-md-12.col-sm-12
                                                 div.col-md-10.col-md-offset-1.col-sm-10.col-sm-offset-1
                                                     input(type="text", name="user", placeholder="Usuario", ng-model="form.user").form-control
-                                            div.col-md-12.col-sm-12(ng-show="usuarioInexistente == true", style="margin-top: 15px")
+                                            div.col-md-12.col-sm-12(ng-show="usuarioInexistente", style="margin-top: 15px")
                                                 div.col-md-10.col-md-offset-1.col-sm-10.col-sm-offset-1
                                                     div.alert.alert-danger(ng-bind-template="{{errores.usuarioInexistente}}")
+                                            div.col-md-12.col-sm-12(ng-show="usuarioVacio", style="margin-top: 15px")
+                                                div.col-md-10.col-md-offset-1.col-sm-10.col-sm-offset-1
+                                                    div.alert.alert-danger(ng-bind-template="{{errores.usuarioVacio}}")
                                             div.col-md-12.col-sm-12(style="margin-top:15px")
                                                 div.col-md-10.col-md-offset-1.col-sm-10.col-sm-offset-1
                                                     input(type="password", name="pass", placeholder="Contraseña", ng-model="form.pass").form-control
-                                            div.col-md-12.col-sm-12(ng-show="passErroneo == true", style="margin-top: 15px")
+                                            div.col-md-12.col-sm-12(ng-show="passErroneo", style="margin-top: 15px")
                                                 div.col-md-10.col-md-offset-1.col-sm-10.col-sm-offset-1
                                                     div.alert.alert-danger(ng-bind-template="{{errores.passErroneo}}")
+                                            div.col-md-12.col-sm-12(ng-show="passVacio", style="margin-top: 15px")
+                                                div.col-md-10.col-md-offset-1.col-sm-10.col-sm-offset-1
+                                                    div.alert.alert-danger(ng-bind-template="{{errores.passVacio}}")
                                             div.col-md-12.col-sm-12(style="margin-top:15px")
                                                 div.col-md-10.col-md-offset-1.col-sm-10.col-sm-offset-1.textoTurquesa
                                                     div.col-md-1.col-sm-1.col-xs-1(style="padding-left:0px")

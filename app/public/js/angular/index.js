@@ -2,8 +2,6 @@ var index = angular.module('index', []);
 
 function mainController($scope, $http){
 
-    $scope.loguedUser = {};
-
     $scope.usuarioEstaLogueado = false;
 
     /*

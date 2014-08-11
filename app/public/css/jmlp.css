@@ -241,7 +241,7 @@
     background-color: #41B19C !important;
 }*/
 
-.btn-lagloria{
+.btn-lagloria, .btn-lagloria:focus{
     background-color: #41B19C !important;
     border-color: #eeeeee !important;
     color: #eeeeee;
@@ -266,9 +266,11 @@
     border-color: #eeeeee;
 }
 
+/*
 .main-card-name span{
     color: #41B19C !important;
 }
+*/
 
 .recipe-time{
     color: #41B19C !important;
@@ -330,6 +332,7 @@ li > a:hover, .navbar-brand:hover, .btn-default:hover, .btn:hover{
 #entrar:hover, #buscar:hover{
     color: #41B19C !important;
     background-color: #FFFFFF !important;
+    border-color: #41B19C !important;
 }
 
 #comprar:hover{
@@ -338,11 +341,33 @@ li > a:hover, .navbar-brand:hover, .btn-default:hover, .btn:hover{
     border-color: #CC3E27 !important;
 }
 
-#entrar, #buscar, #comprar{
+#entrar, #entrar:focus{
     margin-top: 5px;
     margin-right: 10px;
     padding-top: 8px;
     padding-bottom: 8px;
+    color: white;
+    background-color: #41B19C;
+}
+
+#comprar, #buscar{
+    margin-top: 5px;
+    margin-right: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    color: white;
+}
+
+#buscar, #buscar:focus{
+    background-color: #41B19C;
+}
+
+#buscar{
+    border-color: #eeeeee !important;
+}
+
+#buscar:focus{
+    border-color: #41B19C !important;
 }
 
 nav{
@@ -597,5 +622,21 @@ th, td{
 }
 
 .error{
+    color: #CC3E27 !important;
+}
+
+.css-form input.ng-invalid.ng-dirty {
+    background-color: #FA787E;
+}
+
+.css-form input.ng-valid.ng-dirty {
+    background-color: #78FA89;
+}
+
+.lagloria{
+    color: #41B19C !important;
+}
+
+.eathub{
     color: #CC3E27 !important;
 }

@@ -50,6 +50,7 @@ var db = new MongoDB(dbName, new Server(dbHost, dbPort, {auto_reconnect: true}),
 // Collections definition
 
 var accounts                = db.collection('accounts');
+var mails                   = db.collection('mails');
 var toffeesYMasticables     = db.collection('toffeesYMasticables');
 var duros                   = db.collection('duros');
 var grageados               = db.collection('grageados');
@@ -427,4 +428,20 @@ exports.getProductByCategoryTypeAndId = function(categoryType, id, callback){
     }else{
         callback(null, {message: "La categoria no existe."});
     }
+}
+
+exports.addNewEmail = function(newData, callback){
+    newData.fecha = moment().format('MMMM Do YYYY, h:mm:ss a');
+    mails.insert(newData, callback);
+}
+
+exports.getAllEmails = function(callback){
+    mails.find({ $query: {}, $orderby: {fecha:1}}).toArray(
+        function(e, res) {
+            if (e){
+                callback(e);
+            }else{
+                callback(null, res);
+            }
+        });
 }

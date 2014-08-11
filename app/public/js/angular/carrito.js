@@ -79,6 +79,7 @@ function mainController($scope, $http){
     $http.get('/api/shoppingCart')
         .success(function(data){
             $scope.productos = data;
+            alert(data);
         })
         .error(function(data){
 
