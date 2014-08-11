@@ -103,3 +103,19 @@ body {
     display: inline-block;
     border-radius: 50%;
 }
+
+.header-section a{
+    color: grey !important;
+    font-weight: bold !important;
+}
+
+@font-face {
+    font-family: 'Abel';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Abel'), local('Abel-Regular'), url(/fonts/brdGGFwqYJxjg2CD1E9o7g.woff2) format('woff2'), url(/fonts/EAqh528fFdbUek8UOky4sA.woff) format('woff');
+}
+
+body{
+    background-color: white !important;
+}
