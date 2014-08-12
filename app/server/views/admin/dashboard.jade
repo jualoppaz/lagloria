@@ -1,7 +1,7 @@
-extends ../partials/adminLayout
+extends ../adminPartials/layout
 
 block content
-    div.navbar.navbar-inverse.navbar-fixed-top(role="navigation")
+    //div.navbar.navbar-inverse.navbar-fixed-top(role="navigation")
         div.container-fluid
             div.navbar-header
                 button(type="button", data-toggle="collapse", data-target=".navbar-collapse").navbar-toggle.collapsed
@@ -25,63 +25,27 @@ block content
                 form.navbar-form.navbar-right
                     input(type="text", placeholder="Search...").form-control
 
-    div.container-fluid
-        div.row
-            div.col-sm-3.col-md-2.sidebar
-                ul.nav.nav-sidebar
-                    li.header-section
-                        a(href="#") Miscelánea
-                    li
-                        a(href="#") Emails
-                    li
-                        a(href="#") Pedidos
+    div(ng-app="dashboard")
+        div
+            include ../adminPartials/navbar
 
-                ul.nav.nav-sidebar
-                    li.header-section
-                        a(href="#") Gama propia
-                    li
-                        a(href="#") Toffees y Masticables
-                    li
-                        a(href="#") Duros
-                    li
-                        a(href="#") Grageados
-                    li
-                        a(href="#") Con palo
+        div.container-fluid
+            div.row
 
-            div.col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
-                //h1.page-header Dashboard
+                include ../adminPartials/sidebar
 
-                //div.row.placeholders
-                    div.col-xs-6.col-sm-3.placeholder
-                        img(data-src="holder.js/200x200/auto/sky", alt="200x200", src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIj48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iIzBEOEZEQiIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjEwMCIgeT0iMTAwIiBzdHlsZT0iZmlsbDojZmZmO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjEzcHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+MjAweDIwMDwvdGV4dD48L3N2Zz4=").img-responsive
-                        h4 Label
-                        span.text-muted Something else
+                div.col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
 
-                //h2.sub-header Section title
-                //div.table-responsive
-                    table.table.table-striped
-                        thead
-                            tr
-                                th #
-                                th Header
-                                th Header
-                                th Header
-                                th Header
-                        tbody
-                            tr
-                                td 1,001
-                                td Lorem
-                                td ipsum
-                                td dolor
-                                td sit
-                h1.page-header Panel de Administración
-                div.
-                    Se encuentra en el panel de administración de la página web de La Gloria S.L. A la izquierda se encuentran todas las
-                    secciones y funcionalidades de la web.
+                    h1.page-header Panel de Administración
+                    div.
+                        Se encuentra en el panel de administración de la página web de La Gloria S.L. A la izquierda se encuentran todas las
+                        secciones y funcionalidades de la web.
 
 
 block scripts
-    <!-- Placed at the end of the document so the pages load faster -->
     script(src="/js/jquery.js")
     script(src="/js/bootstrap.js")
-    script(src="/js/docs.min.js")
+    script(src="/js/angular.js")
+    script(src="/js/angular/admin/dashboard.js")
+    script(src="/js/angular/admin/navbar.js")
+    script(src="/js/angular/admin/sidebar.js")

@@ -44,7 +44,6 @@ function mainController($scope, $http) {
         if(angular.element("#recordar").checked){
             $scope.form.recordar = true;
         }
-        alert("usuario: " + usuario);
         if(usuario == 'undefined' || usuario == ""){
             $scope.usuarioVacio = true;
             $scope.hayErrores = true;
@@ -58,7 +57,7 @@ function mainController($scope, $http) {
             if(usuario != 'undefined' && pass != 'undefined' && usuario.indexOf(" ") == -1 && pass.indexOf(" ") == -1){
                 $http.post('/api/login', $scope.form)
                     .success(function(data){
-                        alert("Login correcto: \n" + "Usuario: " + data.user + "\nPass: " + data.pass);
+                        alert("Login correcto");
                         $http.get('/api/lastURL')
                             .success(function(data2){
                                 if(data2.indexOf("/login")!= -1 || data2.indexOf("/") == -1){
@@ -70,8 +69,6 @@ function mainController($scope, $http) {
                             .error(function(data){
 
                             })
-                        //window.location.href = "/";
-                        alert(data);
                     })
                     .error(function(data){
                         alert(data);

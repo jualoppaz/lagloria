@@ -1,0 +1,21 @@
+div.col-sm-3.col-md-2.sidebar(ng-controller="sidebar")
+    ul.nav.nav-sidebar
+        li.header-section
+            a(href="#") Miscelánea
+        li.section
+            a(href="/emails") Emails
+                span.badge(ng-bind-template="{{correosNoLeidos}}")
+        li.section
+            a(href="#") Pedidos
+
+    ul.nav.nav-sidebar
+        li.header-section
+            a(href="#") Gama propia
+        li.section
+            a(href="#") Toffees y Masticables
+        li.section
+            a(href="#") Duros
+        li.section
+            a(href="#") Grageados
+        li.section
+            a(href="#") Con palo

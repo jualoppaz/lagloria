@@ -249,6 +249,11 @@ var getConPaloId = function(id){
     return conPalo.db.bson_serializer.ObjectID.createFromHexString(id)
 }
 
+var getMailId = function(id)
+{
+    return mails.db.bson_serializer.ObjectID.createFromHexString(id)
+}
+
 
 
 var findById = function(id, callback)
@@ -431,7 +436,7 @@ exports.getProductByCategoryTypeAndId = function(categoryType, id, callback){
 }
 
 exports.addNewEmail = function(newData, callback){
-    newData.fecha = moment().format('MMMM Do YYYY, h:mm:ss a');
+    newData.fecha = new Date();
     mails.insert(newData, callback);
 }
 
@@ -444,4 +449,43 @@ exports.getAllEmails = function(callback){
                 callback(null, res);
             }
         });
+}
+
+exports.getEmailById = function(id, callback){
+    mails.findOne({_id:getMailId(id)}, function(e, res){
+        if (e){
+            callback(e);
+        }else{
+            callback(null, res);
+        }
+    });
+}
+
+exports.getNotReadedEmails = function(callback){
+    mails.find({ $query: {leido: false}, $orderby: {fecha:1}}).toArray(
+        function(e, res) {
+            if(e){
+                callback(e);
+            }else{
+                callback(null, res);
+            }
+        });
+}
+
+exports.setEmailReaded = function(id, callback){
+    mails.findOne({_id: getMailId(id)}, function(err, res){
+        if(err){
+            callback(err);
+        }else{
+            res.leido = true;
+            mails.save(res, {safe: true}, function(err2){
+                if(err2){
+                    callback(err2);
+                }else{
+                    console.log()
+                    callback(null, res)
+                }
+            })
+        }
+    })
 }

@@ -162,6 +162,38 @@ module.exports = function(app){
         res.render('contacto');
     });
 
+    app.get('/emails', function(req, res){
+        if(req.session.user == null){
+            res.render('error',{
+                message : 'No puede acceder a los emails enviados a La Gloria S.L. porque no tiene permisos de administración.'
+            });
+        }else{
+            if(req.session.user.role == 'admin'){
+                res.render('admin/emails', 200);
+            }else{
+                res.render('error',{
+                    message : 'No puede acceder a los emails enviados a La Gloria S.L. porque no tiene permisos de administración.'
+                });
+            }
+        }
+    });
+
+    app.get('/emails/:id', function(req, res){
+        if(req.session.user == null){
+            res.render('error',{
+                message : 'No puede acceder a los emails enviados a La Gloria S.L. porque no tiene permisos de administración.'
+            });
+        }else{
+            if(req.session.user.role == 'admin'){
+                res.render('admin/email', 200);
+            }else{
+                res.render('error',{
+                    message : 'No puede acceder a los emails enviados a La Gloria S.L. porque no tiene permisos de administración.'
+                });
+            }
+        }
+    });
+
     app.get('/webAntigua/blandos', function(req, res) {
         res.sendfile('app/server/views/webAntigua/blandos.html');
     });
@@ -644,6 +676,38 @@ module.exports = function(app){
         }
     });
 
+    app.get('/api/emails/:id', function(req, res){
+        if(req.session.user == null){
+            res.send('unauthorized',400);
+        }else{
+            if(req.session.user.role == "admin"){
+                console.log("Id del email: " + req.params.id);
+                DBM.getEmailById(req.params.id, function(err, mail){
+                    if(err){
+                        console.log(err);
+                    }else{
+                        console.log("Email: " + JSON.stringify(mail));
+
+                        if(mail.leido == false){
+                            DBM.setEmailReaded(req.params.id, function(err2, mail2){
+                                if(err2){
+                                    console.log(err2);
+                                }else{
+                                    console.log("Mail final: " + mail2.leido);
+                                    res.send(mail2, 200);
+                                }
+                            });
+                        }else{
+                            res.send(mail, 200);
+                        }
+                    }
+                });
+            }else{
+                res.send('unauthorized', 400);
+            }
+        }
+    });
+
     app.post('/api/emails', function(req, res){
         var nombre = req.body.nombre;
         var email = req.body.email;
@@ -655,10 +719,10 @@ module.exports = function(app){
 
         if(!hayErrores){
             DBM.addNewEmail({
-                nombre  : nombre,
-                email   : email,
-                mensaje : mensaje,
-                leido   : false
+                nombre      : nombre,
+                direccion   : email,
+                mensaje     : mensaje,
+                leido       : false
             }, function(e){
                 if(e){
                     console.log("Error al enviar email");
@@ -669,6 +733,28 @@ module.exports = function(app){
         }
     });
 
+    app.get('/query/notReadedEmails', function(req, res){
+        DBM.getNotReadedEmails(function(err, emails){
+            if(err){
+                console.log(err);
+            }else{
+                res.send(emails, 200);
+            }
+        });
+    });
+
+    app.get('/query/notReadedEmailsNumber', function(req, res){
+        DBM.getNotReadedEmails(function(err, emails){
+            if(err){
+                console.log(err);
+            }else{
+                console.log(emails.length);
+                res.send({
+                    emails: emails.length
+                }, 200);
+            }
+        });
+    });
 
 
     var actualizarUltimaPagina = function(req){
