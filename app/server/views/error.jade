@@ -4,7 +4,7 @@ block head
     link(rel="stylesheet", href="/css/backgroundImage.css")
 block content
     div#container.fondoCaramelos(ng-app="index")
-        div(ng-controller="loginNavbarController")
+        div(ng-controller="navbarController")
             div(ng-controller="mainController")
                 include partials/navbar
                 main
@@ -19,4 +19,4 @@ block scripts
     script(src='/js/bootstrap.js')
     script(src='/js/angular.js')
     script(src='/js/angular/index.js')
-    script(src='/js/angular/loginNavbar.js')
+    script(src='/js/angular/navbar.js')

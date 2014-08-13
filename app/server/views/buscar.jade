@@ -5,11 +5,11 @@ block head
     link(rel="stylesheet", href="/css/backgroundImage.css")
 
 block content
-    div#container.fondoCaramelos
+    div#container.fondoCaramelos(ng-app="buscar")
         include partials/navbar
 
         main.margen-superior-50
-            div.container(ng-app="buscar")
+            div.container
                 div.row(ng-controller="mainController")
                     include partials/botonesMovil
 
@@ -19,7 +19,7 @@ block content
                                 div.main-card-description
                                     div.main-card-name
                                         a(href="/gamaPropia")
-                                            span.caramelo BÚSQUEDA DE CARAMELOS
+                                            span.caramelo.lagloria BÚSQUEDA DE CARAMELOS
                     div.col-md-12.col-sm-12.col-xs-12
                         div.panel.panel-body.main-card#toffees
                             //div.main-card-picture
@@ -28,7 +28,7 @@ block content
                             div.main-card-content(style="word-wrap: break-word;")
                                 div.main-card-name
                                     a.recipe-title(href="#")
-                                        span.caramelo Buscar
+                                        span.caramelo.lagloria Buscar
                                 div.main-card-description
                                     p.
                                         Aqu&iacute; podr&aacute;s buscar todos los caramelos disponibles en La Gloria S.L. actualmente.
@@ -79,7 +79,7 @@ block content
                                 div.main-card-description
                                     div.main-card-name
                                         a(href="/gamaPropia/toffeesYMasticables/toffees")
-                                            span.caramelo TOFFEES Y MASTICABLES
+                                            span.caramelo.lagloria TOFFEES Y MASTICABLES
                             div.col-md-12(style="clear:both")
                                 h3.abel Toffees
                             div(ng-repeat="toffee in toffees", style="text-align:center;")
@@ -136,7 +136,7 @@ block content
                                 div.main-card-description
                                     div.main-card-name
                                         a(href="/gamaPropia/duros")
-                                            span.caramelo DUROS
+                                            span.caramelo.lagloria DUROS
                             div.col-md-12(style="clear:both")
                                 h3.abel Crystal
                             div(ng-repeat="crystal in crystals", style="text-align:center;")
@@ -243,7 +243,7 @@ block content
                                 div.main-card-description
                                     div.main-card-name
                                         a(href="/gamaPropia/grageados")
-                                            span.caramelo GRAGEADOS
+                                            span.caramelo.lagloria GRAGEADOS
 
                             div(ng-repeat="grageado in grageados", style="text-align:center;")
                                 div(ng-show="esSurtido(grageado)")
@@ -274,7 +274,7 @@ block content
                                 div.main-card-description
                                     div.main-card-name
                                         a(href="/gamaPropia/conPalo")
-                                            span.caramelo CON PALO
+                                            span.caramelo.lagloria CON PALO
 
                             div(ng-repeat="conP in conPalo", style="text-align:center;")
                                 div(ng-show="esSurtido(conP)")
@@ -304,4 +304,5 @@ block scripts
     script(src='/js/bootstrap.js')
     script(src='/js/angular.js')
     script(src='/js/angular/buscar.js')
+    script(src='/js/angular/navbar.js')
 

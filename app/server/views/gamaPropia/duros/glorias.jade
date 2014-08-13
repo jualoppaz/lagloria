@@ -7,11 +7,10 @@ block head
 block content
     div#container(ng-app="glorias")
 
-        div(ng-controller="loginNavbarController")
+        include ../../partials/navbar
+
+        div
             div(ng-controller="mainController")
-
-                include ../../partials/navbar
-
                 main.margen-superior-50
                     div.container
                         div.row
@@ -23,13 +22,13 @@ block content
                                         div.main-card-description
                                             div.main-card-name
                                                 a(href="/gamaPropia")
-                                                    span.caramelo Gama propia
+                                                    span.caramelo.lagloria Gama propia
                                                 b.abel.mayorQue >
                                                 a(href="../duros")
-                                                    span.caramelo Duros
+                                                    span.caramelo.lagloria Duros
                                                 b.abel.mayorQue >
                                                 a(href="#")
-                                                    span.caramelo Gloria
+                                                    span.caramelo.lagloria Gloria
 
                             //Este col es con la tarjeta unificada para el modelo y la caja de busqueda
 
@@ -73,7 +72,7 @@ block content
                                     div.main-card-content(style="word-wrap: break-word;")
                                         div.main-card-name
                                             a.recipe-title(href="#")
-                                                span.caramelo Gloria
+                                                span.caramelo.lagloria Gloria
                                         div.main-card-description
                                             p.
                                                 Aqu&iacute; encontrar&aacute;s todos los caramelos gloria de los que disponemos actualmente.
@@ -87,7 +86,7 @@ block content
                                         div.main-card-name.col-md-12
                                             div.col-md-4.reset-padding-left
                                                 a.recipe-title(href="#")
-                                                    span.caramelo Buscar
+                                                    span.caramelo.lagloria Buscar
                                             div.col-md-6.col-xs-6(style="margin-top:7px")
                                                 input(type="text", placeholder="Introduzca un texto", ng-model="gloriaSearch").form-control
 
@@ -137,4 +136,4 @@ block scripts
     script(src='/js/bootstrap.js')
     script(src='/js/angular.js')
     script(src='/js/angular/duros/glorias.js')
-    script(src='/js/angular/loginNavbar.js')
+    script(src='/js/angular/navbar.js')

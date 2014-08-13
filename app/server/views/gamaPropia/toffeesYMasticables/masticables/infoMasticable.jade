@@ -8,11 +8,10 @@ block head
 block content
     div#container(ng-app="masticableInfo")
 
-        div(ng-controller="loginNavbarController")
+        include ../../../partials/navbar
+
+        div
             div(ng-controller="mainController")
-
-                include ../../../partials/navbar
-
                 main.margen-superior-50
                     div.container
                         div.row
@@ -24,13 +23,13 @@ block content
                                         div.main-card-description
                                             div.main-card-name
                                                 a(href="/gamaPropia")
-                                                    span.caramelo Gama propia
+                                                    span.caramelo.lagloria Gama propia
                                                 b.abel.mayorQue >
                                                 a(href="../../toffeesYMasticables")
-                                                    span.caramelo Toffees y Masticables
+                                                    span.caramelo.lagloria Toffees y Masticables
                                                 b.abel.mayorQue >
                                                 a(href="../masticables")
-                                                    span.caramelo Masticables
+                                                    span.caramelo.lagloria Masticables
                             div
                                 div
                                     div.col-md-12
@@ -38,7 +37,7 @@ block content
                                             div.main-card-content(style="word-wrap: break-word;")
                                                 div.main-card-name
                                                     a.recipe-title(href="#")
-                                                        span.caramelo(ng-bind-template="{{producto.model}}")
+                                                        span.caramelo.lagloria(ng-bind-template="{{producto.model}}")
                                     div(ng-show="esSurtido(producto)")
                                         // Vista para ordenadores
                                         div.col-md-12.hidden-sm.hidden-xs
@@ -197,5 +196,5 @@ block scripts
     script(src='/js/bootstrap.js')
     script(src='/js/angular.js')
     script(src='/js/angular/toffeesYMasticables/masticables/info.js')
-    script(src='/js/angular/loginNavbar.js')
+    script(src='/js/angular/navbar.js')
     script(src='/js/angular/comprar.js')

@@ -6,24 +6,18 @@ block head
 
 block content
     div#container.fondoCaramelos(ng-app="carrito")
-        div(ng-controller="loginNavbarController")
+        div(ng-controller="navbarController")
             div(ng-controller="mainController")
                 include partials/navbar
 
                 main
-                    div.container
-                        //div.row
-                            //div.col-md-4.col-md-offset-4.col-sm-6.col-sm-offset-3.col-xs-8.col-xs-offset-2
-                                img(src="/img/logoblanco.png", style="width:100%; height: 100%")
                     div.col-md-12.col-sm-12.col-xs-12(style="clear:both; margin-top:50px; margin-left:0px")
                         div.panel.panel-body.main-card(style="height: auto")
                             div.main-card-content(style="word-wrap: break-word;")
                                 div.main-card-name
                                     p.recipe-title(style="text-align:center; padding-left: 0px")
                                         span Carrito
-                                //div.col-md-12.col-sm-12
-                                    ul(ng-repeat="producto in productos")
-                                        li(ng-bind-template="{{producto.category}}, {{producto.type}}, {{producto.model}}")
+
                                 div.col-md-12.col-sm-12
                                     table.table
                                         thead
@@ -42,10 +36,6 @@ block content
                                                 td(ng-bind-template="{{producto.type}}")
                                                 td(ng-bind-template="{{producto.model}}")
                                                 td(ng-bind-template="{{producto.price}} €")
-                                                //td
-                                                    input(type="number", ng-model="producto.quantity", ng-init="producto.quantity = producto.minimumOrder", min="{{producto.minimumOrder}}", ng-change="actualizarPrecios(producto)")
-                                                //td
-                                                    input(type="number", ng-model="producto.total", ng-init="precioSubTotal = producto.quantity * producto.price", disabled)
                                                 td
                                                     div
                                                         label(style="font-weight: normal", ng-model="producto.quantity", ng-init="producto.quantity = producto.quantity || producto.minimumOrder", min="{{producto.minimumOrder}}", ng-change="actualizarPrecios(producto)", ng-bind-template="{{producto.quantity}} uds.")
@@ -78,5 +68,5 @@ block scripts
     script(src='/js/bootstrap.js')
     script(src='/js/angular.js')
     script(src='/js/angular/carrito.js')
-    script(src='/js/angular/loginNavbar.js')
+    script(src='/js/angular/navbar.js')
 

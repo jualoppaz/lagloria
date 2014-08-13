@@ -1,5 +1,5 @@
 {
-  "name": "web-angular",
+  "name": "Caramelos La Gloria S.L.",
   "version": "0.0.1",
   "description": "Sweets are you looking for are here.",
   "main": "server.js",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jualoppaz/web-angular.git"
+    "url": "https://github.com/jualoppaz/carameloslagloria.git"
   },
   "license": "MIT",
   "engines": {

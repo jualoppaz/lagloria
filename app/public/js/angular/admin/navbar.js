@@ -1,6 +1,6 @@
 //var loginNavbar = angular.module('loginNavbar', [])
 
-function loginNavbarController($scope, $http){
+function navbarController($scope, $http){
 
     $scope.usuarioEstaLogueadoParent = false;
 

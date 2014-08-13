@@ -7,10 +7,10 @@ block head
 block content
     div#container(ng-app="toffees")
 
-        div(ng-controller="loginNavbarController")
-            div(ng-controller="mainController")
-                include ../../partials/navbar
+        include ../../partials/navbar
 
+        div
+            div(ng-controller="mainController")
                 main.margen-superior-50
                     div.container
                         div.row
@@ -22,19 +22,19 @@ block content
                                         div.main-card-description
                                             div.main-card-name
                                                 a(href="/gamaPropia")
-                                                    span.caramelo Gama propia
+                                                    span.caramelo.lagloria Gama propia
                                                 b.abel.mayorQue >
                                                 a(href="../toffeesYMasticables")
-                                                    span.caramelo Toffees y Masticables
+                                                    span.caramelo.lagloria Toffees y Masticables
                                                 b.abel.mayorQue >
                                                 a(href="#")
-                                                    span.caramelo Toffees
+                                                    span.caramelo.lagloria Toffees
                             div.col-md-6.col-sm-12.col-xs-12
                                 div.panel.panel-body.main-card#toffees
                                     div.main-card-content(style="word-wrap: break-word;")
                                         div.main-card-name
                                             a.recipe-title(href="#")
-                                                span.caramelo Toffees
+                                                span.caramelo.lagloria Toffees
                                         div.main-card-description
                                             p.
                                                 Aqu&iacute; encontrar&aacute;s todos los Toffees de los que disponemos actualmente.
@@ -44,7 +44,7 @@ block content
                                         div.main-card-name.col-md-12
                                             div.col-md-4.reset-padding-left
                                                 a.recipe-title(href="#")
-                                                    span.caramelo Buscar
+                                                    span.caramelo.lagloria Buscar
                                             div.col-md-6.col-xs-6(style="margin-top:7px")
                                                 input(type="text", placeholder="Introduzca un texto", ng-model="toffeeSearch").form-control
                             div(style="clear:both")
@@ -84,4 +84,4 @@ block scripts
     script(src='/js/bootstrap.js')
     script(src='/js/angular.js')
     script(src='/js/angular/toffeesYMasticables/toffees.js')
-    script(src='/js/angular/loginNavbar.js')
+    script(src='/js/angular/navbar.js')

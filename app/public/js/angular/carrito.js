@@ -5,6 +5,8 @@ function mainController($scope, $http){
     $scope.loguedUser = {};
     $scope.productos = {};
 
+    $scope.vistaCarrito = true;
+
     /*
     $scope.usuarioEstaLogueado = false;
 
@@ -85,17 +87,13 @@ function mainController($scope, $http){
         });
 
     $scope.subTotal = function(){
-        return this.cantidad * this.price || 0;
+        return (this.cantidad * this.price) || 0;
     }
 
     $scope.guardarCambios = function(){
         var json = {
             productos : $scope.productos
         };
-        alert("JSON: ");
-        for(i=0;i<$scope.productos.length;i++){
-
-        }
         $http.put('/api/shoppingCart', json)
             .success(function(data){
                 if(data == "saved"){

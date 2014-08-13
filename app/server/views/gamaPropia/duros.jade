@@ -7,11 +7,10 @@ block head
 block content
     div#container(ng-app="duros")
 
-        div(ng-controller="loginNavbarController")
+        include ../partials/navbar
+
+        div
             div(ng-controller="mainController")
-
-                include ../partials/navbar
-
                 main.margen-superior-50
                     div.container
                         div.row
@@ -23,16 +22,16 @@ block content
                                         div.main-card-description
                                             div.main-card-name
                                                 a(href="/gamaPropia")
-                                                    span.caramelo Gama propia
+                                                    span.caramelo.lagloria Gama propia
                                                 b.abel.mayorQue >
                                                 a(href="#")
-                                                    span.caramelo Duros
+                                                    span.caramelo.lagloria Duros
                             div.col-sm-6.col-md-6.col-xs-12
                                 div.panel.panel-body.main-card#crystals
                                     div.main-card-content(style="word-wrap: break-word;")
                                         div.main-card-name
                                             a.recipe-title(href="duros/crystal")
-                                                span.caramelo Crystal
+                                                span.caramelo.lagloria Crystal
                                         div.main-card-description
                                             p.
                                                 Una delicia para el paladar.
@@ -41,7 +40,7 @@ block content
                                     div.main-card-content(style="word-wrap: break-word;")
                                         div.main-card-name
                                             a.recipe-title(href="duros/gloria")
-                                                span.caramelo Gloria
+                                                span.caramelo.lagloria Gloria
                                         div.main-card-description
                                             p.
                                                 Los caramelos que mejor identifican a la empresa.
@@ -50,7 +49,7 @@ block content
                                     div.main-card-content(style="word-wrap: break-word;")
                                         div.main-card-name
                                             a.recipe-title(href="duros/ponny")
-                                                span.caramelo Ponny
+                                                span.caramelo.lagloria Ponny
                                         div.main-card-description
                                             p.
                                                 Caramelos ideales para los más pequeños.
@@ -60,7 +59,7 @@ block content
                                     div.main-card-content(style="word-wrap: break-word;")
                                         div.main-card-name
                                             a.recipe-title(href="duros/sinGrupo")
-                                                span.caramelo Sin grupo
+                                                span.caramelo.lagloria Sin grupo
                                         div.main-card-description
                                             p.
                                                 Si no te ha convencido ninguno, seguro que éstos lo harán.
@@ -70,4 +69,4 @@ block scripts
     script(src='/js/bootstrap.js')
     script(src='/js/angular.js')
     script(src='/js/angular/duros.js')
-    script(src='/js/angular/loginNavbar.js')
+    script(src='/js/angular/navbar.js')

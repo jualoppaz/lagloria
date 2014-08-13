@@ -6,9 +6,13 @@ block head
 
 block content
     div#container.fondoCaramelos(ng-app="index")
-        div(ng-controller="loginNavbarController")
+
+        include partials/navbar
+
+        div
+
             div(ng-controller="mainController")
-                include partials/navbar
+
 
                 main
                     div.container
@@ -41,5 +45,5 @@ block scripts
     script(src='/js/bootstrap.js')
     script(src='/js/angular.js')
     script(src='/js/angular/index.js')
-    script(src='/js/angular/loginNavbar.js')
+    script(src='/js/angular/navbar.js')
 
