@@ -21,7 +21,12 @@ function navbarController($scope, $http){
         $http.get('/api/logout')
             .success(function(data){
                 if(data == "ok"){
-                    alert("Ha cerrado sesión correctamente");
+                    //alert("Ha cerrado sesión correctamente");
+
+                    angular.element("#modalTitleLogout").text("Sesión cerrada correctamente");
+                    angular.element("#modalTextLogout").text("Vuelva pronto.");
+                    angular.element("#modal-logout").modal('show');
+
                     $scope.usuarioEstaLogueadoParent = false;
 
                     // La redireccion esta hecha en cliente, pero seria ideal conseguir hacerla desde el servidor.

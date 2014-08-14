@@ -7,9 +7,12 @@ block head
 block content
     div#container.fondoCaramelos(ng-app="login")
 
-        div(ng-controller="navbarController")
+        include partials/navbar
+
+        div
             div(ng-controller="mainController")
-                include partials/navbar
+
+                include modals/alerts
 
                 main
                     div.container

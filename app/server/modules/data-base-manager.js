@@ -51,6 +51,7 @@ var db = new MongoDB(dbName, new Server(dbHost, dbPort, {auto_reconnect: true}),
 
 var accounts                = db.collection('accounts');
 var mails                   = db.collection('mails');
+var orders                  = db.collection('orders');
 var toffeesYMasticables     = db.collection('toffeesYMasticables');
 var duros                   = db.collection('duros');
 var grageados               = db.collection('grageados');
@@ -252,6 +253,11 @@ var getConPaloId = function(id){
 var getMailId = function(id)
 {
     return mails.db.bson_serializer.ObjectID.createFromHexString(id)
+}
+
+var getOrderId = function(id)
+{
+    return orders.db.bson_serializer.ObjectID.createFromHexString(id)
 }
 
 
@@ -479,6 +485,39 @@ exports.setEmailReaded = function(id, callback){
         }else{
             res.leido = true;
             mails.save(res, {safe: true}, function(err2){
+                if(err2){
+                    callback(err2);
+                }else{
+                    console.log()
+                    callback(null, res)
+                }
+            })
+        }
+    })
+}
+
+exports.deleteEmail = function(id, callback){
+    mails.remove({_id:getMailId(id)}, callback);
+}
+
+exports.getNotReadedOrders = function(callback){
+    orders.find({$query: {leido: false}, $orderby: {fecha:1}}).toArray(
+        function(e, res){
+            if(e){
+                callback(e);
+            }else{
+                callback(null, res);
+            }
+        });
+}
+
+exports.setOrderReaded = function(id, callback){
+    orders.findOne({_id: getOrderId(id)}, function(err, res){
+        if(err){
+            callback(err);
+        }else{
+            res.leido = true;
+            orders.save(res, {safe: true}, function(err2){
                 if(err2){
                     callback(err2);
                 }else{

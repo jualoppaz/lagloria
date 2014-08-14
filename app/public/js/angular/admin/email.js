@@ -10,7 +10,6 @@ function mainController($scope, $http){
     $http.get('/api/emails/' + String(emailId))
         .success(function(data){
             $scope.email = data;
-            alert(data);
 
         })
         .error(function(data){

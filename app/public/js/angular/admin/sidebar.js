@@ -3,7 +3,7 @@ function sidebar($scope, $http){
 
     $scope.correosNoLeidos = {};
 
-    $scope.pedidos = 3;
+    $scope.pedidos = {};
 
     $http.get('/query/notReadedEmailsNumber')
         .success(function(data){
@@ -12,4 +12,13 @@ function sidebar($scope, $http){
         .error(function(data){
 
         });
+
+    $http.get('/query/notReadedOrders')
+        .success(function(data){
+            $scope.pedidos = data.orders;
+        })
+        .error(function(data){
+
+        })
+
 }

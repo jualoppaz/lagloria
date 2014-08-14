@@ -1,13 +1,13 @@
 div.col-sm-3.col-md-2.sidebar(ng-controller="sidebar")
     ul.nav.nav-sidebar
         li.header-section
-            a(href="#") Notificaciones
+            a(href="#") Novedades
                 span.badge(ng-bind-template="{{correosNoLeidos + pedidos}}")
         li.section
             a(href="/emails") Emails
                 span.badge(ng-bind-template="{{correosNoLeidos}}")
         li.section
-            a(href="#") Pedidos
+            a(href="/pedidos") Pedidos
                 span.badge(ng-bind-template="{{pedidos}}")
 
     ul.nav.nav-sidebar

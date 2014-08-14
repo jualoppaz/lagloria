@@ -57,7 +57,8 @@ function mainController($scope, $http) {
             if(usuario != 'undefined' && pass != 'undefined' && usuario.indexOf(" ") == -1 && pass.indexOf(" ") == -1){
                 $http.post('/api/login', $scope.form)
                     .success(function(data){
-                        alert("Login correcto");
+                        //alert("Login correcto");
+                        /*
                         $http.get('/api/lastURL')
                             .success(function(data2){
                                 if(data2.indexOf("/login")!= -1 || data2.indexOf("/") == -1){
@@ -69,6 +70,11 @@ function mainController($scope, $http) {
                             .error(function(data){
 
                             })
+                        */
+
+                        angular.element("#modalTitleLogin").text("Login correcto");
+                        angular.element("#modalTextLogin").text("Pulse el botón para continuar");
+                        angular.element("#modal-login").modal('show');
                     })
                     .error(function(data){
                         alert(data);
@@ -80,6 +86,20 @@ function mainController($scope, $http) {
                     });
             }
         }
+    };
+
+    $scope.redirigirTrasLogin = function(){
+        $http.get('/api/lastURL')
+            .success(function(data2){
+                if(data2.indexOf("/login")!= -1 || data2.indexOf("/") == -1){
+                    window.location.href= '/';
+                }else{
+                    window.location.href = data2;
+                }
+            })
+            .error(function(data){
+
+            })
     };
 
     /*

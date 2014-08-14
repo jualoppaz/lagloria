@@ -641,6 +641,11 @@ th, td{
     color: #CC3E27 !important;
 }
 
+.mensajeEmail{
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
 
 /* Tipografia Abel de Google fonts */
 
@@ -649,4 +654,8 @@ th, td{
     font-style: normal;
     font-weight: 400;
     src: local('Abel'), local('Abel-Regular'), url(/fonts/brdGGFwqYJxjg2CD1E9o7g.woff2) format('woff2'), url(/fonts/EAqh528fFdbUek8UOky4sA.woff) format('woff');
+}
+
+#confirmarEliminacion:hover{
+    color: #285e8e !important;
 }

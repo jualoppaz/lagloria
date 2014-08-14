@@ -733,6 +733,24 @@ module.exports = function(app){
         }
     });
 
+    app.delete('/api/emails/:id', function(req, res){
+        DBM.deleteEmail(req.params.id, function(err, mail){
+            if(err){
+                console.log(err);
+            }else{
+                DBM.getAllEmails(function(err2, mails){
+                    if(err2){
+                        console.log(err2);
+                    }else{
+                        res.send(mails, 200);
+                    }
+                });
+            }
+        });
+    });
+
+    // Auxiliar query methods
+
     app.get('/query/notReadedEmails', function(req, res){
         DBM.getNotReadedEmails(function(err, emails){
             if(err){
@@ -755,6 +773,19 @@ module.exports = function(app){
             }
         });
     });
+
+    app.get('/query/notReadedOrders', function(req, res){
+        DBM.getNotReadedOrders(function(err, orders){
+            if(err){
+                console.log(err);
+            }else{
+                console.log(orders.length);
+                res.send({
+                    orders: orders.length
+                }, 200);
+            }
+        })
+    })
 
 
     var actualizarUltimaPagina = function(req){

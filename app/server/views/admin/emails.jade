@@ -18,18 +18,29 @@ block content
                         table.table
                             thead
                                 tr
+                                    th Eliminar
                                     th Remitente
                                     th Fecha
                                     th Mensaje
                             tbody(ng-repeat="email in emails")
-                                tr(ng-click="verEmail(email)", ng-show="email.leido == false").verEmail
-                                    td(style="font-weight: bold") {{email.nombre}} ({{email.direccion}})
-                                    td(style="font-weight: bold") {{email.fecha | date:'dd/MM/yyyy'}}
-                                    td(style="font-weight: bold") {{email.mensaje}}
-                                tr(href="/emails/{{email._id}}", ng-show="email.leido == true")
-                                    td {{email.nombre}} ({{email.direccion}})
-                                    td {{email.fecha | date:'dd/MM/yyyy'}}
-                                    td {{email.mensaje}}
+                                tr(ng-show="email.leido == false").verEmail
+                                    td(style="font-weight: bold")
+                                        span(ng-click="eliminarEmail(email._id)")
+                                            i.fa.fa-trash-o
+                                    td(style="font-weight: bold", ng-click="verEmail(email._id)") {{email.nombre}} ({{email.direccion}})
+                                    td(style="font-weight: bold", ng-click="verEmail(email._id)") {{email.fecha | date:'dd/MM/yyyy'}}
+                                    td(style="font-weight: bold; text-overflow: hidden !important", ng-click="verEmail(email._id)").mensajeEmail {{email.mensaje}}
+                                tr(ng-show="email.leido == true").verEmail
+                                    td
+                                        span(ng-click="eliminarEmail(email._id)")
+                                            i.fa.fa-trash-o
+                                    td(ng-click="verEmail(email._id)") {{email.nombre}} ({{email.direccion}})
+                                    td(ng-click="verEmail(email._id)") {{email.fecha | date:'dd/MM/yyyy'}}
+                                    td.mensajeEmail(ng-click="verEmail(email._id)") {{email.mensaje}}
+
+                        include ../modals/alerts
+
+
 
 
 block scripts
