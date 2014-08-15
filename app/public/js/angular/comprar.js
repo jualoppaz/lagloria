@@ -1,4 +1,6 @@
 
+
+
 function comprarController($scope, $http){
     $scope.anadirAlCarrito = function(){
         alert("Entramos en el controlador comun para comprar");

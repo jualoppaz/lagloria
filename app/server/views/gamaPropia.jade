@@ -5,66 +5,68 @@ block head
     link(rel="stylesheet", href="/css/backgroundImage.css")
 
 block content
-    div#container.fondoCaramelos(ng-app="gamaPropia")
+    div#container.fondoCaramelos(ng-app="lagloria")
 
-        include partials/navbar
+        div(ng-controller="LoguedUserController")
+            div(ng-controller="GamaPropiaController")
+                include partials/navbar
 
-        div
+                div
 
-            div(ng-controller="mainController")
+                    main.margen-superior-50
+                        div.container
+                            div.row
+                                include partials/botonesMovil
 
-                main.margen-superior-50
-                    div.container
-                        div.row
-                            include partials/botonesMovil
-
-                            div.col-md-12.col-xs-12
-                                div.panel.panel-body
-                                    div.main-card-content
-                                        div.main-card-description
-                                            div.main-card-name
-                                                a(href="/gamaPropia")
-                                                    span.caramelo.lagloria Gama propia
-                            div.col-sm-6.col-md-3.col-xs-12
-                                div.panel.panel-body.main-card#gama-propia-toffeesYMasticables
-                                    div.main-card-picture
-                                        a(href="/gamaPropia/toffeesYMasticables")
-                                            img(src="/img/toffessYMasticables2.png", style="width: 90%; height: 90%;").imagenCategoria
-                                    div.main-card-content(style="word-wrap: break-word;")
-                                        div.main-card-description
-                                            p.
-                                                Si te gustan los caramelos que se deshacen en la boca &eacute;stos son los tuyos.
-                            div.col-sm-6.col-md-3.col-xs-12
-                                div.panel.panel-body.main-card#gama-propia-duros
-                                    div.main-card-picture
-                                        a(href="/gamaPropia/duros")
-                                            img(src="/img/duros2.png", style="width: 100%; height: 85%;").imagenCategoria.duros
-                                    div.main-card-content(style="word-wrap: break-word;")
-                                        div.main-card-description
-                                            p.
-                                                Los caramelos de toda la vida.
-                            div.col-sm-6.col-md-3.col-xs-12
-                                div.panel.panel-body.main-card#gama-propia-grageados
-                                    div.main-card-picture
-                                        a(href="/gamaPropia/grageados")
-                                            img(src="/img/grageados2.png", style="width: 100%; height: 80%;").imagenCategoria.grageados
-                                    div.main-card-content(style="word-wrap: break-word;")
-                                        div.main-card-description
-                                            p.
-                                                Caramelos ideales para fiestas de cumpleaños.
-                            div.col-sm-6.col-md-3.col-xs-12
-                                div.panel.panel-body.main-card#gama-propia-conPalo
-                                    div.main-card-picture
-                                        a(href="/gamaPropia/conPalo")
-                                            img(src="/img/conPalo2.png", style="width: 100%; height: 100%;")
-                                    div.main-card-content(style="word-wrap: break-word;")
-                                        div.main-card-description
-                                            p.
-                                                Si prefieres los novedosos caramelos con palo ésta es tu sección.
+                                div.col-md-12.col-xs-12
+                                    div.panel.panel-body
+                                        div.main-card-content
+                                            div.main-card-description
+                                                div.main-card-name
+                                                    a(href="/gamaPropia")
+                                                        span.caramelo.lagloria Gama propia
+                                div.col-sm-6.col-md-3.col-xs-12
+                                    div.panel.panel-body.main-card#gama-propia-toffeesYMasticables
+                                        div.main-card-picture
+                                            a(href="/gamaPropia/toffeesYMasticables")
+                                                img(src="/img/toffessYMasticables2.png", style="width: 90%; height: 90%;").imagenCategoria
+                                        div.main-card-content(style="word-wrap: break-word;")
+                                            div.main-card-description
+                                                p.
+                                                    Si te gustan los caramelos que se deshacen en la boca &eacute;stos son los tuyos.
+                                div.col-sm-6.col-md-3.col-xs-12
+                                    div.panel.panel-body.main-card#gama-propia-duros
+                                        div.main-card-picture
+                                            a(href="/gamaPropia/duros")
+                                                img(src="/img/duros2.png", style="width: 100%; height: 85%;").imagenCategoria.duros
+                                        div.main-card-content(style="word-wrap: break-word;")
+                                            div.main-card-description
+                                                p.
+                                                    Los caramelos de toda la vida.
+                                div.col-sm-6.col-md-3.col-xs-12
+                                    div.panel.panel-body.main-card#gama-propia-grageados
+                                        div.main-card-picture
+                                            a(href="/gamaPropia/grageados")
+                                                img(src="/img/grageados2.png", style="width: 100%; height: 80%;").imagenCategoria.grageados
+                                        div.main-card-content(style="word-wrap: break-word;")
+                                            div.main-card-description
+                                                p.
+                                                    Caramelos ideales para fiestas de cumpleaños.
+                                div.col-sm-6.col-md-3.col-xs-12
+                                    div.panel.panel-body.main-card#gama-propia-conPalo
+                                        div.main-card-picture
+                                            a(href="/gamaPropia/conPalo")
+                                                img(src="/img/conPalo2.png", style="width: 100%; height: 100%;")
+                                        div.main-card-content(style="word-wrap: break-word;")
+                                            div.main-card-description
+                                                p.
+                                                    Si prefieres los novedosos caramelos con palo ésta es tu sección.
 
 block scripts
     script(src='/js/jquery.js')
     script(src='/js/bootstrap.js')
     script(src='/js/angular.js')
+    script(src='/js/angular/services.js')
+    script(src='/js/angular/loguedUser.js')
     script(src='/js/angular/gamaPropia.js')
     script(src='/js/angular/navbar.js')

@@ -5,49 +5,52 @@ block head
     link(rel="stylesheet", href="/css/backgroundImage.css")
 
 block content
-    div#container(ng-app="toffeesYMasticables")
+    div#container(ng-app="lagloria")
 
-        include ../partials/navbar
+        div(ng-controller="LoguedUserController")
+            include ../partials/navbar
 
-        div
-            div(ng-controller="mainController")
-                main.margen-superior-50
-                    div.container
-                        div.row
-                            include ../partials/botonesMovil
+            div
+                div(ng-controller="ToffeesYMasticablesController")
+                    main.margen-superior-50
+                        div.container
+                            div.row
+                                include ../partials/botonesMovil
 
-                            div.col-md-12.col-xs-12
-                                div.panel.panel-body
-                                    div.main-card-content
-                                        div.main-card-description
+                                div.col-md-12.col-xs-12
+                                    div.panel.panel-body
+                                        div.main-card-content
+                                            div.main-card-description
+                                                div.main-card-name
+                                                    a(href="/gamaPropia")
+                                                        span.caramelo.lagloria Gama propia
+                                                    b.abel.mayorQue >
+                                                    a(href="#")
+                                                        span.caramelo.lagloria Toffees y Masticables
+                                div.col-sm-6.col-md-6.col-xs-12
+                                    div.panel.panel-body.main-card#toffees
+                                        div.main-card-content(style="word-wrap: break-word;")
                                             div.main-card-name
-                                                a(href="/gamaPropia")
-                                                    span.caramelo.lagloria Gama propia
-                                                b.abel.mayorQue >
-                                                a(href="#")
-                                                    span.caramelo.lagloria Toffees y Masticables
-                            div.col-sm-6.col-md-6.col-xs-12
-                                div.panel.panel-body.main-card#toffees
-                                    div.main-card-content(style="word-wrap: break-word;")
-                                        div.main-card-name
-                                            a.recipe-title(href="toffeesYMasticables/toffees")
-                                                span.caramelo.lagloria Toffees
-                                        div.main-card-description
-                                            p.
-                                                Si te gustan los caramelos que se deshacen en la boca &eacute;stos son los tuyos.
-                            div.col-sm-6.col-md-6.col-xs-12
-                                div.panel.panel-body.main-card#masticables
-                                    div.main-card-content(style="word-wrap: break-word;")
-                                        div.main-card-name
-                                            a.recipe-title(href="toffeesYMasticables/masticables")
-                                                span.caramelo.lagloria Masticables
-                                        div.main-card-description
-                                            p.
-                                                Los caramelos de toda la vida.
+                                                a.recipe-title(href="toffeesYMasticables/toffees")
+                                                    span.caramelo.lagloria Toffees
+                                            div.main-card-description
+                                                p.
+                                                    Si te gustan los caramelos que se deshacen en la boca &eacute;stos son los tuyos.
+                                div.col-sm-6.col-md-6.col-xs-12
+                                    div.panel.panel-body.main-card#masticables
+                                        div.main-card-content(style="word-wrap: break-word;")
+                                            div.main-card-name
+                                                a.recipe-title(href="toffeesYMasticables/masticables")
+                                                    span.caramelo.lagloria Masticables
+                                            div.main-card-description
+                                                p.
+                                                    Los caramelos de toda la vida.
 
 block scripts
     script(src='/js/jquery.js')
     script(src='/js/bootstrap.js')
     script(src='/js/angular.js')
+    script(src='/js/angular/services.js')
+    script(src='/js/angular/loguedUser.js')
     script(src='/js/angular/toffeesYMasticables.js')
     script(src='/js/angular/navbar.js')

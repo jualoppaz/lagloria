@@ -21,29 +21,14 @@ header(ng-controller="navbarController")
                         li
                             a(href="/contacto") Contacto
 
-                    //ul.nav.navbar-nav(ng-show="loguedUser.role == 'admin'")
-                        li.dropdown
-                            a(href="#", data-toggle="dropdown").dropdown-toggle Secciones Usuario
-                                span.caret
-                            ul.dropdown-menu(role="menu")
-                                li
-                                    a(href="/gamaPropia") Gama propia
-                                li
-                                    a(href="#") Publicitarios
-                                li
-                                    a(href="#") Nosotros
-                                li
-                                    a(href="/contacto") Contacto
-
-
                     ul.nav.navbar-nav.navbar-right.hidden-xs
                         li
                             a(href="/buscar") Buscar
                                 i.fa.fa-search(style="margin-left:15px")
-                        li(ng-show="usuarioEstaLogueadoParent == true")
+                        li(ng-show="usuarioEstaLogueado == true")
                             a(href="/carrito") Carrito
                                 i.fa.fa-shopping-cart(style="margin-left:15px")
-                        li(ng-show="usuarioEstaLogueadoParent == true", style="margin-left:15px")
+                        li(ng-show="usuarioEstaLogueado == true", style="margin-left:15px")
                             a.btn.btn-default.btn-lagloria(href="#", role="button", ng-click="cerrarSesion()")#entrar Cerrar sesión
-                        li(ng-show="usuarioEstaLogueadoParent == false", style="margin-left:15px")
+                        li(ng-show="usuarioEstaLogueado == false", style="margin-left:15px")
                             a.btn.btn-default.btn-lagloria(href="/login", role="button")#entrar Entrar

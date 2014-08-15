@@ -2,6 +2,7 @@
 
 function navbarController($scope, $http){
 
+    /*
     $scope.usuarioEstaLogueadoParent = false;
 
     $scope.loguedUser = {};
@@ -16,6 +17,8 @@ function navbarController($scope, $http){
                 $scope.usuarioEstaLogueadoParent = false;
             }
         });
+
+        */
 
     $scope.cerrarSesion = function(){
         $http.get('/api/logout')
