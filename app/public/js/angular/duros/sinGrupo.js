@@ -1,35 +1,7 @@
-var sinGrupo = angular.module('sinGrupo', []);
+var app = angular.module('lagloria');
 
-function mainController($scope, $http) {
+app.controller('SinGrupoController', function ($scope, $http) {
     $scope.sinGrupos = {};
-    $scope.loguedUser = {};
-
-    /*
-    $scope.usuarioEstaLogueado = false;
-
-    $http.get('/api/user')
-        .success(function(data){
-            $scope.usuarioEstaLogueado = true;
-            $scope.loguedUser = data;
-        })
-        .error(function(data){
-            if(data == "not-loguedin-user"){
-                $scope.usuarioEstaLogueado = false;
-            }
-        });
-
-    $scope.cerrarSesion = function(){
-        $http.get('/api/logout')
-            .success(function(data){
-                if(data == "ok"){
-                    alert("Ha cerrado sesión correctamente");
-                    $scope.usuarioEstaLogueado = false;
-                }
-            })
-            .error(function(data){
-
-            });
-    }*/
 
     $http.get('/api/sinGrupo')
         .success(function(data) {
@@ -43,19 +15,4 @@ function mainController($scope, $http) {
             alert("Ha sucedido algún error. Recargue la página de nuevo. Disculpe las molestias.");
         });
 
-    /*
-    $http.get('/api/user')
-        .success(function(data) {
-            $scope.loguedUser = data;
-        })
-        .error(function(data){
-
-        });
-    */
-
-    /*
-    $scope.esSurtido = function(duro){
-        return duro.model == "Surtido";
-    }
-    */
-}
+});

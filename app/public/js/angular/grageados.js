@@ -1,35 +1,7 @@
-var grageados = angular.module('grageados', []);
+var app = angular.module('lagloria');
 
-function mainController($scope, $http) {
+app.controller('GrageadoController', function ($scope, $http) {
     $scope.grageados = {};
-    $scope.loguedUser = {};
-
-    /*
-    $scope.usuarioEstaLogueado = false;
-
-    $http.get('/api/user')
-        .success(function(data){
-            $scope.usuarioEstaLogueado = true;
-            $scope.loguedUser = data;
-        })
-        .error(function(data){
-            if(data == "not-loguedin-user"){
-                $scope.usuarioEstaLogueado = false;
-            }
-        });
-
-    $scope.cerrarSesion = function(){
-        $http.get('/api/logout')
-            .success(function(data){
-                if(data == "ok"){
-                    alert("Ha cerrado sesión correctamente");
-                    $scope.usuarioEstaLogueado = false;
-                }
-            })
-            .error(function(data){
-
-            });
-    }*/
 
     $http.get('/api/grageados')
         .success(function(data) {
@@ -43,17 +15,7 @@ function mainController($scope, $http) {
             alert("No se ha podido cargar la página correctamente. Recargue la página. Gracias.");
         });
 
-    /*
-    $http.get('/api/user')
-        .success(function(data) {
-            $scope.loguedUser = data;
-        })
-        .error(function(data){
-
-        });
-    */
-
     $scope.esSurtido = function(grageado){
         return grageado.model == "Surtido";
     }
-}
+});

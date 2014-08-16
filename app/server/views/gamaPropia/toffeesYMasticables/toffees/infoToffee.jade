@@ -1,18 +1,15 @@
-// Surtidos: ordenadores, tablets y moviles.
-// Otros:    ordenadores, tablets y moviles.
-
 extends ../../../layout
 block head
     title Información
     link(rel="stylesheet", href="/css/backgroundImage.css")
 block content
-    div#container(ng-app="productoInfo")
-        div(ng-controller="userController")
+    div#container(ng-app="lagloria")
+        div(ng-controller="LoguedUserController")
 
             include ../../../partials/navbar
 
             div
-                div(ng-controller="mainController")
+                div(ng-controller="InfoToffeeController")
 
                     main.margen-superior-50
                         div.container
@@ -154,6 +151,7 @@ block content
                                                                 h3(ng-bind-template="{{producto.minimumOrder}} Kg")
                                                             div.col-md-4
                                                                 h3(ng-bind-template="{{producto.price}} € / Kg")
+
                                                     include ../../../partials/botonComprar
 
                                                 div.panel.panel-body
@@ -201,8 +199,9 @@ block scripts
     script(src='/js/jquery.js')
     script(src='/js/bootstrap.js')
     script(src='/js/angular.js')
-    //script(src='/js/angular/toffeesYMasticables/toffees/info.js')
-    script(src='/js/angular/categoria/tipo/info.js')
+    script(src='/js/angular/services.js')
+    script(src='/js/angular/loguedUser.js')
+    script(src='/js/angular/toffeesYMasticables/toffees/info.js')
     script(src='/js/angular/navbar.js')
     script(src='/js/angular/comprar.js')
-    script(src='/js/angular/user.js')
+

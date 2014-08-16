@@ -1,58 +1,8 @@
-var toffeeInfo = angular.module('toffeeInfo', []);
+var app = angular.module('lagloria');
 
-function mainController($scope, $http) {
+app.controller('InfoToffeeController', function($scope, $http) {
     $scope.producto = {};
     $scope.loguedUser = {};
-
-    /*
-    $scope.usuarioEstaLogueado = false;
-
-    $http.get('/api/user')
-        .success(function(data){
-            $scope.usuarioEstaLogueado = true;
-            $scope.loguedUser = data;
-        })
-        .error(function(data){
-            if(data == "not-loguedin-user"){
-                $scope.usuarioEstaLogueado = false;
-            }
-        });
-
-    $scope.cerrarSesion = function(){
-        $http.get('/api/logout')
-            .success(function(data){
-                if(data == "ok"){
-                    alert("Ha cerrado sesión correctamente");
-                    $scope.usuarioEstaLogueado = false;
-                }
-            })
-            .error(function(data){
-
-            });
-    }*/
-
-    /*
-    $scope.anadirAlCarrito = function(){
-        var json = {
-            id: $scope.producto._id,
-            category: $scope.producto.category,
-            type: $scope.producto.type
-        };
-
-        $http.post('/api/shoppingCart', json)
-            .success(function(data){
-                if(data == "ok"){
-                    alert("El producto ha sido añadido al carrito.");
-                }
-                alert("Categoria: " + data.category + "\nTipo: " + data.type + "\nModelo: " + data.model);
-            })
-            .error(function(data){
-                if(data == "product-already-exists"){
-                    alert("El producto estaba añadido en el carrito con anterioridad.");
-                }
-            });
-    };
-    */
 
     var url = window.location.href.split("/");
     var toffeeId = url[url.length - 1];
@@ -66,19 +16,9 @@ function mainController($scope, $http) {
             alert("No se ha podido cargar la página correctamente. Recargue la página. Gracias.");
         });
 
-    /*
-    $http.get('/api/user')
-        .success(function(data) {
-            $scope.loguedUser = data;
-        })
-        .error(function(data){
-
-        });
-    */
-
     $scope.esSurtido = function(toffee){
         //alert("Modelo: " + toffee.model);
         return toffee.model == "Surtido";
     }
 
-}
+});

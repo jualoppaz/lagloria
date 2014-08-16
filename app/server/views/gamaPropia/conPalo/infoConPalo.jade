@@ -6,12 +6,12 @@ block head
     title Información
     link(rel="stylesheet", href="/css/backgroundImage.css")
 block content
-    div#container(ng-app="conPaloInfo")
+    div#container(ng-app="lagloria")
+        div(ng-controller="LoguedUserController")
 
-        include ../../partials/navbar
+            include ../../partials/navbar
 
-        div
-            div(ng-controller="mainController")
+            div(ng-controller="InfoConPaloController")
                 main.margen-superior-50
                     div.container
                         div.row
@@ -189,6 +189,8 @@ block scripts
     script(src='/js/jquery.js')
     script(src='/js/bootstrap.js')
     script(src='/js/angular.js')
+    script(src='/js/angular/services.js')
+    script(src='/js/angular/loguedUser.js')
     script(src='/js/angular/conPalo/info.js')
     script(src='/js/angular/navbar.js')
     script(src='/js/angular/comprar.js')
