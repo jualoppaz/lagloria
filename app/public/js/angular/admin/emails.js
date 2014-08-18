@@ -1,6 +1,6 @@
-var emails = angular.module('emails', []);
+var app = angular.module('dashboard');
 
-function mainController($scope, $http){
+app.controller('EmailsController', function ($scope, $http){
 
     $scope.emails = {};
     $scope.emailAEliminar = {};
@@ -32,4 +32,4 @@ function mainController($scope, $http){
 
             })
     };
-}
+});

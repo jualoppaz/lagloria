@@ -1,4 +1,4 @@
-header(ng-controller="navbarController")
+header(ng-controller="NavbarController")
     nav.navbar.navbar-fixed-top.navbar-default.fondoTurquesa(role="navigation")
         div.navbar-inner
             div.container-fluid
@@ -32,3 +32,5 @@ header(ng-controller="navbarController")
                             a.btn.btn-default.btn-lagloria(href="#", role="button", ng-click="cerrarSesion()")#entrar Cerrar sesión
                         li(ng-show="usuarioEstaLogueado == false", style="margin-left:15px")
                             a.btn.btn-default.btn-lagloria(href="/login", role="button")#entrar Entrar
+
+    include ../modals/alerts

@@ -1,5 +1,5 @@
-var dashboard = angular.module('dashboard', []);
+var app = angular.module('dashboard');
 
-function mainController($scope, $http){
+app.controller('DashBoardController', function ($scope, $http){
 
-}
+});

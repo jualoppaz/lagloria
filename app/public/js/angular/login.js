@@ -1,6 +1,6 @@
-var login = angular.module('login', []);
+var app = angular.module('lagloria');
 
-function mainController($scope, $http) {
+app.controller('LoginController', function ($scope, $http) {
     $scope.loguedUser = {};
     $scope.usuarioEstaLogueado = false;
 
@@ -22,7 +22,7 @@ function mainController($scope, $http) {
         $scope.usuarioVacio = false;
         $scope.passVacio = false;
         $scope.hayErrores = false;
-    }
+    };
 
     $scope.loguearse = function(){
         $scope.reiniciarMensajes();
@@ -77,29 +77,16 @@ function mainController($scope, $http) {
 
     $scope.redirigirTrasLogin = function(){
         $http.get('/api/lastURL')
-            .success(function(data2){
-                if(data2.indexOf("/login")!= -1 || data2.indexOf("/") == -1){
-                    window.location.href= '/';
+            .success(function(data){
+                if(data.indexOf('/login')!= -1 || data.indexOf('/') != -1){
+                    window.location.href = '/';
                 }else{
-                    window.location.href = data2;
+                    window.location.href = data;
                 }
             })
             .error(function(data){
-
+                alert(data);
             })
     };
 
-    /*
-    $http.get('/api/userCookies')
-        .success(function(data){
-            $scope.form.user = data.user;
-            // El input de la contrasena es simbolico si estan los datos en las cookies.
-            $scope.form.pass = data.user;
-            alert(data);
-        })
-        .error(function(data){
-            alert(data);
-        });
-    */
-
-}
+});

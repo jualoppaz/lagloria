@@ -1,5 +1,6 @@
+var app = angular.module('dashboard');
 
-function sidebar($scope, $http){
+app.controller('SidebarController', function ($scope, $http){
 
     $scope.correosNoLeidos = {};
 
@@ -21,4 +22,4 @@ function sidebar($scope, $http){
 
         })
 
-}
+});

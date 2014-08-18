@@ -1,24 +1,6 @@
-//var loginNavbar = angular.module('loginNavbar', [])
+var app = angular.module('lagloria');
 
-function navbarController($scope, $http){
-
-    /*
-    $scope.usuarioEstaLogueadoParent = false;
-
-    $scope.loguedUser = {};
-
-    $http.get('/api/user')
-        .success(function(data){
-            $scope.usuarioEstaLogueadoParent = true;
-            $scope.loguedUser = data;
-        })
-        .error(function(data){
-            if(data == "not-loguedin-user"){
-                $scope.usuarioEstaLogueadoParent = false;
-            }
-        });
-
-        */
+app.controller('NavbarController', function ($scope, $http, $window){
 
     $scope.cerrarSesion = function(){
         $http.get('/api/logout')
@@ -30,16 +12,21 @@ function navbarController($scope, $http){
                     angular.element("#modalTextLogout").text("Vuelva pronto.");
                     angular.element("#modal-logout").modal('show');
 
-                    $scope.usuarioEstaLogueadoParent = false;
+                    $scope.usuarioEstaLogueado = false;
 
                     // La redireccion esta hecha en cliente, pero seria ideal conseguir hacerla desde el servidor.
                     // El problema es que la redireccion no se lleva bien con las peticiones AJAX.
-                    location.href = "/";
+
                 }
 
             })
             .error(function(data){
 
             });
-    }
-}
+    };
+
+    $scope.redirigirTrasLogout = function(){
+        $window.locationhref = "/";
+    };
+
+});

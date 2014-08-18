@@ -1,29 +1,7 @@
 extends ../adminPartials/layout
 
 block content
-    //div.navbar.navbar-inverse.navbar-fixed-top(role="navigation")
-        div.container-fluid
-            div.navbar-header
-                button(type="button", data-toggle="collapse", data-target=".navbar-collapse").navbar-toggle.collapsed
-                    span.sr-only Cambiar la navegación
-                    span.icon-bar
-                    span.icon-bar
-                    span.icon-bar
-                a(href="/inicio").navbar-brand Panel de administración
 
-            div.navbar-collapse.collapse(style="height: 1px;")
-                ul.nav.navbar-nav.navbar-right
-                    li
-                        a(href="http://getbootstrap.com/examples/dashboard/#") Dashboard
-                    li
-                        a(href="http://getbootstrap.com/examples/dashboard/#") Settings
-                    li
-                        a(href="http://getbootstrap.com/examples/dashboard/#") Profile
-                    li
-                        a(href="http://getbootstrap.com/examples/dashboard/#") Help
-
-                form.navbar-form.navbar-right
-                    input(type="text", placeholder="Search...").form-control
 
     div(ng-app="dashboard")
         div
@@ -46,6 +24,7 @@ block scripts
     script(src="/js/jquery.js")
     script(src="/js/bootstrap.js")
     script(src="/js/angular.js")
+    script(src="/js/angular/admin/app.js")
     script(src="/js/angular/admin/dashboard.js")
     script(src="/js/angular/admin/navbar.js")
     script(src="/js/angular/admin/sidebar.js")

@@ -5,14 +5,11 @@ block head
     link(rel="stylesheet", href="/css/backgroundImage.css")
 
 block content
-    div#container.fondoCaramelos(ng-app="login")
+    div#container.fondoCaramelos(ng-app="lagloria")
+        div(ng-controller="LoguedUserController")
+            div(ng-controller="LoginController")
 
-        include partials/navbar
-
-        div
-            div(ng-controller="mainController")
-
-                include modals/alerts
+                include partials/navbar
 
                 main
                     div.container
@@ -63,6 +60,8 @@ block scripts
     script(src='/js/jquery.js')
     script(src='/js/bootstrap.js')
     script(src='/js/angular.js')
+    script(src='/js/angular/services.js')
+    script(src='/js/angular/loguedUser.js')
     script(src='/js/angular/login.js')
     script(src='/js/angular/navbar.js')
 
