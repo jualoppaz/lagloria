@@ -32,11 +32,6 @@ module.exports = function(app){
         res.render('gamaPropia');
     });
 
-    app.get('/gamaPropia2', function(req, res) {
-        funcionesComunes(req);
-        res.render('gamaPropia2');
-    });
-
     // Gama propia
 
     app.get('/gamaPropia/toffeesYMasticables', function(req, res) {
