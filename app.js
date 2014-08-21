@@ -32,6 +32,7 @@ app.configure(function() {
 
 require('./app/server/router')(app);
 
+
 app.listen(port, function() {
 	console.log('App listening on port ' + port);
 });

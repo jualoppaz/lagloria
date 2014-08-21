@@ -4,6 +4,8 @@ var roles = ['provider', 'admin'];
 
 var ultimaPagina = "";
 
+var open = require("nodegit").Repo.open;
+
 module.exports = function(app){
 
     // Vistas de la web
@@ -809,6 +811,63 @@ module.exports = function(app){
     var funcionesComunes = function(req){
         actualizarUltimaPagina(req);
     };
+
+    var obtenerFechaUltimaActualizacion = function(callback){
+
+    };
+
+    app.get('/lastModified', function(req, res, callback){
+        open(".git", function(err, repo) {
+            if (err) {
+                throw err;
+            }
+
+            // Open the master branch.
+            repo.getMaster(function(err, branch) {
+                if (err) {
+                    throw err;
+                }
+
+                // Create a new history event emitter.
+                var history = branch.history();
+
+                // Create a counter to only show up to 9 entries.
+                var count = 0;
+
+
+                // Listen for commit events from the history.
+                history.on("commit", function(commit) {
+                    // Disregard commits past 9.
+                    if (++count >= 2) {
+                        return;
+                    }
+
+                    // Show the commit sha.
+                    console.log("commit " + commit.sha());
+
+                    // Store the author object.
+                    var author = commit.author();
+
+                    // Display author information.
+                    console.log("Author:\t" + author.name() + " <", author.email() + ">");
+
+                    // Show the commit date.
+                    console.log("Date:\t" + commit.date());
+
+                    // Give some space and show the message.
+                    console.log("\n    " + commit.message());
+
+                    res.send({
+                        fecha: commit.date()
+                    });
+                });
+
+                // Start emitting events.
+                history.start();
+
+            });
+        });
+    });
 
     app.get('*', function(req, res) {
         res.render('index');
