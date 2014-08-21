@@ -1,14 +1,14 @@
 var app = angular.module('lagloria');
 
 app.controller('GloriaController', function ($scope, $http) {
-    $scope.glorias = {};
+    $scope.productos = {};
 
     $http.get('/api/glorias')
         .success(function(data) {
             if(data.message){
-                $scope.glorias = {};
+                $scope.productos = {};
             }else{
-                $scope.glorias = data;
+                $scope.productos = data;
             }
         })
         .error(function(data) {
