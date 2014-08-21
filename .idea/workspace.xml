@@ -2,12 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10f8a809-813f-448f-8ef1-b4cf12576758" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/public/img/redimensionadas/toffees/chocolate.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/public/img/redimensionadas/toffees/chocolateBlanco.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/public/img/redimensionadas/toffees/chocolateMenta.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/public/img/redimensionadas/toffees/nata.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/public/img/redimensionadas/toffees/regaliz.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/public/img/redimensionadas/toffees/surtido.jpg" />
       <change type="DELETED" beforePath="D:\WS\carameloslagloria\app\public\img\bolsa masticables.jpg" afterPath="" />
       <change type="DELETED" beforePath="D:\WS\carameloslagloria\app\public\img\bolsa toffees.JPG" afterPath="" />
       <change type="DELETED" beforePath="D:\WS\carameloslagloria\app\public\img\bolsaMasticables.jpg" afterPath="" />
@@ -17,9 +11,7 @@
       <change type="DELETED" beforePath="D:\WS\carameloslagloria\app\public\img\toffee chocolate.jpg" afterPath="" />
       <change type="DELETED" beforePath="D:\WS\carameloslagloria\app\public\img\toffee nata.jpg" afterPath="" />
       <change type="DELETED" beforePath="D:\WS\carameloslagloria\app\public\img\toffee regaliz.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/toffees.jade" afterPath="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/toffees.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="D:\WS\carameloslagloria\app\public\img\imagenesMias\toffees\chocoMenta.png" afterPath="$PROJECT_DIR$/app/public/img/imagenesMias/toffees/chocolateMenta.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/toffees/infoToffee.jade" afterPath="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/toffees/infoToffee.jade" />
     </list>
     <ignored path="angular-users-api.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,19 +34,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="loguedUser.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/public/js/angular/loguedUser.js">
+      <file leaf-file-name="infoToffee.jade" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/toffees/infoToffee.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="37" selection-start="398" selection-end="398" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="665">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="toffees.jade" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/toffees.jade">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="81" column="96" selection-start="6706" selection-end="6706" vertical-scroll-proportion="0.5979021" vertical-offset="1197" max-vertical-offset="1938">
+            <state line="160" column="90" selection-start="13386" selection-end="13386" vertical-scroll-proportion="0.5314685" vertical-offset="2736" max-vertical-offset="4218">
               <folding />
             </state>
           </provider>
@@ -73,7 +56,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/public/js/angular/toffeesYMasticables/masticables/info.js" />
         <option value="$PROJECT_DIR$/app/server/views/gamaPropia/duros.jade" />
         <option value="$PROJECT_DIR$/app/public/js/angular/duros.js" />
         <option value="$PROJECT_DIR$/app/server/views/gamaPropia/duros/crystals.jade" />
@@ -124,6 +106,7 @@
         <option value="$PROJECT_DIR$/app/server/views/gamaPropia.jade" />
         <option value="$PROJECT_DIR$/app/public/js/angular/loguedUser.js" />
         <option value="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/toffees.jade" />
+        <option value="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/toffees/infoToffee.jade" />
       </list>
     </option>
   </component>
@@ -286,6 +269,40 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="toffeesYMasticables" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="caramelos-la-gloria" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="carameloslagloria" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gamaPropia" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="toffeesYMasticables" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="toffees" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -647,13 +664,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21303074" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21303074" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -667,6 +684,25 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21303074" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USERS">
@@ -685,11 +721,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/server/views/gamaPropia/duros/glorias/infoGloria.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="198" column="43" selection-start="14876" selection-end="14876" vertical-scroll-proportion="0.79195803" vertical-offset="2913" max-vertical-offset="3519" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/public/js/angular/duros/glorias/info.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="3" selection-start="498" selection-end="498" vertical-scroll-proportion="0.44590163" vertical-offset="0" max-vertical-offset="610" />
@@ -933,13 +964,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/public/js/angular/loguedUser.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="37" selection-start="398" selection-end="398" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="665">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/public/img/imagenesMias/toffees/nata.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -947,7 +971,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/toffees.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="81" column="96" selection-start="6706" selection-end="6706" vertical-scroll-proportion="0.5979021" vertical-offset="1197" max-vertical-offset="1938">
+        <state line="77" column="71" selection-start="6071" selection-end="6071" vertical-scroll-proportion="0.46503496" vertical-offset="1197" max-vertical-offset="1938">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/public/js/angular/loguedUser.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="37" selection-start="398" selection-end="398" vertical-scroll-proportion="0.3737705" vertical-offset="0" max-vertical-offset="665">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/toffees/infoToffee.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="160" column="90" selection-start="13386" selection-end="13386" vertical-scroll-proportion="0.5314685" vertical-offset="2736" max-vertical-offset="4218">
           <folding />
         </state>
       </provider>
