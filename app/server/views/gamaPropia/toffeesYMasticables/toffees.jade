@@ -53,7 +53,7 @@ block content
                                         div(ng-repeat="producto in toffees | filter:toffeeSearch", style="text-align:center")
                                             div(ng-show="esSurtido(producto)")
                                                 div.col-md-12.col-sm-12
-                                                    div.panel.panel-body.panel-toffee-info
+                                                    div.panel.panel-body
                                                         div(style="text-align:left;")
                                                             h1.modelo-toffee
                                                                 a(ng-href="toffees/{{producto._id}}", ng-bind-template="{{$index + 1}}. {{producto.model}}").green.hover-red

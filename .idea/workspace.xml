@@ -2,6 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10f8a809-813f-448f-8ef1-b4cf12576758" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/public/img/imagenesMias/masticables/cola.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/public/img/redimensionadas/masticables/cola.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/public/img/imagenesMias/masticables/fresa.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/public/img/redimensionadas/masticables/fresa.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/public/img/imagenesMias/masticables/limon.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/public/img/redimensionadas/masticables/limon.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/public/img/imagenesMias/masticables/naranja.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/public/img/redimensionadas/masticables/naranja.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/public/img/imagenesMias/masticables/pina.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/public/img/redimensionadas/masticables/pina.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/public/img/redimensionadas/masticables/surtido.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/public/img/imagenesMias/masticables/tuttiFrutti.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/public/img/redimensionadas/masticables/tuttiFrutti.jpg" />
       <change type="DELETED" beforePath="D:\WS\carameloslagloria\app\public\img\bolsa masticables.jpg" afterPath="" />
       <change type="DELETED" beforePath="D:\WS\carameloslagloria\app\public\img\bolsa toffees.JPG" afterPath="" />
       <change type="DELETED" beforePath="D:\WS\carameloslagloria\app\public\img\bolsaMasticables.jpg" afterPath="" />
@@ -11,7 +24,10 @@
       <change type="DELETED" beforePath="D:\WS\carameloslagloria\app\public\img\toffee chocolate.jpg" afterPath="" />
       <change type="DELETED" beforePath="D:\WS\carameloslagloria\app\public\img\toffee nata.jpg" afterPath="" />
       <change type="DELETED" beforePath="D:\WS\carameloslagloria\app\public\img\toffee regaliz.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/toffees/infoToffee.jade" afterPath="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/toffees/infoToffee.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/public/css/jmlp.css" afterPath="$PROJECT_DIR$/app/public/css/jmlp.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/masticables.jade" afterPath="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/masticables.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/toffees.jade" afterPath="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/toffees.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="angular-users-api.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,17 +49,7 @@
     <favorites_list name="angular-users-api" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="infoToffee.jade" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/toffees/infoToffee.jade">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="160" column="90" selection-start="13386" selection-end="13386" vertical-scroll-proportion="0.5314685" vertical-offset="2736" max-vertical-offset="4218">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -56,8 +62,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/server/views/gamaPropia/duros.jade" />
-        <option value="$PROJECT_DIR$/app/public/js/angular/duros.js" />
         <option value="$PROJECT_DIR$/app/server/views/gamaPropia/duros/crystals.jade" />
         <option value="$PROJECT_DIR$/app/public/js/angular/duros/crystals.js" />
         <option value="$PROJECT_DIR$/app/public/js/angular/duros/crystals/info.js" />
@@ -105,8 +109,10 @@
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/app/server/views/gamaPropia.jade" />
         <option value="$PROJECT_DIR$/app/public/js/angular/loguedUser.js" />
-        <option value="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/toffees.jade" />
         <option value="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/toffees/infoToffee.jade" />
+        <option value="$PROJECT_DIR$/app/public/css/jmlp.css" />
+        <option value="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/toffees.jade" />
+        <option value="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/masticables.jade" />
       </list>
     </option>
   </component>
@@ -524,6 +530,36 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="redimensionadas" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="masticables" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="caramelos-la-gloria" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="carameloslagloria" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="imagenesMias" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -558,6 +594,36 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="caramelos-la-gloria" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="carameloslagloria" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="imagenesMias" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="masticables" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope">
@@ -583,11 +649,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\WS\carameloslagloria\app\public\img\imagenesMias\masticables" />
+      <recent name="D:\WS\carameloslagloria\app\public\img\redimensionadas\masticables" />
       <recent name="D:\WS\carameloslagloria\app\public\img\redimensionadas\toffees" />
       <recent name="D:\WS\carameloslagloria\app\public\img\redimensionadas" />
       <recent name="D:\WS\carameloslagloria\app\public\img\imagenesMias" />
-      <recent name="D:\WS\carameloslagloria\app\public\js\angular\admin" />
-      <recent name="D:\WS\carameloslagloria\app\server\views\admin" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\WS\carameloslagloria\app\public\js\angular" />
@@ -664,13 +730,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21303074" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21303074" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -721,16 +787,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/public/js/angular/duros/glorias/info.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="3" selection-start="498" selection-end="498" vertical-scroll-proportion="0.44590163" vertical-offset="0" max-vertical-offset="610" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/server/views/gamaPropia/duros/ponnies.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="138" column="43" selection-start="9870" selection-end="9870" vertical-scroll-proportion="-18.8" vertical-offset="1876" max-vertical-offset="2482" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/public/js/angular/duros/ponnies.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="17" column="3" selection-start="487" selection-end="487" vertical-scroll-proportion="0.4737705" vertical-offset="0" max-vertical-offset="610" />
@@ -969,13 +1025,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/toffees.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="71" selection-start="6071" selection-end="6071" vertical-scroll-proportion="0.46503496" vertical-offset="1197" max-vertical-offset="1938">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/public/js/angular/loguedUser.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="37" selection-start="398" selection-end="398" vertical-scroll-proportion="0.3737705" vertical-offset="0" max-vertical-offset="665">
@@ -986,6 +1035,27 @@
     <entry file="file://$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/toffees/infoToffee.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state line="160" column="90" selection-start="13386" selection-end="13386" vertical-scroll-proportion="0.5314685" vertical-offset="2736" max-vertical-offset="4218">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/public/css/jmlp.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="444" column="4" selection-start="7077" selection-end="7077" vertical-scroll-proportion="0.0" vertical-offset="8218" max-vertical-offset="12597">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/toffees.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="72" selection-start="3389" selection-end="3389" vertical-scroll-proportion="3.8" vertical-offset="1140" max-vertical-offset="1938">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/masticables.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="79" column="155" selection-start="6494" selection-end="6494" vertical-scroll-proportion="0.7307692" vertical-offset="1083" max-vertical-offset="1919">
           <folding />
         </state>
       </provider>

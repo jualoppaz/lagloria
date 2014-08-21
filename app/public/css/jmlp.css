@@ -448,6 +448,7 @@ main{
 .toffee-description, .masticable-description, .crystal-description, .gloria-description, .ponny-description, .sinGrupo-description,
 .grageado-description, .conPalo-description{
     padding-top: 10px;
+    margin-top: 30px;
     /*padding-left: 10px;*/
 }
 
@@ -463,10 +464,6 @@ main{
 
 h3{
     font-size: 18px;
-}
-
-.panel-toffee > div{
-    margin-top:10px;
 }
 
 .col-md-right-offset-3 {
