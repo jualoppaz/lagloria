@@ -27,6 +27,15 @@ block content
                             div.panel.panel-body(ng-bind-template="{{email.mensaje}}")
 
 
+
+
+                    div.col-md-12
+                        div(ng-bind-template="{{email.fecha | date:('dd/MM/yyyy')}}")
+
+
+
+
+
 block scripts
     script(src="/js/jquery.js")
     script(src="/js/bootstrap.js")

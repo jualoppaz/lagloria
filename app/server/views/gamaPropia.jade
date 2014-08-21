@@ -29,7 +29,8 @@ block content
                                     div.panel.panel-body.main-card#gama-propia-toffeesYMasticables
                                         div.main-card-picture
                                             a(href="/gamaPropia/toffeesYMasticables")
-                                                img(src="/img/toffessYMasticables2.png", style="width: 90%; height: 90%;").imagenCategoria
+                                                img(src="/img/imagenesMias/toffessYMasticables.png", ng-show="imagenesOriginales", style="width: 90%; height: 90%;").imagenCategoria
+                                                img(src="/img/redimensionadas/toffeesYMasticables.png", ng-show="imagenesOriginales == false", style="width: 100%; height: 100%;")
                                         div.main-card-content(style="word-wrap: break-word;")
                                             div.main-card-description
                                                 p.
@@ -38,7 +39,8 @@ block content
                                     div.panel.panel-body.main-card#gama-propia-duros
                                         div.main-card-picture
                                             a(href="/gamaPropia/duros")
-                                                img(src="/img/duros2.png", style="width: 100%; height: 85%;").imagenCategoria.duros
+                                                img(src="/img/imagenesMias/duros.png", ng-show="imagenesOriginales", style="width: 100%; height: 85%;").imagenCategoria.duros
+                                                img(src="/img/redimensionadas/duros.png", ng-show="imagenesOriginales == false", style="width: 100%; height: 100%;")
                                         div.main-card-content(style="word-wrap: break-word;")
                                             div.main-card-description
                                                 p.
@@ -47,7 +49,8 @@ block content
                                     div.panel.panel-body.main-card#gama-propia-grageados
                                         div.main-card-picture
                                             a(href="/gamaPropia/grageados")
-                                                img(src="/img/grageados2.png", style="width: 100%; height: 80%;").imagenCategoria.grageados
+                                                img(src="/img/imagenesMias/grageados.png", ng-show="imagenesOriginales", style="width: 100%; height: 80%;").imagenCategoria.grageados
+                                            img(src="/img/redimensionadas/grageados.png", ng-show="imagenesOriginales == false", style="width: 100%; height: 100%;")
                                         div.main-card-content(style="word-wrap: break-word;")
                                             div.main-card-description
                                                 p.
@@ -56,7 +59,8 @@ block content
                                     div.panel.panel-body.main-card#gama-propia-conPalo
                                         div.main-card-picture
                                             a(href="/gamaPropia/conPalo")
-                                                img(src="/img/conPalo2.png", style="width: 100%; height: 100%;")
+                                                img(src="/img/imagenesMias/conPalo.png", ng-show="imagenesOriginales", style="width: 100%; height: 100%;")
+                                                img(src="/img/redimensionadas/conPalo.png", ng-show="imagenesOriginales == false", style="width: 100%; height: 100%;")
                                         div.main-card-content(style="word-wrap: break-word;")
                                             div.main-card-description
                                                 p.

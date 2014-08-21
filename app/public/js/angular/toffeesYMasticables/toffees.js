@@ -2,7 +2,6 @@ var app = angular.module('lagloria');
 
 app.controller('ToffeesController', function($scope, $http) {
     $scope.toffees = {};
-    $scope.loguedUser = {};
 
     $http.get('/api/toffees')
         .success(function(data) {
@@ -18,5 +17,11 @@ app.controller('ToffeesController', function($scope, $http) {
 
     $scope.esSurtido = function(toffee){
         return toffee.model == "Surtido";
-    }
+    };
+
 });
+
+
+
+
+

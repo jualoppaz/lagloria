@@ -446,6 +446,10 @@ exports.addNewEmail = function(newData, callback){
     mails.insert(newData, callback);
 }
 
+
+
+
+
 exports.getAllEmails = function(callback){
     mails.find({ $query: {}, $orderby: {fecha:1}}).toArray(
         function(e, res) {
@@ -456,6 +460,10 @@ exports.getAllEmails = function(callback){
             }
         });
 }
+
+
+
+
 
 exports.getEmailById = function(id, callback){
     mails.findOne({_id:getMailId(id)}, function(e, res){

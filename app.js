@@ -1,22 +1,19 @@
 //server.js
 
+/*
+require('nodetime').profile({
+    accountKey: '0fdc0d3ef41156c759bd086c430abb61ae23b725',
+    appName: 'Node.js Application'
+});
+*/
+
 var express 	= require('express');
 var app 		= express();
 var mongoose 	= require('mongoose');
 var path        = require("path");
 
 var port = process.env.PORT || 8888;
-// Conexión con la base de datos
 
-/*
-if (process.env.MONGOHQ_URL){
-	mongoose.connect(process.env.MONGOHQ_URL);
-}else{
-    mongoose.connect('mongodb://localhost:27017/angular-users');
-}
-*/
-
-// Configuración
 app.configure(function() {
     app.set('port', port);
     app.set('views', path.join(__dirname + '/app/server/views'));
@@ -27,8 +24,6 @@ app.configure(function() {
     app.use(express.cookieParser());
     app.use(express.session({ secret: 'super-duper-secret-secret' }));
     app.use(express.methodOverride());					// Simula DELETE y PUT
-    //app.use('/app/public/css', express.static(__dirname + '/app/public/css'));
-    //app.use('/app/public/img', express.static(__dirname + '/app/public/img'));
     app.use(express.favicon(path.join(__dirname, '/app/public/img/logo.png')));
     app.use(express.static(__dirname + '/app/public'));
     app.use('/img', express.static(__dirname + '/app/public/img'));
@@ -40,3 +35,8 @@ require('./app/server/router')(app);
 app.listen(port, function() {
 	console.log('App listening on port ' + port);
 });
+
+
+
+
+

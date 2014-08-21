@@ -12,7 +12,8 @@ module.exports = function(app){
         res.render('blandos');
     });
 
-    // Barra principal
+    // Vista principal
+
 
     app.get('/', function(req, res) {
         funcionesComunes(req);
@@ -653,6 +654,13 @@ module.exports = function(app){
         }
     });
 
+
+
+
+
+
+
+
     app.get('/api/emails', function(req, res){
         if(req.session.user == null){
             res.send('unauthorized',400);
@@ -670,6 +678,10 @@ module.exports = function(app){
             }
         }
     });
+
+
+
+
 
     app.get('/api/emails/:id', function(req, res){
         if(req.session.user == null){
