@@ -14,9 +14,4 @@ app.controller('CrystalController', function ($scope, $http) {
         .error(function(data) {
             alert("Ha sucedido algún error. Recargue la página de nuevo. Disculpe las molestias.");
         });
-
-    $scope.esSurtido = function(producto){
-        return producto.image.indexOf("surtido")!= -1 || producto.resizedImage.indexOf("surtido")!= -1;
-    }
-
 });

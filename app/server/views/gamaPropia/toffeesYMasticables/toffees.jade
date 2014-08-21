@@ -51,7 +51,7 @@ block content
                                 div(style="clear:both")
                                     div
                                         div(ng-repeat="producto in toffees | filter:toffeeSearch", style="text-align:center")
-                                            div(ng-show="esSurtido(producto)")
+                                            div(ng-show="producto.esSurtido")
                                                 div.col-md-12.col-sm-12
                                                     div.panel.panel-body
                                                         div(style="text-align:left;")
@@ -70,7 +70,7 @@ block content
                                                         div.col-md-9.col-sm-12
                                                             div
                                                                 h3(style="text-align: justify; margin-top: 30px", ng-bind-template="{{producto.description}}").blue
-                                            div(ng-show="!esSurtido(producto)")
+                                            div(ng-show="!producto.esSurtido")
                                                 div.col-md-3.col-sm-6
                                                     div.panel.panel-body.panel-toffee
                                                         div(style="text-align:left")

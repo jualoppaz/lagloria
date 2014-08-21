@@ -16,7 +16,4 @@ app.controller('MasticablesController', function($scope, $http) {
             alert("Hay algún error. Recargue de nuevo la página. Disculpe las molestias.");
         });
 
-    $scope.esSurtido = function(masticable){
-        return masticable.model == "Surtido";
-    };
 });

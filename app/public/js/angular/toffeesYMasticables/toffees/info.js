@@ -16,9 +16,4 @@ app.controller('InfoToffeeController', function($scope, $http) {
             alert("No se ha podido cargar la página correctamente. Recargue la página. Gracias.");
         });
 
-    $scope.esSurtido = function(toffee){
-        //alert("Modelo: " + toffee.model);
-        return toffee.model == "Surtido";
-    }
-
 });

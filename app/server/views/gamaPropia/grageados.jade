@@ -49,7 +49,7 @@ block content
                             div(style="clear:both")
                                 div
                                     div(ng-repeat="grageado in grageados | filter:grageadoSearch", style="text-align:center")
-                                        div(ng-show="esSurtido(grageado)")
+                                        div(ng-show="grageado.esSurtido")
                                             div.col-md-12.col-sm-12
                                                 div.panel.panel-body.panel-grageado-info
                                                     div(style="text-align:left;")
@@ -63,7 +63,7 @@ block content
                                                     div.col-md-10
                                                         div(style="margin-left: 15px;").grageado-description
                                                             h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{grageado.description}}").blue
-                                        div(ng-show="!esSurtido(grageado)")
+                                        div(ng-show="!grageado.esSurtido")
                                             div.col-md-4.col-sm-6
                                                 div.panel.panel-body.panel-grageado
                                                     div(style="text-align:left")

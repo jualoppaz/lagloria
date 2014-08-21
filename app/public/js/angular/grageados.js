@@ -15,7 +15,4 @@ app.controller('GrageadoController', function ($scope, $http) {
             alert("No se ha podido cargar la página correctamente. Recargue la página. Gracias.");
         });
 
-    $scope.esSurtido = function(grageado){
-        return grageado.model == "Surtido";
-    }
 });

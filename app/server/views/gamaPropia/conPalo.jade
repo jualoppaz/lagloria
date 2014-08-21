@@ -56,7 +56,7 @@ block content
                             div(style="clear:both")
                                 div
                                     div(ng-repeat="conPalo in conPalos | filter:conPaloSearch", style="text-align:center")
-                                        div(ng-show="esSurtido(conPalo)")
+                                        div(ng-show="conPalo.esSurtido")
                                             div.col-md-12.col-sm-12
                                                 div.panel.panel-body.panel-conPalo-info
                                                     div(style="text-align:left;")
@@ -70,7 +70,7 @@ block content
                                                     div.col-md-10
                                                         div(style="margin-left: 15px;").conPalo-description
                                                             h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{conPalo.description}}").blue
-                                        div(ng-show="!esSurtido(conPalo)")
+                                        div(ng-show="!conPalo.esSurtido")
                                             div.col-md-4.col-sm-6.col-xs-12
                                                 div.panel.panel-body.panel-conPalo
                                                     div(style="text-align:left")

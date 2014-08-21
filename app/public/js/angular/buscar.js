@@ -137,8 +137,4 @@ function mainController($scope, $http) {
             });
     };
 
-    $scope.esSurtido = function(caramelo){
-        return caramelo.model == "Surtido";
-    }
-
 }

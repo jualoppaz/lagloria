@@ -15,10 +15,6 @@ app.controller('ToffeesController', function($scope, $http) {
             alert(data);
         });
 
-    $scope.esSurtido = function(toffee){
-        return toffee.model == "Surtido";
-    };
-
 });
 
 

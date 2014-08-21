@@ -35,7 +35,7 @@ block content
                                                 div.main-card-name
                                                     a.recipe-title(href="#")
                                                         span.caramelo.lagloria(ng-bind-template="{{producto.model}}")
-                                    div(ng-show="esSurtido(producto)")
+                                    div(ng-show="producto.esSurtido")
                                         // Vista para ordenador
                                         div.col-md-12.hidden-sm.hidden-xs
                                             div.panel.panel-body.panel-conPalo-info
@@ -108,7 +108,7 @@ block content
                                             div.panel.panel-body
                                                 div.conPalo-info-description.blue
                                                     h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{conPalo.description}}")
-                                    div(ng-show="!esSurtido(producto)")
+                                    div(ng-show="!producto.esSurtido")
                                         // Vista para ordenadores
                                         div.col-md-12.col-sm-12.col-xs-12
                                             div.panel.panel-body.panel-conPalo-info

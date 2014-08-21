@@ -14,8 +14,4 @@ app.controller('InfoGrageadoController', function ($scope, $http) {
             alert("No se ha podido cargar la página correctamente. Recargue la página. Gracias.");
         });
 
-    $scope.esSurtido = function(masticable){
-        return masticable.model == "Surtido";
-    }
-
 });

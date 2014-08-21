@@ -35,15 +35,23 @@ block content
                                                 div.main-card-name
                                                     a.recipe-title(href="#")
                                                         span.caramelo.lagloria(ng-bind-template="{{producto.model}}")
-                                    div(ng-show="esSurtido(producto)")
+                                    div(ng-show="producto.esSurtido")
                                         // Vista para ordenadores
                                         div.col-md-12.col-sm-12.col-xs-12
                                             div.panel.panel-body.panel-crystal-info
-                                                div.col-md-2.col-sm-4.col-sm-offset-4
-                                                    div(style="float:left; margin-right: 20px; width: 100%; height: 260px").text-center.hidden-sm.hidden-xs
-                                                        img(ng-src="/img/imagenesMias/{{producto.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
-                                                    div(style="float:left; margin-right: 20px; width: 100%; height: 260px").text-center.hidden-lg.hidden-md
-                                                        img(ng-src="/img/imagenesMias/{{producto.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
+                                                div.col-md-2.col-sm-12.col-xs-12
+                                                    div(ng-show="imagenesOriginales")
+                                                        div(style="float:left; margin-right: 20px; width: 100%; height: 260px").text-center.hidden-sm.hidden-xs
+                                                            img(ng-src="/img/imagenesMias/{{producto.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
+                                                        div(style="float:left; margin-right: 20px; width: 100%; height: 260px").text-center.hidden-lg.hidden-md
+                                                            img(ng-src="/img/imagenesMias/{{producto.image}}", height="100%", style="margin-left: 10px; margin-bottom: 10px")
+
+                                                    div(ng-show="imagenesOriginales == false")
+                                                        div(style="float:left; margin-right: 20px; width: 100%; height: 260px").text-center.hidden-sm.hidden-xs
+                                                            img(ng-src="/img/redimensionadas/{{producto.resizedImage}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
+                                                        div(style="float:left; margin-right: 20px; width: 100%; height: 260px").text-center.hidden-lg.hidden-md
+                                                            img(ng-src="/img/redimensionadas/{{producto.resizedImage}}", height="100%", style="margin-left: 10px; margin-bottom: 10px")
+
                                                 div.col-md-9.col-md-offset-1
                                                     h1(style="text-align: left;").separador-horizontal.green Detalles
                                                     div.row.blue
@@ -75,51 +83,13 @@ block content
                                                     h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{producto.description}}")
 
 
-
-
-                                        // Vista para tablets y moviles
-                                        //div.col-sm-12.hidden-lg.hidden-md.col-xs-12
-                                            div.panel.panel-body.panel-crystal-info
-                                                div.col-sm-4.col-sm-offset-4
-                                                    div(style="float:left; margin-right: 20px; width: 100%; height: 260px").text-center
-                                                        img(ng-src="/img/imagenesMias/{{crystal.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
-                                                div.col-sm-12
-                                                    h1(style="text-align: left;").separador-horizontal.green Detalles
-                                                    div.row.blue
-                                                        div.col-sm-4.col-xs-4
-                                                            h3 Categoría
-                                                        div.col-sm-4.col-xs-4
-                                                            h3 Tipo
-                                                        div.col-sm-4.col-xs-4
-                                                            h3 Modelo
-                                                    div.row
-                                                        div.col-sm-4.col-xs-4
-                                                            h3(ng-bind-template="{{crystal.category}}")
-                                                        div.col-sm-4.col-xs-4
-                                                            h3(ng-bind-template="{{crystal.type}}")
-                                                        div.col-sm-4.col-xs-4
-                                                            h3(ng-bind-template="{{crystal.model}}")
-                                                    div.row.blue
-                                                        div.col-sm-4.col-xs-4
-                                                            h3 Pedido mínimo
-                                                        div.col-sm-4.col-xs-4
-                                                            h3 Precio
-                                                    div.row
-                                                        div.col-sm-4.col-xs-4
-                                                            h3(ng-bind-template="{{crystal.minimumOrder}} Kg")
-                                                        div.col-sm-4.col-xs-4
-                                                            h3(ng-bind-template="{{crystal.price}} € / Kg")
-                                            div.panel.panel-body
-                                                div.crystal-info-description.blue
-                                                    h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{crystal.description}}")
-
-                                    div(ng-show="!esSurtido(producto)")
+                                    div(ng-show="!producto.esSurtido")
                                         // Vista para ordenadores
                                         div.col-md-12.col-sm-12.col-xs-12
                                             div.panel.panel-body.panel-crystal-info
                                                 div.col-md-5.text-center.col-sm-12.col-xs-12
                                                     div(style="float:left; margin-right: 20px; width: 100%; height: 300px")
-                                                        img(ng-src="/img/imagenesMias/{{producto.image}}", height="30%", width="70%", style="margin-left: 10px; margin-bottom: 10px; margin-top:60px")
+                                                        img(ng-src="/img/redimensionadas/{{producto.resizedImage}}", height="30%", width="70%", style="margin-left: 10px; margin-bottom: 10px; margin-top:60px")
                                                 div.col-md-7.col-sm-12.col-xs-12
                                                     h1(style="text-align: left;").separador-horizontal.green Detalles
                                                     div.row.blue
@@ -153,41 +123,6 @@ block content
                                                 div.crystal-info-description.blue
                                                     h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{producto.description}}")
 
-                                        // Vista para tablets y moviles
-                                        //div.col-sm-12.hidden-md.hidden-lg.col-xs-12
-                                            div.panel.panel-body.panel-crystal-info
-                                                div.col-sm-12
-                                                    div(style="float:left; margin-right: 20px; margin-bottom: 30px; width: 100%; height: 150px").text-center
-                                                        img(ng-src="/img/imagenesMias/{{crystal.image}}", height="100%", width="70%", style="margin-left: 10px; margin-bottom: 30px")
-                                                div.col-sm-12
-                                                    h1(style="text-align: left;").separador-horizontal.green Detalles
-                                                    div.row.blue
-                                                        div.col-sm-4.col-xs-4
-                                                            h3 Categoría
-                                                        div.col-sm-4.col-xs-4
-                                                            h3 Tipo
-                                                        div.col-sm-4.col-xs-4
-                                                            h3 Modelo
-                                                    div.row
-                                                        div.col-sm-4.col-xs-4
-                                                            h3(ng-bind-template="{{crystal.category}}")
-                                                        div.col-sm-4.col-xs-4
-                                                            h3(ng-bind-template="{{crystal.type}}")
-                                                        div.col-sm-4.col-xs-4
-                                                            h3(ng-bind-template="{{crystal.model}}")
-                                                    div.row.blue
-                                                        div.col-sm-4.col-xs-4
-                                                            h3 Pedido mínimo
-                                                        div.col-sm-4.col-xs-4
-                                                            h3 Precio
-                                                    div.row
-                                                        div.col-sm-4.col-xs-4
-                                                            h3(ng-bind-template="{{crystal.minimumOrder}} Kg")
-                                                        div.col-sm-4.col-xs-4
-                                                            h3(ng-bind-template="{{crystal.price}} € / Kg")
-                                            div.panel.panel-body
-                                                div.crystal-info-description.blue
-                                                    h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{crystal.description}}")
 
 block scripts
     script(src='/js/jquery.js')

@@ -38,7 +38,7 @@ block content
                                                 div.main-card-name
                                                     a.recipe-title(href="#")
                                                         span.caramelo.lagloria(ng-bind-template="{{producto.model}}")
-                                    div(ng-show="esSurtido(producto)")
+                                    div(ng-show="producto.esSurtido")
                                         // Vista para ordenadores
                                         div.col-md-12.col-sm-12.col-xs-12
                                             div.panel.panel-body.panel-masticable-info
@@ -125,7 +125,7 @@ block content
                                                 div.masticable-info-description.blue
                                                     h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{producto.description}}")
 
-                                    div(ng-show="!esSurtido(producto)")
+                                    div(ng-show="!producto.esSurtido")
                                         // Vista para ordenadores
                                         div.col-md-12.col-sm-12.col-xs-12
                                             div.panel.panel-body.panel-masticable-info
