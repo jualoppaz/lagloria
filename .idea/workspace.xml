@@ -11,10 +11,6 @@
       <change type="DELETED" beforePath="D:\WS\carameloslagloria\app\public\img\toffee chocolate.jpg" afterPath="" />
       <change type="DELETED" beforePath="D:\WS\carameloslagloria\app\public\img\toffee nata.jpg" afterPath="" />
       <change type="DELETED" beforePath="D:\WS\carameloslagloria\app\public\img\toffee regaliz.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/views/index.jade" afterPath="$PROJECT_DIR$/app/server/views/index.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/public/js/angular/index.js" afterPath="$PROJECT_DIR$/app/public/js/angular/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/router.js" afterPath="$PROJECT_DIR$/app/server/router.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="angular-users-api.iws" />
@@ -56,10 +52,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="router.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="router.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/server/router.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="861" column="23" selection-start="27454" selection-end="27454" vertical-scroll-proportion="-16.8" vertical-offset="15939" max-vertical-offset="16739">
+            <state line="861" column="23" selection-start="27454" selection-end="27454" vertical-scroll-proportion="1.9300699" vertical-offset="15255" max-vertical-offset="16739">
               <folding />
             </state>
           </provider>
@@ -74,10 +70,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.jade" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.jade" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/server/views/index.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="98" selection-start="2207" selection-end="2207" vertical-scroll-proportion="0.48994514" vertical-offset="530" max-vertical-offset="1121">
+            <state line="42" column="98" selection-start="2207" selection-end="2207" vertical-scroll-proportion="-5.36" vertical-offset="530" max-vertical-offset="1121">
               <folding />
             </state>
           </provider>
@@ -1165,13 +1161,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/server/router.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="861" column="23" selection-start="27454" selection-end="27454" vertical-scroll-proportion="-16.8" vertical-offset="15939" max-vertical-offset="16739">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/public/js/angular/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="66" selection-start="105" selection-end="105" vertical-scroll-proportion="-1.52" vertical-offset="0" max-vertical-offset="456">
@@ -1188,7 +1177,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/server/views/index.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="98" selection-start="2207" selection-end="2207" vertical-scroll-proportion="0.48994514" vertical-offset="530" max-vertical-offset="1121">
+        <state line="42" column="98" selection-start="2207" selection-end="2207" vertical-scroll-proportion="-5.36" vertical-offset="530" max-vertical-offset="1121">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/server/router.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="861" column="23" selection-start="27454" selection-end="27454" vertical-scroll-proportion="1.9300699" vertical-offset="15255" max-vertical-offset="16739">
           <folding />
         </state>
       </provider>
