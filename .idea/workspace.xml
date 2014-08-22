@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10f8a809-813f-448f-8ef1-b4cf12576758" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/public/js/angular/toffeesYMasticables/masticables/info.js" afterPath="$PROJECT_DIR$/app/public/js/angular/toffeesYMasticables/masticables/info.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/masticables/infoMasticable.jade" afterPath="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/masticables/infoMasticable.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/public/css/jmlp.css" afterPath="$PROJECT_DIR$/app/public/css/jmlp.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/views/index.jade" afterPath="$PROJECT_DIR$/app/server/views/index.jade" />
     </list>
     <ignored path="angular-users-api.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -55,10 +52,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jmlp.css" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.jade" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/server/views/index.jade">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="42" column="85" selection-start="2194" selection-end="2194" vertical-scroll-proportion="0.47902098" vertical-offset="524" max-vertical-offset="1159">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jmlp.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/public/css/jmlp.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="673" column="16" selection-start="11489" selection-end="11489" vertical-scroll-proportion="0.5544389" vertical-offset="12456" max-vertical-offset="13509">
+            <state line="673" column="16" selection-start="11489" selection-end="11489" vertical-scroll-proportion="0.0" vertical-offset="12456" max-vertical-offset="13509">
               <folding />
             </state>
           </provider>
@@ -126,7 +132,6 @@
         <option value="$PROJECT_DIR$/app/server/views/gamaPropia/duros/glorias/infoGloria.jade" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/app/server/modules/data-base-manager.js" />
-        <option value="$PROJECT_DIR$/app/server/views/index.jade" />
         <option value="$PROJECT_DIR$/app/server/router.js" />
         <option value="$PROJECT_DIR$/app/public/js/angular/carrito.js" />
         <option value="$PROJECT_DIR$/app/server/views/carrito.jade" />
@@ -137,6 +142,7 @@
         <option value="$PROJECT_DIR$/app/public/js/angular/toffeesYMasticables/masticables/info.js" />
         <option value="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/masticables/infoMasticable.jade" />
         <option value="$PROJECT_DIR$/app/public/css/jmlp.css" />
+        <option value="$PROJECT_DIR$/app/server/views/index.jade" />
       </list>
     </option>
   </component>
@@ -1098,13 +1104,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/server/views/index.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="4" selection-start="2446" selection-end="2527" vertical-scroll-proportion="0.0" vertical-offset="524" max-vertical-offset="1140">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/server/views/signup.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state line="27" column="59" selection-start="1409" selection-end="1409" vertical-scroll-proportion="0.0" vertical-offset="513" max-vertical-offset="1178">
@@ -1135,7 +1134,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/public/css/jmlp.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="673" column="16" selection-start="11489" selection-end="11489" vertical-scroll-proportion="0.5544389" vertical-offset="12456" max-vertical-offset="13509">
+        <state line="673" column="16" selection-start="11489" selection-end="11489" vertical-scroll-proportion="0.0" vertical-offset="12456" max-vertical-offset="13509">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/server/views/index.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="85" selection-start="2194" selection-end="2194" vertical-scroll-proportion="0.47902098" vertical-offset="524" max-vertical-offset="1159">
           <folding />
         </state>
       </provider>
