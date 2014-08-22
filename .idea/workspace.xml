@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10f8a809-813f-448f-8ef1-b4cf12576758" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\WS\carameloslagloria\app\public\img\bolsa masticables.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\WS\carameloslagloria\app\public\img\bolsa toffees.JPG" afterPath="" />
-      <change type="DELETED" beforePath="D:\WS\carameloslagloria\app\public\img\bolsaMasticables.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\WS\carameloslagloria\app\public\img\logoLaGloria.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\WS\carameloslagloria\app\public\img\surtido.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\WS\carameloslagloria\app\public\img\toffee chocolate menta.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\WS\carameloslagloria\app\public\img\toffee chocolate.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\WS\carameloslagloria\app\public\img\toffee nata.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\WS\carameloslagloria\app\public\img\toffee regaliz.jpg" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/router.js" afterPath="$PROJECT_DIR$/app/server/router.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="angular-users-api.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,7 +38,7 @@
       <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="36" selection-start="316" selection-end="316" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="931">
+            <state line="20" column="62" selection-start="529" selection-end="530" vertical-scroll-proportion="-7.6" vertical-offset="190" max-vertical-offset="931">
               <folding />
             </state>
           </provider>
@@ -54,7 +47,7 @@
       <file leaf-file-name="router.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/server/router.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="861" column="23" selection-start="27454" selection-end="27454" vertical-scroll-proportion="1.9300699" vertical-offset="15255" max-vertical-offset="16739">
+            <state line="869" column="24" selection-start="27589" selection-end="27589" vertical-scroll-proportion="2.6276224" vertical-offset="15008" max-vertical-offset="16777">
               <folding />
             </state>
           </provider>
@@ -113,7 +106,6 @@
         <option value="$PROJECT_DIR$/app/server/views/admin/dashboard.jade" />
         <option value="$PROJECT_DIR$/app/public/js/angular/admin/sidebar.js" />
         <option value="$PROJECT_DIR$/app/server/views/adminPartials/sidebar.jade" />
-        <option value="$PROJECT_DIR$/app/server/modules/data-base-manager.js" />
         <option value="$PROJECT_DIR$/app/server/views/admin/email.jade" />
         <option value="$PROJECT_DIR$/app/public/js/angular/services.js" />
         <option value="$PROJECT_DIR$/app/public/js/angular/carrito.js" />
@@ -148,9 +140,10 @@
         <option value="$PROJECT_DIR$/app/server/views/gamaPropia/duros/glorias.jade" />
         <option value="$PROJECT_DIR$/app/server/views/gamaPropia/duros/glorias/infoGloria.jade" />
         <option value="$PROJECT_DIR$/app.js" />
-        <option value="$PROJECT_DIR$/app/server/router.js" />
         <option value="$PROJECT_DIR$/app/public/js/angular/index.js" />
         <option value="$PROJECT_DIR$/app/server/views/index.jade" />
+        <option value="$PROJECT_DIR$/app/server/router.js" />
+        <option value="$PROJECT_DIR$/app/server/modules/data-base-manager.js" />
       </list>
     </option>
   </component>
@@ -884,11 +877,6 @@
         <state line="0" column="62" selection-start="62" selection-end="62" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/server/modules/data-base-manager.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="490" column="16" selection-start="12787" selection-end="12787" vertical-scroll-proportion="0.82747066" vertical-offset="8816" max-vertical-offset="10336" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/server/views/admin/emails.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state line="49" column="42" selection-start="2303" selection-end="2303" vertical-scroll-proportion="0.9440559" vertical-offset="391" max-vertical-offset="1102" />
@@ -1153,13 +1141,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="36" selection-start="316" selection-end="316" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="931">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/public/js/angular/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="66" selection-start="105" selection-end="105" vertical-scroll-proportion="-1.52" vertical-offset="0" max-vertical-offset="456">
@@ -1181,9 +1162,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="62" selection-start="529" selection-end="530" vertical-scroll-proportion="-7.6" vertical-offset="190" max-vertical-offset="931">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/server/modules/data-base-manager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="0" selection-start="1039" selection-end="1039" vertical-scroll-proportion="0.6683417" vertical-offset="285" max-vertical-offset="10336">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/server/router.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="861" column="23" selection-start="27454" selection-end="27454" vertical-scroll-proportion="1.9300699" vertical-offset="15255" max-vertical-offset="16739">
+        <state line="869" column="24" selection-start="27589" selection-end="27589" vertical-scroll-proportion="2.6276224" vertical-offset="15008" max-vertical-offset="16777">
           <folding />
         </state>
       </provider>

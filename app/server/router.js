@@ -4,7 +4,8 @@ var roles = ['provider', 'admin'];
 
 var ultimaPagina = "";
 
-var open = require("nodegit").Repo.open;
+var open = require("nodegit").Repo.open,
+    clone = require("nodegit").Repo.clone;
 
 module.exports = function(app){
 
@@ -812,11 +813,8 @@ module.exports = function(app){
         actualizarUltimaPagina(req);
     };
 
-    var obtenerFechaUltimaActualizacion = function(callback){
-
-    };
-
-    app.get('/lastModified', function(req, res, callback){
+    app.get('/lastModified', function(req, res){
+        /*
         open(".git", function(err, repo) {
             if (err) {
                 throw err;
@@ -867,6 +865,10 @@ module.exports = function(app){
 
             });
         });
+        */
+
+        res.send({}, 200);
+
     });
 
     app.get('*', function(req, res) {
