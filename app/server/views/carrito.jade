@@ -5,9 +5,9 @@ block head
     link(rel="stylesheet", href="/css/backgroundImage.css")
 
 block content
-    div#container.fondoCaramelos(ng-app="carrito")
-        div(ng-controller="navbarController")
-            div(ng-controller="mainController")
+    div#container.fondoCaramelos(ng-app="lagloria")
+        div(ng-controller="LoguedUserController")
+            div(ng-controller="CarritoController")
                 include partials/navbar
 
                 main
@@ -67,6 +67,8 @@ block scripts
     script(src='/js/jquery.js')
     script(src='/js/bootstrap.js')
     script(src='/js/angular.js')
+    script(src='/js/angular/services.js')
+    script(src='/js/angular/loguedUser.js')
     script(src='/js/angular/carrito.js')
     script(src='/js/angular/navbar.js')
 

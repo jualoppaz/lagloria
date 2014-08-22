@@ -1,6 +1,6 @@
-var registro = angular.module('registro', []);
+var app = angular.module('lagloria');
 
-function mainController($scope, $http) {
+app.controller('SignupController', function ($scope, $http) {
     $scope.caramelos = {};
     $scope.loguedUser = {};
 
@@ -61,5 +61,5 @@ function mainController($scope, $http) {
                     }
                 });
         }
-    }
-}
+    };
+});

@@ -1,6 +1,6 @@
-var carrito = angular.module('carrito', []);
+var carrito = angular.module('lagloria');
 
-function mainController($scope, $http){
+app.controller('CarritoController', function($scope, $http){
 
     $scope.loguedUser = {};
     $scope.productos = {};
@@ -81,4 +81,5 @@ function mainController($scope, $http){
     $scope.validarCantidades = function(){
 
     };
-}
+
+});

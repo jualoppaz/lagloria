@@ -9,7 +9,7 @@ app.controller('IndexController', function ($scope, $http) {
             $scope.fecha = data.fecha;
         })
         .error(function(data){
-            alert(data);
+
         })
 });
 
