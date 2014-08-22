@@ -38,7 +38,90 @@ block content
                                                 div.main-card-name
                                                     a.recipe-title(href="#")
                                                         span.caramelo.lagloria(ng-bind-template="{{producto.model}}")
-                                    div(ng-show="producto.esSurtido")
+
+                                    div.col-md-12.col-sm-12.col-xs-12
+                                        div.panel.panel-body.panel-masticable-info
+                                            div.col-md-3.col-sm-12
+                                                //div(style="float:left; width: 100%; height: 260px", ng-show="imagenesOriginales").hidden-sm.hidden-xs.text-center
+                                                    img(ng-src="/img/imagenesMias/{{producto.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
+                                                //div(style="float:left; margin-right: 20px; height: 260px", ng-show="imagenesOriginales").hidden-md.hidden-lg.text-center.col-sm-4.col-sm-offset-4.col-xs-4.col-xs-offset-4
+                                                    img(ng-src="/img/imagenesMias/{{producto.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
+
+
+                                                //div(style="float:left; width: 100%;", ng-show="imagenesOriginales == false").hidden-sm.hidden-xs.text-center
+                                                    img(ng-src="/img/redimensionadas/{{producto.resizedImage}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
+                                                //div(style="float:left; margin-right: 20px; height: 260px", ng-show="imagenesOriginales == false").hidden-md.hidden-lg.text-center.col-sm-4.col-sm-offset-4.col-xs-4.col-xs-offset-4
+                                                    img(ng-src="/img/redimensionadas/{{producto.resizedImage}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
+
+                                                div.panel.panel-body#carousel-example-generic.carousel.slide(data-ride="carousel", style="background-color: white")
+                                                    ol.carousel-indicators
+                                                        li(data-target="#carousel-example-generic", data-slide-to="0").active
+                                                        li(data-target="#carousel-example-generic", ng-show="numero != 0", data-slide-to="{{numero}}", ng-repeat="numero in numeros")
+
+                                                    div.carousel-inner
+                                                        div.item.active.galeria
+                                                            img(ng-src="/img/redimensionadas/{{producto.resizedImage}}", alt="", style="margin:auto")
+                                                            div.carousel-caption
+
+                                                        div.item.galeria(ng-repeat="sabor in producto.avaibleSavours")
+                                                            img.sabor(ng-src="/img/redimensionadas/{{sabor.image}}", alt="", style="padding-top: 60px;")
+                                                            div.carousel-caption
+                                                        //div.item.active.galeria
+                                                            img(ng-src="/img/redimensionadas/{{sabor.image}}", alt="", style="margin:auto")
+
+                                                    //div.carousel-inner
+                                                        div.item.active.galeria
+                                                            img(ng-src="/img/redimensionadas/masticables/cola.jpg", alt="", style="margin:auto")
+                                                        div.item.galeria
+                                                            img(ng-src="/img/redimensionadas/masticables/naranja.jpg", alt="", style="margin:auto")
+                                                        div.item.galeria
+                                                            img(ng-src="/img/redimensionadas/masticables/limon.jpg", alt="", style="margin:auto")
+
+                                                    a.left.carousel-control(href="#carousel-example-generic", role="button", data-slide="prev", style="background-color: white")
+                                                        //span.glyphicon.glyphicon-chevron-left
+                                                        i.fa.fa-arrow-left.flecha
+
+                                                    a.right.carousel-control(href="#carousel-example-generic", role="button", data-slide="next", style="background-color: white")
+                                                        //span.glyphicon.glyphicon-chevron-right
+                                                        i.fa.fa-arrow-right.flecha
+
+
+                                            div.col-md-8.col-md-offset-1.col-sm-12
+                                                h1(style="text-align: left;").separador-horizontal.green Detalles
+                                                div.row.blue
+                                                    div.col-md-4.col-sm-4.col-xs-4
+                                                        h3 Categoría
+                                                    div.col-md-4.col-sm-4.col-xs-4
+                                                        h3 Tipo
+                                                    div.col-md-4.col-sm-4.col-xs-4
+                                                        h3 Modelo
+                                                div.row
+                                                    div.col-md-4.col-sm-4.col-xs-4
+                                                        h3(ng-bind-template="{{producto.category}}")
+                                                    div.col-md-4.col-sm-4.col-xs-4
+                                                        h3(ng-bind-template="{{producto.type}}")
+                                                    div.col-md-4.col-sm-4.col-xs-4
+                                                        h3(ng-bind-template="{{producto.model}}")
+                                                div.row.blue
+                                                    div.col-md-4.col-sm-4.col-xs-4
+                                                        h3 Pedido mínimo
+                                                    div.col-md-4.col-sm-4.col-xs-4
+                                                        h3 Precio
+                                                div.row
+                                                    div.col-md-4.col-sm-4.col-xs-4
+                                                        h3(ng-bind-template="{{producto.minimumOrder}} Kg")
+                                                    div.col-md-4.col-sm-4.col-xs-4
+                                                        h3(ng-bind-template="{{producto.price}} € / Kg")
+
+                                            include ../../../partials/botonComprar
+
+                                        div.panel.panel-body
+                                            div.masticable-info-description.blue
+                                                h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{producto.description}}")
+
+
+
+                                    //div(ng-show="producto.esSurtido")
                                         // Vista para ordenadores
                                         div.col-md-12.col-sm-12.col-xs-12
                                             div.panel.panel-body.panel-masticable-info
@@ -86,46 +169,8 @@ block content
                                                 div.masticable-info-description.blue
                                                     h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{producto.description}}")
 
-                                        // Vista para tablets y moviles
-                                        //div.col-sm-12.hidden-lg.hidden-md
-                                            div.panel.panel-body.panel-masticable-info
-                                                div.col-sm-4.col-sm-offset-4.col-xs-4.col-xs-offset-4
-                                                    div(style="float:left; margin-right: 20px; width: 100%; height: 260px").text-center
-                                                        img(ng-src="/img/imagenesMias/{{producto.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
-                                                div.col-sm-12.col-xs-12
-                                                    h1(style="text-align: left;").separador-horizontal.green Detalles
-                                                    div.row.blue
-                                                        div.col-sm-4.col-xs-4
-                                                            h3 Categoría
-                                                        div.col-sm-4.col-xs-4
-                                                            h3 Tipo
-                                                        div.col-sm-4.col-xs-4
-                                                            h3 Modelo
-                                                    div.row
-                                                        div.col-sm-4.col-xs-4
-                                                            h3(ng-bind-template="{{producto.category}}")
-                                                        div.col-sm-4.col-xs-4
-                                                            h3(ng-bind-template="{{producto.type}}")
-                                                        div.col-sm-4.col-xs-4
-                                                            h3(ng-bind-template="{{producto.model}}")
-                                                    div.row.blue
-                                                        div.col-sm-4.col-xs-4
-                                                            h3 Pedido mínimo
-                                                        div.col-sm-4.col-xs-4
-                                                            h3 Precio
-                                                    div.row
-                                                        div.col-sm-4.col-xs-4
-                                                            h3(ng-bind-template="{{producto.minimumOrder}} Kg")
-                                                        div.col-sm-4.col-xs-4
-                                                            h3(ng-bind-template="{{producto.price}} € / Kg")
 
-                                                include ../../../partials/botonComprar
-
-                                            div.panel.panel-body
-                                                div.masticable-info-description.blue
-                                                    h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{producto.description}}")
-
-                                    div(ng-show="!producto.esSurtido")
+                                    //div(ng-show="!producto.esSurtido")
                                         // Vista para ordenadores
                                         div.col-md-12.col-sm-12.col-xs-12
                                             div.panel.panel-body.panel-masticable-info
@@ -165,41 +210,7 @@ block content
                                                 div.masticable-info-description.blue
                                                     h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{producto.description}}")
 
-                                        // Vista para moviles
-                                        //div.col-sm-12.hidden-md.hidden-lg
-                                            div.panel.panel-body.panel-masticable-info
-                                                div.col-sm-12
-                                                    div(style="float:left; margin-right: 20px; margin-bottom: 30px; width: 100%; height: 150px").text-center
-                                                        img(ng-src="/img/imagenesMias/{{producto.image}}", height="100%", width="70%", style="margin-left: 10px; margin-bottom: 30px")
-                                                div.col-sm-12
-                                                    h1(style="text-align: left;").separador-horizontal.green Detalles
-                                                    div.row.blue
-                                                        div.col-sm-4
-                                                            h3 Categoría
-                                                        div.col-sm-4
-                                                            h3 Tipo
-                                                        div.col-sm-4
-                                                            h3 Modelo
-                                                    div.row
-                                                        div.col-sm-4
-                                                            h3(ng-bind-template="{{masticable.category}}")
-                                                        div.col-sm-4
-                                                            h3(ng-bind-template="{{masticable.type}}")
-                                                        div.col-sm-4
-                                                            h3(ng-bind-template="{{masticable.model}}")
-                                                    div.row.blue
-                                                        div.col-sm-4
-                                                            h3 Pedido mínimo
-                                                        div.col-sm-4
-                                                            h3 Precio
-                                                    div.row
-                                                        div.col-sm-4
-                                                            h3(ng-bind-template="{{masticable.minimumOrder}} Kg")
-                                                        div.col-sm-4
-                                                            h3(ng-bind-template="{{masticable.price}} € / Kg")
-                                            div.panel.panel-body
-                                                div.masticable-info-description.blue
-                                                    h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{masticable.description}}")
+
 
 
 block scripts
