@@ -815,13 +815,11 @@ module.exports = function(app){
     app.get('/lastModified', function(req, res){
 
         var github = require('octonode');
-        var client = github.client();
+
+        //var client = github.client();
 
 
         var repo      = client.repo('jualoppaz/lagloria');
-
-        var isodate = require('isodate');
-
 
         var request = require('request-json');
         var client = request.newClient('https://api.github.com');
