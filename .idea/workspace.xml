@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="10f8a809-813f-448f-8ef1-b4cf12576758" name="Default" comment="" />
+    <list default="true" id="10f8a809-813f-448f-8ef1-b4cf12576758" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/router.js" afterPath="$PROJECT_DIR$/app/server/router.js" />
+    </list>
     <ignored path="angular-users-api.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,7 +28,7 @@
       <file leaf-file-name="router.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/server/router.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="818" column="10" selection-start="26002" selection-end="26002" vertical-scroll-proportion="-0.09965035" vertical-offset="15599" max-vertical-offset="16663">
+            <state line="829" column="38" selection-start="26429" selection-end="26429" vertical-scroll-proportion="0.3653846" vertical-offset="15542" max-vertical-offset="16644">
               <folding />
             </state>
           </provider>
@@ -1080,7 +1082,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/server/router.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="818" column="10" selection-start="26002" selection-end="26002" vertical-scroll-proportion="-0.09965035" vertical-offset="15599" max-vertical-offset="16663">
+        <state line="829" column="38" selection-start="26429" selection-end="26429" vertical-scroll-proportion="0.3653846" vertical-offset="15542" max-vertical-offset="16644">
           <folding />
         </state>
       </provider>

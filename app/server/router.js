@@ -816,15 +816,14 @@ module.exports = function(app){
 
         var github = require('octonode');
 
-        //var client = github.client();
+        var client1 = github.client();
 
-
-        var repo      = client.repo('jualoppaz/lagloria');
+        var repo      = client1.repo('jualoppaz/lagloria');
 
         var request = require('request-json');
-        var client = request.newClient('https://api.github.com');
+        var client2 = request.newClient('https://api.github.com');
 
-        var json = client.get('repos/jualoppaz/lagloria/git/refs/heads/master', function(err, response, body) {
+        var json = client2.get('repos/jualoppaz/lagloria/git/refs/heads/master', function(err, response, body) {
             console.log("RESPUESTA");
             console.log(body);
 
