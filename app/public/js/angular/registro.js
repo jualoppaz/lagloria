@@ -1,6 +1,6 @@
 var app = angular.module('lagloria');
 
-app.controller('SignupController', function ($scope, $http) {
+app.controller('SignupController', function ($scope, $http, $timeout, $window) {
     $scope.caramelos = {};
     $scope.loguedUser = {};
 
@@ -16,7 +16,10 @@ app.controller('SignupController', function ($scope, $http) {
     $scope.registroConExito = false;
     $scope.usuarioEnUso = false;
 
+    $scope.hayErrores = false;
+
     $scope.reiniciarMensajes = function(){
+        $scope.hayErrores = false;
         $scope.usuarioInvalido = false;
         $scope.passInvalido = false;
         $scope.registroConExito = false;
@@ -27,32 +30,41 @@ app.controller('SignupController', function ($scope, $http) {
         $scope.reiniciarMensajes();
         var usuario = String($scope.form.user);
         var pass = String($scope.form.pass);
-        //alert("Usuario: " + usuario);
-        //alert("Pass: " + pass);
-        if(usuario == 'undefined'){
-            //alert("Debe introducir un usuario.");
+
+        if(usuario == 'undefined' || usuario.length == 0){
             $scope.errores.usuario = "Debe introducir un usuario.";
             $scope.usuarioInvalido = true;
+            $scope.hayErrores = true;
         }else{
-            if(usuario.indexOf(" ") != -1){
-                //alert("Debe introducir un usuario válido.");
-                $scope.usuarioInvalido = true;
+            for(i=0; i<usuario.length;i++){
+                if(usuario.charAt(i) == " "){
+                    $scope.usuarioInvalido = true;
+                    $scope.hayErrores = true;
+                }
             }
+
         }
-        if(pass == 'undefined'){
+        if(pass == 'undefined' || pass.length == 0){
             //alert("Debe introducir una contraseña.");
             $scope.passInvalido = true;
+            $scope.hayErrores = true;
         }else{
-            if(pass.indexOf(" ") != -1){
-                //alert("Debe introducir una contraseña válida");
-                $scope.passInvalido = true;
+            for(i=0; i<pass.length;i++){
+                if(pass.charAt(i) == " "){
+                    $scope.passInvalido = true;
+                    $scope.hayErrores = true;
+                }
             }
+
         }
-        if(usuario != 'undefined' && pass != 'undefined' && usuario.indexOf(" ") == -1 && pass.indexOf(" ") == -1){
+        if(!$scope.hayErrores){
             $http.post('/api/signup', $scope.form)
                 .success(function(data){
                     if(data == "ok"){
                         $scope.registroConExito = true;
+                        $timeout(function(){
+                            $window.location = "/login";
+                        },2000);
                     }
                 })
                 .error(function(data){
