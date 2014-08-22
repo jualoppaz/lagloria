@@ -1,8 +1,8 @@
 var app = angular.module('lagloria');
 
-app.controller('IndexController', function ($scope, $http, $filter) {
+app.controller('IndexController', function ($scope, $http) {
 
-    $scope.fecha = {};
+    $scope.fecha = "";
 
     $http.get('/lastModified')
         .success(function(data){
