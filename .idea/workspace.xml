@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="10f8a809-813f-448f-8ef1-b4cf12576758" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/router.js" afterPath="$PROJECT_DIR$/app/server/router.js" />
-    </list>
+    <list default="true" id="10f8a809-813f-448f-8ef1-b4cf12576758" name="Default" comment="" />
     <ignored path="angular-users-api.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
