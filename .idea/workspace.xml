@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="10f8a809-813f-448f-8ef1-b4cf12576758" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/public/img/redimensionadas/ponnies/anis.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/public/img/redimensionadas/ponnies/express.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/public/img/redimensionadas/ponnies/mint.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/public/img/redimensionadas/ponnies/surtidoAnises.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/public/img/redimensionadas/ponnies/surtidoColours.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/public/img/redimensionadas/ponnies/surtidoExpress.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/public/img/redimensionadas/ponnies/surtidoFrutas.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/public/img/redimensionadas/ponnies/surtidoMints.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/public/js/angular/duros/ponnies/info.js" afterPath="$PROJECT_DIR$/app/public/js/angular/duros/ponnies/info.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/views/gamaPropia/duros/ponnies/infoPonny.jade" afterPath="$PROJECT_DIR$/app/server/views/gamaPropia/duros/ponnies/infoPonny.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/public/css/jmlp.css" afterPath="$PROJECT_DIR$/app/public/css/jmlp.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/views/gamaPropia/duros/ponnies.jade" afterPath="$PROJECT_DIR$/app/server/views/gamaPropia/duros/ponnies.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/public/js/angular/duros/ponnies.js" afterPath="$PROJECT_DIR$/app/public/js/angular/duros/ponnies.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="10f8a809-813f-448f-8ef1-b4cf12576758" name="Default" comment="" />
     <ignored path="angular-users-api.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -776,7 +761,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ponnies" />
+              <option name="myItemId" value="glorias" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
