@@ -2,7 +2,7 @@ var app = angular.module('lagloria');
 
 app.controller('IndexController', function ($scope, $http) {
 
-    $scope.fecha = "";
+    $scope.fecha = "empty";
 
     $http.get('/lastModified')
         .success(function(data){
