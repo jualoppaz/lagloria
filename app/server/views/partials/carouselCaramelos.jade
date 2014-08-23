@@ -1,0 +1,19 @@
+div.panel.panel-body.borde-lagloria#carousel-example-generic.carousel.slide(data-ride="carousel", style="background-color: white")
+    ol.carousel-indicators
+        li(data-target="#carousel-example-generic", data-slide-to="0").active
+        li(data-target="#carousel-example-generic", ng-show="numero != 0", data-slide-to="{{numero}}", ng-repeat="numero in numeros")
+
+    div.carousel-inner
+        div.item.active.galeria
+            img(ng-src="/img/redimensionadas/{{producto.resizedImage}}", alt="", style="margin:auto")
+            div.carousel-caption
+
+        div.item.galeria(ng-repeat="sabor in producto.avaibleSavours")
+            img.sabor(ng-src="/img/redimensionadas/{{sabor.image}}", alt="", style="padding-top: 60px;")
+            div.carousel-caption
+
+    a.left.carousel-control(href="#carousel-example-generic", role="button", data-slide="prev", style="background-color: white")
+        i.fa.fa-arrow-left.flecha
+
+    a.right.carousel-control(href="#carousel-example-generic", role="button", data-slide="next", style="background-color: white")
+        i.fa.fa-arrow-right.flecha

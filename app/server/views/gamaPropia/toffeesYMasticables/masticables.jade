@@ -51,11 +51,11 @@ block content
                                 div
                                     div(ng-repeat="masticable in masticables | filter:masticableSearch", style="text-align:center")
                                         div(ng-show="masticable.esSurtido")
-                                            div.col-md-12.col-sm-12
+                                            div.col-md-3.col-sm-6
                                                 div.panel.panel-body
                                                     div(style="text-align:left;")
                                                         h1.modelo-masticable
-                                                            a(ng-href="masticables/{{masticable._id}}", ng-bind-template="{{$index + 1}}. {{masticable.model}}").green.hover-red
+                                                            a(ng-href="masticables/{{masticable._id}}", ng-bind-template="{{masticable.model}}").green.hover-red
                                                     div.col-md-3.col-sm-12.text-center
                                                         div(style="float:left; margin-right: 20px; width:100%; height: 260px", ng-show="imagenesOriginales").hidden-sm.hidden-xs
                                                             img(ng-src="/img/imagenesMias/{{masticable.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
@@ -66,7 +66,7 @@ block content
                                                             img(ng-src="/img/redimensionadas/{{masticable.resizedImage}}", style="margin-left: 10px; margin-bottom: 10px")
                                                         div(style="float:left; margin-right: 20px; width: 100%", ng-show="imagenesOriginales == false").hidden-md.hidden-lg
                                                             img(ng-src="/img/redimensionadas/{{masticable.resizedImage}}", style="margin-left: 10px; margin-bottom: 10px")
-                                                    div.col-md-9.col-sm-12
+                                                    //div.col-md-9.col-sm-12
                                                         div.masticable-description
                                                             h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{masticable.description}}").blue
                                         div(ng-show="!masticable.esSurtido")
@@ -79,7 +79,7 @@ block content
                                                         img(ng-src="/img/imagenesMias/{{masticable.image}}", ng-show="imagenesOriginales", width="100%", style="margin-left: 10px; margin-bottom: 10px")
                                                         img(ng-src="/img/redimensionadas/{{masticable.resizedImage}}", ng-show="imagenesOriginales == false", width="100%", style="margin-left: 10px; margin-bottom: 10px")
 
-                                                    div.col-md-12
+                                                    //div.col-md-12
                                                         div.masticable-description
                                                             h3(style="text-align: justify; margin-top: 5px", ng-bind-template="{{masticable.description}}").blue
 

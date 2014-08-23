@@ -442,7 +442,8 @@ main{
 }
 
 .panel-toffee, .panel-masticable, .panel-crystal, .panel-gloria, .panel-ponny, .panel-sinGrupo, .panel-grageado, .panel-conPalo{
-    height: 450px;
+    /*height: 450px;*/
+    height: 350px;
 }
 
 .toffee-description, .masticable-description, .crystal-description, .gloria-description, .ponny-description, .sinGrupo-description,
@@ -703,4 +704,17 @@ th, td{
 .flecha{
     top: 45%;
     position: absolute;
+
+}
+
+.flecha.fa-arrow-left{
+    left: 10px;
+}
+
+.flecha.fa-arrow-right{
+    right: 10px;
+}
+
+.borde-lagloria{
+    border: 2px solid #41B19C !important;
 }

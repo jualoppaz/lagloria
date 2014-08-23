@@ -20,6 +20,10 @@ header(ng-controller="NavbarController")
                             a(href="#") Nosotros
                         li
                             a(href="/contacto") Contacto
+                        //li(ng-show="usuarioEstaLogueado == false")
+                            a(href="/login") Entrar
+                        //li(ng-show="usuarioEstaLogueado")
+                            a(href="#", ng-click="cerrarSesion()") Cerrar sesión
 
                     ul.nav.navbar-nav.navbar-right.hidden-xs
                         li

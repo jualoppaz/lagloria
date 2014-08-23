@@ -17,7 +17,7 @@ block content
                         div.row
                             include ../../../partials/botonesMovil
 
-                            div.col-md-12
+                            div.col-md-12.col-sm-12.col-xs-12
                                 div.panel.panel-body
                                     div.main-card-content
                                         div.main-card-description
@@ -32,7 +32,7 @@ block content
                                                     span.caramelo.lagloria Masticables
                             div
                                 div
-                                    div.col-md-12
+                                    div.col-md-12.col-sm-12.col-xs-12
                                         div.panel.panel-body
                                             div.main-card-content(style="word-wrap: break-word;")
                                                 div.main-card-name
@@ -53,64 +53,26 @@ block content
                                                 //div(style="float:left; margin-right: 20px; height: 260px", ng-show="imagenesOriginales == false").hidden-md.hidden-lg.text-center.col-sm-4.col-sm-offset-4.col-xs-4.col-xs-offset-4
                                                     img(ng-src="/img/redimensionadas/{{producto.resizedImage}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
 
-                                                div.panel.panel-body#carousel-example-generic.carousel.slide(data-ride="carousel", style="background-color: white")
-                                                    ol.carousel-indicators
-                                                        li(data-target="#carousel-example-generic", data-slide-to="0").active
-                                                        li(data-target="#carousel-example-generic", ng-show="numero != 0", data-slide-to="{{numero}}", ng-repeat="numero in numeros")
-
-                                                    div.carousel-inner
-                                                        div.item.active.galeria
-                                                            img(ng-src="/img/redimensionadas/{{producto.resizedImage}}", alt="", style="margin:auto")
-                                                            div.carousel-caption
-
-                                                        div.item.galeria(ng-repeat="sabor in producto.avaibleSavours")
-                                                            img.sabor(ng-src="/img/redimensionadas/{{sabor.image}}", alt="", style="padding-top: 60px;")
-                                                            div.carousel-caption
-                                                        //div.item.active.galeria
-                                                            img(ng-src="/img/redimensionadas/{{sabor.image}}", alt="", style="margin:auto")
-
-                                                    //div.carousel-inner
-                                                        div.item.active.galeria
-                                                            img(ng-src="/img/redimensionadas/masticables/cola.jpg", alt="", style="margin:auto")
-                                                        div.item.galeria
-                                                            img(ng-src="/img/redimensionadas/masticables/naranja.jpg", alt="", style="margin:auto")
-                                                        div.item.galeria
-                                                            img(ng-src="/img/redimensionadas/masticables/limon.jpg", alt="", style="margin:auto")
-
-                                                    a.left.carousel-control(href="#carousel-example-generic", role="button", data-slide="prev", style="background-color: white")
-                                                        //span.glyphicon.glyphicon-chevron-left
-                                                        i.fa.fa-arrow-left.flecha
-
-                                                    a.right.carousel-control(href="#carousel-example-generic", role="button", data-slide="next", style="background-color: white")
-                                                        //span.glyphicon.glyphicon-chevron-right
-                                                        i.fa.fa-arrow-right.flecha
+                                                include ../../../partials/carouselCaramelos
 
 
                                             div.col-md-8.col-md-offset-1.col-sm-12
                                                 h1(style="text-align: left;").separador-horizontal.green Detalles
-                                                div.row.blue
-                                                    div.col-md-4.col-sm-4.col-xs-4
-                                                        h3 Categoría
-                                                    div.col-md-4.col-sm-4.col-xs-4
-                                                        h3 Tipo
-                                                    div.col-md-4.col-sm-4.col-xs-4
-                                                        h3 Modelo
                                                 div.row
-                                                    div.col-md-4.col-sm-4.col-xs-4
+                                                    div.col-md-4.col-sm-4.col-xs-6
+                                                        h3.blue Categoría
                                                         h3(ng-bind-template="{{producto.category}}")
-                                                    div.col-md-4.col-sm-4.col-xs-4
+                                                    div.col-md-4.col-sm-4.col-xs-6
+                                                        h3.blue Tipo
                                                         h3(ng-bind-template="{{producto.type}}")
-                                                    div.col-md-4.col-sm-4.col-xs-4
+                                                    div.col-md-4.col-sm-4.col-xs-6
+                                                        h3.blue Modelo
                                                         h3(ng-bind-template="{{producto.model}}")
-                                                div.row.blue
-                                                    div.col-md-4.col-sm-4.col-xs-4
-                                                        h3 Pedido mínimo
-                                                    div.col-md-4.col-sm-4.col-xs-4
-                                                        h3 Precio
-                                                div.row
-                                                    div.col-md-4.col-sm-4.col-xs-4
+                                                    div.col-md-4.col-sm-4.col-xs-6
+                                                        h3.blue Pedido mínimo
                                                         h3(ng-bind-template="{{producto.minimumOrder}} Kg")
-                                                    div.col-md-4.col-sm-4.col-xs-4
+                                                    div.col-md-4.col-sm-4.col-xs-6
+                                                        h3.blue Precio
                                                         h3(ng-bind-template="{{producto.price}} € / Kg")
 
                                             include ../../../partials/botonComprar

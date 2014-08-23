@@ -1,6 +1,6 @@
 var app = angular.module('lagloria');
 
-app.controller('LoginController', function ($scope, $http) {
+app.controller('LoginController', function ($scope, $http, $window) {
     $scope.loguedUser = {};
     $scope.usuarioEstaLogueado = false;
 
@@ -79,11 +79,7 @@ app.controller('LoginController', function ($scope, $http) {
     $scope.redirigirTrasLogin = function(){
         $http.get('/api/lastURL')
             .success(function(data){
-                if(data.indexOf('/login')!= -1 || data.indexOf('/') != -1){
-                    window.location.href = '/';
-                }else{
-                    window.location.href = data;
-                }
+                $window.location.href = data;
             })
             .error(function(data){
                 alert(data);

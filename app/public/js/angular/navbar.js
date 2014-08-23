@@ -2,6 +2,13 @@ var app = angular.module('lagloria');
 
 app.controller('NavbarController', function ($scope, $http, $window){
 
+    /*
+     Estos metodos han sido trasladados al LoguedUserController para que también puedan ser
+     utilizados por los botones de la version movil.
+      */
+
+
+    /*
     $scope.cerrarSesion = function(){
         $http.get('/api/logout')
             .success(function(data){
@@ -26,7 +33,8 @@ app.controller('NavbarController', function ($scope, $http, $window){
     };
 
     $scope.redirigirTrasLogout = function(){
-        $window.locationhref = "/";
+        $window.location.href = "/";
     };
+    */
 
 });
