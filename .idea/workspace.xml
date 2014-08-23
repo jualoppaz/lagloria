@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10f8a809-813f-448f-8ef1-b4cf12576758" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/views/index.jade" afterPath="$PROJECT_DIR$/app/server/views/index.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/public/js/angular/index.js" afterPath="$PROJECT_DIR$/app/public/js/angular/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/views/login.jade" afterPath="$PROJECT_DIR$/app/server/views/login.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/public/js/angular/login.js" afterPath="$PROJECT_DIR$/app/public/js/angular/login.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/public/js/angular/registro.js" afterPath="$PROJECT_DIR$/app/public/js/angular/registro.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/router.js" afterPath="$PROJECT_DIR$/app/server/router.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/views/signup.jade" afterPath="$PROJECT_DIR$/app/server/views/signup.jade" />
     </list>
     <ignored path="angular-users-api.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,37 +29,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="login.jade" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/server/views/login.jade">
+      <file leaf-file-name="registro.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/public/js/angular/registro.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="56" column="70" selection-start="4407" selection-end="4407" vertical-scroll-proportion="-9.44" vertical-offset="828" max-vertical-offset="1425">
+            <state line="52" column="0" selection-start="1807" selection-end="1807" vertical-scroll-proportion="0.36348408" vertical-offset="771" max-vertical-offset="1710">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/public/js/angular/login.js">
+      <file leaf-file-name="signup.jade" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/server/views/signup.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="40" selection-start="2098" selection-end="2098" vertical-scroll-proportion="0.0" vertical-offset="701" max-vertical-offset="1919">
+            <state line="39" column="0" selection-start="2544" selection-end="2544" vertical-scroll-proportion="-22.04" vertical-offset="190" max-vertical-offset="1254">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.jade" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/server/views/index.jade">
+      <file leaf-file-name="router.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/server/router.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="60" selection-start="2677" selection-end="2677" vertical-scroll-proportion="0.57867134" vertical-offset="562" max-vertical-offset="1216">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/public/js/angular/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="24" selection-start="125" selection-end="125" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="456">
+            <state line="515" column="0" selection-start="16652" selection-end="16652" vertical-scroll-proportion="5.32" vertical-offset="9918" max-vertical-offset="17347">
               <folding />
             </state>
           </provider>
@@ -116,19 +107,19 @@
         <option value="$PROJECT_DIR$/app/server/views/gamaPropia/duros/glorias/infoGloria.jade" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/app/server/modules/data-base-manager.js" />
-        <option value="$PROJECT_DIR$/app/server/router.js" />
         <option value="$PROJECT_DIR$/app/public/js/angular/carrito.js" />
         <option value="$PROJECT_DIR$/app/server/views/carrito.jade" />
         <option value="$PROJECT_DIR$/app/server/views/error.jade" />
-        <option value="$PROJECT_DIR$/app/server/views/signup.jade" />
-        <option value="$PROJECT_DIR$/app/public/js/angular/registro.js" />
         <option value="$PROJECT_DIR$/app/public/js/angular/toffeesYMasticables/masticables/info.js" />
         <option value="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/masticables/infoMasticable.jade" />
         <option value="$PROJECT_DIR$/app/public/css/jmlp.css" />
-        <option value="$PROJECT_DIR$/app/server/views/login.jade" />
-        <option value="$PROJECT_DIR$/app/public/js/angular/login.js" />
         <option value="$PROJECT_DIR$/app/public/js/angular/index.js" />
         <option value="$PROJECT_DIR$/app/server/views/index.jade" />
+        <option value="$PROJECT_DIR$/app/server/views/login.jade" />
+        <option value="$PROJECT_DIR$/app/public/js/angular/login.js" />
+        <option value="$PROJECT_DIR$/app/server/router.js" />
+        <option value="$PROJECT_DIR$/app/server/views/signup.jade" />
+        <option value="$PROJECT_DIR$/app/public/js/angular/registro.js" />
       </list>
     </option>
   </component>
@@ -826,25 +817,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21303074" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USERS">
@@ -1043,11 +1015,6 @@
         <state line="24" column="74" selection-start="1001" selection-end="1001" vertical-scroll-proportion="-5.16" vertical-offset="327" max-vertical-offset="950" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/server/modules/data-base-manager.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="0" selection-start="1039" selection-end="1039" vertical-scroll-proportion="0.6683417" vertical-offset="285" max-vertical-offset="10336" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="62" selection-start="529" selection-end="530" vertical-scroll-proportion="0.33216783" vertical-offset="190" max-vertical-offset="931" />
@@ -1068,11 +1035,6 @@
         <state line="7" column="36" selection-start="268" selection-end="268" vertical-scroll-proportion="-5.32" vertical-offset="0" max-vertical-offset="570" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/server/views/signup.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="59" selection-start="1409" selection-end="1409" vertical-scroll-proportion="0.0" vertical-offset="513" max-vertical-offset="1178" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/public/js/angular/toffeesYMasticables/masticables/info.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="17" column="0" selection-start="573" selection-end="573" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="551" />
@@ -1090,30 +1052,6 @@
         <state line="43" column="66" selection-start="2237" selection-end="2237" vertical-scroll-proportion="0.4020979" vertical-offset="587" max-vertical-offset="4351" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/server/router.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="829" column="38" selection-start="26429" selection-end="26429" vertical-scroll-proportion="0.35008374" vertical-offset="15542" max-vertical-offset="16644" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/public/js/angular/registro.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="9" selection-start="1812" selection-end="2038" vertical-scroll-proportion="0.0" vertical-offset="676" max-vertical-offset="1558" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/server/views/login.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="70" selection-start="4407" selection-end="4407" vertical-scroll-proportion="-9.44" vertical-offset="828" max-vertical-offset="1425">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/public/js/angular/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="40" selection-start="2098" selection-end="2098" vertical-scroll-proportion="0.0" vertical-offset="701" max-vertical-offset="1919">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/public/js/angular/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="24" selection-start="125" selection-end="125" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="456">
@@ -1123,7 +1061,49 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/server/views/index.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="60" selection-start="2677" selection-end="2677" vertical-scroll-proportion="0.57867134" vertical-offset="562" max-vertical-offset="1216">
+        <state line="47" column="60" selection-start="2677" selection-end="2677" vertical-scroll-proportion="1.0769231" vertical-offset="277" max-vertical-offset="1216">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/public/js/angular/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="0" selection-start="1052" selection-end="1052" vertical-scroll-proportion="0.40819672" vertical-offset="321" max-vertical-offset="1862">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/server/views/login.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="89" selection-start="1930" selection-end="1942" vertical-scroll-proportion="0.33272395" vertical-offset="426" max-vertical-offset="1368">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/server/modules/data-base-manager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="91" column="8" selection-start="2404" selection-end="2404" vertical-scroll-proportion="0.33333334" vertical-offset="1530" max-vertical-offset="10336">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/server/router.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="515" column="0" selection-start="16652" selection-end="16652" vertical-scroll-proportion="5.32" vertical-offset="9918" max-vertical-offset="17347">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/server/views/signup.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="0" selection-start="2544" selection-end="2544" vertical-scroll-proportion="-22.04" vertical-offset="190" max-vertical-offset="1254">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/public/js/angular/registro.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="0" selection-start="1807" selection-end="1807" vertical-scroll-proportion="0.36348408" vertical-offset="771" max-vertical-offset="1710">
           <folding />
         </state>
       </provider>

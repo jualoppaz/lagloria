@@ -501,30 +501,67 @@ module.exports = function(app){
 
         console.log("Ultima pagina: " + ultimaPagina);
         res.send(ultimaPagina, 200);
-    })
+    });
 
 
     // Registrarse como nuevo usuario
 
     app.post('/api/signup', function(req, res){
-        // FALTA COMPROBAR SI EL USUARIO YA EXISTE O NO. EN EL PROYECTO DE CBD SOLO SE COMPRUEBA EN EL CLIENTE
-        DBM.addNewAccount({
-            //name 	: req.param('name'),
-            //email 	: req.param('email'),
-            user 	: req.param('user'),
-            pass	: req.param('pass'),
-            active  : false,
-            role    : roles[0]
-            //country : req.param('country')
-        }, function(e){
-            if (e){
-                console.log(e, 400);
-                res.send(e, 400);
-            }	else{
-                console.log('ok', 200);
-                res.send('ok', 200);
+
+        var usuario = req.param('user');
+        var pass    = req.param('pass');
+        var errores = {};
+
+        var hayErrores = false;
+
+        if(usuario == undefined){
+            errores.usuarioVacio = true;
+            hayErrores = true;
+        }else{
+            if(usuario.length == 0){
+                errores.usuarioVacio = true;
+                hayErrores = true;
             }
-        });
+
+            for(i=0; i<usuario.length;i++){
+                if(usuario.charAt(i) == " "){
+                    errores.usuarioInvalido = true;
+                    hayErrores = true;
+                }
+            }
+
+        }
+        if(pass == undefined){
+            errores.passVacio = true;
+            hayErrores = true;
+
+        }else{
+            if(pass.length == 0){
+                errores.passVacio = true;
+                hayErrores = true;
+            }
+        }
+        if(!hayErrores){
+            DBM.addNewAccount({
+                //name 	: req.param('name'),
+                //email 	: req.param('email'),
+                user 	: req.param('user'),
+                pass	: req.param('pass'),
+                active  : false,
+                role    : roles[0]
+                //country : req.param('country')
+            }, function(e){
+                if (e){
+                    console.log(e, 400);
+                    res.send(e, 400);
+                }	else{
+                    console.log('ok', 200);
+                    res.send('ok', 200);
+                }
+            });
+        }else{
+            res.send(errores, 400);
+        }
     });
 
     // Datos del usuario logueado
