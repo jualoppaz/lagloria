@@ -1,14 +1,15 @@
 var app = angular.module('lagloria');
 
-app.controller('SinGrupoController', function ($scope, $http) {
-    $scope.sinGrupos = {};
+app.controller('EspecialController', function ($scope, $http) {
 
-    $http.get('/api/sinGrupo')
+    $scope.productos = {};
+
+    $http.get('/api/especiales')
         .success(function(data) {
             if(data.message){
-                $scope.sinGrupos = {};
+                $scope.productos = {};
             }else{
-                $scope.sinGrupos = data;
+                $scope.productos = data;
             }
         })
         .error(function(data) {

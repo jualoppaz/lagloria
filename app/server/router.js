@@ -97,14 +97,14 @@ module.exports = function(app){
         res.render('gamaPropia/duros/ponnies/infoPonny');
     });
 
-    app.get('/gamaPropia/duros/sinGrupo', function(req, res) {
+    app.get('/gamaPropia/duros/especiales', function(req, res) {
         funcionesComunes(req);
-        res.render('gamaPropia/duros/sinGrupo');
+        res.render('gamaPropia/duros/especiales');
     });
 
-    app.get('/gamaPropia/duros/sinGrupo/:id', function(req, res) {
+    app.get('/gamaPropia/duros/especiales/:id', function(req, res) {
         funcionesComunes(req);
-        res.render('gamaPropia/duros/sinGrupo/infoSinGrupo');
+        res.render('gamaPropia/duros/especiales/infoEspeciales');
     });
 
     app.get('/gamaPropia/grageados', function(req, res) {
@@ -302,22 +302,22 @@ module.exports = function(app){
         });
     });
 
-    app.get('/api/sinGrupo', function(req, res) {
-        DBM.getAllProductsByCategoryType('Sin grupo', function(err, sinGrupo){
+    app.get('/api/especiales', function(req, res) {
+        DBM.getAllProductsByCategoryType('Especial', function(err, especiales){
             if(err){
                 console.log(err);
             }else{
-                res.send(sinGrupo);
+                res.send(especiales);
             }
         });
     });
 
-    app.get('/api/sinGrupo/:id', function(req, res) {
-        DBM.getProductByCategoryTypeAndId('Sin grupo', req.params.id, function(err, sinGrupo){
+    app.get('/api/especiales/:id', function(req, res) {
+        DBM.getProductByCategoryTypeAndId('Especial', req.params.id, function(err, especiales){
             if(err){
                 console.log(err);
             }else{
-                res.send(sinGrupo[0]);
+                res.send(especiales[0]);
             }
         });
     });
@@ -396,13 +396,13 @@ module.exports = function(app){
                     DBM.getAllProductsByCategoryType('Crystal', function(err1, crystals){
                         DBM.getAllProductsByCategoryType('Gloria', function(err2, glorias){
                             DBM.getAllProductsByCategoryType('Ponny', function(err3, ponnies){
-                                DBM.getAllProductsByCategoryType('Sin grupo', function(err4, sinGrupo){
+                                DBM.getAllProductsByCategoryType('Especiales', function(err4, especiales){
 
                                     var json = {
                                         crystals: crystals,
                                         glorias: glorias,
                                         ponnies: ponnies,
-                                        sinGrupo: sinGrupo
+                                        especiales: especiales
                                     };
                                     if(err1){
                                         console.log(err1);

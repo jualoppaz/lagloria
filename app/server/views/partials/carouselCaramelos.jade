@@ -6,11 +6,14 @@ div.panel.panel-body.borde-lagloria#carousel-example-generic.carousel.slide(data
     div.carousel-inner
         div.item.active.galeria
             img(ng-src="/img/redimensionadas/{{producto.resizedImage}}", alt="", style="margin:auto")
-            div.carousel-caption
 
         div.item.galeria(ng-repeat="sabor in producto.avaibleSavours")
-            img.sabor(ng-src="/img/redimensionadas/{{sabor.image}}", alt="", style="padding-top: 60px;")
-            div.carousel-caption
+            // Esta primera etiqueta es la que se usa más veces
+            img.sabor(ng-src="/img/redimensionadas/{{sabor.image}}", alt="", style="padding-top: 60px;", ng-show="!sabor.fotoVertical")
+
+            // Esta etiqueta se usa cuando la foto a mostrar tiene una orientación vertical o mucho margen
+            // superior y/o inferior
+            img.sabor(ng-src="/img/redimensionadas/{{sabor.image}}", alt="", style="padding-top: 0px;", ng-show="sabor.fotoVertical")
 
     a.left.carousel-control(href="#carousel-example-generic", role="button", data-slide="prev", style="background-color: white")
         i.fa.fa-arrow-left.flecha

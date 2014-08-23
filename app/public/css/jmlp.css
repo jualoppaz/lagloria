@@ -420,7 +420,7 @@ main{
     padding-bottom: 0px !important;
 }
 
-#toffees, #masticables, #crystals, #glorias, #ponnies, #sinGrupo, #grageados, #conPalo{
+#toffees, #masticables, #crystals, #glorias, #ponnies, #especiales, #grageados, #conPalo{
     height: auto;
 }
 
@@ -437,16 +437,16 @@ main{
 
 }
 
-.imagenToffee, .imagenMasticable, .imagenCrystal, .imagenGloria, .imagenPonny, .imagenSinGrupo, .imagenGrageado, .imagenConPalo{
+.imagenToffee, .imagenMasticable, .imagenCrystal, .imagenGloria, .imagenPonny, .imagenEspecial, .imagenGrageado, .imagenConPalo{
     float:left;
 }
 
-.panel-toffee, .panel-masticable, .panel-crystal, .panel-gloria, .panel-ponny, .panel-sinGrupo, .panel-grageado, .panel-conPalo{
+.panel-toffee, .panel-masticable, .panel-crystal, .panel-gloria, .panel-ponny, .panel-especial, .panel-grageado, .panel-conPalo{
     /*height: 450px;*/
     height: 375px;
 }
 
-.toffee-description, .masticable-description, .crystal-description, .gloria-description, .ponny-description, .sinGrupo-description,
+.toffee-description, .masticable-description, .crystal-description, .gloria-description, .ponny-description, .especial-description,
 .grageado-description, .conPalo-description{
     padding-top: 10px;
     margin-top: 30px;
@@ -454,7 +454,7 @@ main{
 }
 
 .toffee-info-description, .masticable-info-description, .crystal-info-description, .gloria-info-description, .ponny-info-description,
-.sinGrupo-info-description, .grageado-info-description, .conPalo-info-description{
+.especial-info-description, .grageado-info-description, .conPalo-info-description{
     padding-left: 15px;
     padding-top: 10px;
 }
@@ -475,7 +475,7 @@ h3{
     margin-right: 25%;
 }
 
-.modelo-toffee > a, .modelo-masticable > a, .modelo-crystal > a, .modelo-gloria > a, .modelo-ponny > a, .modelo-sinGrupo > a,
+.modelo-toffee > a, .modelo-masticable > a, .modelo-crystal > a, .modelo-gloria > a, .modelo-ponny > a, .modelo-especial > a,
 .modelo-grageado > a, .modelo-conPalo > a{
     padding-left: 15px;
     font-size: 25px !important;
@@ -494,7 +494,7 @@ h3{
 }
 */
 
-.panel-toffee-info, .panel-masticable-info, .panel-crystal-info, .panel-gloria-info, .panel-ponny-info, .panel-sinGrupo-info,
+.panel-toffee-info, .panel-masticable-info, .panel-crystal-info, .panel-gloria-info, .panel-ponny-info, .panel-especial-info,
 .panel-grageado-info, .panel-conPalo-info{
     padding-top: 30px;
 }

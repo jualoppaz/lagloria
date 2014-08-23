@@ -1,0 +1,110 @@
+extends ../../../layout
+block head
+    title Información
+    link(rel="stylesheet", href="/css/backgroundImage.css")
+block content
+    div#container(ng-app="lagloria")
+        div(ng-controller="LoguedUserController")
+
+            include ../../../partials/navbar
+
+            div(ng-controller="InfoEspecialController")
+                main.margen-superior-50
+                    div.container
+                        div.row
+                            include ../../../partials/botonesMovil
+
+                            div.col-md-12.col-sm-12.col-xs-12
+                                div.panel.panel-body
+                                    div.main-card-content
+                                        div.main-card-description
+                                            div.main-card-name
+                                                a(href="/gamaPropia")
+                                                    span.caramelo.lagloria Gama propia
+                                                b.abel.mayorQue >
+                                                a(href="../../duros")
+                                                    span.caramelo.lagloria Duros
+                                                b.abel.mayorQue >
+                                                a(href="../especiales")
+                                                    span.caramelo.lagloria Especiales
+                            div
+                                div
+                                    div.col-md-12.col-sm-12.col-xs-12
+                                        div.panel.panel-body
+                                            div.main-card-content(style="word-wrap: break-word;")
+                                                div.main-card-name
+                                                    a.recipe-title(href="#")
+                                                        span.caramelo.lagloria(ng-bind-template="{{producto.model}}")
+                                    div(ng-show="producto.esSurtido")
+                                        // Vista para ordenadores
+                                        div.col-md-12.col-sm-12.col-xs-12
+                                            div.panel.panel-body.panel-especial-info
+                                                div.col-md-3.col-sm-12.col-xs-12
+
+                                                    include ../../../partials/carouselCaramelos
+
+                                                div.col-md-8.col-md-offset-1
+                                                    h1(style="text-align: left;").separador-horizontal.green Detalles
+                                                    div.row
+                                                        div.col-md-4.col-sm-4.col-xs-6
+                                                            h3.blue Categoría
+                                                            h3(ng-bind-template="{{producto.category}}")
+                                                        div.col-md-4.col-sm-4.col-xs-6
+                                                            h3.blue Tipo
+                                                            h3(ng-bind-template="{{producto.type}}")
+                                                        div.col-md-4.col-sm-4.col-xs-6
+                                                            h3.blue Modelo
+                                                            h3(ng-bind-template="{{producto.model}}")
+                                                        div.col-md-4.col-sm-4.col-xs-6
+                                                            h3.blue Pedido mínimo
+                                                            h3(ng-bind-template="{{producto.minimumOrder}} Kg")
+                                                        div.col-md-4.col-sm-4.col-xs-6
+                                                            h3.blue Precio
+                                                            h3(ng-bind-template="{{producto.price}} € / Kg")
+
+                                            div.panel.panel-body
+                                                div.ponnies-info-description.blue
+                                                    h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{producto.description}}")
+
+                                    div(ng-show="!producto.esSurtido")
+                                        div.col-md-12.col-sm-12.col-xs-12
+                                            div.panel.panel-body.panel-especial-info
+                                                div.col-md-5.text-center.col-sm-12.col-xs-12
+
+                                                    include ../../../partials/carouselCaramelos
+
+                                                div.col-md-7.col-sm-12.col-xs-12
+                                                    h1(style="text-align: left;").separador-horizontal.green Detalles
+                                                    div.row
+                                                        div.col-md-4.col-sm-4.col-xs-6
+                                                            h3.blue Categoría
+                                                            h3(ng-bind-template="{{producto.category}}")
+                                                        div.col-md-4.col-sm-4.col-xs-6
+                                                            h3.blue Tipo
+                                                            h3(ng-bind-template="{{producto.type}}")
+                                                        div.col-md-4.col-sm-4.col-xs-6
+                                                            h3.blue Modelo
+                                                            h3(ng-bind-template="{{producto.model}}")
+                                                        div.col-md-4.col-sm-4.col-xs-6
+                                                            h3.blue Pedido mínimo
+                                                            h3(ng-bind-template="{{producto.minimumOrder}} Kg")
+                                                        div.col-md-4.col-sm-4.col-xs-6
+                                                            h3.blue Precio
+                                                            h3(ng-bind-template="{{producto.price}} € / Kg")
+
+                                                include ../../../partials/botonComprar
+
+                                            div.panel.panel-body
+                                                div.especial-info-description.blue
+                                                    h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{producto.description}}")
+
+
+block scripts
+    script(src='/js/jquery.js')
+    script(src='/js/bootstrap.js')
+    script(src='/js/angular.js')
+    script(src='/js/angular/services.js')
+    script(src='/js/angular/loguedUser.js')
+    script(src='/js/angular/duros/especiales/info.js')
+    script(src='/js/angular/navbar.js')
+    script(src='/js/angular/comprar.js')

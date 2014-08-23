@@ -213,29 +213,29 @@ block content
                                                     img(ng-src="/img/imagenesMias/{{ponny.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
 
                             div.col-md-12(style="clear:both")
-                                h3.abel Sin grupo
-                            div(ng-repeat="grupo in sinGrupo", style="text-align:center;")
-                                div(ng-show="grupo.esSurtido")
+                                h3.abel Especiales
+                            div(ng-repeat="especial in especiales", style="text-align:center;")
+                                div(ng-show="especial.esSurtido")
                                     div.col-md-4.col-sm-6
                                         div.panel.panel-body.panel-toffee-buscar
                                             div(style="text-align:left;")
                                                 h1(style="margin-bottom:30px").modelo-toffee
-                                                    a(ng-href="gamaPropia/duros/{{grupo._id}}", ng-bind-template="{{$index + 1}}. {{grupo.model}}").green.hover-red
+                                                    a(ng-href="gamaPropia/duros/{{especial._id}}", ng-bind-template="{{especial.model}}").green.hover-red
                                             div.col-md-8.col-md-offset-2
                                                 div(style="float:left; margin-right: 20px; width:100%; height: 175px").hidden-sm.hidden-xs
-                                                    img(ng-src="/img/imagenesMias/{{grupo.image}}", height="100%", width="70%", style="margin-left: 10px; margin-bottom: 10px")
+                                                    img(ng-src="/img/imagenesMias/{{especial.image}}", height="100%", width="70%", style="margin-left: 10px; margin-bottom: 10px")
                                                 div(style="float:left; margin-right: 20px; width:100%; height: 175px").hidden-md.hidden-lg
-                                                    img(ng-src="/img/imagenesMias/{{grupo.image}}", height="100%", width="50%", style="margin-left: 10px; margin-bottom: 10px")
+                                                    img(ng-src="/img/imagenesMias/{{especial.image}}", height="100%", width="50%", style="margin-left: 10px; margin-bottom: 10px")
 
-                                div(ng-show="!grupo.esSurtido")
+                                div(ng-show="!especial.esSurtido")
                                     div.col-md-4.col-sm-6
                                         div.panel.panel-body.panel-toffee-buscar
                                             div(style="text-align:left")
                                                 h1(style="margin-bottom:30px").modelo-toffee
-                                                    a(ng-href="gamaPropia/duros/{{grupo._id}}", ng-bind-template="{{$index + 1}}. {{grupo.model}}").green.hover-red
+                                                    a(ng-href="gamaPropia/duros/{{especial._id}}", ng-bind-template="{{especial.model}}").green.hover-red
                                             div.col-md-12
                                                 div(style="margin-right: 20px; height: 100px; max-height: 200px; margin-top: 20px").margenInferior-30
-                                                    img(ng-src="/img/imagenesMias/{{grupo.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
+                                                    img(ng-src="/img/imagenesMias/{{especial.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
 
                     div(style="clear:both").col-md-12
                         div.panel.panel-body(ng-show="grageados.length > 0")

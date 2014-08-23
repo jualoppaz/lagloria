@@ -1,0 +1,101 @@
+extends ../../layout
+
+block head
+    title Especiales
+    link(rel="stylesheet", href="/css/backgroundImage.css")
+
+block content
+    div#container(ng-app="lagloria")
+        div(ng-controller="LoguedUserController")
+
+            include ../../partials/navbar
+
+            div(ng-controller="EspecialController")
+                main.margen-superior-50
+                    div.container
+                        div.row
+                            include ../../partials/botonesMovil
+
+                            div.col-md-12.col-xs-12
+                                div.panel.panel-body
+                                    div.main-card-content
+                                        div.main-card-description
+                                            div.main-card-name
+                                                a(href="/gamaPropia")
+                                                    span.caramelo.lagloria Gama propia
+                                                b.abel.mayorQue >
+                                                a(href="../duros")
+                                                    span.caramelo.lagloria Duros
+                                                b.abel.mayorQue >
+                                                a(href="#")
+                                                    span.caramelo.lagloria Especiales
+
+
+
+                            div.col-md-6.col-sm-12.col-xs-12
+                                div.panel.panel-body.main-card#especiales
+
+                                    div.main-card-content(style="word-wrap: break-word;")
+                                        div.main-card-name
+                                            a.recipe-title(href="#")
+                                                span.caramelo.lagloria Sin grupo
+                                        div.main-card-description
+                                            p.
+                                                Aqu&iacute; encontrar&aacute;s todos los caramelos sin grupo de los que disponemos actualmente.
+
+                            div.col-md-6.col-sm-12.col-xs-12
+                                div.panel.panel-body(style="min-height: 124px")
+                                    div.main-card-content
+                                        div.main-card-name.col-md-12
+                                            div.col-md-4.reset-padding-left
+                                                a.recipe-title(href="#")
+                                                    span.caramelo.lagloria Buscar
+                                            div.col-md-6.col-xs-6(style="margin-top:7px")
+                                                input(type="text", placeholder="Introduzca un texto", ng-model="especialSearch").form-control
+
+
+                            div(style="clear:both")
+                                div
+                                    div(ng-repeat="producto in productos | filter:especialSearch", style="text-align:center")
+                                        div(ng-show="producto.esSurtido")
+                                            div.col-md-4.col-sm-6
+                                                div.panel.panel-body.panel-especial
+                                                    div(style="text-align:left;")
+                                                        h1.modelo-especial
+                                                            a(ng-href="especiales/{{producto._id}}", ng-bind-template="{{producto.model}}").green.hover-red
+                                                    div.col-md-12.col-sm-12
+                                                        div(style="float:left; margin-right: 20px; width:100%; height: 260px", ng-show="imagenesOriginales").hidden-sm.hidden-xs
+                                                            img(ng-src="/img/imagenesMias/{{producto.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
+                                                        div(style="float:left; margin-right: 20px; width:100%; height: 260px", ng-show="imagenesOriginales").hidden-md.hidden-lg
+                                                            img(ng-src="/img/imagenesMias/{{producto.image}}", height="100%", width="30%", style="margin-left: 10px; margin-bottom: 10px")
+
+                                                        div(style="float:left; margin-right: 20px; width: 100%", ng-show="imagenesOriginales == false").hidden-sm.hidden-xs
+                                                            img(ng-src="/img/redimensionadas/{{producto.resizedImage}}", style="margin-left: 10px; margin-bottom: 10px")
+                                                        div(style="float:left; margin-right: 20px; width: 100%", ng-show="imagenesOriginales == false").hidden-md.hidden-lg
+                                                            img(ng-src="/img/redimensionadas/{{producto.resizedImage}}", style="margin-left: 10px; margin-bottom: 10px")
+                                                    //div.col-md-9.col-sm-12
+                                                        div
+                                                            h3(style="text-align: justify; margin-top: 30px", ng-bind-template="{{producto.description}}").blue
+                                            div(ng-show="!producto.esSurtido")
+                                                div.col-md-3.col-sm-6
+                                                    div.panel.panel-body.panel-especial
+                                                        div(style="text-align:left")
+                                                            h1(style="margin-bottom:30px").modelo-especial
+                                                                a(ng-href="especiales/{{producto._id}}", ng-bind-template="{{producto.model}}").green.hover-red
+                                                        div.col-md-12
+                                                            div(style="margin-right: 20px; height: 100px; max-height: 200px; margin-top:50px").margenInferior-30
+                                                                img(ng-src="/img/imagenesMias/{{producto.image}}", ng-show="imagenesOriginales", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px;")
+                                                                img(ng-src="/img/redimensionadas/{{producto.resizedImage}}", ng-show="imagenesOriginales == false", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px;")
+                                                        //div.col-md-12
+                                                            div.especial-description
+                                                                h3(style="text-align: justify; margin-top: 5px", ng-bind-template="{{producto.description}}").blue
+
+
+block scripts
+    script(src='/js/jquery.js')
+    script(src='/js/bootstrap.js')
+    script(src='/js/angular.js')
+    script(src='/js/angular/services.js')
+    script(src='/js/angular/loguedUser.js')
+    script(src='/js/angular/duros/especiales.js')
+    script(src='/js/angular/navbar.js')

@@ -44,7 +44,7 @@ function mainController($scope, $http) {
     $scope.crystals = {};
     $scope.glorias = {};
     $scope.ponnies = {};
-    $scope.sinGrupo = {};
+    $scope.especiales = {};
     $scope.grageados = {};
     $scope.conPalo = {};
 
@@ -89,7 +89,7 @@ function mainController($scope, $http) {
         $scope.crystals = {};
         $scope.glorias = {};
         $scope.ponnies = {};
-        $scope.sinGrupo = {};
+        $scope.especiales = {};
 
         $scope.grageados = {};
 
@@ -125,7 +125,7 @@ function mainController($scope, $http) {
                     $scope.crystals = data.crystals;
                     $scope.glorias = data.glorias;
                     $scope.ponnies = data.ponnies;
-                    $scope.sinGrupo = data.sinGrupo;
+                    $scope.especiales = data.especiales;
                 }else if(data.grageados){
                     $scope.grageados    = data.grageados;
                 }else if(data.conPalo){

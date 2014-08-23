@@ -367,7 +367,7 @@ exports.getAllProductsByCategoryType = function(categoryType, callback)
                     callback(null, res);
                 }
             });
-    }else if(categoryType == "Crystal" || categoryType == "Gloria" || categoryType == "Ponny" || categoryType == "Sin grupo"){
+    }else if(categoryType == "Crystal" || categoryType == "Gloria" || categoryType == "Ponny" || categoryType == "Especial"){
         duros.find({ $query: {type:categoryType}, $orderby: {position:1}}).toArray(
             function(e, res) {
                 if (e){
@@ -409,7 +409,7 @@ exports.getProductByCategoryTypeAndId = function(categoryType, id, callback){
                     callback(null, res);
                 }
             });
-    }else if(categoryType == "Crystal" || categoryType == "Gloria" || categoryType == "Ponny" || categoryType == "Sin grupo"){
+    }else if(categoryType == "Crystal" || categoryType == "Gloria" || categoryType == "Ponny" || categoryType == "Especial"){
         duros.find({ $query: {type:categoryType, _id: getDuroId(id)}}).toArray(
             function(e, res){
                 if(e){
