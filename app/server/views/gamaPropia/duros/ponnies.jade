@@ -66,9 +66,6 @@ block content
 
                             div.col-md-6.col-sm-12.col-xs-12
                                 div.panel.panel-body.main-card#ponnies
-                                    //div.main-card-picture
-                                        a(href="#")
-                                            img(src="/img/toffessYMasticables.png", style="width: 100%; height: 100%;")
                                     div.main-card-content(style="word-wrap: break-word;")
                                         div.main-card-name
                                             a.recipe-title(href="#")
@@ -76,10 +73,6 @@ block content
                                         div.main-card-description
                                             p.
                                                 Aqu&iacute; encontrar&aacute;s todos los caramelos ponnies de los que disponemos actualmente.
-                                    //div.recipe-time
-                                        span
-                                            i.fa.fa-bars
-                                        span  M&aacute;s info
                             div.col-md-6.col-sm-12.col-xs-12
                                 div.panel.panel-body(style="min-height: 124px")
                                     div.main-card-content
@@ -93,32 +86,47 @@ block content
 
                             div(style="clear:both")
                                 div
-                                    div(ng-repeat="ponny in ponnies | filter:ponnySearch", style="text-align:center")
-                                        //div(ng-show="esSurtido(duro)")
-                                            div.col-md-12.col-sm-12
-                                                div.panel.panel-body.panel-duro
-                                                    div(style="text-align:left;")
-                                                        h1(style="margin-bottom:30px").modelo-duro
-                                                            a(ng-href="duros/{{duro._id}}", ng-bind-template="{{$index + 1}}. {{duro.model}}").green.hover-red
-                                                    div.col-md-2
-                                                        div(style="float:left; margin-right: 20px; width:100%; height: 260px").hidden-sm
-                                                            img(ng-src="/img/imagenesMias/{{duro.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
-                                                        div(style="float:left; margin-right: 20px; width:100%; height: 260px").hidden-md.hidden-lg
-                                                            img(ng-src="/img/imagenesMias/{{duro.image}}", height="100%", width="30%", style="margin-left: 10px; margin-bottom: 10px")
-                                                    div.col-md-10
-                                                        div(style="margin-left: 15px;").duro-description
-                                                            h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{duro.description}}").blue
-                                        //div(ng-show="!esSurtido(duro)")
+                                    div(ng-repeat="producto in productos | filter:ponnySearch", style="text-align:center")
+                                        div(ng-show="producto.esSurtido")
                                             div.col-md-3.col-sm-6
-                                                div.panel.panel-body.panel-duro
+                                                div.panel.panel-body.panel-ponny
+                                                    div(style="text-align:left;")
+                                                        h1(style="margin-bottom:0px").modelo-ponny
+                                                            a(ng-href="ponny/{{producto._id}}", ng-bind-template="{{producto.model}}").green.hover-red
+                                                    div.col-md-12
+                                                        div(style="float:left; margin-right: 20px; width:100%; height: 260px", ng-show="imagenesOriginales").hidden-sm.hidden-xs
+                                                            img(ng-src="/img/imagenesMias/{{producto.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
+                                                        div(style="float:left; margin-right: 20px; width:100%; height: 260px", ng-show="imagenesOriginales").hidden-md.hidden-lg
+                                                            img(ng-src="/img/imagenesMias/{{producto.image}}", height="100%", width="30%", style="margin-left: 10px; margin-bottom: 10px")
+
+                                                        div(style="float:left; margin-right: 20px; width: 100%", ng-show="imagenesOriginales == false").hidden-sm.hidden-xs
+                                                            img(ng-src="/img/redimensionadas/{{producto.resizedImage}}", style="margin-left: 10px; margin-bottom: 10px")
+                                                        div(style="float:left; margin-right: 20px; width: 100%", ng-show="imagenesOriginales == false").hidden-md.hidden-lg
+                                                            img(ng-src="/img/redimensionadas/{{producto.resizedImage}}", style="margin-left: 10px; margin-bottom: 10px")
+
+
+
+
+
+                                                    //div.col-md-10
+                                                        div(style="margin-left: 15px;").ponny-description
+                                                            h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{producto.description}}").blue
+                                        div(ng-show="!producto.esSurtido")
+                                            div.col-md-3.col-sm-6
+                                                div.panel.panel-body.panel-ponny
                                                     div(style="text-align:left")
-                                                        h1(style="margin-bottom:30px").modelo-duro
-                                                            a(ng-href="duros/{{duro._id}}", ng-bind-template="{{$index + 1}}. {{duro.model}}").green.hover-red
-                                                    div(style="margin-right: 20px; height: 100px; max-height: 200px;").margenInferior-30
-                                                        img(ng-src="/img/imagenesMias/{{duro.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
-                                                    div.duro-description
-                                                        h3(style="text-align: justify; margin-top: 5px", ng-bind-template="{{duro.description}}").blue
-                                        div.col-md-3.col-sm-6
+                                                        h1(style="margin-bottom:30px").modelo-ponny
+                                                            a(ng-href="ponny/{{producto._id}}", ng-bind-template="{{producto.model}}").green.hover-red
+
+                                                    div.col-md-12
+                                                        div(style="margin-right: 20px; height: 100px; max-height: 200px;").margenInferior-30
+                                                            img(ng-src="/img/imagenesMias/{{ponny.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
+
+
+
+                                                    //div.ponny-description
+                                                        h3(style="text-align: justify; margin-top: 5px", ng-bind-template="{{producto.description}}").blue
+                                        //div.col-md-3.col-sm-6
                                             div.panel.panel-body.panel-ponny
                                                 div(style="text-align:left")
                                                     h1(style="margin-bottom:30px").modelo-ponny

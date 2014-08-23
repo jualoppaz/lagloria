@@ -1,14 +1,14 @@
 var app = angular.module('lagloria');
 
 app.controller('PonnyController', function($scope, $http) {
-    $scope.ponnies = {};
+    $scope.productos = {};
 
     $http.get('/api/ponnies')
         .success(function(data) {
             if(data.message){
-                $scope.ponnies = {};
+                $scope.productos = {};
             }else{
-                $scope.ponnies = data;
+                $scope.productos = data;
             }
         })
         .error(function(data) {
