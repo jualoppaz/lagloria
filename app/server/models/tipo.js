@@ -3,7 +3,7 @@ var mongoose = require('mongoose'),
 
 var tipoSchema = new Schema({
     nombre:     { type: String, enum :
-        ['Toffee', 'Masticable', 'Crystal', 'Ponny', 'Sin grupo', 'Peladillas blancas', 'Peladillas de colores',
+        ['Toffee', 'Masticable', 'Crystal', 'Ponny', 'Especial', 'Peladillas blancas', 'Peladillas de colores',
          'Anises', 'Bolitas de anis blancas', 'Bolitas de anis de colores', 'Mani', 'Glorypop', 'Colorful', 'Monster']
     },
     modelo:     ObjectId
