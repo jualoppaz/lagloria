@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10f8a809-813f-448f-8ef1-b4cf12576758" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/public/js/angular/carrito.js" afterPath="$PROJECT_DIR$/app/public/js/angular/carrito.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/public/js/angular/index.js" afterPath="$PROJECT_DIR$/app/public/js/angular/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/public/js/angular/loguedUser.js" afterPath="$PROJECT_DIR$/app/public/js/angular/loguedUser.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/router.js" afterPath="$PROJECT_DIR$/app/server/router.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="angular-users-api.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,19 +25,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/public/js/angular/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="50" selection-start="463" selection-end="463" vertical-scroll-proportion="0.43606558" vertical-offset="0" max-vertical-offset="610">
+            <state line="14" column="50" selection-start="463" selection-end="463" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="551">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="router.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="router.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/server/router.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="926" column="47" selection-start="29454" selection-end="29454" vertical-scroll-proportion="0.0" vertical-offset="17453" max-vertical-offset="18221">
+            <state line="889" column="24" selection-start="28034" selection-end="28034" vertical-scroll-proportion="0.58626467" vertical-offset="16541" max-vertical-offset="18221">
               <folding />
             </state>
           </provider>
@@ -109,8 +105,8 @@
         <option value="$PROJECT_DIR$/app/public/js/angular/loguedUser.js" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/app/public/js/angular/carrito.js" />
-        <option value="$PROJECT_DIR$/app/server/router.js" />
         <option value="$PROJECT_DIR$/app/public/js/angular/index.js" />
+        <option value="$PROJECT_DIR$/app/server/router.js" />
       </list>
     </option>
   </component>
@@ -1233,16 +1229,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/server/router.js">
+    <entry file="file://$PROJECT_DIR$/app/public/js/angular/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="926" column="47" selection-start="29454" selection-end="29454" vertical-scroll-proportion="0.0" vertical-offset="17453" max-vertical-offset="18221">
+        <state line="14" column="50" selection-start="463" selection-end="463" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="551">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/public/js/angular/index.js">
+    <entry file="file://$PROJECT_DIR$/app/server/router.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="50" selection-start="463" selection-end="463" vertical-scroll-proportion="0.43606558" vertical-offset="0" max-vertical-offset="610">
+        <state line="889" column="24" selection-start="28034" selection-end="28034" vertical-scroll-proportion="0.58626467" vertical-offset="16541" max-vertical-offset="18221">
           <folding />
         </state>
       </provider>

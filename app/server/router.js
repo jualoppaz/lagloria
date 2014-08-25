@@ -887,7 +887,7 @@ module.exports = function(app){
             /*
              var client2 = github.client({
              username: 'jualoppaz',
-             password: 'Juanmit@14'
+             password: ''
              });*/
 
             var json = client2.get('repos/jualoppaz/lagloria/git/refs/heads/master', function(err, response, body) {
