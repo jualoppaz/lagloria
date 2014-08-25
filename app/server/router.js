@@ -147,6 +147,7 @@ module.exports = function(app){
     });
 
     app.get('/carrito', function(req, res){
+        console.log("Usuario de sesion: " + req.session.user);
         if(req.session.user == null){
             res.render('error',{
                 message : 'No puede acceder al carrito de la compra si no está logueado.'
@@ -175,6 +176,15 @@ module.exports = function(app){
             }
         }
     });
+
+
+    app.post('/error', function(req, res){
+        var message = req.body.message;
+        res.render('error',{
+            message: message
+        });
+    });
+
 
     app.get('/emails/:id', function(req, res){
         if(req.session.user == null){
@@ -605,19 +615,24 @@ module.exports = function(app){
     // Carrito de la compra
 
     app.get('/api/shoppingCart', function(req, res){
-        var productos = req.session.shoppingCartProducts;
-        var json = [
-            {
-
-            }];
-        if(productos == undefined){
-            res.send({}, 200);
+        if(req.session.user == null){
+            console.log("Usuario no logueado");
+            res.send("not-loguedin-user", 400);
         }else{
-            for(i=0;i<productos.length;i++){
-                json[i] = productos[i];
+            var productos = req.session.shoppingCartProducts;
+            var json = [
+                {
+
+                }];
+            if(productos == undefined){
+                res.send({}, 200);
+            }else{
+                for(i=0;i<productos.length;i++){
+                    json[i] = productos[i];
+                }
+                console.log(JSON.stringify(json));
+                res.send(json, 200);
             }
-            console.log(JSON.stringify(json));
-            res.send(json, 200);
         }
     });
 
@@ -857,37 +872,62 @@ module.exports = function(app){
 
     app.get('/lastModified', function(req, res){
 
-        var github = require('octonode');
+        if(process.env.MONGOHQ_URL){ //Estamos en Heroku
+            var github = require('octonode');
 
-        var client1 = github.client();
+            var client1 = github.client();
 
-        var repo      = client1.repo('jualoppaz/lagloria');
+            var repo      = client1.repo('jualoppaz/lagloria');
 
-        var request = require('request-json');
-        var client2 = request.newClient('https://api.github.com');
+            var request = require('request-json');
 
-        var json = client2.get('repos/jualoppaz/lagloria/git/refs/heads/master', function(err, response, body) {
-            console.log("RESPUESTA");
-            console.log(body);
 
-            var sha = body.object.sha;
+            var client2 = request.newClient('https://api.github.com');
 
-            repo.commit(sha, function(error, commit){
-                if(error){
-                    res.send(error, 400);
-                }else{
-                    //var date = isodate(commits[0].commit.committer.date);
-                    /*
-                    res.send({
-                        fecha: commits[0].commit.committer.date
-                    }, 200);
-                    */
-                    res.send({
-                        fecha: commit.commit.committer.date
-                    }, 200);
+            /*
+             var client2 = github.client({
+             username: 'jualoppaz',
+             password: 'Juanmit@14'
+             });*/
+
+            var json = client2.get('repos/jualoppaz/lagloria/git/refs/heads/master', function(err, response, body) {
+                console.log("RESPUESTA");
+                console.log(body);
+
+                /*
+                 El try and catch esta por si hemos superado las 60 peticiones permitidas por hora y
+                 direccion IP. En ese caso, saltara una excepcion, la cual capturamos para que no
+                 caiga el servidor .
+                 */
+
+                try{
+                    var sha = body.object.sha;
+
+                    repo.commit(sha, function(error, commit){
+                        if(error){
+                            res.send(error, 400);
+                        }else{
+                            //var date = isodate(commits[0].commit.committer.date);
+                            /*
+                             res.send({
+                             fecha: commits[0].commit.committer.date
+                             }, 200);
+                             */
+                            res.send({
+                                fecha: commit.commit.committer.date
+                            }, 200);
+                        }
+                    });
+                }catch(Exception){
+                    res.send("not-avaible", 400);
                 }
+
             });
-        });
+        }else{
+            res.send("local-environment", 400);
+        }
+
+
 
 
 

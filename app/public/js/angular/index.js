@@ -9,6 +9,11 @@ app.controller('IndexController', function ($scope, $http) {
             $scope.fecha = data.fecha;
         })
         .error(function(data){
+            if(data == "not-avaible"){
+                $scope.fecha = "No disponible";
+            }else if(data == "local-environment"){
+                $scope.fecha = "Estamos en local";
+            }
 
         })
 });

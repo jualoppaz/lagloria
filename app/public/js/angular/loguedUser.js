@@ -2,7 +2,7 @@
 
 var app = angular.module('lagloria', ['services']);
 
-app.controller('LoguedUserController', function($scope, UserService, $http){
+app.controller('LoguedUserController', function($scope, UserService, $http, $window){
     $scope.usuarioEstaLogueado = false;
 
     /*
@@ -50,6 +50,7 @@ app.controller('LoguedUserController', function($scope, UserService, $http){
     };
 
     $scope.redirigirTrasLogout = function(){
+        alert("Nueva url: " + "/");
         $window.location.href = "/";
     };
 });

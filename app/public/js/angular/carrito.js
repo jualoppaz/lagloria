@@ -59,7 +59,7 @@ app.controller('CarritoController', function($scope, $http){
 
     $scope.subTotal = function(){
         return (this.cantidad * this.price) || 0;
-    }
+    };
 
     $scope.guardarCambios = function(){
         var json = {
