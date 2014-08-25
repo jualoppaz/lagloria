@@ -19,7 +19,7 @@ module.exports = function(app){
 
     app.get('/', function(req, res) {
         funcionesComunes(req);
-        if(req.session.user == null){
+        if(req.session.user == null && req.cookies.user == undefined){
             res.render('index');
         }else{
             if(req.session.user.role == "admin"){
@@ -464,12 +464,18 @@ module.exports = function(app){
                         res.cookie('user', o.user, { maxAge: 900000 });
                         res.cookie('pass', o.pass, { maxAge: 900000 });
                     }
+                    if(o.role == "admin"){
+                        ultimaPagina = "/";
+                    }
                     res.send(o, 200);
                 }
             });
         }else{
             DBM.autoLogin(req.cookies.user, req.cookies.pass, function(o){
                 if(o != null){
+                    if(o.role == "admin"){
+                        ultimaPagina = "/";
+                    }
                     res.send(o, 200);
                 }else{
                     res.render('login');

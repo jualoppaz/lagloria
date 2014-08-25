@@ -1,6 +1,6 @@
-var contacto = angular.module('contacto', []);
+var contacto = angular.module('lagloria');
 
-function mainController($scope, $http){
+app.controller('ContactoController', function ($scope, $http){
 
     $scope.loguedUser = {};
 
@@ -17,42 +17,6 @@ function mainController($scope, $http){
 
     $scope.hayErrores = false;
     $scope.nombreVacio = false;
-
-    /*
-    $http.get('/api/user')
-        .success(function(data){
-            $scope.usuarioEstaLogueado = true;
-            $scope.loguedUser = data;
-        })
-        .error(function(data){
-            if(data == "not-loguedin-user"){
-                $scope.usuarioEstaLogueado = false;
-            }
-        });
-
-    */
-
-    // Llamada AJAX para cerrar sesion
-
-    /*
-    $scope.cerrarSesion = function(){
-        $http.get('/api/logout')
-            .success(function(data){
-                if(data == "ok"){
-                    alert("Ha cerrado sesión correctamente");
-                    $scope.usuarioEstaLogueado = false;
-                }
-            })
-            .error(function(data){
-
-            });
-    }*/
-
-    /*
-    $scope.cerrarSesion = function(){
-        $scope.$parent.cerrarSesion();
-    };
-    */
 
     $scope.isEmailAddress = function (str) {
         var pattern =/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -118,4 +82,4 @@ function mainController($scope, $http){
 
     };
 
-}
+});

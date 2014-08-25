@@ -1,7 +1,7 @@
 extends ../adminPartials/layout
 
 block content
-    div(ng-app="dasjboard")
+    div(ng-app="dashboard")
         div
             include ../adminPartials/navbar
 
@@ -10,11 +10,11 @@ block content
 
                 include ../adminPartials/sidebar
 
-                div.col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
+                div.col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main(ng-controller="EmailController")
 
                     h1.page-header Correo electrónico
 
-                    div.col-md-12.col-sm-12(ng-controller="mainController", style="padding-left: 0px")
+                    div.col-md-12.col-sm-12(style="padding-left: 0px")
                         div.col-md-12(style="padding-left: 0px")
                             div.col-md-1(style="padding-left: 0px")
                                 label Remitente:
@@ -28,18 +28,11 @@ block content
 
 
 
-
-                    div.col-md-12
-                        div(ng-bind-template="{{email.fecha | date:('dd/MM/yyyy')}}")
-
-
-
-
-
 block scripts
     script(src="/js/jquery.js")
     script(src="/js/bootstrap.js")
     script(src="/js/angular.js")
+    script(src='/js/angular/admin/app.js')
     script(src="/js/angular/admin/email.js")
     script(src="/js/angular/admin/navbar.js")
     script(src="/js/angular/admin/sidebar.js")
