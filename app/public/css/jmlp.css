@@ -602,6 +602,7 @@ div.row div h3{
 
 .panel-toffee-buscar{
     height: 300px;
+    border: 2px solid #41B19C !important;
 }
 
 nav{

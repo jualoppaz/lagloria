@@ -396,7 +396,7 @@ module.exports = function(app){
                     DBM.getAllProductsByCategoryType('Crystal', function(err1, crystals){
                         DBM.getAllProductsByCategoryType('Gloria', function(err2, glorias){
                             DBM.getAllProductsByCategoryType('Ponny', function(err3, ponnies){
-                                DBM.getAllProductsByCategoryType('Especiales', function(err4, especiales){
+                                DBM.getAllProductsByCategoryType('Especial', function(err4, especiales){
 
                                     var json = {
                                         crystals: crystals,
