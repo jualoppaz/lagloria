@@ -13,20 +13,6 @@ div.modal.fade#modal-eliminar-email(tabindex="-1", role="dialog", aria-labelledb
                 button(type="button", data-dismiss="modal", ng-click="eliminarEmailDefinitivamente()").btn.btn-primary#confirmarEliminacion Aceptar
 
 
-// Modal tras hacer login
-
-div.modal.fade#modal-login(tabindex="-1", role="dialog", aria-labelledby="myModalLabel", aria-hidden="true")
-    div.modal-dialog
-        div.modal-content
-            div.modal-header
-                button.close(type="button", data-dismiss="modal", aria-hidden="true") &times;
-                h4.modal-title#modalTitleLogin
-            div.modal-body
-                form
-                    div.alert.alert-info#modalTextLogin
-            div.modal-footer
-                button(type="button", data-dismiss="modal", ng-click="redirigirTrasLogin()").btn.btn-primary#confirmarEliminacion Aceptar
-
 // Modal tras hacer logout
 
 div.modal.fade#modal-logout(tabindex="-1", role="dialog", aria-labelledby="myModalLabel", aria-hidden="true")
