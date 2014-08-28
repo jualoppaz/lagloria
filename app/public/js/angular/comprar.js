@@ -1,9 +1,8 @@
+var app = angular.module('lagloria');
 
 
-
-function comprarController($scope, $http){
+app.controller('ComprarController', function ($scope, $http){
     $scope.anadirAlCarrito = function(){
-        alert("Entramos en el controlador comun para comprar");
         var json = {
             id: $scope.producto._id,
             category: $scope.producto.category,
@@ -13,9 +12,11 @@ function comprarController($scope, $http){
         $http.post('/api/shoppingCart', json)
             .success(function(data){
                 if(data == "ok"){
-                    alert("El producto ha sido añadido al carrito.");
+                    angular.element("#modalTitleComprarProducto").text("Producto añadido al carrito");
+                    angular.element("#modalTextComprarProducto").text("Pulse el botón para continuar");
+                    angular.element("#modal-comprarProducto").modal('show');
                 }
-                alert("Categoria: " + data.category + "\nTipo: " + data.type + "\nModelo: " + data.model);
+                //alert("Categoria: " + data.category + "\nTipo: " + data.type + "\nModelo: " + data.model);
             })
             .error(function(data){
                 if(data == "product-already-exists"){
@@ -23,4 +24,4 @@ function comprarController($scope, $http){
                 }
             });
     };
-}
+});

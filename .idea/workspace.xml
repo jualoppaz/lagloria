@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10f8a809-813f-448f-8ef1-b4cf12576758" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\WS\carameloslagloria\app\server\models\caramelo.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\WS\carameloslagloria\app\server\models\categoria.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\WS\carameloslagloria\app\server\models\modelo.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\WS\carameloslagloria\app\server\models\tipo.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/views/buscar.jade" afterPath="$PROJECT_DIR$/app/server/views/buscar.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/views/admin/emails.jade" afterPath="$PROJECT_DIR$/app/server/views/admin/emails.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/public/js/angular/admin/emails.js" afterPath="$PROJECT_DIR$/app/public/js/angular/admin/emails.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/server/views/modals/comprarProducto.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/views/partials/botonComprar.jade" afterPath="$PROJECT_DIR$/app/server/views/partials/botonComprar.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/public/js/angular/comprar.js" afterPath="$PROJECT_DIR$/app/public/js/angular/comprar.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/router.js" afterPath="$PROJECT_DIR$/app/server/router.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -33,10 +29,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="buscar.jade" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/server/views/buscar.jade">
+      <file leaf-file-name="comprar.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/public/js/angular/comprar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="42" selection-start="2010" selection-end="2010" vertical-scroll-proportion="0.5646853" vertical-offset="418" max-vertical-offset="6574">
+            <state line="21" column="0" selection-start="878" selection-end="878" vertical-scroll-proportion="0.6683417" vertical-offset="0" max-vertical-offset="608">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="router.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/server/router.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="664" column="28" selection-start="21165" selection-end="21165" vertical-scroll-proportion="-12.92" vertical-offset="12293" max-vertical-offset="18259">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="botonComprar.jade" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/server/views/partials/botonComprar.jade">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="37" selection-start="424" selection-end="424" vertical-scroll-proportion="-3.8" vertical-offset="0" max-vertical-offset="228">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="comprarProducto.jade" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/server/views/modals/comprarProducto.jade">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="58" selection-start="575" selection-end="575" vertical-scroll-proportion="-9.12" vertical-offset="0" max-vertical-offset="342">
               <folding />
             </state>
           </provider>
@@ -55,9 +78,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/public/js/angular/duros/crystals/info.js" />
-        <option value="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/toffees/infoToffee.jade" />
-        <option value="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/toffees.jade" />
         <option value="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/masticables.jade" />
         <option value="$PROJECT_DIR$/app/public/js/angular/login.js" />
         <option value="$PROJECT_DIR$/app/server/views/partials/botonesMovil.jade" />
@@ -102,10 +122,13 @@
         <option value="$PROJECT_DIR$/app/server/views/modals/logout.jade" />
         <option value="$PROJECT_DIR$/app/server/views/adminPartials/navbar.jade" />
         <option value="$PROJECT_DIR$/app/server/views/partials/navbar.jade" />
-        <option value="$PROJECT_DIR$/app/server/router.js" />
         <option value="$PROJECT_DIR$/app/public/js/angular/admin/emails.js" />
         <option value="$PROJECT_DIR$/app/server/views/admin/emails.jade" />
         <option value="$PROJECT_DIR$/app/server/views/buscar.jade" />
+        <option value="$PROJECT_DIR$/app/server/views/partials/botonComprar.jade" />
+        <option value="$PROJECT_DIR$/app/server/views/modals/comprarProducto.jade" />
+        <option value="$PROJECT_DIR$/app/server/router.js" />
+        <option value="$PROJECT_DIR$/app/public/js/angular/comprar.js" />
       </list>
     </option>
   </component>
@@ -243,6 +266,58 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="partials" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="caramelos-la-gloria" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="carameloslagloria" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modals" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="caramelos-la-gloria" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="carameloslagloria" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="modules" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -258,6 +333,58 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="caramelos-la-gloria" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="carameloslagloria" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="caramelos-la-gloria" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="carameloslagloria" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="angular" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -276,11 +403,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\WS\carameloslagloria\app\server\views\modals" />
       <recent name="D:\WS\carameloslagloria\app\public\img\redimensionadas\especiales" />
       <recent name="D:\WS\carameloslagloria\app\public\img\redimensionadas\glorias" />
       <recent name="D:\WS\carameloslagloria\app\public\img\redimensionadas\ponnies" />
       <recent name="D:\WS\carameloslagloria\app\public\img\imagenesMias\glorias" />
-      <recent name="D:\WS\carameloslagloria\app\public\img\redimensionadas\crystals" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\WS\carameloslagloria\app\public\js\angular" />
@@ -414,23 +541,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="0" selection-start="1309" selection-end="1309" vertical-scroll-proportion="0.0" vertical-offset="152" max-vertical-offset="931">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/toffees/infoToffee.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="103" column="75" selection-start="8608" selection-end="8608" vertical-scroll-proportion="0.6678322" vertical-offset="1575" max-vertical-offset="3173" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/masticables.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="122" selection-start="3524" selection-end="3524" vertical-scroll-proportion="0.16608392" vertical-offset="988" max-vertical-offset="1919" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/server/views/partials/botonesMovil.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="20" selection-start="115" selection-end="115" vertical-scroll-proportion="0.066433564" vertical-offset="0" max-vertical-offset="572" />
@@ -561,11 +671,6 @@
         <state line="59" column="43" selection-start="2928" selection-end="3009" vertical-scroll-proportion="0.71153843" vertical-offset="714" max-vertical-offset="1311" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/public/js/angular/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="38" selection-start="626" selection-end="626" vertical-scroll-proportion="0.0" vertical-offset="1005" max-vertical-offset="1786" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/public/js/angular/navbar.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="52" selection-start="261" selection-end="261" vertical-scroll-proportion="0.19095477" vertical-offset="0" max-vertical-offset="855" />
@@ -646,11 +751,6 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="817" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/server/router.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="174" column="31" selection-start="5192" selection-end="5192" vertical-scroll-proportion="1.6940559" vertical-offset="2337" max-vertical-offset="18259" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/server/views/admin/emails.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="35" selection-start="473" selection-end="473" vertical-scroll-proportion="0.28810722" vertical-offset="56" max-vertical-offset="1007" />
@@ -671,6 +771,41 @@
     <entry file="file://$PROJECT_DIR$/app/server/views/buscar.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state line="39" column="42" selection-start="2010" selection-end="2010" vertical-scroll-proportion="0.5646853" vertical-offset="418" max-vertical-offset="6574">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/public/js/angular/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="66" column="66" selection-start="2109" selection-end="2329" vertical-scroll-proportion="0.0" vertical-offset="1005" max-vertical-offset="1786">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/server/views/modals/comprarProducto.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="58" selection-start="575" selection-end="575" vertical-scroll-proportion="-9.12" vertical-offset="0" max-vertical-offset="342">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/server/views/partials/botonComprar.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="37" selection-start="424" selection-end="424" vertical-scroll-proportion="-3.8" vertical-offset="0" max-vertical-offset="228">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/server/router.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="664" column="28" selection-start="21165" selection-end="21165" vertical-scroll-proportion="-12.92" vertical-offset="12293" max-vertical-offset="18259">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/public/js/angular/comprar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="0" selection-start="878" selection-end="878" vertical-scroll-proportion="0.6683417" vertical-offset="0" max-vertical-offset="608">
           <folding />
         </state>
       </provider>

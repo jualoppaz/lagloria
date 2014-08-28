@@ -662,7 +662,7 @@ module.exports = function(app){
                 console.log("El carrito esta vacio.");
                 req.session.shoppingCartProducts = [];
                 req.session.shoppingCartProducts[0] = query[0];
-                res.send(query[0], 200);
+                res.send("ok", 200);
             }else{ // Ya hay productos en el carrito
                 console.log("El carrito tiene productos.");
                 for(i=0;i<productos.length;i++){// Comprobamos si el producto a añadir ya estaba en el carrito
