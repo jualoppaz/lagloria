@@ -6,10 +6,8 @@ require('nodetime').profile({
     appName: 'Node.js Application'
 });
 */
-
 var express 	= require('express');
 var app 		= express();
-var mongoose 	= require('mongoose');
 var path        = require("path");
 
 var port = process.env.PORT || 8888;
