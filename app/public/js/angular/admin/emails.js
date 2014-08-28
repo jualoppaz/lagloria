@@ -5,13 +5,19 @@ app.controller('EmailsController', function ($scope, $http){
     $scope.emails = {};
     $scope.emailAEliminar = {};
 
+
+
     $http.get('/api/emails')
         .success(function(data){
             $scope.emails = data;
         })
         .error(function(data){
-
+            alert("Ha sucedido algún error. Recargue la página.");
         });
+
+
+
+
 
     $scope.verEmail = function(id){
         window.location.href = "/emails/" + id;

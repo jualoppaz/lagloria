@@ -164,14 +164,16 @@ module.exports = function(app){
     app.get('/emails', function(req, res){
         if(req.session.user == null){
             res.render('error',{
-                message : 'No puede acceder a los emails enviados a La Gloria S.L. porque no tiene permisos de administración.'
+                message : 'No puede acceder a los emails enviados a La Gloria S.L. porque no' +
+                    ' tiene permisos de administración.'
             });
         }else{
             if(req.session.user.role == 'admin'){
                 res.render('admin/emails', 200);
             }else{
                 res.render('error',{
-                    message : 'No puede acceder a los emails enviados a La Gloria S.L. porque no tiene permisos de administración.'
+                    message : 'No puede acceder a los emails enviados a La Gloria S.L. porque ' +
+                        'no tiene permisos de administración.'
                 });
             }
         }
