@@ -6,6 +6,7 @@ require('nodetime').profile({
     appName: 'Node.js Application'
 });
 */
+
 var express 	= require('express');
 var app 		= express();
 var path        = require("path");
@@ -34,6 +35,7 @@ require('./app/server/router')(app);
 app.listen(port, function() {
 	console.log('App listening on port ' + port);
 });
+
 
 
 

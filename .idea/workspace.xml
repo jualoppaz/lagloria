@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10f8a809-813f-448f-8ef1-b4cf12576758" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/conf.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/index/index.spec.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/masticable/masticable.spec.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/modules/data-base-manager.js" afterPath="$PROJECT_DIR$/app/server/modules/data-base-manager.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/masticables/infoMasticable.jade" afterPath="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/masticables/infoMasticable.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="angular-users-api.iws" />
@@ -28,7 +28,26 @@
     <favorites_list name="angular-users-api" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="index.spec.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/index/index.spec.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="54" selection-start="404" selection-end="404" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="361">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="masticable.spec.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/masticable/masticable.spec.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="3" selection-start="423" selection-end="423" vertical-scroll-proportion="0.22278057" vertical-offset="0" max-vertical-offset="597">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -41,14 +60,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/server/views/partials/botonesMovil.jade" />
-        <option value="$PROJECT_DIR$/app/server/views/index.jade" />
-        <option value="$PROJECT_DIR$/app/public/js/angular/navbar.js" />
-        <option value="$PROJECT_DIR$/app/server/views/gamaPropia/duros/glorias/infoGloria.jade" />
-        <option value="$PROJECT_DIR$/app/public/js/angular/duros/glorias/info.js" />
-        <option value="$PROJECT_DIR$/app/public/js/angular/duros/ponnies.js" />
-        <option value="$PROJECT_DIR$/app/server/views/gamaPropia/duros/ponnies.jade" />
-        <option value="$PROJECT_DIR$/app/public/js/angular/duros/ponnies/info.js" />
         <option value="$PROJECT_DIR$/app/server/views/gamaPropia/duros/glorias.jade" />
         <option value="$PROJECT_DIR$/app/server/views/partials/carouselCaramelos.jade" />
         <option value="$PROJECT_DIR$/app/public/js/angular/duros/sinGrupo.js" />
@@ -87,11 +98,19 @@
         <option value="$PROJECT_DIR$/app/server/views/modals/comprarProducto.jade" />
         <option value="$PROJECT_DIR$/app/server/router.js" />
         <option value="$PROJECT_DIR$/app/public/js/angular/comprar.js" />
-        <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/app/server/modules/data-base-manager.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/Procfile" />
+        <option value="$PROJECT_DIR$/test/protactor.conf.js" />
+        <option value="$PROJECT_DIR$/test/spec.js" />
+        <option value="$PROJECT_DIR$/test/index/spec.js" />
         <option value="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/masticables/infoMasticable.jade" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/test/APIREST/api.spec.js" />
+        <option value="$PROJECT_DIR$/test/conf.js" />
+        <option value="$PROJECT_DIR$/test/adminConf.js" />
+        <option value="$PROJECT_DIR$/test/index/index.spec.js" />
+        <option value="$PROJECT_DIR$/test/masticable/masticable.spec.js" />
       </list>
     </option>
   </component>
@@ -168,6 +187,56 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="carameloslagloria" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="caramelos-la-gloria" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="carameloslagloria" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="caramelos-la-gloria" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="carameloslagloria" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="masticable" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="caramelos-la-gloria" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="carameloslagloria" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="index" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -314,28 +383,6 @@
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="caramelos-la-gloria" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="carameloslagloria" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -352,18 +399,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\WS\carameloslagloria\test\APIREST" />
       <recent name="D:\WS\carameloslagloria\app\server\views\modals" />
       <recent name="D:\WS\carameloslagloria\app\public\img\redimensionadas\especiales" />
       <recent name="D:\WS\carameloslagloria\app\public\img\redimensionadas\glorias" />
       <recent name="D:\WS\carameloslagloria\app\public\img\redimensionadas\ponnies" />
-      <recent name="D:\WS\carameloslagloria\app\public\img\imagenesMias\glorias" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\WS\carameloslagloria\test\index" />
       <recent name="D:\WS\carameloslagloria\app\public\js\angular" />
       <recent name="D:\WS\carameloslagloria\app\server\views\adminPartials" />
       <recent name="D:\WS\carameloslagloria\app\server\views\admin" />
       <recent name="D:\WS\carameloslagloria\app\server\views\partials" />
-      <recent name="D:\WS\carameloslagloria\app\public\js" />
     </key>
   </component>
   <component name="RunManager">
@@ -439,7 +486,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23572475" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23572475" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -453,25 +500,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23572475" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USERS">
@@ -490,26 +518,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/server/views/gamaPropia/duros/ponnies.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="118" column="76" selection-start="8232" selection-end="8232" vertical-scroll-proportion="0.7915905" vertical-offset="1809" max-vertical-offset="2926" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/public/js/angular/toffeesYMasticables/masticables/info.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="13" selection-start="463" selection-end="572" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="551" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/public/js/angular/duros/ponnies/info.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="24" selection-start="153" selection-end="153" vertical-scroll-proportion="0.124590166" vertical-offset="0" max-vertical-offset="610" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/server/views/gamaPropia/duros/glorias.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="109" column="85" selection-start="7447" selection-end="7448" vertical-scroll-proportion="0.33272395" vertical-offset="1889" max-vertical-offset="2717" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/server/views/partials/carouselCaramelos.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="36" selection-start="944" selection-end="944" vertical-scroll-proportion="0.46503496" vertical-offset="0" max-vertical-offset="572" />
@@ -600,11 +608,6 @@
         <state line="17" column="31" selection-start="503" selection-end="503" vertical-scroll-proportion="-12.92" vertical-offset="0" max-vertical-offset="1292" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/server/views/index.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="43" selection-start="2928" selection-end="3009" vertical-scroll-proportion="0.71153843" vertical-offset="714" max-vertical-offset="1311" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/public/js/angular/navbar.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="52" selection-start="261" selection-end="261" vertical-scroll-proportion="0.19095477" vertical-offset="0" max-vertical-offset="855" />
@@ -692,77 +695,85 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/server/views/buscar.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="42" selection-start="2010" selection-end="2010" vertical-scroll-proportion="0.5646853" vertical-offset="418" max-vertical-offset="6574">
-          <folding />
-        </state>
+        <state line="39" column="42" selection-start="2010" selection-end="2010" vertical-scroll-proportion="0.5646853" vertical-offset="418" max-vertical-offset="6574" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/public/js/angular/login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="66" selection-start="2109" selection-end="2329" vertical-scroll-proportion="0.0" vertical-offset="1005" max-vertical-offset="1786">
-          <folding />
-        </state>
+        <state line="66" column="66" selection-start="2109" selection-end="2329" vertical-scroll-proportion="0.0" vertical-offset="1005" max-vertical-offset="1786" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/public/js/angular/comprar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="0" selection-start="878" selection-end="878" vertical-scroll-proportion="0.6683417" vertical-offset="0" max-vertical-offset="608">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/server/router.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="664" column="28" selection-start="21165" selection-end="21165" vertical-scroll-proportion="0.5646853" vertical-offset="12293" max-vertical-offset="18259">
-          <folding />
-        </state>
+        <state line="21" column="0" selection-start="878" selection-end="878" vertical-scroll-proportion="0.6683417" vertical-offset="0" max-vertical-offset="608" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/server/views/partials/botonComprar.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="37" selection-start="424" selection-end="424" vertical-scroll-proportion="0.16608392" vertical-offset="0" max-vertical-offset="572">
-          <folding />
-        </state>
+        <state line="5" column="37" selection-start="424" selection-end="424" vertical-scroll-proportion="0.16608392" vertical-offset="0" max-vertical-offset="572" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/server/views/modals/comprarProducto.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="58" selection-start="575" selection-end="575" vertical-scroll-proportion="0.3986014" vertical-offset="0" max-vertical-offset="572">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="0" selection-start="1188" selection-end="1188" vertical-scroll-proportion="0.7403685" vertical-offset="147" max-vertical-offset="893">
-          <folding />
-        </state>
+        <state line="12" column="58" selection-start="575" selection-end="575" vertical-scroll-proportion="0.3986014" vertical-offset="0" max-vertical-offset="572" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/server/modules/data-base-manager.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="33" selection-start="831" selection-end="831" vertical-scroll-proportion="0.6817421" vertical-offset="106" max-vertical-offset="10317">
-          <folding />
-        </state>
+        <state line="27" column="33" selection-start="831" selection-end="831" vertical-scroll-proportion="0.6817421" vertical-offset="106" max-vertical-offset="10317" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="0" selection-start="614" selection-end="614" vertical-scroll-proportion="0.9467354" vertical-offset="0" max-vertical-offset="665">
-          <folding />
-        </state>
+        <state line="29" column="0" selection-start="614" selection-end="614" vertical-scroll-proportion="0.9467354" vertical-offset="0" max-vertical-offset="665" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Procfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="16" selection-start="16" selection-end="16" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="610">
-          <folding />
-        </state>
+        <state line="0" column="16" selection-start="16" selection-end="16" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="610" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/server/router.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="656" column="10" selection-start="20784" selection-end="20784" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="18259" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/masticables/infoMasticable.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="73" selection-start="5490" selection-end="5490" vertical-scroll-proportion="0.6870629" vertical-offset="1051" max-vertical-offset="3686">
+        <state line="78" column="104" selection-start="5675" selection-end="5675" vertical-scroll-proportion="0.65384614" vertical-offset="1108" max-vertical-offset="3686" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="0" selection-start="1278" selection-end="1278" vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="931">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/conf.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="158" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="610">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/server/views/index.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="141" selection-start="2785" selection-end="2804" vertical-scroll-proportion="-10.96" vertical-offset="714" max-vertical-offset="1311">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/index/index.spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="54" selection-start="404" selection-end="404" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="361">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/masticable/masticable.spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="3" selection-start="423" selection-end="423" vertical-scroll-proportion="0.22278057" vertical-offset="0" max-vertical-offset="597">
           <folding />
         </state>
       </provider>
