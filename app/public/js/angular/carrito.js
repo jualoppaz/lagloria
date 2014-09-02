@@ -40,14 +40,6 @@ app.controller('CarritoController', function($scope, $http){
         }
     };
 
-    $scope.precioTotal = function(){
-        var precioTotal = 0;
-        for(i=0; i<$scope.productos.length;i++){
-            //precioTotal += $scope.productos[i].quantity * $scope.productos[i].price;
-            precioTotal += $scope.productos[i].total;
-        }
-        return precioTotal;
-    };
 
     $http.get('/api/shoppingCart')
         .success(function(data){
@@ -59,6 +51,15 @@ app.controller('CarritoController', function($scope, $http){
 
     $scope.subTotal = function(){
         return (this.cantidad * this.price) || 0;
+    };
+
+    $scope.precioTotal = function(){
+        var precioTotal = 0;
+        for(i=0; i<$scope.productos.length;i++){
+            //precioTotal += $scope.productos[i].quantity * $scope.productos[i].price;
+            precioTotal += $scope.productos[i].total;
+        }
+        return precioTotal;
     };
 
     $scope.guardarCambios = function(){
@@ -80,6 +81,12 @@ app.controller('CarritoController', function($scope, $http){
 
     $scope.validarCantidades = function(){
 
+    };
+
+    $scope.realizarPedido = function(){
+        angular.element("#modalTitleRealizarPedido").text("Realización de pedido");
+        angular.element("#modalTextRealizarPedido").text("");
+        angular.element("#modal-realizarPedido").modal('show');
     };
 
 });

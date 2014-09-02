@@ -204,6 +204,123 @@ module.exports = function(app){
         }
     });
 
+    app.get('/usuarios', function(req, res){
+        if(req.session.user == null){
+            res.render('error',{
+                message : 'No puede ver los usuarios registrados en La Gloria S.L. porque no' +
+                    ' tiene permisos de administración.'
+            });
+        }else{
+            if(req.session.user.role == 'admin'){
+                res.render('admin/usuarios', 200);
+            }else{
+                res.render('error',{
+                    message : 'No puede ver los usuarios registrados en La Gloria S.L. porque ' +
+                        'no tiene permisos de administración.'
+                });
+            }
+        }
+    });
+
+    app.get('/usuarios/:id', function(req, res){
+        if(req.session.user == null){
+            res.render('error',{
+                message : 'No puede acceder a los emails enviados a La Gloria S.L. porque no tiene permisos de administración.'
+            });
+        }else{
+            if(req.session.user.role == 'admin'){
+                res.render('admin/usuario', 200);
+            }else{
+                res.render('error',{
+                    message : 'No puede acceder a los emails enviados a La Gloria S.L. porque no tiene permisos de administración.'
+                });
+            }
+        }
+    });
+
+    app.get('/admin/toffeesYMasticables', function(req, res){
+        if(req.session.user == null){
+            res.render('error',{
+                message : 'No puede acceder al panel de administración de La Gloria S.L. porque no tiene permisos de administración.'
+            });
+        }else{
+            if(req.session.user.role == 'admin'){
+                res.render('admin/toffeesYMasticables', 200);
+            }else{
+                res.render('error',{
+                    message : 'No puede acceder al panel de administración de La Gloria S.L. porque no tiene permisos de administración.'
+                });
+            }
+        }
+    });
+
+    app.get('/admin/toffees/:id', function(req, res){
+        if(req.session.user == null){
+            res.render('error',{
+                message : 'No puede acceder al panel de administración de La Gloria S.L. porque no tiene permisos de administración.'
+            });
+        }else{
+            if(req.session.user.role == "admin"){
+                res.render('admin/toffee');
+            }else{
+                res.render('error',{
+                    message : 'No puede acceder al panel de administración de La Gloria S.L. porque no tiene permisos de administración.'
+                });
+            }
+        }
+    });
+
+
+    app.get('/admin/toffees/:id/comentarios', function(req, res){
+        if(req.session.user == null){
+            res.render('error',{
+                message : 'No puede acceder al panel de administración de La Gloria S.L. porque no tiene permisos de administración.'
+            });
+        }else{
+            if(req.session.user.role == "admin"){
+                res.render('admin/comentarios');
+            }else{
+                res.render('error',{
+                    message : 'No puede acceder al panel de administración de La Gloria S.L. porque no tiene permisos de administración.'
+                });
+            }
+        }
+    });
+
+    app.get('/pedidos', function(req, res){
+        if(req.session.user == null){
+            res.render('error',{
+                message : 'No puede acceder a los pedidos de La Gloria S.L. porque no tiene permisos de administración.'
+            });
+        }else{
+            if(req.session.user.role == "admin"){
+                res.render('admin/pedidos');
+            }else{
+                res.render('error',{
+                    message : 'No puede acceder a los pedidos de La Gloria S.L. porque no tiene permisos de administración.'
+                });
+            }
+        }
+    });
+
+    app.get('/pedidos/:id', function(req, res){
+        if(req.session.user == null){
+            res.render('error',{
+                message : 'No puede acceder a los pedidos de La Gloria S.L. porque no tiene permisos de administración.'
+            });
+        }else{
+            if(req.session.user.role == "admin"){
+                res.render('admin/pedido');
+            }else{
+                res.render('error',{
+                    message : 'No puede acceder a los pedidos de La Gloria S.L. porque no tiene permisos de administración.'
+                });
+            }
+        }
+    });
+
+
+
     app.get('/webAntigua/blandos', function(req, res) {
         res.sendfile('app/server/views/webAntigua/blandos.html');
     });
@@ -213,6 +330,17 @@ module.exports = function(app){
     });
 
     // API REST
+
+    app.get('/api/toffeesYMasticables', function(req, res){
+       DBM.getAllProductsByCategory('Toffees y Masticables', function(err, result){
+           if(err){
+               console.log(err);
+               res.send(err);
+           }else{
+               res.send(result);
+           }
+       });
+    });
 
     app.get('/api/toffees', function(req, res) {
         DBM.getAllProductsByCategoryType('Toffee', function(err, toffees){
@@ -597,6 +725,44 @@ module.exports = function(app){
         }
     });
 
+    // Usuarios registrados en el sistema
+
+    app.get('/api/users', function(req, res){
+        if(req.session.user == null){
+            res.send('not-authorized');
+        }else{
+            if(req.session.user.role == "admin"){
+                DBM.getAllRecords(function(err, users){
+                    if(err){
+                        console.log(err);
+                    }else{
+                        res.send(users, 200);
+                    }
+                });
+            }else{
+                res.send('not-authorized');
+            }
+        }
+    });
+
+    app.get('/api/users/:id', function(req, res){
+        if(req.session.user == null){
+            res.send('not-authorized');
+        }else{
+            if(req.session.user.role == "admin"){
+                DBM.findUserById(req.params.id, function(err, users){
+                    if(err){
+                        console.log(err);
+                    }else{
+                        res.send(users, 200);
+                    }
+                });
+            }else{
+                res.send('not-authorized');
+            }
+        }
+    });
+
     // Datos del usuario en las cookies
 
     /*
@@ -947,6 +1113,15 @@ module.exports = function(app){
         */
 
 
+    });
+
+    // Acciones
+
+    app.post('/action/comentar', function(req, res){
+        var comentario = req.param('comentarioRealizado');
+
+        console.log("Comentario realizado: " + comentario);
+        res.send("");
     });
 
     app.get('*', function(req, res) {

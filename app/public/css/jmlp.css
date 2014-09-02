@@ -335,7 +335,7 @@ li > a:hover, .navbar-brand:hover, .btn-default:hover, .btn:hover{
     border-color: #41B19C !important;
 }
 
-#comprar:hover{
+#comprar:hover, #enviar:hover, #comentar:hover{
     color: #CC3E27 !important;
     background-color: white !important;
     border-color: #CC3E27 !important;
@@ -350,7 +350,7 @@ li > a:hover, .navbar-brand:hover, .btn-default:hover, .btn:hover{
     background-color: #41B19C;
 }
 
-#comprar, #buscar{
+#comprar, #buscar, #enviar, #comentar{
     margin-top: 5px;
     margin-right: 10px;
     padding-top: 8px;
@@ -659,6 +659,10 @@ th, td{
     color: #285e8e !important;
 }
 
+#confirmarPedido:hover{
+    color: #CC3E27 !important;
+}
+
 .galeria{
 
     /*
@@ -718,4 +722,8 @@ th, td{
 
 .borde-lagloria{
     border: 2px solid #41B19C !important;
+}
+
+.centrar{
+    text-align: center;
 }

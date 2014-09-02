@@ -1,0 +1,39 @@
+extends ../adminPartials/layout
+
+block content
+    div(ng-app="dashboard")
+        div
+            include ../adminPartials/navbar
+        div.container-fluid
+            div.row
+                include ../adminPartials/sidebar
+                div.col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
+                    h1.page-header Comentarios
+                    div.col-md-12.col-sm-12(ng-controller="ComentariosController")
+                        table.table
+                            thead
+                                tr
+                                    th Eliminar
+                                    th Usuario
+                                    th Comentario
+                            tbody(ng-repeat="comentario in comentarios")
+                                tr.verEmail
+                                    td
+                                        span(ng-click="eliminarComentario(comentario._id)")
+                                            i.fa.fa-trash-o
+                                    td(ng-click="verComentario(comentario._id)") {{comentario.user}}
+                                    td.mensajeEmail(ng-click="verComentario(comentario._id)") {{comentario.texto}}
+
+                        include ../modals/eliminarComentario
+
+
+
+
+block scripts
+    script(src="/js/jquery.js")
+    script(src="/js/bootstrap.js")
+    script(src="/js/angular.js")
+    script(src='/js/angular/admin/app.js')
+    script(src="/js/angular/admin/comentarios.js")
+    script(src="/js/angular/admin/navbar.js")
+    script(src="/js/angular/admin/sidebar.js")

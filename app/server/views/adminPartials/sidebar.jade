@@ -9,12 +9,15 @@ div.col-sm-3.col-md-2.sidebar(ng-controller="SidebarController")
         li.section
             a(href="/pedidos") Pedidos
                 span.badge(ng-bind-template="{{pedidos}}")
+        li.section
+            a(href="/usuarios") Usuarios
+                span.badge(ng-bind-template="{{usuariosNuevos}}")
 
     ul.nav.nav-sidebar
         li.header-section
             a(href="#") Gama propia
         li.section
-            a(href="#") Toffees y Masticables
+            a(href="/admin/toffeesYMasticables") Toffees y Masticables
         li.section
             a(href="#") Duros
         li.section

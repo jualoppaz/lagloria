@@ -57,10 +57,14 @@ block content
                                                 td Total: {{precioTotal()}} €
 
                                 div.col-md-12
-                                    div.col-md-6
-                                        a.btn.btn-default.btn-lagloria(href="#", role="button", ng-click="guardarCambios()")#guardarCambiosCarrito Guardar cambios
+                                    div.col-md-2
+                                        a.btn.btn-default.btn-lagloria(href="#", role="button", ng-click="guardarCambios()")#buscar Guardar cambios
+                                    div.col-md-2
+                                        a.btn.btn-default.btn-eathub(href="#", role="button", ng-click="realizarPedido()")#comprar Confirmar pedido
 
 
+
+    include modals/formularioPedido
 
 
 block scripts

@@ -116,7 +116,8 @@ exports.addNewAccount = function(newData, callback)
             saltAndHash(newData.pass, function(hash){
                 newData.pass = hash;
                 // append date stamp when record was created //
-                newData.date = moment().format('MMMM Do YYYY, h:mm:ss a');
+                //newData.date = moment().format('MMMM Do YYYY, h:mm:ss a');
+                newData.date = new Date();
                 accounts.insert(newData, {safe: true}, callback);
                 if(e){
                     console.log("Error: " + e);
@@ -396,7 +397,20 @@ exports.getAllProductsByCategoryType = function(categoryType, callback)
     }else{
         callback(null, {message: "La categoria no existe."});
     }
-}
+};
+
+exports.getAllProductsByCategory = function(category, callback){
+    if(category == "Toffees y Masticables"){
+        toffeesYMasticables.find({$or: [{type: 'Toffee'}, {type:'Masticable'}]}).toArray(
+            function(e, res){
+                if(e){
+                    callback(e);
+                }else{
+                    callback(null, res);
+                }
+            });
+    }
+};
 
 exports.getProductByCategoryTypeAndId = function(categoryType, id, callback){
     if(categoryType == "Toffee" || categoryType == "Masticable"){
@@ -534,4 +548,4 @@ exports.setOrderReaded = function(id, callback){
             })
         }
     })
-}
+};
