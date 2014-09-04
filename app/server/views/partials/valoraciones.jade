@@ -1,10 +1,16 @@
-div.col-md-12
-    div
-        a(style="color:green; margin-left: 75px")
+div.col-xs-12(ng-controller="ValoracionesController")
+    div.centrar
+        a(style="color: green", ng-click="hacerLike()", ng-show="usuarioEstaLogueado").pointer
             i.fa.fa-thumbs-o-up.fa-lg
-        a(href="#")
-            span(style="border-radius: 10px !important;").badge 1
-        a(style="color:red; margin-left: 20px")
+        a(style="color: green", ng-show="!usuarioEstaLogueado")
+            i.fa.fa-thumbs-o-up.fa-lg
+        a(style="margin-left:5px")
+            span(style="border-radius: 10px !important;", ng-bind-template="{{producto.likes.length || 0}}").badge
+        a(style="color: red; margin-left: 15px", ng-click="hacerDislike()", ng-show="usuarioEstaLogueado").pointer
             i.fa.fa-thumbs-o-down.fa-lg
-        a(href="#")
-            span.badge(style="border-radius: 10px !important;") 0
+        a(style="color: red; margin-left: 15px", ng-show="!usuarioEstaLogueado")
+            i.fa.fa-thumbs-o-down.fa-lg
+        a(style="margin-left:5px")
+            span(style="border-radius: 10px !important;", ng-bind-template="{{producto.dislikes.length || 0}}").badge
+
+

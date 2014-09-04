@@ -549,3 +549,131 @@ exports.setOrderReaded = function(id, callback){
         }
     })
 };
+
+exports.addLikeToProduct = function(caramelo, usuario, callback){
+    if(caramelo.category == 'Toffees y Masticables'){
+        toffeesYMasticables.update({_id: getToffeeYMasticableId(caramelo._id)}, {
+            $push: {
+                'likes':{
+                    'user': usuario
+                }
+            }
+        }, function(err, res){
+            if(err){
+                callback(err);
+            }else{
+                console.log();
+                callback(null, res)
+            }
+        });
+    }else if(caramelo.category == 'Duros'){
+        duros.update({_id: getDuroId(caramelo._id)}, {
+            $push: {
+                'likes':{
+                    'user': usuario
+                }
+            }
+        }, function(err, res){
+            if(err){
+                callback(err);
+            }else{
+                console.log();
+                callback(null, res)
+            }
+        });
+    }else if(caramelo.category == 'Grageados'){
+        grageados.update({_id: getGrageadoId(caramelo._id)}, {
+            $push: {
+                'likes':{
+                    'user': usuario
+                }
+            }
+        }, function(err, res){
+            if(err){
+                callback(err);
+            }else{
+                console.log();
+                callback(null, res)
+            }
+        });
+    }else if(caramelo.category == 'Con palo'){
+        conPalo.update({_id: getConPaloId(caramelo._id)}, {
+            $push: {
+                'likes':{
+                    'user': usuario
+                }
+            }
+        }, function(err, res){
+            if(err){
+                callback(err);
+            }else{
+                console.log();
+                callback(null, res)
+            }
+        });
+    }
+};
+
+exports.addDislikeToProduct = function(caramelo, usuario, callback){
+    if(caramelo.category == 'Toffees y Masticables'){
+        toffeesYMasticables.update({_id: getToffeeYMasticableId(caramelo._id)}, {
+            $push: {
+                'dislikes':{
+                    'user': usuario
+                }
+            }
+        }, function(err, res){
+            if(err){
+                callback(err);
+            }else{
+                console.log();
+                callback(null, res)
+            }
+        });
+    }else if(caramelo.category == 'Duros'){
+        duros.update({_id: getDuroId(caramelo._id)}, {
+            $push: {
+                'dislikes':{
+                    'user': usuario
+                }
+            }
+        }, function(err, res){
+            if(err){
+                callback(err);
+            }else{
+                console.log();
+                callback(null, res)
+            }
+        });
+    }else if(caramelo.category == 'Grageados'){
+        grageados.update({_id: getGrageadoId(caramelo._id)}, {
+            $push: {
+                'dislikes':{
+                    'user': usuario
+                }
+            }
+        }, function(err, res){
+            if(err){
+                callback(err);
+            }else{
+                console.log();
+                callback(null, res)
+            }
+        });
+    }else if(caramelo.category == 'Con palo'){
+        conPalo.update({_id: getConPaloId(caramelo._id)}, {
+            $push: {
+                'dislikes':{
+                    'user': usuario
+                }
+            }
+        }, function(err, res){
+            if(err){
+                callback(err);
+            }else{
+                console.log();
+                callback(null, res)
+            }
+        });
+    }
+};

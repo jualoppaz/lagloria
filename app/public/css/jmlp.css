@@ -537,8 +537,11 @@ h1{
 
 div.row div h3{
     font-family: 'Abel', sans-serif;
-    font-weight: bold;
     font-size: 22px;
+}
+
+div.row div h3.blue{
+    font-weight: bold;
 }
 
 .navbar-toggle{
@@ -726,4 +729,13 @@ th, td{
 
 .centrar{
     text-align: center;
+}
+
+.pointer{
+    cursor: pointer !important;
+}
+
+h1.green, h1.red{
+    font-family: 'Abel' sans-serif !important;
+    font-weight: bold;
 }

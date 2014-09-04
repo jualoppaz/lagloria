@@ -23,10 +23,11 @@ app.configure(function() {
     app.use(express.cookieParser());
     app.use(express.session({ secret: 'super-duper-secret-secret' }));
     app.use(express.methodOverride());					// Simula DELETE y PUT
-    app.use(express.favicon(path.join(__dirname, '/app/public/img/logo.png')));
-    app.use(express.static(__dirname + '/app/public'));
     app.use('/img', express.static(__dirname + '/app/public/img'));
     app.use('/js', express.static(__dirname + '/app/public/js'));
+    app.use(express.static(__dirname + '/app/public'));
+    app.use(express.favicon(__dirname + '/app/public/img/logo.png'));
+
 });
 
 require('./app/server/router')(app);

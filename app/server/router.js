@@ -1124,6 +1124,126 @@ module.exports = function(app){
         res.send("");
     });
 
+
+    app.post('/action/like', function(req, res){
+
+        var userHasAlreadyLike      = false;
+        var userHasAlreadyDislike   = false;
+
+
+        if(req.session.user == null){
+            res.send('not-logued-user')
+        }else{
+            if(req.session.user.role == 'provider'){
+
+                DBM.getProductByCategoryTypeAndId(req.body.type, req.body._id, function(err, result){
+                    var likes       = result[0].likes;
+                    var dislikes    = result[0].dislikes;
+
+                    if(likes != undefined){
+                        for(i=0; i<likes.length; i++){
+                            console.log('usuario con like: ' + likes[i].user);
+                            console.log('usuario logueado: ' + req.session.user.user);
+                            if(likes[i].user.toString() === req.session.user.user.toString()){
+                                userHasAlreadyLike = true;
+                                break;
+                            }
+                        }
+                    }
+
+                    if(dislikes != undefined && !userHasAlreadyLike){ //Comprobamos si habia votado negativamente
+                        for(i=0; i<dislikes.length; i++){
+                            if(dislikes[i].user.toString() === req.session.user.user.toString()){
+                                userHasAlreadyDislike = true;
+                                break;
+                            }
+                        }
+                    }
+
+                    if(userHasAlreadyLike || userHasAlreadyDislike){
+                        res.send('user-has-already-voted', 400);
+                    }else{
+                        DBM.addLikeToProduct(req.body, req.session.user.user, function(err, result){
+                            if(err){
+                                res.send(err);
+                            }else{
+                                DBM.getProductByCategoryTypeAndId(req.body.type, req.body._id, function(err2, res2){
+                                    if(err2){
+                                        res.send(err2);
+                                    }else{
+                                        res.send(res2[0], 200);
+                                    }
+                                });
+                            }
+                        });
+                    }
+                });
+
+            }else if(req.session.user.role == 'admin'){
+                res.send('admin-cannot-like');
+            }
+        }
+
+
+    });
+
+    app.post('/action/dislike', function(req, res){
+
+        var userHasAlreadyLike      = false;
+        var userHasAlreadyDislike   = false;
+
+        if(req.session.user == null){
+            res.send('not-logued-user')
+        }else{
+            if(req.session.user.role == 'provider'){
+
+                DBM.getProductByCategoryTypeAndId(req.body.type, req.body._id, function(err, result){
+                    var likes       = result[0].likes;
+                    var dislikes    = result[0].dislikes;
+
+                    if(likes != undefined){
+                        for(i=0; i<likes.length; i++){
+                            if(likes[i].user.toString() === req.session.user.user.toString()){
+                                userHasAlreadyLike = true;
+                                break;
+                            }
+                        }
+                    }
+                    if(dislikes != undefined && !userHasAlreadyLike){
+                        for(i=0; i<dislikes.length; i++){
+                            if(dislikes[i].user.toString() === req.session.user.user.toString()){
+                                userHasAlreadyDislike = true;
+                                break;
+                            }
+                        }
+                    }
+
+                    if(userHasAlreadyLike || userHasAlreadyDislike){
+                        res.send('user-has-already-voted', 400);
+                    }else{
+                        DBM.addDislikeToProduct(req.body, req.session.user.user, function(err, result2){
+                            if(err){
+                                res.send(err);
+                            }else{
+                                DBM.getProductByCategoryTypeAndId(req.body.type, req.body._id, function(err2, res2){
+                                    if(err2){
+                                        res.send(err2);
+                                    }else{
+                                        res.send(res2[0], 200);
+                                    }
+                                });
+                            }
+                        });
+                    }
+                });
+
+            }else if(req.session.user.role == 'admin'){
+                res.send('admin-cannot-like');
+            }
+        }
+    });
+
+
     app.get('*', function(req, res) {
         res.render('index');
     });
