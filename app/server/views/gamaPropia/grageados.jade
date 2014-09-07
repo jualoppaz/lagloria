@@ -48,33 +48,34 @@ block content
 
                             div(style="clear:both")
                                 div
-                                    div(ng-repeat="grageado in grageados | filter:grageadoSearch", style="text-align:center")
-                                        div(ng-show="grageado.esSurtido")
-                                            div.col-md-12.col-sm-12
-                                                div.panel.panel-body.panel-grageado-info
-                                                    div(style="text-align:left;")
-                                                        h1(style="margin-bottom:30px").modelo-grageado
-                                                            a(ng-href="grageados/{{grageado._id}}", ng-bind-template="{{$index + 1}}. {{grageado.model}}").green.hover-red
-                                                    div.col-md-2
-                                                        div(style="float:left; margin-right: 20px; width:100%; height: 260px").hidden-sm.hidden-xs
-                                                            img(ng-src="/img/imagenesMias/{{grageado.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
-                                                        div(style="float:left; margin-right: 20px; width:100%; height: 260px").hidden-md.hidden-lg
-                                                            img(ng-src="/img/imagenesMias/{{grageado.image}}", height="100%", width="30%", style="margin-left: 10px; margin-bottom: 10px")
-                                                    div.col-md-10
-                                                        div(style="margin-left: 15px;").grageado-description
-                                                            h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{grageado.description}}").blue
-                                        div(ng-show="!grageado.esSurtido")
+                                    div(ng-repeat="producto in productos | filter:productoSearch", style="text-align:center")
+                                        div(ng-show="producto.esSurtido")
                                             div.col-md-4.col-sm-6
-                                                div.panel.panel-body.panel-grageado
+                                                div.panel.panel-body
+                                                    div(style="text-align:left;")
+                                                        h1.modelo-masticable
+                                                            a(ng-href="grageados/{{producto._id}}", ng-bind-template="{{producto.model}}").green.hover-red
+                                                    div.col-md-3.col-sm-12.text-center
+                                                        div(style="float:left; margin-right: 20px; width:100%; height: 260px", ng-show="imagenesOriginales").hidden-sm.hidden-xs
+                                                            img(ng-src="/img/imagenesMias/{{producto.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
+                                                        div(style="float:left; margin-right: 20px; width:100%; height: 260px", ng-show="imagenesOriginales").hidden-md.hidden-lg
+                                                            img(ng-src="/img/imagenesMias/{{producto.image}}", height="100%", width="30%", style="margin-left: 10px; margin-bottom: 10px")
+
+                                                        div(style="float:left; margin-right: 20px; width: 100%", ng-show="imagenesOriginales == false").hidden-sm.hidden-xs
+                                                            img(ng-src="/img/redimensionadas/{{producto.resizedImage}}", style="margin-left: 10px; margin-bottom: 10px")
+                                                        div(style="float:left; margin-right: 20px; width: 100%", ng-show="imagenesOriginales == false").hidden-md.hidden-lg
+                                                            img(ng-src="/img/redimensionadas/{{producto.resizedImage}}", style="margin-left: 10px; margin-bottom: 10px")
+
+                                        div(ng-show="!producto.esSurtido")
+                                            div.col-md-4.col-sm-6
+                                                div.panel.panel-body.panel-masticable
                                                     div(style="text-align:left")
-                                                        h1(style="margin-bottom:30px").modelo-grageado
-                                                            a(ng-href="grageados/{{grageado._id}}", ng-bind-template="{{$index + 1}}. {{grageado.model}}").green.hover-red
-                                                    div.col-md-12
-                                                        div(style="margin-right: 20px; height: 100px; max-height: 200px;").margenInferior-30
-                                                            img(ng-src="/img/imagenesMias/{{grageado.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
-                                                    div.col-md-12
-                                                        div.grageado-description
-                                                            h3(style="text-align: justify; margin-top: 5px", ng-bind-template="{{grageado.description}}").blue
+                                                        h1(style="margin-bottom:30px").modelo-masticable
+                                                            a(ng-href="grageados/{{producto._id}}", ng-bind-template="{{producto.model}}").green.hover-red
+                                                    div(style="margin-right: 20px; height: 100px; max-height: 200px;").margenInferior-30
+                                                        img(ng-src="/img/imagenesMias/{{producto.image}}", ng-show="imagenesOriginales", width="100%", style="margin-left: 10px; margin-bottom: 10px")
+                                                        img(ng-src="/img/redimensionadas/{{producto.resizedImage}}", ng-show="imagenesOriginales == false", width="100%", style="margin-left: 10px; margin-bottom: 10px")
+
 
 
 block scripts

@@ -1136,7 +1136,19 @@ module.exports = function(app){
         }else{
             if(req.session.user.role == 'provider'){
 
-                DBM.getProductByCategoryTypeAndId(req.body.type, req.body._id, function(err, result){
+                var tipo;
+
+                if(req.body.type == undefined){
+                    tipo = req.body.category;
+                }else{
+                    if(req.body.type.length == 0){
+                        tipo = req.body.category;
+                    }else{
+                        tipo = req.body.type;
+                    }
+                }
+
+                DBM.getProductByCategoryTypeAndId(tipo, req.body._id, function(err, result){
                     var likes       = result[0].likes;
                     var dislikes    = result[0].dislikes;
 
@@ -1167,7 +1179,7 @@ module.exports = function(app){
                             if(err){
                                 res.send(err);
                             }else{
-                                DBM.getProductByCategoryTypeAndId(req.body.type, req.body._id, function(err2, res2){
+                                DBM.getProductByCategoryTypeAndId(tipo, req.body._id, function(err2, res2){
                                     if(err2){
                                         res.send(err2);
                                     }else{
@@ -1197,7 +1209,19 @@ module.exports = function(app){
         }else{
             if(req.session.user.role == 'provider'){
 
-                DBM.getProductByCategoryTypeAndId(req.body.type, req.body._id, function(err, result){
+                var tipo;
+
+                if(req.body.type == undefined){
+                    tipo = req.body.category;
+                }else{
+                    if(req.body.type.length == 0){
+                        tipo = req.body.category;
+                    }else{
+                        tipo = req.body.type;
+                    }
+                }
+
+                DBM.getProductByCategoryTypeAndId(tipo, req.body._id, function(err, result){
                     var likes       = result[0].likes;
                     var dislikes    = result[0].dislikes;
 
@@ -1225,7 +1249,7 @@ module.exports = function(app){
                             if(err){
                                 res.send(err);
                             }else{
-                                DBM.getProductByCategoryTypeAndId(req.body.type, req.body._id, function(err2, res2){
+                                DBM.getProductByCategoryTypeAndId(tipo, req.body._id, function(err2, res2){
                                     if(err2){
                                         res.send(err2);
                                     }else{

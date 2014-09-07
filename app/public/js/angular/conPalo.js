@@ -1,14 +1,14 @@
 var app = angular.module('lagloria');
 
 app.controller('ConPaloController', function ($scope, $http) {
-    $scope.conPalos = {};
+    $scope.productos = {};
 
     $http.get('/api/conPalo')
         .success(function(data) {
             if(data.message){
-                $scope.conPalos = {};
+                $scope.productos = {};
             }else{
-                $scope.conPalos = data;
+                $scope.productos = data;
             }
         })
         .error(function(data) {

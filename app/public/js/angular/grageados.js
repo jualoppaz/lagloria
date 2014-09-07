@@ -1,14 +1,14 @@
 var app = angular.module('lagloria');
 
 app.controller('GrageadoController', function ($scope, $http) {
-    $scope.grageados = {};
+    $scope.productos = {};
 
     $http.get('/api/grageados')
         .success(function(data) {
             if(data.message){
-                $scope.grageados = {};
+                $scope.productos = {};
             }else{
-                $scope.grageados = data;
+                $scope.productos = data;
             }
         })
         .error(function(data) {

@@ -1,6 +1,3 @@
-// Surtidos: ordenadores, tablets y moviles.
-// Otros:    ordenadores, tablets y moviles.
-
 extends ../../layout
 block head
     title Información
@@ -8,15 +5,12 @@ block head
 block content
     div#container(ng-app="lagloria")
         div(ng-controller="LoguedUserController")
-
             include ../../partials/navbar
-
             div(ng-controller="InfoConPaloController")
                 main.margen-superior-50
                     div.container
                         div.row
                             include ../../partials/botonesMovil
-
                             div.col-md-12.col-xs-12
                                 div.panel.panel-body
                                     div.main-card-content
@@ -36,85 +30,43 @@ block content
                                                     a.recipe-title(href="#")
                                                         span.caramelo.lagloria(ng-bind-template="{{producto.model}}")
                                     div(ng-show="producto.esSurtido")
-                                        // Vista para ordenador
-                                        div.col-md-12.hidden-sm.hidden-xs
-                                            div.panel.panel-body.panel-conPalo-info
-                                                div.col-md-2
-                                                    div(style="float:left; width: 100%; height: 260px").hidden-sm.hidden-xs.text-center
-                                                        img(ng-src="/img/imagenesMias/{{producto.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
-                                                div.col-md-9.col-md-offset-1
+                                        // Vista para ordenadores
+                                        div.col-md-12.col-sm-12.col-xs-12
+                                            div.panel.panel-body.panel-crystal-info
+                                                div.col-md-3.col-sm-12.col-xs-12
+
+                                                    include ../../partials/carouselCaramelos
+                                                    include ../../partials/valoraciones
+                                                    include ../../modals/usuarioYaHabiaVotado
+
+                                                div.col-md-8.col-md-offset-1.col-sm-12.col-xs-12
                                                     h1(style="text-align: left;").separador-horizontal.green Detalles
-                                                    div.row.blue
-                                                        div.col-md-4
-                                                            h3 Categoría
-                                                        div.col-md-4
-                                                            h3 Tipo
-                                                        div.col-md-4
-                                                            h3 Modelo
                                                     div.row
-                                                        div.col-md-4
+                                                        div.col-md-4.col-sm-4.col-xs-6
+                                                            h3.blue Categoría
                                                             h3(ng-bind-template="{{producto.category}}")
-                                                        div.col-md-4
+                                                        div.col-md-4.col-sm-4.col-xs-6
+                                                            h3.blue Tipo
                                                             h3(ng-bind-template="{{producto.type}}")
-                                                        div.col-md-4
+                                                        div.col-md-4.col-sm-4.col-xs-6
+                                                            h3.blue Modelo
                                                             h3(ng-bind-template="{{producto.model}}")
-                                                    div.row.blue
-                                                        div.col-md-4
-                                                            h3 Pedido mínimo
-                                                        div.col-md-4
-                                                            h3 Precio
-                                                    div.row
-                                                        div.col-md-4
+                                                        div.col-md-4.col-sm-4.col-xs-6
+                                                            h3.blue Pedido mínimo
                                                             h3(ng-bind-template="{{producto.minimumOrder}} Kg")
-                                                        div.col-md-4
+                                                        div.col-md-4.col-sm-4.col-xs-6
+                                                            h3.blue Precio
                                                             h3(ng-bind-template="{{producto.price}} € / Kg")
                                             div.panel.panel-body
-                                                div.conPalo-info-description.blue
+                                                div.crystal-info-description.blue
                                                     h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{producto.description}}")
-
-                                        // Vista para tablets y moviles
-
-                                        //div.col-sm-12.hidden-lg.hidden-md.col-xs-12
-                                            div.panel.panel-body.panel-conPalo-info
-                                                div.col-sm-4.col-sm-offset-4.col-xs-4.col-xs-offset-4
-                                                    div(style="float:left; margin-right: 20px; width: 100%; height: 260px").hidden-md.hidden-lg.text-center
-                                                        img(ng-src="/img/imagenesMias/{{conPalo.image}}", height="100%", width="100%", style="margin-left: 10px; margin-bottom: 10px")
-                                                div.col-sm-12.col-xs-12
-                                                    h1(style="text-align: left;").separador-horizontal.green Detalles
-                                                    div.row.blue
-                                                        div.col-sm-4.col-xs-4
-                                                            h3 Categoría
-                                                        div.col-sm-4.col-xs-4
-                                                            h3 Tipo
-                                                        div.col-sm-4.col-xs-4
-                                                            h3 Modelo
-                                                    div.row
-                                                        div.col-sm-4.col-xs-4
-                                                            h3(ng-bind-template="{{conPalo.category}}")
-                                                        div.col-sm-4.col-xs-4
-                                                            h3(ng-bind-template="{{conPalo.type}}")
-                                                        div.col-sm-4.col-xs-4
-                                                            h3(ng-bind-template="{{conPalo.model}}")
-                                                    div.row.blue
-                                                        div.col-sm-4.col-xs-4
-                                                            h3 Pedido mínimo
-                                                        div.col-sm-4.col-xs-4
-                                                            h3 Precio
-                                                    div.row
-                                                        div.col-sm-4.col-xs-4
-                                                            h3(ng-bind-template="{{conPalo.minimumOrder}} Kg")
-                                                        div.col-sm-4.col-xs-4
-                                                            h3(ng-bind-template="{{conPalo.price}} € / Kg")
-                                            div.panel.panel-body
-                                                div.conPalo-info-description.blue
-                                                    h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{conPalo.description}}")
                                     div(ng-show="!producto.esSurtido")
                                         // Vista para ordenadores
                                         div.col-md-12.col-sm-12.col-xs-12
-                                            div.panel.panel-body.panel-conPalo-info
+                                            div.panel.panel-body.panel-crystal-info
                                                 div.col-md-5.text-center.col-sm-12.col-xs-12
                                                     div(style="float:left; margin-right: 20px; width: 100%; height: 300px")
-                                                        img(ng-src="/img/imagenesMias/{{producto.image}}", height="30%", width="70%", style="margin-left: 10px; margin-bottom: 10px; margin-top:60px")
+                                                        img(ng-src="/img/redimensionadas/{{producto.resizedImage}}", height="30%", width="70%", style="margin-left: 10px; margin-bottom: 10px; margin-top:60px")
                                                 div.col-md-7.col-sm-12.col-xs-12
                                                     h1(style="text-align: left;").separador-horizontal.green Detalles
                                                     div.row.blue
@@ -141,50 +93,10 @@ block content
                                                             h3(ng-bind-template="{{producto.minimumOrder}} Kg")
                                                         div.col-md-4.col-sm-4.col-xs-4
                                                             h3(ng-bind-template="{{producto.price}} € / Kg")
-
                                                 include ../../partials/botonComprar
-
                                             div.panel.panel-body
-                                                div.conPalo-info-description.blue
+                                                div.crystal-info-description.blue
                                                     h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{producto.description}}")
-
-
-                                        // Vista para moviles
-                                        //div.col-sm-12.hidden-md.hidden-lg.col-xs-12
-                                            div.panel.panel-body.panel-conPalo-info
-                                                div.col-sm-12
-                                                    div(style="float:left; margin-right: 20px; margin-bottom: 30px; width: 100%; height: 150px").text-center
-                                                        img(ng-src="/img/imagenesMias/{{conPalo.image}}", height="100%", width="70%", style="margin-left: 10px; margin-bottom: 30px")
-                                                div.col-sm-12
-                                                    h1(style="text-align: left;").separador-horizontal.green Detalles
-                                                    div.row.blue
-                                                        div.col-sm-4.col-xs-4
-                                                            h3 Categoría
-                                                        div.col-sm-4.col-xs-4
-                                                            h3 Tipo
-                                                        div.col-sm-4.col-xs-4
-                                                            h3 Modelo
-                                                    div.row
-                                                        div.col-sm-4.col-xs-4
-                                                            h3(ng-bind-template="{{conPalo.category}}")
-                                                        div.col-sm-4.col-xs-4
-                                                            h3(ng-bind-template="{{conPalo.type}}")
-                                                        div.col-sm-4.col-xs-4
-                                                            h3(ng-bind-template="{{conPalo.model}}")
-                                                    div.row.blue
-                                                        div.col-sm-4.col-xs-4
-                                                            h3 Pedido mínimo
-                                                        div.col-sm-4.col-xs-4
-                                                            h3 Precio
-                                                    div.row
-                                                        div.col-sm-4.col-xs-4
-                                                            h3(ng-bind-template="{{conPalo.minimumOrder}} Kg")
-                                                        div.col-sm-4.col-xs-4
-                                                            h3(ng-bind-template="{{conPalo.price}} € / Kg")
-                                            div.panel.panel-body
-                                                div.conPalo-info-description.blue
-                                                    h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{conPalo.description}}")
-
 block scripts
     script(src='/js/jquery.js')
     script(src='/js/bootstrap.js')
@@ -194,3 +106,4 @@ block scripts
     script(src='/js/angular/conPalo/info.js')
     script(src='/js/angular/navbar.js')
     script(src='/js/angular/comprar.js')
+    script(src='/js/angular/valoraciones.js')
