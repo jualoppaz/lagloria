@@ -739,3 +739,8 @@ h1.green, h1.red{
     font-family: 'Abel' sans-serif !important;
     font-weight: bold;
 }
+
+#cancel:hover{
+    background-color: #e6e6e6 !important;
+    color: #333 !important;
+}

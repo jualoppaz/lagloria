@@ -148,6 +148,47 @@ exports.updateAccount = function(newData, callback)
 			});
 		}
 	});
+};
+
+exports.actualizarCuenta = function(nuevoUsuario, callback){
+    accounts.find({user: nuevoUsuario.user}).toArray(
+        function(err,result){
+            if(err){
+                callback(err);
+            }else{
+                if(result.length > 0){
+                    callback('username-taken');
+                }else{
+                    accounts.findOne({_id: getObjectId(nuevoUsuario._id)}, function(err, o){
+                        o.user          = nuevoUsuario.user;
+                        o.role          = nuevoUsuario.role;
+                        o.estaActivo    = nuevoUsuario.estaActivo;
+                        o.estaBaneado   = nuevoUsuario.estaBaneado;
+
+                        if(nuevoUsuario.pass == ''){
+                            accounts.save(o, {safe:true}, function(err2){
+                                if (err2){
+                                    callback(err2);
+                                }else{
+                                    callback(null, o);
+                                }
+                            });
+                        }else{
+                            saltAndHash(nuevoUsuario.pass, function(hash){
+                                o.pass = hash;
+                                accounts.save(o, {safe: true}, function(err2) {
+                                    if (err2){
+                                        callback(err2);
+                                    }else{
+                                        callback(null, o);
+                                    }
+                                });
+                            });
+                        }
+                    });
+                }
+            }
+        });
 }
 
 exports.updatePassword = function(email, newPass, callback)
@@ -191,6 +232,18 @@ exports.getAllRecords = function(callback)
 		else callback(null, res)
 	});
 };
+
+exports.getAccountById = function(id, callback)
+{
+    accounts.findOne({_id: getObjectId(id)},
+        function(e, res) {
+            if (e){
+                callback(e);
+            }else{
+                callback(null, res);
+            }
+        });
+}
 
 exports.delAllRecords = function(callback)
 {
@@ -519,6 +572,10 @@ exports.setEmailReaded = function(id, callback){
 
 exports.deleteEmail = function(id, callback){
     mails.remove({_id:getMailId(id)}, callback);
+}
+
+exports.deleteUser = function(id, callback){
+    accounts.remove({_id:getObjectId(id)}, callback);
 }
 
 exports.getNotReadedOrders = function(callback){

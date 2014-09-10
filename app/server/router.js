@@ -225,14 +225,14 @@ module.exports = function(app){
     app.get('/usuarios/:id', function(req, res){
         if(req.session.user == null){
             res.render('error',{
-                message : 'No puede acceder a los emails enviados a La Gloria S.L. porque no tiene permisos de administración.'
+                message : 'No puede ver los usuarios registrados en La Gloria S.L. porque no tiene permisos de administración.'
             });
         }else{
             if(req.session.user.role == 'admin'){
                 res.render('admin/usuario', 200);
             }else{
                 res.render('error',{
-                    message : 'No puede acceder a los emails enviados a La Gloria S.L. porque no tiene permisos de administración.'
+                    message : 'No puede ver los usuarios registrados en Gloria S.L. porque no tiene permisos de administración.'
                 });
             }
         }
@@ -691,10 +691,11 @@ module.exports = function(app){
             DBM.addNewAccount({
                 //name 	: req.param('name'),
                 //email 	: req.param('email'),
-                user 	: req.param('user'),
-                pass	: req.param('pass'),
-                active  : false,
-                role    : roles[0]
+                user 	    : req.param('user'),
+                pass	    : req.param('pass'),
+                estaActivo  : false,
+                role        : roles[0],
+                estaBaneado : false
                 //country : req.param('country')
             }, function(e){
                 if (e){
@@ -750,11 +751,11 @@ module.exports = function(app){
             res.send('not-authorized');
         }else{
             if(req.session.user.role == "admin"){
-                DBM.findUserById(req.params.id, function(err, users){
+                DBM.findUserById(req.params.id, function(err, user){
                     if(err){
                         console.log(err);
                     }else{
-                        res.send(users, 200);
+                        res.send(user, 200);
                     }
                 });
             }else{
@@ -763,7 +764,136 @@ module.exports = function(app){
         }
     });
 
-    // Datos del usuario en las cookies
+    // Editar usuario desde el panel de administracion
+
+    app.put('/api/users/:id', function(req, res){
+
+        if(req.session.user == null){
+            res.send('not-authorized', 400);
+        }else{
+            if(req.session.user.role == 'admin'){
+                var usuario = req.param('user');
+                var pass    = req.param('pass');
+                var role    = req.param('role');
+                var activo  = req.param('estaActivo');
+                var baneado = req.param('estaBaneado');
+                var date    = req.param('date');
+                var id      = req.params.id;
+
+
+                console.log("Usuario: " + usuario);
+                console.log("Password: " + pass);
+                console.log("Rol: " + role);
+                console.log("Activo: " + activo);
+                console.log("Baneado: " + baneado);
+                console.log("Date: " + date);
+                console.log("Id: " + id);
+
+                var errores = {};
+
+                var hayErrores = false;
+
+                if(usuario == undefined){
+                    errores.usuarioVacio = true;
+                    hayErrores = true;
+                }else{
+                    if(usuario.length == 0){
+                        errores.usuarioVacio = true;
+                        hayErrores = true;
+                    }
+
+                    for(i=0; i<usuario.length;i++){
+                        if(usuario.charAt(i) == " "){
+                            errores.usuarioInvalido = true;
+                            hayErrores = true;
+                        }
+                    }
+
+                }
+                if(pass == undefined){ // Mantener contrasena
+
+                    pass = '';
+
+                }else{
+                    if(pass.length == 0){
+
+                        pass = '';
+
+                    }
+                }
+
+                // Comprobamos si el rol recibido existe y es válido
+
+                var rolValido = false;
+
+                for(i=0; i<roles.length; i++){
+                    if(roles[i] == role){
+                        rolValido = true;
+                        if(rolValido){
+                            break;
+                        }
+                    }
+                }
+
+                if(!rolValido){
+                    hayErrores = true;
+                    errores.rolNoValido = true;
+                }
+
+                if(activo != true && activo != false){
+                    hayErrores = true;
+                    errores.valorActivoNoValido = true;
+                }
+
+                if(!hayErrores){
+                    DBM.actualizarCuenta({
+                        user 	    : req.param('user'),
+                        pass	    : req.param('pass'),
+                        estaActivo  : activo,
+                        role        : role,
+                        estaBaneado : baneado,
+                        _id         : id
+                    }, function(e){
+                        if (e){
+                            console.log(e, 400);
+                            res.send(e, 400);
+                        }	else{
+                            console.log('ok', 200);
+                            res.send('ok', 200);
+                        }
+                    });
+                }else{
+                    res.send(errores, 400);
+                }
+            }else{
+                res.send('not-authorized', 400);
+            }
+        }
+    });
+
+    app.delete('/api/users/:id', function(req, res){
+       if(req.session.user == null){
+           res.send('not-authorized', 400);
+       }else{
+           if(req.session.user.role == 'admin'){
+               DBM.deleteUser(req.params.id, function(err, user){
+                   if(err){
+                       console.log(err);
+                   }else{
+                       DBM.getAllRecords(function(err2, users){
+                           if(err2){
+                               console.log(err2);
+                           }else{
+                               res.send(users, 200);
+                           }
+                       });
+                   }
+               });
+           }else{
+               res.send('not-authorized', 400);
+           }
+       }
+    });
 
     /*
     app.get('/api/userCookies', function(req, res){
@@ -969,19 +1099,27 @@ module.exports = function(app){
     });
 
     app.delete('/api/emails/:id', function(req, res){
-        DBM.deleteEmail(req.params.id, function(err, mail){
-            if(err){
-                console.log(err);
-            }else{
-                DBM.getAllEmails(function(err2, mails){
-                    if(err2){
-                        console.log(err2);
+        if(req.session.user == null){
+            res.send('not-authorized', 400);
+        }else{
+            if(req.session.user.role == 'admin'){
+                DBM.deleteEmail(req.params.id, function(err, mail){
+                    if(err){
+                        console.log(err);
                     }else{
-                        res.send(mails, 200);
+                        DBM.getAllEmails(function(err2, mails){
+                            if(err2){
+                                console.log(err2);
+                            }else{
+                                res.send(mails, 200);
+                            }
+                        });
                     }
                 });
+            }else{
+                res.send('not-authorized', 400);
             }
-        });
+        }
     });
 
     // Auxiliar query methods
