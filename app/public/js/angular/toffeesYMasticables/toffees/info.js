@@ -2,7 +2,6 @@ var app = angular.module('lagloria');
 
 app.controller('InfoToffeeController', function($scope, $http) {
     $scope.producto = {};
-    $scope.loguedUser = {};
 
     var url = window.location.href.split("/");
     var toffeeId = url[url.length - 1];

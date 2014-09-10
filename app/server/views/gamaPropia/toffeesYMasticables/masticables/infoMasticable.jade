@@ -107,6 +107,9 @@ block content
                                                 div.crystal-info-description.blue
                                                     h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{producto.description}}")
 
+                                    include ../../../partials/comentarios
+
+
     include ../../../modals/usuarioYaHabiaVotado
 
 block scripts
@@ -119,3 +122,4 @@ block scripts
     script(src='/js/angular/navbar.js')
     script(src='/js/angular/comprar.js')
     script(src='/js/angular/valoraciones.js')
+    script(src='/js/angular/comentarios.js')

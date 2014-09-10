@@ -1256,10 +1256,52 @@ module.exports = function(app){
     // Acciones
 
     app.post('/action/comentar', function(req, res){
-        var comentario = req.param('comentarioRealizado');
 
-        console.log("Comentario realizado: " + comentario);
-        res.send("");
+        if(req.session.user == null){
+            res.send('not-logued-user', 400);
+        }else{
+            if(req.session.user.role == 'provider'){
+
+                console.log(JSON.stringify(req.body));
+
+                var comentario  = req.param('comment');
+                var id          = req.param('id');
+                var category    = req.param('category');
+                var type        = req.param('type');
+
+                var badRequest = false;
+
+                if(type == undefined){
+                    if(category == undefined){
+                        badRequest = true;
+                    }else{
+                        type = category;
+                    }
+                }
+
+                if(badRequest){
+                    res.send('bad-request', 400);
+                }else{
+                    DBM.addNewCommentToProduct(req.body, req.session.user, function(err, result){
+                        if(err){
+                            res.send(err);
+                        }else{
+                            DBM.getProductByCategoryTypeAndId(type, req.body._id, function(err2, res2){
+                                if(err2){
+                                    res.send(err2);
+                                }else{
+                                    res.send(res2[0], 200);
+                                }
+                            });
+                        }
+                    });
+                }
+
+
+            }else{
+                res.send('not-authorized', 400);
+            }
+        }
     });
 
 

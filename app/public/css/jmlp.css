@@ -744,3 +744,7 @@ h1.green, h1.red{
     background-color: #e6e6e6 !important;
     color: #333 !important;
 }
+
+.product-comment{
+    margin-top: 0px;
+}

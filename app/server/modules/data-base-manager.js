@@ -407,6 +407,78 @@ exports.addNewCommentToTrip = function(tripId, user, comment, callback)
         });
 };
 
+exports.addNewCommentToProduct = function(json, user, callback)
+{
+    console.log("Comentario nuevo: " + json.comment);
+    if(json.category == "Toffees y Masticables"){
+        toffeesYMasticables.update({_id: getToffeeYMasticableId(json._id)},
+            {
+                $push: {
+                    'comments': {
+                        text: json.comment,
+                        user: user.user
+                    }
+                }
+            }, function(e, res){
+                if(e){
+                    callback(e);
+                }else{
+                    callback(null, res);
+                }
+            });
+    }else if(json.category == "Duros"){
+        duros.update({_id: getDuroId(json._id)},
+            {
+                $push: {
+                    'comments': {
+                        text: json.comment,
+                        user: user.user
+                    }
+                }
+            }, function(e, res){
+                if(e){
+                    callback(e);
+                }else{
+                    callback(null, res);
+                }
+            });
+    }else if(json.category == "Grageados"){
+        grageados.update({_id: getGrageadoId(json._id)},
+            {
+                $push: {
+                    'comments': {
+                        text: json.comment,
+                        user: user.user
+                    }
+                }
+            }, function(e, res){
+                if(e){
+                    callback(e);
+                }else{
+                    callback(null, res);
+                }
+            });
+    }else if(json.category == "Con palo"){
+        conPalo.update({_id: getConPaloId(json._id)},
+            {
+                $push: {
+                    'comments': {
+                        text: json.comment,
+                        user: user.user
+                    }
+                }
+            }, function(e, res){
+                if(e){
+                    callback(e);
+                }else{
+                    callback(null, res);
+                }
+            });
+    }else{
+        callback('category-does-not-exist');
+    }
+}
+
 // Products
 
 exports.getAllProductsByCategoryType = function(categoryType, callback)

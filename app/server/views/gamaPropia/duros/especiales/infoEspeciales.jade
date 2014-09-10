@@ -67,7 +67,7 @@ block content
                                                             h3(ng-bind-template="{{producto.price}} € / Kg")
 
                                             div.panel.panel-body
-                                                div.ponnies-info-description.blue
+                                                div.especial-info-description.blue
                                                     h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{producto.description}}")
 
                                     div(ng-show="!producto.esSurtido")
@@ -103,6 +103,8 @@ block content
                                                     h3(style="text-align: justify; margin-top: 0px", ng-bind-template="{{producto.description}}")
 
 
+                                    include ../../../partials/comentarios
+
 block scripts
     script(src='/js/jquery.js')
     script(src='/js/bootstrap.js')
@@ -113,3 +115,4 @@ block scripts
     script(src='/js/angular/navbar.js')
     script(src='/js/angular/comprar.js')
     script(src='/js/angular/valoraciones.js')
+    script(src='/js/angular/comentarios.js')
