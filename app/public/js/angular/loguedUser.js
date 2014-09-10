@@ -5,6 +5,8 @@ var app = angular.module('lagloria', ['services']);
 app.controller('LoguedUserController', function($scope, UserService, $http, $window){
     $scope.usuarioEstaLogueado = false;
 
+    $scope.usuarioLogueado = {};
+
     /*
      Esta variable se usa para mostrar las imagenes sin optimizar (true) o
      las imagenes redimensionadas (false)
@@ -18,6 +20,7 @@ app.controller('LoguedUserController', function($scope, UserService, $http, $win
         UserService.solicitarUsuario()
             .success(function(data){
                 $scope.usuarioEstaLogueado = true;
+                $scope.usuarioLogueado = data;
             })
             .error(function(data){
                 if(data == "not-loguedin-user"){

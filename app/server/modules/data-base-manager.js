@@ -416,7 +416,8 @@ exports.addNewCommentToProduct = function(json, user, callback)
                 $push: {
                     'comments': {
                         text: json.comment,
-                        user: user.user
+                        user: user.user,
+                        date: new Date()
                     }
                 }
             }, function(e, res){
@@ -432,7 +433,8 @@ exports.addNewCommentToProduct = function(json, user, callback)
                 $push: {
                     'comments': {
                         text: json.comment,
-                        user: user.user
+                        user: user.user,
+                        date: new Date()
                     }
                 }
             }, function(e, res){
@@ -448,7 +450,8 @@ exports.addNewCommentToProduct = function(json, user, callback)
                 $push: {
                     'comments': {
                         text: json.comment,
-                        user: user.user
+                        user: user.user,
+                        date: new Date()
                     }
                 }
             }, function(e, res){
@@ -464,7 +467,8 @@ exports.addNewCommentToProduct = function(json, user, callback)
                 $push: {
                     'comments': {
                         text: json.comment,
-                        user: user.user
+                        user: user.user,
+                        date: new Date()
                     }
                 }
             }, function(e, res){

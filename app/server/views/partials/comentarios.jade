@@ -9,8 +9,13 @@ div.panel.panel-body.col-md-8.col-md-offset-2.offset-comment(ng-controller="Come
         | No hay comentarios.
     div(ng-repeat="comentario in producto.comments")
         div.panel.panel-primary
-            div.panel-heading
-                h3(ng-bind-template="{{comentario.user}}").panel-title
+            div.panel-heading(style="overflow: auto")
+                div.panel-title(ng-bind-template="{{comentario.user}}", style="margin-right: 10px").pull-left
+                div.panel-title(ng-bind-template="({{comentario.date | date:'dd/MM/yyyy HH:mm'}} h)").pull-left
+                div.panel-title.pull-right
+                    i.fa.fa-1.fa-pencil(ng-show="usuarioLogueado.user == comentario.user", style="color:white; margin-right: 10px").pointer
+                    i.fa.fa-1.fa-trash-o(ng-show="usuarioLogueado.user == comentario.user", style="color:white").pointer
+
             div.panel-body.adapt
                 i.fa.fa-1.fa-quote-left.pull-left
                 h3(ng-bind-template="{{comentario.text}}").pull-left.product-comment
