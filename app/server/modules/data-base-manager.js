@@ -371,15 +371,6 @@ exports.findUsersByTripId = function(id, callback)
         });
 };
 
-exports.findCommentsByTripId = function(id, callback)
-{
-    trips.find({_id: getTripObjectId(id)}, {comments:1, _id:0}).toArray(
-        function(e, res){
-            if(e) callback(e)
-            else callback(null, res)
-        });
-};
-
 exports.findUserById = function(id, callback)
 {
     accounts.findOne({_id: getObjectId(id)},
@@ -398,18 +389,8 @@ exports.addNewUserToTrip = function(tripId, user, callback)
         });
 };
 
-exports.addNewCommentToTrip = function(tripId, user, comment, callback)
-{
-    trips.update({_id: getObjectId(tripId)},{$push: {'comments': {text: comment,user: user.name}}},
-        function(e, res){
-            if(e) callback(e)
-            else callback(null, res)
-        });
-};
-
 exports.addNewCommentToProduct = function(json, user, callback)
 {
-    console.log("Comentario nuevo: " + json.comment);
     if(json.category == "Toffees y Masticables"){
         toffeesYMasticables.update({_id: getToffeeYMasticableId(json._id)},
             {
@@ -478,6 +459,185 @@ exports.addNewCommentToProduct = function(json, user, callback)
                     callback(null, res);
                 }
             });
+    }else{
+        callback('category-does-not-exist');
+    }
+}
+
+exports.getComment = function(usuario, json, callback){
+    if(json.category == "Toffees y Masticables"){
+        console.log("Usuario: " + usuario);
+        console.log("Fecha: " + json.nuevoComentario.date);
+        toffeesYMasticables.aggregate({
+            $unwind: '$comments'
+        },{
+            $match: {
+                'comments.user': usuario,
+                'comments.date': new Date(json.nuevoComentario.date)
+            }
+        },{
+            $group: {
+                _id: '$_id',
+                comments: {
+                    $push: '$comments'
+                }
+            }
+        },
+            function(e, res){
+                if(e){
+                    callback(e);
+                }else{
+                    callback(null, res);
+                }
+            });
+    }
+};
+
+exports.editProductComment = function(json, usuario, callback){
+    if(json.category == "Toffees y Masticables"){
+        console.log("Usuario: " + usuario);
+        console.log("Fecha: " + json.nuevoComentario.date);
+        console.log("Comentario: " + json.nuevoComentario.text);
+        toffeesYMasticables.update({
+            "comments.user": usuario,
+            "comments.date": new Date(json.nuevoComentario.date)
+        },{
+            $set: {
+                "comments.$.text": json.nuevoComentario.text
+            }
+        }, function(e, res){
+            if(e || !res){ // El !res es para saber si no se ha actualizado el comentario.
+                callback('Not updated');
+            }else{
+                callback(null, res);
+            }
+        });
+    }else if(json.category == "Duros"){
+        duros.update({
+            _id: getDuroId(json._id)
+        },{
+            $push: {
+                'comments': {
+                    text: json.comment,
+                    user: user.user,
+                    date: new Date()
+                }
+            }
+        }, function(e, res){
+            if(e){
+                callback(e);
+            }else{
+                callback(null, res);
+            }
+        });
+    }else if(json.category == "Grageados"){
+        grageados.update({_id: getGrageadoId(json._id)},
+            {
+                $push: {
+                    'comments': {
+                        text: json.comment,
+                        user: user.user,
+                        date: new Date()
+                    }
+                }
+            }, function(e, res){
+                if(e){
+                    callback(e);
+                }else{
+                    callback(null, res);
+                }
+            });
+    }else if(json.category == "Con palo"){
+        conPalo.update({_id: getConPaloId(json._id)},
+            {
+                $push: {
+                    'comments': {
+                        text: json.comment,
+                        user: user.user,
+                        date: new Date()
+                    }
+                }
+            }, function(e, res){
+                if(e){
+                    callback(e);
+                }else{
+                    callback(null, res);
+                }
+            });
+    }else{
+        callback('category-does-not-exist');
+    }
+}
+
+exports.deleteComment = function(json, callback){
+    if(json.category == "Toffees y Masticables"){
+        toffeesYMasticables.update({
+            "_id": getToffeeYMasticableId(json._id)
+        },{
+            $pull: {
+                "comments" : {
+                    "text": json.comentario.text
+                }
+            }
+        }, function(e, res){
+            console.log("Resultado: " + res);
+            if(e || !res){
+                callback("No ha sido borrado");
+            }else{
+                callback(null, res);
+            }
+        });
+    }else if(json.category == "Duros"){
+        duros.update({
+            "_id": getDuroId(json._id)
+        },{
+            $pull: {
+                "comments" : {
+                    "text": json.comentario.text
+                }
+            }
+        }, function(e, res){
+            console.log("Resultado: " + res);
+            if(e || !res){
+                callback("No ha sido borrado");
+            }else{
+                callback(null, res);
+            }
+        });
+    }else if(json.category == "Grageados"){
+        grageados.update({
+            "_id": getGrageadoId(json._id)
+        },{
+            $pull: {
+                "comments" : {
+                    "text": json.comentario.text
+                }
+            }
+        }, function(e, res){
+            console.log("Resultado: " + res);
+            if(e || !res){
+                callback("No ha sido borrado");
+            }else{
+                callback(null, res);
+            }
+        });
+    }else if(json.category == "Con palo"){
+        conPalo.update({
+            "_id": getConPaloId(json._id)
+        },{
+            $pull: {
+                "comments" : {
+                    "text": json.comentario.text
+                }
+            }
+        }, function(e, res){
+            console.log("Resultado: " + res);
+            if(e || !res){
+                callback("No ha sido borrado");
+            }else{
+                callback(null, res);
+            }
+        });
     }else{
         callback('category-does-not-exist');
     }
@@ -647,7 +807,9 @@ exports.setEmailReaded = function(id, callback){
 }
 
 exports.deleteEmail = function(id, callback){
-    mails.remove({_id:getMailId(id)}, callback);
+    mails.remove({
+        _id:getMailId(id)
+    }, callback);
 }
 
 exports.deleteUser = function(id, callback){

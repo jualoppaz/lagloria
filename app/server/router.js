@@ -1279,6 +1279,10 @@ module.exports = function(app){
                     }
                 }
 
+                if(comentario == undefined){
+                    badRequest = true;
+                }
+
                 if(badRequest){
                     res.send('bad-request', 400);
                 }else{
@@ -1302,6 +1306,145 @@ module.exports = function(app){
                 res.send('not-authorized', 400);
             }
         }
+    });
+
+    app.put('/action/editarComentario', function(req, res){
+
+        if(req.session.user == null){
+            res.send('not-logued-user', 400);
+        }else{
+            if(req.session.user.role == 'provider'){
+
+                console.log(JSON.stringify(req.body));
+
+
+                //res.send('ok');
+
+                var nuevoComentario     = req.param('nuevoComentario');
+                var id                  = req.param('id');
+                var category            = req.param('category');
+                var type                = req.param('type');
+
+                var badRequest = false;
+
+                if(type == undefined){
+                    if(category == undefined){
+                        badRequest = true;
+                    }else{
+                        type = category;
+                    }
+                }
+
+                if(nuevoComentario.text == undefined){
+                    badRequest = true;
+                }
+
+                if(nuevoComentario.user != req.session.user.user){
+                    badRequest = true;
+                }
+
+                if(badRequest){
+                    res.send('bad-request', 400);
+                }else{
+                    DBM.getComment(req.session.user.user, req.body, function(err, result){
+                       if(err){
+                           res.send(err);
+                       }else{
+                           //console.log("Comentario consultado: " + JSON.stringify(result[0].comments[0]));
+                           //console.log("Numero de comentarios: " + result.length);
+                           if(result[0].comments.length == 1){
+                               console.log("Vamos a editar el comentario");
+                               DBM.editProductComment(req.body, req.session.user.user, function(err, result){
+                                   if(err){
+                                       res.send(err);
+                                   }else{
+                                       DBM.getProductByCategoryTypeAndId(type, req.body._id, function(err2, res2){
+                                           if(err2){
+                                               res.send(err2);
+                                           }else{
+                                               //console.log(res2[0]);
+                                               res.send(res2[0], 200);
+                                           }
+                                       });
+                                   }
+                               });
+                           }else if(result.length > 1){
+                               res.send("Hay mas de 1 comentario", 400);
+                           }else{
+                               res.send("No existe el comentario", 400);
+                           }
+                       }
+                    });
+
+
+
+                }
+
+
+            }else{
+                res.send('not-authorized', 400);
+            }
+        }
+
+    });
+
+    app.put('/action/eliminarComentario', function(req, res){
+
+        if(req.session.user == null){
+            res.send('not-logued-user', 400);
+        }else{
+            if(req.session.user.role == 'provider'){
+
+                console.log(JSON.stringify(req.body));
+
+
+                //res.send('ok');
+
+                var id                  = req.param('id');
+                var category            = req.param('category');
+                var type                = req.param('type');
+                var comentario          = req.param('comentario');
+
+                var badRequest = false;
+
+                if(type == undefined){
+                    if(category == undefined){
+                        badRequest = true;
+                    }else{
+                        type = category;
+                    }
+                }
+
+                if(comentario.user != req.session.user.user){
+                    badRequest = true;
+                }
+
+                if(badRequest){
+                    res.send('bad-request', 400);
+                }else{
+                    console.log("Usuario: " + req.session.user.user);
+                    console.log("Comentario: " + req.body.comentario.text);
+                    DBM.deleteComment(req.body, function(err, result){
+                        if(err){
+                            res.send(err);
+                        }else{
+                            DBM.getProductByCategoryTypeAndId(type, req.body._id, function(err2, res2){
+                                if(err2){
+                                    res.send(err2);
+                                }else{
+                                    //console.log(res2[0]);
+                                    res.send(res2[0], 200);
+                                }
+                            });
+                        }
+                    });
+                }
+
+            }else{
+                res.send('not-authorized', 400);
+            }
+        }
+
     });
 
 

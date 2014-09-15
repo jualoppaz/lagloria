@@ -53,7 +53,8 @@ app.controller('LoguedUserController', function($scope, UserService, $http, $win
     };
 
     $scope.redirigirTrasLogout = function(){
-        $window.location.href = "/";
+        //$window.location.href = window.location.href;
+        $window.location.reload();
     };
 });
 
