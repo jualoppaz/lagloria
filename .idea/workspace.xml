@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10f8a809-813f-448f-8ef1-b4cf12576758" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/server/views/modals/comentarioEditado.jade" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/server/views/modals/editarComentario.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/views/partials/comentarios.jade" afterPath="$PROJECT_DIR$/app/server/views/partials/comentarios.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/public/js/angular/comentarios.js" afterPath="$PROJECT_DIR$/app/public/js/angular/comentarios.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/modules/data-base-manager.js" afterPath="$PROJECT_DIR$/app/server/modules/data-base-manager.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/views/modals/eliminarComentario.jade" afterPath="$PROJECT_DIR$/app/server/views/modals/eliminarComentario.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/public/js/angular/loguedUser.js" afterPath="$PROJECT_DIR$/app/public/js/angular/loguedUser.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/router.js" afterPath="$PROJECT_DIR$/app/server/router.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="angular-users-api.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,10 +35,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="data-base-manager.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="data-base-manager.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/server/modules/data-base-manager.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="642" column="5" selection-start="17744" selection-end="17744" vertical-scroll-proportion="0.8006993" vertical-offset="11740" max-vertical-offset="18620">
+            <state line="642" column="5" selection-start="17744" selection-end="17744" vertical-scroll-proportion="-18.32" vertical-offset="11740" max-vertical-offset="18620">
               <folding />
             </state>
           </provider>
@@ -54,7 +47,7 @@
       <file leaf-file-name="comentarios.jade" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/server/views/partials/comentarios.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="40" selection-start="2028" selection-end="2028" vertical-scroll-proportion="-16.04" vertical-offset="188" max-vertical-offset="779">
+            <state line="12" column="30" selection-start="773" selection-end="773" vertical-scroll-proportion="-9.12" vertical-offset="0" max-vertical-offset="817">
               <folding />
             </state>
           </provider>
@@ -69,10 +62,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="comentarios.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="comentarios.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/public/js/angular/comentarios.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="70" column="0" selection-start="2289" selection-end="2289" vertical-scroll-proportion="0.0" vertical-offset="1037" max-vertical-offset="1653">
+            <state line="11" column="0" selection-start="362" selection-end="362" vertical-scroll-proportion="0.35008374" vertical-offset="0" max-vertical-offset="1691">
               <folding />
             </state>
           </provider>
@@ -137,11 +130,11 @@
         <option value="$PROJECT_DIR$/app/public/js/angular/loguedUser.js" />
         <option value="$PROJECT_DIR$/app/server/views/modals/editarComentario.jade" />
         <option value="$PROJECT_DIR$/app/server/views/modals/comentarioEditado.jade" />
-        <option value="$PROJECT_DIR$/app/server/views/partials/comentarios.jade" />
         <option value="$PROJECT_DIR$/app/server/views/modals/eliminarComentario.jade" />
-        <option value="$PROJECT_DIR$/app/public/js/angular/comentarios.js" />
         <option value="$PROJECT_DIR$/app/server/router.js" />
         <option value="$PROJECT_DIR$/app/server/modules/data-base-manager.js" />
+        <option value="$PROJECT_DIR$/app/server/views/partials/comentarios.jade" />
+        <option value="$PROJECT_DIR$/app/public/js/angular/comentarios.js" />
       </list>
     </option>
   </component>
@@ -572,7 +565,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -847,23 +840,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/server/views/partials/comentarios.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="40" selection-start="2028" selection-end="2028" vertical-scroll-proportion="-16.04" vertical-offset="188" max-vertical-offset="779">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/server/views/modals/eliminarComentario.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="88" selection-start="605" selection-end="605" vertical-scroll-proportion="-7.6" vertical-offset="0" max-vertical-offset="304">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/public/js/angular/comentarios.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="0" selection-start="2289" selection-end="2289" vertical-scroll-proportion="0.0" vertical-offset="1037" max-vertical-offset="1653">
           <folding />
         </state>
       </provider>
@@ -877,7 +856,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/server/modules/data-base-manager.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="642" column="5" selection-start="17744" selection-end="17744" vertical-scroll-proportion="0.8006993" vertical-offset="11740" max-vertical-offset="18620">
+        <state line="642" column="5" selection-start="17744" selection-end="17744" vertical-scroll-proportion="-18.32" vertical-offset="11740" max-vertical-offset="18620">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/server/views/partials/comentarios.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="30" selection-start="773" selection-end="773" vertical-scroll-proportion="-9.12" vertical-offset="0" max-vertical-offset="817">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/public/js/angular/comentarios.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="0" selection-start="362" selection-end="362" vertical-scroll-proportion="0.35008374" vertical-offset="0" max-vertical-offset="1691">
           <folding />
         </state>
       </provider>

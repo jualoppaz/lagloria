@@ -9,6 +9,8 @@ div.panel.panel-body.col-md-8.col-md-offset-2.offset-comment(ng-controller="Come
         | No hay comentarios.
     div(ng-show="comentarioEditadoCorrectamente").alert.alert-success
         | Comentario editado correctamente.
+    div(ng-show="comentarioEliminadoCorrectamente").alert.alert-success
+        | Comentario eliminado correctamente.
     div(ng-repeat="comentario in producto.comments")
         div.panel.panel-primary
             div.panel-heading(style="overflow: auto")

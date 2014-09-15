@@ -3,10 +3,13 @@ var app = angular.module('lagloria');
 app.controller('ComentariosController', function($scope, $http){
 
     $scope.comentarioEditadoCorrectamente = false;
+    $scope.comentarioEliminadoCorrectamente = false;
 
 
     $scope.ocultarAlerts = function(){
         $scope.comentarioEditadoCorrectamente = false;
+        $scope.comentarioEliminadoCorrectamente = false;
+
     };
 
 
@@ -70,7 +73,6 @@ app.controller('ComentariosController', function($scope, $http){
         json.comentario = $scope.comentarioAEliminar;
         $http.put('/action/eliminarComentario', json)
             .success(function(data){
-                alert("Eliminado");
                 $scope.comentarioEliminadoCorrectamente = true;
                 $scope.producto = data;
             })
