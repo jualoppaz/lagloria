@@ -2,7 +2,7 @@ div.col-sm-3.col-md-2.sidebar(ng-controller="SidebarController")
     ul.nav.nav-sidebar
         li.header-section
             a(href="#") Novedades
-                span.badge(ng-bind-template="{{correosNoLeidos + pedidos}}")
+                span.badge(ng-bind-template="{{correosNoLeidos + pedidos + usuariosNuevos}}")
         li.section
             a(href="/emails") Emails
                 span.badge(ng-bind-template="{{correosNoLeidos}}")

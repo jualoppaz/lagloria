@@ -151,15 +151,23 @@ exports.updateAccount = function(newData, callback)
 };
 
 exports.actualizarCuenta = function(nuevoUsuario, callback){
+    var usernameTaken = false;
     accounts.find({user: nuevoUsuario.user}).toArray(
         function(err,result){
             if(err){
                 callback(err);
             }else{
-                if(result.length > 0){
-                    callback('username-taken');
-                }else{
-                    accounts.findOne({_id: getObjectId(nuevoUsuario._id)}, function(err, o){
+                if(result.length > 0){ // Vamos a comprobar si se trata de este usuario o de otro
+                    if(result[0]._id != nuevoUsuario._id){ // Son usuarios distintos
+                        console.log("Usuario cogido");
+                        usernameTaken = true;
+                        callback('username-taken');
+                    }
+                }
+                if(!usernameTaken){
+                    accounts.findOne({
+                        _id: getObjectId(nuevoUsuario._id)
+                    }, function(err, o){
                         o.user          = nuevoUsuario.user;
                         o.role          = nuevoUsuario.role;
                         o.estaActivo    = nuevoUsuario.estaActivo;
@@ -189,7 +197,7 @@ exports.actualizarCuenta = function(nuevoUsuario, callback){
                 }
             }
         });
-}
+};
 
 exports.updatePassword = function(email, newPass, callback)
 {
@@ -748,12 +756,34 @@ exports.addNewEmail = function(newData, callback){
     mails.insert(newData, callback);
 }
 
-
-
-
+exports.addNewOrder = function(productos, usuario, direccion, telefono, callback){
+    var fecha = new Date();
+    orders.insert({
+        fecha: fecha,
+        productos: productos,
+        usuario: usuario,
+        datosContacto: {
+            direccion: direccion,
+            telefono: telefono
+        }
+    }, {
+        w:1
+    },function(e, res){
+        if(e){
+            callback(e);
+        }else{
+            callback(null, res);
+        }
+    });
+};
 
 exports.getAllEmails = function(callback){
-    mails.find({ $query: {}, $orderby: {fecha:1}}).toArray(
+    mails.find({
+        $query: {},
+        $orderby: {
+            fecha: 1
+        }
+    }).toArray(
         function(e, res) {
             if (e){
                 callback(e);
@@ -761,14 +791,38 @@ exports.getAllEmails = function(callback){
                 callback(null, res);
             }
         });
-}
+};
 
-
+exports.getAllOrders = function(callback){
+    orders.find({
+        $query: {},
+        $orderby: {
+            fecha: 1
+        }
+    }).toArray(
+        function(e, res){
+            if(e){
+                callback(e);
+            }else{
+                callback(null, res);
+            }
+        });
+};
 
 
 
 exports.getEmailById = function(id, callback){
     mails.findOne({_id:getMailId(id)}, function(e, res){
+        if (e){
+            callback(e);
+        }else{
+            callback(null, res);
+        }
+    });
+}
+
+exports.getOrderById = function(id, callback){
+    orders.findOne({_id:getOrderId(id)}, function(e, res){
         if (e){
             callback(e);
         }else{
@@ -798,26 +852,56 @@ exports.setEmailReaded = function(id, callback){
                 if(err2){
                     callback(err2);
                 }else{
-                    console.log()
                     callback(null, res)
                 }
             })
         }
     })
-}
+};
+
+exports.setOrderReaded = function(id, callback){
+    orders.findOne({_id: getOrderId(id)}, function(err, res){
+        if(err){
+            callback(err);
+        }else{
+            res.leido = true;
+            orders.save(res, {safe: true}, function(err2){
+                if(err2){
+                    callback(err2);
+                }else{
+                    callback(null, res)
+                }
+            })
+        }
+    })
+};
 
 exports.deleteEmail = function(id, callback){
     mails.remove({
         _id:getMailId(id)
     }, callback);
-}
+};
+
+exports.deleteOrderById = function(id, callback){
+    orders.remove({
+        _id:getOrderId(id)
+    }, callback);
+};
 
 exports.deleteUser = function(id, callback){
     accounts.remove({_id:getObjectId(id)}, callback);
 }
 
 exports.getNotReadedOrders = function(callback){
-    orders.find({$query: {leido: false}, $orderby: {fecha:1}}).toArray(
+    orders.find({
+        $query: {
+            leido: false
+        },
+        $orderby: {
+            fecha:1
+        }
+    })
+    .toArray(
         function(e, res){
             if(e){
                 callback(e);
@@ -825,7 +909,23 @@ exports.getNotReadedOrders = function(callback){
                 callback(null, res);
             }
         });
-}
+};
+
+exports.getNotActiveUsers = function(callback){
+    accounts.find({
+        $query: {
+            estaActivo: false
+        }
+    })
+    .toArray(
+        function(e, res){
+            if(e){
+                callback(e);
+            }else{
+                callback(null, res);
+            }
+        });
+};
 
 exports.setOrderReaded = function(id, callback){
     orders.findOne({_id: getOrderId(id)}, function(err, res){

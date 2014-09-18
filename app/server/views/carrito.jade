@@ -63,8 +63,12 @@ block content
                                         a.btn.btn-default.btn-eathub(href="#", role="button", ng-click="realizarPedido()")#comprar Confirmar pedido
 
 
+                                div.col-xs-12(style="padding-left:30px")
+                                    div(ng-show="pedidoRealizado", style="margin-top: 15px; padding-left: 15px").alert.alert-success
+                                        | Pedido realizado correctamente.
 
-    include modals/formularioPedido
+
+                include modals/formularioPedido
 
 
 block scripts

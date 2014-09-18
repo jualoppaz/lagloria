@@ -1,21 +1,31 @@
 var app = angular.module('dashboard');
 
-app.controller('PedidosController', function($scope, $http){
+app.controller('PedidosController', function($scope, $http, $window){
 
+    $scope.pedidos = {};
 
-    $scope.pedidos = [{
-        "user": "Proveedor",
-        "fecha": "01/09/2014",
-        "productos":[{
-            "category": "Toffees y Masticables",
-            "type": "Toffee",
-            "model": "Surtido",
-            "_id": "53c00b87dbc8cd8b5c175547"
-        }],
-        "leido": true
-    }];
-
-    $scope.eliminarPedido = function(){
+    $scope.eliminarPedido = function(pedido){
+        $scope.pedidoAEliminar = pedido;
         angular.element("#modal-eliminar-pedido").modal('show');
+    };
+
+    $scope.eliminarPedidoDefinitivamente = function(){
+        $http.delete('/api/orders/' + String($scope.pedidoAEliminar._id))
+            .success(function(data){
+                $scope.pedidos = data;
+                $window.location.reload();
+            })
+            .error(function(data){
+                alert(data);
+            })
     }
+
+    $http.get('/api/orders')
+        .success(function(data){
+            $scope.pedidos = data;
+        })
+        .error(function(data){
+
+        })
+
 });

@@ -9,25 +9,16 @@ div.modal.fade#modal-realizarPedido(tabindex="-1", role="dialog", aria-labelledb
                 form.form-horizontal(role="form")
                     //div.alert.alert-info#modalTextRealizarPedido
                     div.form-group
-                        label(for="calle").col-sm-2.control-label Dirección
+                        label(for="direccion").col-sm-2.control-label Dirección
                         div.col-sm-10
-                            input(type="text", placeholder="").form-control#direccion
+                            input(type="text", placeholder="", ng-model="direccion").form-control#direccion
 
                     div.form-group
                         label(for="telefono").col-sm-2.control-label Teléfono
                         div.col-sm-10
-                            input(type="text", placeholder="").form-control#telefono
+                            input(type="text", placeholder="", ng-model="telefono").form-control#telefono
 
-                    //div.form-group
-                        div.col-sm-offset-2.col-sm-10
-                            div.checkbox
-                                label
-                                    input(type="checkbox", value="Remember me")
-
-                    //div.form-group
-                        div.col-sm-offset-2.col-sm-10
-                            button(type="submit").btn.btn-default Sign in
 
             div.modal-footer
                 div(style="text-align:center").alert.alert-danger Si confirma el pedido se le cobrará el importe del mismo en el momento de la entrega.
-                button(type="button", data-dismiss="modal").btn.btn-danger#confirmar Confirmar
+                button(type="button", data-dismiss="modal", ng-click="confirmacionDePedido()").btn.btn-eathub#comprar Confirmar

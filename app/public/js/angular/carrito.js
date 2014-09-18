@@ -5,6 +5,9 @@ app.controller('CarritoController', function($scope, $http){
     $scope.loguedUser = {};
     $scope.productos = {};
 
+    $scope.direccion = "";
+    $scope.telefono = "";
+
     $scope.vistaCarrito = true;
 
     $scope.aumentarCantidad = function(producto){
@@ -88,5 +91,26 @@ app.controller('CarritoController', function($scope, $http){
         angular.element("#modalTextRealizarPedido").text("");
         angular.element("#modal-realizarPedido").modal('show');
     };
+
+    $scope.confirmacionDePedido = function(){
+        var json = {
+            productos: angular.copy($scope.productos),
+            datosContacto: {
+                direccion: $scope.direccion,
+                telefono: $scope.telefono
+            }
+        };
+        $http.post('/api/orders', json)
+            .success(function(data){
+                alert(data);
+                if(data == "ok"){
+                    $scope.pedidoRealizado = true;
+                    $scope.productos = [];
+                }
+            })
+            .error(function(data){
+                alert(data);
+            })
+    }
 
 });

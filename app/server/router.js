@@ -958,6 +958,8 @@ module.exports = function(app){
                 console.log("El carrito esta vacio.");
                 req.session.shoppingCartProducts = [];
                 req.session.shoppingCartProducts[0] = query[0];
+                req.session.shoppingCartProducts[0].quantity = query[0].minimumOrder;
+                req.session.shoppingCartProducts[0].total = query[0].minimumOrder * query[0].price;
                 res.send("ok", 200);
             }else{ // Ya hay productos en el carrito
                 console.log("El carrito tiene productos.");
@@ -972,7 +974,8 @@ module.exports = function(app){
                 }else{
                     console.log("Añadimos el producto al carrito.");
                     req.session.shoppingCartProducts[req.session.shoppingCartProducts.length] = query[0];
-
+                    req.session.shoppingCartProducts[req.session.shoppingCartProducts.length].quantity = query[0].minimumOrder;
+                    req.session.shoppingCartProducts[req.session.shoppingCartProducts.length].total = query[0].minimumOrder * query[0].price;
                     res.send(query[0], 200);
                 }
             }
@@ -1012,6 +1015,266 @@ module.exports = function(app){
         }
     });
 
+    // Consulta de pedidos como administrador
+
+    app.get('/api/orders', function(req, res){
+        if(req.session.user == null){
+            res.send('not-authorized', 400);
+        }else{
+
+            if(req.session.user.role == 'admin'){
+
+                DBM.getAllOrders(function(err, result){
+                   if(err){
+                       res.send(err);
+                   }else{
+                       res.send(result);
+                   }
+                });
+
+            }else{
+                res.send('not-authorized', 400);
+            }
+        }
+    });
+
+    app.delete('/api/orders/:id', function(req, res){
+        if(req.session.user == null){
+            res.send('not-authorized', 400);
+        }else{
+            if(req.session.user.role == 'admin'){
+
+                var id = req.params.id;
+
+                if(id == null){
+                    res.send('Debe proporcionar un id.');
+                }else{
+                    
+                    DBM.getOrderById(id, function(err, result){
+                        if(err){
+                            res.send(err);
+                        }else{
+                            if(result == null){
+                                res.send('El pedido indicado no existe.');
+                            }else{
+                                DBM.deleteOrderById(id, function(err2, result2){
+                                    if(err2){
+                                        res.send(err2);
+                                    }else{
+                                        DBM.getAllOrders(function(err3, orders){
+                                            if(err3){
+                                                res.send(err3);
+                                            }else{
+                                                res.send(orders, 200);
+                                            }
+                                        });
+                                    }
+                                });
+                            }
+                       }
+                   });
+               }
+           }else{
+               res.send('not-authorized', 400);
+           }
+       }
+    });
+
+    // Realizacion de un pedido como proveedor
+
+    app.post('/api/orders', function(req, res){
+        if(req.session.user == null){
+            res.send('not-authorized', 400);
+        }else{
+            if(req.session.user.role = 'provider'){
+                console.log("Pedido:");
+                console.log(JSON.stringify(req.body, null, 4));
+
+                var errores = [];
+
+                var hayErrores = false;
+
+                var productosRecibidos = req.body.productos;
+
+                var productosSession   = req.session.shoppingCartProducts;
+
+                console.log("Datos de contacto:");
+                console.log(req.body);
+                console.log(JSON.stringify(req.param('datosContacto'), null, 4));
+
+                var direccion = req.param('datosContacto').direccion;
+                var telefono = req.param('datosContacto').telefono;
+
+                if(productosSession.length != productosRecibidos.length){
+                    hayErrores = true;
+                    errores.push({
+                        error: 'El numero de productos en el servidor y en el cliente no coincide'
+                    });
+                }else if(direccion == null || telefono == null){
+                    hayErrores = true;
+                    errores.push({
+                        error: 'Los datos de contactos no han sido proporcionados'
+                    });
+                }else{
+
+                    var totalCarritoCliente = 0;
+
+                    var totalCarritoServidor = 0;
+
+                    for(i=0; i<productosRecibidos.length;i++){ // Recorremos los productos recibidos en el body
+                        for(j=0; j<productosSession.length;j++){ // Recorremos los productos de la session
+                            if(productosRecibidos[i]._id == productosSession[j]._id){ // Es el mismo producto
+
+                                console.log("Producto recibido: ");
+                                console.log(JSON.stringify(productosRecibidos[i], null, 4));
+
+                                console.log("Producto session: ");
+                                console.log(JSON.stringify(productosSession[j], null, 4));
+
+                                /*
+                                Primero comprobamos que se trata del mismo producto y que
+                                no ha sido manipulado
+                                 */
+
+                                var categoryRecibido        = productosRecibidos[i].category;
+                                var typeRecibido            = productosRecibidos[i].type;
+                                var modelRecibido           = productosRecibidos[i].model;
+                                var priceRecibido           = productosRecibidos[i].price;
+                                var minimumOrderRecibido    = productosRecibidos[i].minimumOrder;
+
+                                var categorySession         = productosSession[j].category;
+                                var typeSession             = productosSession[j].type;
+                                var modelSession            = productosSession[j].model;
+                                var priceSession            = productosSession[j].price;
+                                var minimumOrderSession     = productosSession[j].minimumOrder;
+
+                                if(categoryRecibido != categorySession){
+                                    hayErrores = true;
+                                    errores.push({
+                                        error: 'La categoría del producto no coincide.'
+                                    });
+                                }else if(typeRecibido != typeSession){
+                                    hayErrores = true;
+                                    errores.push({
+                                        error: 'El tipo del producto no coincide.'
+                                    });
+                                }else if(modelRecibido != modelSession){
+                                    hayErrores = true;
+                                    errores.push({
+                                        error: 'El modelo del producto no coincide.'
+                                    });
+                                }else if(priceRecibido != priceSession){
+                                    hayErrores = true;
+                                    errores.push({
+                                        error: 'El precio del producto no coincide.'
+                                    });
+                                }else if(minimumOrderRecibido != minimumOrderSession){
+                                    hayErrores = true;
+                                    errores.push({
+                                        error: 'El pedido minimo no coincide.'
+                                    });
+                                }
+
+                                /*Luego comprobamos que las cantidades indicadas coinciden y que no
+                                  se salen del rango
+                                 */
+
+                                var quantityRecibido    = productosRecibidos[i].quantity;
+                                var quantitySession     = productosSession[j].quantity;
+
+                                if(quantityRecibido != quantitySession){
+                                    hayErrores = true;
+                                    errores.push({
+                                        error: 'La cantidad a comprar del producto no coincide.'
+                                    });
+
+                                    console.log("Cantidad recibida: " + quantityRecibido);
+                                    console.log("Cantidad session: " + quantitySession);
+                                }
+
+                                /*
+                                    Ahora hacemos los cálculos con los datos del cliente y del servidor.
+                                    Así verificamos que no ha habido manipulación alguna.
+                                */
+
+                                /* Calculos con datos del cliente */
+
+                                var totalRecibido        = productosRecibidos[i].total;
+
+                                var calculoTotalRecibido = quantityRecibido * priceRecibido;
+
+                                if(totalRecibido != calculoTotalRecibido){
+                                    hayErrores = true;
+                                    errores.push({
+                                        error: 'El subtotal del producto no coincide con los datos del cliente.'
+                                    });
+
+                                    console.log("Total recibido: " + totalRecibido);
+                                    console.log("Calculo total recibido: " + calculoTotalRecibido);
+                                }
+
+                                /* Calculos con datos del servidor */
+
+                                var totalSession         = productosSession[j].total;
+
+                                var calculoTotalSession  = quantitySession * priceSession;
+
+                                if(totalSession != calculoTotalSession){
+                                    hayErrores = true;
+                                    errores.push({
+                                        error: 'El subtotal del producto no coincide con los datos del servidor.'
+                                    });
+
+                                    console.log("Total session: " + totalSession);
+                                    console.log("Calculo total session: " + calculoTotalSession);
+                                }
+
+                                /* Verificacion de igualdad de ambos subtotales */
+
+                                if(totalRecibido != totalSession){
+                                    hayErrores = true;
+                                    errores.push({
+                                        error: 'El subtotal del producto del cliente no coincide con el del servidor.'
+                                    });
+                                }
+
+                                /* Acumulacion de los subtotales para verificacion final */
+
+                                totalCarritoCliente     += totalRecibido;
+                                totalCarritoServidor    += totalSession;
+
+
+                            }
+                        }
+                    }
+
+                    if(totalCarritoCliente != totalCarritoServidor){
+                        hayErrores = true;
+                        errores.push({
+                            error: 'El precio del carrito del cliente y del servidor no coincide.'
+                        });
+                    }
+                }
+
+                if(hayErrores){
+                    console.log(JSON.stringify(errores, null, 4));
+                    res.send(errores, 400);
+                }else{
+
+                    DBM.addNewOrder(req.session.shoppingCartProducts, req.session.user.user, direccion, telefono, function(err, result){
+                        if(err){
+                            res.send(err);
+                        }else{
+                            req.session.shoppingCartProducts = null;
+                            res.send("ok");
+                        }
+                    });
+                }
+            }else{
+                res.send('not-authorized', 400);
+            }
+        }
+    });
 
 
 
@@ -1127,7 +1390,7 @@ module.exports = function(app){
     app.get('/query/notReadedEmails', function(req, res){
         DBM.getNotReadedEmails(function(err, emails){
             if(err){
-                console.log(err);
+                res.send(err, 400);
             }else{
                 res.send(emails, 200);
             }
@@ -1137,7 +1400,7 @@ module.exports = function(app){
     app.get('/query/notReadedEmailsNumber', function(req, res){
         DBM.getNotReadedEmails(function(err, emails){
             if(err){
-                console.log(err);
+                res.send(err, 400);
             }else{
                 console.log(emails.length);
                 res.send({
@@ -1150,7 +1413,7 @@ module.exports = function(app){
     app.get('/query/notReadedOrders', function(req, res){
         DBM.getNotReadedOrders(function(err, orders){
             if(err){
-                console.log(err);
+                res.send(err, 400);
             }else{
                 console.log(orders.length);
                 res.send({
@@ -1158,6 +1421,18 @@ module.exports = function(app){
                 }, 200);
             }
         })
+    });
+
+    app.get('/query/newUsers', function(req, res){
+        DBM.getNotActiveUsers(function(err, users){
+            if(err){
+                res.send(err, 400);
+            }else{
+                res.send({
+                    newUsers: users.length
+                }, 200);
+            }
+        });
     });
 
 
