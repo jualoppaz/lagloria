@@ -10,6 +10,7 @@ block content
                 div.col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
                     div.col-md-12.col-sm-12(ng-controller="ValoracionesController")
                         h1.page-header Likes
+
                         table.table
                             thead
                                 tr
@@ -18,9 +19,9 @@ block content
                             tbody(ng-repeat="like in likes")
                                 tr.verEmail
                                     td
-                                        span(ng-click="eliminarValoracion(valoracion._id)")
+                                        span(ng-click="eliminarValoracion(like.user, 'like')")
                                             i.fa.fa-trash-o
-                                    td(ng-click="verValoracion(valoracion._id)") {{like.user}}
+                                    td(ng-click="verValoracion()") {{like.user}}
 
                         div.col-md-12.alert.alert-info(ng-show="likes.length == 0 || likes == null")
                             | No hay valoraciones positivas.
@@ -34,14 +35,14 @@ block content
                             tbody(ng-repeat="dislike in dislikes")
                                 tr.verEmail
                                     td
-                                        span(ng-click="eliminarValoracion(valoracion._id)")
+                                        span(ng-click="eliminarValoracion(dislike.user, 'dislike')")
                                             i.fa.fa-trash-o
-                                    td(ng-click="verValoracion(valoracion._id)") {{dislike.user}}
+                                    td(ng-click="verValoracion()") {{dislike.user}}
 
                         div.col-md-12.alert.alert-info(ng-show="dislikes.length == 0 || dislikes == null")
                             | No hay valoraciones negativas.
 
-                        include ../modals/eliminarComentario
+                        include ../modals/eliminarValoracion
 
 
 

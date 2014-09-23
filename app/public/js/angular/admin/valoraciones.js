@@ -6,30 +6,37 @@ app.controller('ValoracionesController', function ($scope, $http){
     $scope.likes = {};
     $scope.dislikes = {};
 
+    $scope.valoracionAEliminar = {};
+
     var url = window.location.href;
 
     var fragmentos = url.split("/");
 
     var id = fragmentos[fragmentos.length-2];
 
-    if(url.indexOf('/toffees/') != -1){
-        $http.get('/api/toffeesYMasticables/' + String(id) + "/valoraciones")
+    var categoria = fragmentos[4];
+
+    var tipo = fragmentos[5];
+
+    if(categoria == "toffeesYMasticables" || categoria == "duros"){
+        $http.get('/api/' + categoria + "/" + tipo + "/" + id + "/valoraciones")
             .success(function(data){
                 $scope.likes = data.likes;
                 $scope.dislikes = data.dislikes;
             })
             .error(function(data){
                 alert(data);
-            })
-    }else if(url.indexOf('/masticables/') != -1){
-        $http.get('/api/toffeesYMasticables/masticables/' + String(id) + "/valoraciones")
+            });
+    }else{
+        var auxiliar = categoria;
+        $http.get('/api/' + categoria + "/" + auxiliar + "/" + id + "/valoraciones")
             .success(function(data){
                 $scope.likes = data.likes;
                 $scope.dislikes = data.dislikes;
             })
             .error(function(data){
                 alert(data);
-            })
+            });
     }
 
 
@@ -41,13 +48,14 @@ app.controller('ValoracionesController', function ($scope, $http){
         }
     };
 
-    $scope.eliminarComentario = function(id){
-        angular.element("#modal-eliminar-comentario").modal('show');
-        $scope.usuarioAEliminar = id;
+    $scope.eliminarValoracion = function(usuario, tipo){
+        angular.element("#modal-eliminar-valoracion").modal('show');
+        $scope.valoracionAEliminar.tipo = tipo;
+        $scope.valoracionAEliminar.user = usuario;
     };
 
 
-    $scope.eliminarComentarioDefinitivamente = function(){
+    $scope.eliminarValoracionDefinitivamente = function(){
 
         var url = window.location.href;
 
@@ -57,13 +65,37 @@ app.controller('ValoracionesController', function ($scope, $http){
 
         var id = fragmentos[fragmentos.length-2];
 
-        $http.delete('/api/' + categoria + "/" + String(id) + "/comentarios")
-            .success(function(data){
-                $scope.comentarios = data;
-            })
-            .error(function(data){
-                alert(data);
-            })
+        if($scope.valoracionAEliminar.tipo == "like"){
+
+            var tipoValoracion = "like";
+
+        }else if($scope.valoracionAEliminar.tipo == "dislike"){
+
+            var tipoValoracion = "dislike";
+
+        }
+
+        if(categoria == "toffeesYMasticables" || categoria == "duros"){
+            $http.put('/api/' + categoria + "/" + tipo + "/" + String(id) + "/valoraciones/" + tipoValoracion, $scope.valoracionAEliminar)
+                .success(function(data){
+                    $scope.likes = data.likes;
+                    $scope.dislikes = data.dislikes;
+                })
+                .error(function(data){
+                    alert(data);
+                });
+        }else{
+
+            $http.put('/api/' + categoria + "/" + categoria + "/" + String(id) + "/valoraciones/" + tipoValoracion, $scope.valoracionAEliminar)
+                .success(function(data){
+                    $scope.likes = data.likes;
+                    $scope.dislikes = data.dislikes;
+                })
+                .error(function(data){
+                    alert(data);
+                });
+        }
+
     };
 
 });

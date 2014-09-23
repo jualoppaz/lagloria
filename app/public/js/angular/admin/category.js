@@ -50,7 +50,7 @@ app.controller('CategoryController', function($scope, $http){
     };
 
     $scope.eliminarProductoDefinitivamente = function(){
-        $http.delete('/api/toffeesYMasticables/' + String($scope.productoAEliminar._id))
+        $http.delete('/api/' + categoria + "/" + String($scope.productoAEliminar._id))
             .success(function(data){
                 $scope.productos = data;
             })
@@ -84,10 +84,26 @@ app.controller('CategoryController', function($scope, $http){
     };
 
     $scope.verValoraciones = function(producto){
+        var baseURL = "/admin";
+
         if(producto.type == "Toffee"){
-            window.location.href = "/admin/toffeesYMasticables/toffees/" + producto._id + "/valoraciones";
+            window.location.href = baseURL + "/toffeesYMasticables/toffees/" + producto._id + "/valoraciones";
         }else if(producto.type == "Masticable"){
-            window.location.href = "/admin/toffeesYMasticables/masticables/" + producto._id + "/valoraciones";
+            window.location.href = baseURL + "/toffeesYMasticables/masticables/" + producto._id + "/valoraciones";
+        }else if(producto.type == "Gloria"){
+            window.location.href = baseURL + "/duros/gloria/" + producto._id + "/valoraciones";
+        }else if(producto.type == "Crystal"){
+            window.location.href = baseURL + "/duros/crystal/" + producto._id + "/valoraciones";
+        }else if(producto.type == "Ponny"){
+            window.location.href = baseURL + "/duros/ponny/" + producto._id + "/valoraciones";
+        }else if(producto.type == "Especial"){
+            window.location.href = baseURL + "/duros/especial/" + producto._id + "/valoraciones";
+        }else{
+            if(producto.category == "Grageados"){
+                window.location.href = baseURL + "/grageados/" + producto._id + "/valoraciones";
+            }else if(producto.category == "Con palo"){
+                window.location.href = baseURL + "/conPalo/" + producto._id + "/valoraciones";
+            }
         }
     };
 

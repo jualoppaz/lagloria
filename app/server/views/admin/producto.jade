@@ -4,18 +4,19 @@ block content
     div(ng-app="dashboard")
         div
             include ../adminPartials/navbar
-                div.container-fluid
+        div.container-fluid
             div.row
                 include ../adminPartials/sidebar
                 div.col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main(ng-controller="ProductoController")
-                    h1.page-header {{nuevoProducto.categoryType}}
+                    h1.page-header {{nuevoProducto.type || nuevoProducto.category}}
+
                     form.form-horizontal
                         div.form-group
                             label.col-sm-2.control-label Modelo:
                             div.col-sm-4
                                 input(ng-model="nuevoProducto.model").form-control
                         div.form-group
-                            label.col-sm-2.control-label Pedído mínimo:
+                            label.col-sm-2.control-label Pedido mínimo:
                             div.col-sm-4
                                 input(ng-model="nuevoProducto.minimumOrder").form-control
                         div.form-group
@@ -24,10 +25,14 @@ block content
                                 input(ng-model="nuevoProducto.price").form-control
 
 
-                    div.col-sm-2
-                        a.btn.btn-default(href="#", role="button", ng-click="") Cancelar
-                    div.col-sm-2
-                        a.btn.btn-default.btn-primary(href="#", role="button", ng-click="")#confirmarEliminacion Aceptar
+                        div.form-group
+                            div.col-sm-2.col-sm-offset-2
+                                a.btn.btn-default(href="#", role="button", ng-click="")#cancel Cancelar
+                            div.col-sm-2(style="text-align:right")
+                                a.btn.btn-default.btn-primary(href="#", role="button", ng-click="guardar()")#confirmarEliminacion Aceptar
+
+
+                    include ../modals/productoEditadoCorrectamente
 
 block scripts
     script(src="/js/jquery.js")
