@@ -42,6 +42,9 @@ block content
                                             div.col-md-12.col-sm-12(ng-show="passVacio", style="margin-top: 15px")
                                                 div.col-md-10.col-md-offset-1.col-sm-10.col-sm-offset-1
                                                     div.alert.alert-danger(ng-bind-template="{{errores.passVacio}}")
+                                            div.col-md-12.col-sm-12(ng-show="usuarioNoActivo", style="margin-top: 15px")
+                                                div.col-md-10.col-md-offset-1.col-sm-10.col-sm-offset-1
+                                                    div.alert.alert-danger(ng-bind-template="{{errores.usuarioNoActivo}}")
                                             div.col-md-12.col-sm-12(style="margin-top:15px")
                                                 div.col-md-10.col-md-offset-1.col-sm-10.col-sm-offset-1.textoTurquesa
                                                     div.col-md-1.col-sm-1.col-xs-1(style="padding-left:0px")

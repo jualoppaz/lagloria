@@ -11,10 +11,12 @@ app.controller('LoginController', function ($scope, $http, $window) {
     $scope.errores.usuarioVacio = "Debe introducir un usuario.";
     $scope.errores.passErroneo = "La contraseña introducida es errónea. Pruebe de nuevo.";
     $scope.errores.passVacio = "Debe introducir una contraseña.";
+    $scope.errores.usuarioNoActivo = "Su cuenta aún no ha sido activada. Contacte con el administrador.";
 
     $scope.passErroneo = false;
     $scope.usuarioInexistente = false;
     $scope.usuarioVacio = false;
+    $scope.usuarioNoActivo = false;
 
     $scope.reiniciarMensajes = function(){
         $scope.passErroneo = false;
@@ -22,6 +24,7 @@ app.controller('LoginController', function ($scope, $http, $window) {
         $scope.usuarioVacio = false;
         $scope.passVacio = false;
         $scope.hayErrores = false;
+        $scope.usuarioNoActivo = false;
     };
 
     $scope.loguearse = function(){
@@ -71,6 +74,8 @@ app.controller('LoginController', function ($scope, $http, $window) {
                         $scope.passErroneo = true;
                     }else if(data == "user-not-found"){
                         $scope.usuarioInexistente = true;
+                    }else if(data == 'user-not-active'){
+                        $scope.usuarioNoActivo = true;
                     }
                 });
         }

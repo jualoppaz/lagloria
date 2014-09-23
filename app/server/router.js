@@ -1572,29 +1572,37 @@ module.exports = function(app){
                 if (!o){
                     res.send(e, 400);
                 }	else{
-                    console.log("Usuario: " + o.user);
-                    console.log("Pass: " + o.pass);
-                    req.session.user = o;
-                    if (req.param('recordar') == true){
-                        console.log("Guardamos las cookies");
-                        console.log("User: " + o.user);
+                    if(o.estaActivo){
+                        console.log("Usuario: " + o.user);
                         console.log("Pass: " + o.pass);
-                        res.cookie('user', o.user, { maxAge: 900000 });
-                        res.cookie('pass', o.pass, { maxAge: 900000 });
+                        req.session.user = o;
+                        if (req.param('recordar') == true){
+                            console.log("Guardamos las cookies");
+                            console.log("User: " + o.user);
+                            console.log("Pass: " + o.pass);
+                            res.cookie('user', o.user, { maxAge: 900000 });
+                            res.cookie('pass', o.pass, { maxAge: 900000 });
+                        }
+                        if(o.role == "admin"){
+                            ultimaPagina = "/";
+                        }
+                        res.send(o, 200);
+                    }else{
+                        res.send('user-not-active', 400);
                     }
-                    if(o.role == "admin"){
-                        ultimaPagina = "/";
-                    }
-                    res.send(o, 200);
                 }
             });
         }else{
             DBM.autoLogin(req.cookies.user, req.cookies.pass, function(o){
                 if(o != null){
-                    if(o.role == "admin"){
-                        ultimaPagina = "/";
+                    if(o.estaActivo){
+                        if(o.role == "admin"){
+                            ultimaPagina = "/";
+                        }
+                        res.send(o, 200);
+                    }else{
+                        res.send('user-not-active', 400);
                     }
-                    res.send(o, 200);
                 }else{
                     res.render('login');
                 }
