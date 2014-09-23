@@ -2,17 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10f8a809-813f-448f-8ef1-b4cf12576758" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/views/carrito.jade" afterPath="$PROJECT_DIR$/app/server/views/carrito.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/public/js/angular/carrito.js" afterPath="$PROJECT_DIR$/app/public/js/angular/carrito.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/public/js/angular/admin/category.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/server/views/modals/pedidoEditadoCorrectamente.jade" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/server/views/admin/producto.jade" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/server/views/admin/valoraciones.jade" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/public/js/angular/admin/valoraciones.js" />
+      <change type="DELETED" beforePath="D:\WS\carameloslagloria\app\public\js\angular\admin\toffeesYMasticables.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/views/admin/comentarios.jade" afterPath="$PROJECT_DIR$/app/server/views/admin/comentarios.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/public/js/angular/admin/comentarios.js" afterPath="$PROJECT_DIR$/app/public/js/angular/admin/comentarios.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/modules/data-base-manager.js" afterPath="$PROJECT_DIR$/app/server/modules/data-base-manager.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/views/modals/eliminarPedido.jade" afterPath="$PROJECT_DIR$/app/server/views/modals/eliminarPedido.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/views/modals/formularioPedido.jade" afterPath="$PROJECT_DIR$/app/server/views/modals/formularioPedido.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/views/modals/eliminarProducto.jade" afterPath="$PROJECT_DIR$/app/server/views/modals/eliminarProducto.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/views/admin/pedido.jade" afterPath="$PROJECT_DIR$/app/server/views/admin/pedido.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/public/js/angular/admin/pedido.js" afterPath="$PROJECT_DIR$/app/public/js/angular/admin/pedido.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/views/admin/pedidos.jade" afterPath="$PROJECT_DIR$/app/server/views/admin/pedidos.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/public/js/angular/admin/pedidos.js" afterPath="$PROJECT_DIR$/app/public/js/angular/admin/pedidos.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/router.js" afterPath="$PROJECT_DIR$/app/server/router.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/views/adminPartials/sidebar.jade" afterPath="$PROJECT_DIR$/app/server/views/adminPartials/sidebar.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/public/js/angular/admin/sidebar.js" afterPath="$PROJECT_DIR$/app/public/js/angular/admin/sidebar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/views/admin/usuario.jade" afterPath="$PROJECT_DIR$/app/server/views/admin/usuario.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/public/js/angular/admin/usuario.js" afterPath="$PROJECT_DIR$/app/public/js/angular/admin/usuario.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/public/js/angular/admin/usuarios.js" afterPath="$PROJECT_DIR$/app/public/js/angular/admin/usuarios.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MOVED" beforePath="D:\WS\carameloslagloria\app\public\js\angular\admin\toffee.js" afterPath="$PROJECT_DIR$/app/public/js/angular/admin/producto.js" />
+      <change type="MOVED" beforePath="D:\WS\carameloslagloria\app\server\views\admin\toffee.jade" afterPath="$PROJECT_DIR$/app/server/views/admin/masticable.jade" />
+      <change type="MOVED" beforePath="D:\WS\carameloslagloria\app\server\views\admin\toffeesYMasticables.jade" afterPath="$PROJECT_DIR$/app/server/views/admin/categoria.jade" />
     </list>
     <ignored path="angular-users-api.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,10 +47,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="router.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="router.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/server/router.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1051" column="20" selection-start="34614" selection-end="34614" vertical-scroll-proportion="0.63461536" vertical-offset="19606" max-vertical-offset="35682">
+            <state line="631" column="92" selection-start="22550" selection-end="22550" vertical-scroll-proportion="-13.68" vertical-offset="11647" max-vertical-offset="46322">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="comentarios.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/public/js/angular/admin/comentarios.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="54" column="39" selection-start="1351" selection-end="1351" vertical-scroll-proportion="0.0" vertical-offset="562" max-vertical-offset="2166">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="comentarios.jade" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/server/views/admin/comentarios.jade">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="26" column="54" selection-start="1230" selection-end="1230" vertical-scroll-proportion="0.763986" vertical-offset="57" max-vertical-offset="893">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="usuario.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/public/js/angular/admin/usuario.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="95" column="39" selection-start="2425" selection-end="2425" vertical-scroll-proportion="0.0" vertical-offset="830" max-vertical-offset="1976">
               <folding />
             </state>
           </provider>
@@ -47,52 +86,16 @@
       <file leaf-file-name="data-base-manager.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/server/modules/data-base-manager.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="333" column="0" selection-start="9074" selection-end="9074" vertical-scroll-proportion="0.0" vertical-offset="5920" max-vertical-offset="20520">
+            <state line="680" column="8" selection-start="18907" selection-end="18907" vertical-scroll-proportion="-9.2" vertical-offset="12690" max-vertical-offset="23598">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pedidos.jade" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/server/views/admin/pedidos.jade">
+      <file leaf-file-name="categoria.jade" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/server/views/admin/categoria.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="76" selection-start="1625" selection-end="1625" vertical-scroll-proportion="-16.72" vertical-offset="114" max-vertical-offset="969">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sidebar.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/public/js/angular/admin/sidebar.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="10" selection-start="200" selection-end="794" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="760">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pedidos.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/public/js/angular/admin/pedidos.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="67" selection-start="107" selection-end="107" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="684">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="loguedUser.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/public/js/angular/loguedUser.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="56" column="8" selection-start="1815" selection-end="1841" vertical-scroll-proportion="0.0" vertical-offset="866" max-vertical-offset="1254">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="eliminarPedido.jade" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/server/views/modals/eliminarPedido.jade">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="84" selection-start="593" selection-end="593" vertical-scroll-proportion="-7.6" vertical-offset="0" max-vertical-offset="304">
+            <state line="26" column="96" selection-start="1317" selection-end="1317" vertical-scroll-proportion="-19.76" vertical-offset="0" max-vertical-offset="969">
               <folding />
             </state>
           </provider>
@@ -111,31 +114,9 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/server/views/admin/toffeesYMasticables.jade" />
-        <option value="$PROJECT_DIR$/app/public/js/angular/admin/toffeesYMasticables.js" />
-        <option value="$PROJECT_DIR$/app/public/js/angular/admin/comentarios.js" />
-        <option value="$PROJECT_DIR$/app/server/views/admin/comentarios.jade" />
-        <option value="$PROJECT_DIR$/app/public/js/angular/admin/pedido.js" />
-        <option value="$PROJECT_DIR$/app/server/views/admin/pedido.jade" />
-        <option value="$PROJECT_DIR$/app.js" />
-        <option value="$PROJECT_DIR$/app/server/views/modals/usuarioYaHabiaVotado.jade" />
-        <option value="$PROJECT_DIR$/app/server/views/partials/valoraciones.jade" />
-        <option value="$PROJECT_DIR$/app/public/js/angular/grageados.js" />
-        <option value="$PROJECT_DIR$/app/server/views/gamaPropia/grageados.jade" />
-        <option value="$PROJECT_DIR$/app/public/js/angular/grageados/info.js" />
-        <option value="$PROJECT_DIR$/app/public/js/angular/valoraciones.js" />
-        <option value="$PROJECT_DIR$/app/public/js/angular/conPalo.js" />
-        <option value="$PROJECT_DIR$/app/server/views/partials/carouselCaramelos.jade" />
-        <option value="$PROJECT_DIR$/app/server/views/gamaPropia/conPalo.jade" />
-        <option value="$PROJECT_DIR$/app/public/js/angular/conPalo/info.js" />
-        <option value="$PROJECT_DIR$/app/public/js/angular/toffeesYMasticables/masticables.js" />
-        <option value="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/masticables.jade" />
         <option value="$PROJECT_DIR$/app/server/views/admin/usuarios.jade" />
         <option value="$PROJECT_DIR$/app/server/views/modals/usuarioYaExiste.jade" />
-        <option value="$PROJECT_DIR$/app/public/js/angular/admin/usuario.js" />
         <option value="$PROJECT_DIR$/app/server/views/modals/usuarioEditadoCorrectamente.jade" />
-        <option value="$PROJECT_DIR$/app/server/views/admin/usuario.jade" />
-        <option value="$PROJECT_DIR$/app/public/js/angular/admin/usuarios.js" />
         <option value="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/toffees/infoToffee.jade" />
         <option value="$PROJECT_DIR$/app/public/js/angular/toffeesYMasticables/toffees/info.js" />
         <option value="$PROJECT_DIR$/app/public/css/jmlp.css" />
@@ -156,12 +137,34 @@
         <option value="$PROJECT_DIR$/app/server/views/modals/formularioPedido.jade" />
         <option value="$PROJECT_DIR$/app/public/js/angular/carrito.js" />
         <option value="$PROJECT_DIR$/app/server/views/carrito.jade" />
-        <option value="$PROJECT_DIR$/app/server/views/adminPartials/sidebar.jade" />
         <option value="$PROJECT_DIR$/app/server/views/modals/eliminarPedido.jade" />
-        <option value="$PROJECT_DIR$/app/server/modules/data-base-manager.js" />
-        <option value="$PROJECT_DIR$/app/public/js/angular/admin/pedidos.js" />
+        <option value="$PROJECT_DIR$/app/server/views/modals/productoEliminado.jade" />
+        <option value="$PROJECT_DIR$/app/server/views/modals/eliminarProducto.jade" />
         <option value="$PROJECT_DIR$/app/server/views/admin/pedidos.jade" />
+        <option value="$PROJECT_DIR$/app/public/js/angular/admin/pedidos.js" />
+        <option value="$PROJECT_DIR$/app/server/views/modals/pedidoEditadoCorrectamente.jade" />
+        <option value="$PROJECT_DIR$/app/public/js/angular/admin/pedido.js" />
+        <option value="$PROJECT_DIR$/app/server/views/admin/pedido.jade" />
+        <option value="$PROJECT_DIR$/app/server/views/admin/masticable.jade" />
+        <option value="$PROJECT_DIR$/app/server/views/admin/toffeesYMasticables.jade" />
+        <option value="$PROJECT_DIR$/app/public/js/angular/admin/toffeesYMasticables.js" />
+        <option value="$PROJECT_DIR$/app/public/js/angular/admin/valoraciones.js" />
+        <option value="$PROJECT_DIR$/app/server/views/admin/valoraciones.jade" />
+        <option value="$PROJECT_DIR$/app/server/views/adminPartials/sidebar.jade" />
+        <option value="$PROJECT_DIR$/app/public/js/angular/admin/usuarios.js" />
+        <option value="$PROJECT_DIR$/app/public/js/angular/admin/usuario.js" />
+        <option value="$PROJECT_DIR$/app/server/views/admin/usuario.jade" />
+        <option value="$PROJECT_DIR$/app/public/js/angular/admin/duros.js" />
+        <option value="$PROJECT_DIR$/app/public/js/angular/admin/categoria.js" />
+        <option value="$PROJECT_DIR$/app/server/views/admin/duros.jade" />
+        <option value="$PROJECT_DIR$/app/server/modules/data-base-manager.js" />
+        <option value="$PROJECT_DIR$/app/server/views/admin/producto.jade" />
+        <option value="$PROJECT_DIR$/app/public/js/angular/admin/producto.js" />
+        <option value="$PROJECT_DIR$/app/server/views/admin/categoria.jade" />
+        <option value="$PROJECT_DIR$/app/public/js/angular/admin/category.js" />
         <option value="$PROJECT_DIR$/app/server/router.js" />
+        <option value="$PROJECT_DIR$/app/public/js/angular/admin/comentarios.js" />
+        <option value="$PROJECT_DIR$/app/server/views/admin/comentarios.jade" />
       </list>
     </option>
   </component>
@@ -213,16 +216,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -551,6 +544,16 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -564,11 +567,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\WS\carameloslagloria\app\public\js\angular\admin" />
+      <recent name="D:\WS\carameloslagloria\app\server\views\admin" />
       <recent name="D:\WS\carameloslagloria\app\server\views\modals" />
       <recent name="D:\WS\carameloslagloria\app\public\img\redimensionadas\conPalo" />
       <recent name="D:\WS\carameloslagloria\app\public\img\redimensionadas\grageados" />
-      <recent name="D:\WS\carameloslagloria\app\server\views\admin" />
-      <recent name="D:\WS\carameloslagloria\app\public\js\angular\admin" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\WS\carameloslagloria\test\index" />
@@ -644,7 +647,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -683,109 +686,9 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/server/views/gamaPropia/duros/crystals.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="31" selection-start="0" selection-end="6344" vertical-scroll-proportion="0.6013986" vertical-offset="1309" max-vertical-offset="1881" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/server/views/gamaPropia/grageados.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="0" selection-start="0" selection-end="6190" vertical-scroll-proportion="0.59090906" vertical-offset="1144" max-vertical-offset="1767" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/server/views/partials/carouselCaramelos.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="84" selection-start="1134" selection-end="1134" vertical-scroll-proportion="0.49825174" vertical-offset="0" max-vertical-offset="572" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/server/views/gamaPropia/conPalo.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="187" selection-start="4659" selection-end="4659" vertical-scroll-proportion="0.68738574" vertical-offset="726" max-vertical-offset="1615" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/public/js/angular/grageados/info.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="13" selection-start="349" selection-end="494" vertical-scroll-proportion="0.44556114" vertical-offset="0" max-vertical-offset="597" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/public/js/angular/conPalo/info.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="24" selection-start="156" selection-end="156" vertical-scroll-proportion="0.12730318" vertical-offset="0" max-vertical-offset="597" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/masticables.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="69" selection-start="5924" selection-end="5924" vertical-scroll-proportion="0.9725777" vertical-offset="798" max-vertical-offset="1691" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/public/js/angular/toffeesYMasticables/masticables.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="36" selection-start="237" selection-end="237" vertical-scroll-proportion="0.21803279" vertical-offset="0" max-vertical-offset="610" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/public/js/angular/toffeesYMasticables/masticables/info.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="3" selection-start="732" selection-end="732" vertical-scroll-proportion="0.7319933" vertical-offset="0" max-vertical-offset="597" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/public/js/angular/buscar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.28032786" vertical-offset="171" max-vertical-offset="2242" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/public/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="117971" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/server/views/buscar.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="96" selection-start="3555" selection-end="3555" vertical-scroll-proportion="0.0" vertical-offset="1045" max-vertical-offset="6574" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/server/views/modals/usuarioYaHabiaVotado.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="0" selection-end="612" vertical-scroll-proportion="0.3986014" vertical-offset="0" max-vertical-offset="572" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/public/js/angular/comprar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="76" selection-start="437" selection-end="700" vertical-scroll-proportion="0.50921273" vertical-offset="0" max-vertical-offset="608" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/server/views/modals/usuarioYaExiste.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="59" selection-start="550" selection-end="550" vertical-scroll-proportion="-7.6" vertical-offset="0" max-vertical-offset="342" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/server/views/modals/usuarioEditadoCorrectamente.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="40" selection-start="458" selection-end="458" vertical-scroll-proportion="0.0" vertical-offset="152" max-vertical-offset="342" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/public/js/angular/admin/usuario.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="124" selection-start="1708" selection-end="1708" vertical-scroll-proportion="0.0" vertical-offset="1265" max-vertical-offset="1976" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/server/views/admin/usuario.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="0" selection-start="2948" selection-end="2948" vertical-scroll-proportion="1.1328671" vertical-offset="492" max-vertical-offset="1406" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/server/views/admin/usuarios.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="87" selection-start="2258" selection-end="2258" vertical-scroll-proportion="0.0" vertical-offset="456" max-vertical-offset="1216" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/server/views/modals/eliminarUsuario.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="597" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/public/js/angular/admin/usuarios.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="0" selection-start="661" selection-end="661" vertical-scroll-proportion="0.0" vertical-offset="171" max-vertical-offset="798" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/public/css/jmlp.css">
@@ -883,79 +786,199 @@
         <state line="32" column="6" selection-start="1030" selection-end="1030" vertical-scroll-proportion="0.5410385" vertical-offset="285" max-vertical-offset="1691" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/server/views/modals/formularioPedido.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="0" selection-start="1057" selection-end="1057" vertical-scroll-proportion="0.66433567" vertical-offset="0" max-vertical-offset="572" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/server/views/modals/eliminarPedido.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="84" selection-start="593" selection-end="593" vertical-scroll-proportion="0.0" vertical-offset="190" max-vertical-offset="304" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/public/js/angular/loguedUser.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="8" selection-start="1815" selection-end="1841" vertical-scroll-proportion="0.0" vertical-offset="866" max-vertical-offset="1254" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/server/views/modals/eliminarProducto.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="86" selection-start="599" selection-end="599" vertical-scroll-proportion="0.33216783" vertical-offset="0" max-vertical-offset="572" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/public/js/angular/admin/pedidos.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="34" selection-start="872" selection-end="872" vertical-scroll-proportion="0.71967214" vertical-offset="150" max-vertical-offset="760" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/server/views/admin/pedidos.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="58" selection-start="2052" selection-end="2052" vertical-scroll-proportion="0.0" vertical-offset="228" max-vertical-offset="1007" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/server/views/carrito.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="72" selection-start="4105" selection-end="4105" vertical-scroll-proportion="0.8636364" vertical-offset="741" max-vertical-offset="1672">
+        <state line="66" column="126" selection-start="4231" selection-end="4232" vertical-scroll-proportion="1.3747715" vertical-offset="502" max-vertical-offset="1672" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/server/views/modals/pedidoEditadoCorrectamente.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="28" selection-start="205" selection-end="205" vertical-scroll-proportion="-2.28" vertical-offset="0" max-vertical-offset="342" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/server/views/admin/pedido.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="91" selection-start="1547" selection-end="1547" vertical-scroll-proportion="-9.88" vertical-offset="114" max-vertical-offset="1786" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/server/views/admin/masticable.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="45" selection-start="395" selection-end="395" vertical-scroll-proportion="-7.6" vertical-offset="0" max-vertical-offset="836" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/public/js/angular/admin/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="610">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/public/css/dashboard.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="176" column="0" selection-start="2940" selection-end="2940" vertical-scroll-proportion="0.74539363" vertical-offset="2899" max-vertical-offset="3496">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/public/js/angular/carrito.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="104" column="28" selection-start="3332" selection-end="3332" vertical-scroll-proportion="0.64991623" vertical-offset="1588" max-vertical-offset="2299">
+        <state line="54" column="33" selection-start="1802" selection-end="1802" vertical-scroll-proportion="0.22278057" vertical-offset="893" max-vertical-offset="2299">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/server/views/modals/formularioPedido.jade">
+    <entry file="file://$PROJECT_DIR$/app/server/views/admin/valoraciones.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="1057" selection-end="1057" vertical-scroll-proportion="0.66433567" vertical-offset="0" max-vertical-offset="572">
+        <state line="18" column="38" selection-start="732" selection-end="732" vertical-scroll-proportion="0.46503496" vertical-offset="76" max-vertical-offset="1159">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/server/views/adminPartials/sidebar.jade">
+    <entry file="file://$PROJECT_DIR$/app/public/js/angular/admin/valoraciones.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="89" selection-start="237" selection-end="237" vertical-scroll-proportion="0.12991454" vertical-offset="0" max-vertical-offset="589">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/server/views/modals/eliminarPedido.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="84" selection-start="593" selection-end="593" vertical-scroll-proportion="-7.6" vertical-offset="0" max-vertical-offset="304">
+        <state line="3" column="0" selection-start="107" selection-end="107" vertical-scroll-proportion="0.0" vertical-offset="57" max-vertical-offset="1406">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/public/js/angular/admin/sidebar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="10" selection-start="200" selection-end="794" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="760">
+        <state line="31" column="24" selection-start="783" selection-end="783" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="760">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/public/js/angular/loguedUser.js">
+    <entry file="file://$PROJECT_DIR$/app/server/views/adminPartials/sidebar.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="8" selection-start="1815" selection-end="1841" vertical-scroll-proportion="0.0" vertical-offset="866" max-vertical-offset="1254">
+        <state line="12" column="27" selection-start="540" selection-end="540" vertical-scroll-proportion="-9.12" vertical-offset="0" max-vertical-offset="589">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/public/js/angular/admin/usuarios.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="0" selection-start="349" selection-end="349" vertical-scroll-proportion="0.0" vertical-offset="112" max-vertical-offset="722">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/server/views/modals/usuarioEditadoCorrectamente.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="40" selection-start="458" selection-end="458" vertical-scroll-proportion="-6.08" vertical-offset="0" max-vertical-offset="342">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/server/views/admin/usuarios.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="54" selection-start="2498" selection-end="2498" vertical-scroll-proportion="-31.92" vertical-offset="0" max-vertical-offset="1216">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/public/js/angular/admin/pedido.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="96" column="11" selection-start="3292" selection-end="3292" vertical-scroll-proportion="0.0" vertical-offset="1626" max-vertical-offset="2014">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/server/views/admin/usuario.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="63" selection-start="2706" selection-end="2706" vertical-scroll-proportion="0.37931034" vertical-offset="855" max-vertical-offset="1406">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/public/js/angular/admin/usuario.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="95" column="39" selection-start="2425" selection-end="2425" vertical-scroll-proportion="0.0" vertical-offset="830" max-vertical-offset="1976">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/public/js/angular/admin/producto.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="24" selection-start="695" selection-end="695" vertical-scroll-proportion="0.87213117" vertical-offset="0" max-vertical-offset="684">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/server/views/admin/producto.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="42" selection-start="1638" selection-end="1638" vertical-scroll-proportion="0.73426574" vertical-offset="264" max-vertical-offset="836">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/server/modules/data-base-manager.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="333" column="0" selection-start="9074" selection-end="9074" vertical-scroll-proportion="0.0" vertical-offset="5920" max-vertical-offset="20520">
+        <state line="680" column="8" selection-start="18907" selection-end="18907" vertical-scroll-proportion="-9.2" vertical-offset="12690" max-vertical-offset="23598">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/public/js/angular/admin/pedidos.js">
+    <entry file="file://$PROJECT_DIR$/app/server/views/admin/categoria.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="67" selection-start="107" selection-end="107" vertical-scroll-proportion="0.0" vertical-offset="74" max-vertical-offset="684">
+        <state line="26" column="96" selection-start="1317" selection-end="1317" vertical-scroll-proportion="-19.76" vertical-offset="0" max-vertical-offset="969">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/server/views/admin/pedidos.jade">
+    <entry file="file://$PROJECT_DIR$/app/public/js/angular/admin/category.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="76" selection-start="1625" selection-end="1625" vertical-scroll-proportion="-16.72" vertical-offset="114" max-vertical-offset="969">
+        <state line="66" column="27" selection-start="2361" selection-end="2361" vertical-scroll-proportion="0.42713568" vertical-offset="999" max-vertical-offset="1881">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/server/router.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1051" column="20" selection-start="34614" selection-end="34614" vertical-scroll-proportion="0.63461536" vertical-offset="19606" max-vertical-offset="35682">
+        <state line="631" column="92" selection-start="22550" selection-end="22550" vertical-scroll-proportion="-13.68" vertical-offset="11647" max-vertical-offset="46322">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/public/js/angular/admin/comentarios.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="39" selection-start="1351" selection-end="1351" vertical-scroll-proportion="0.0" vertical-offset="562" max-vertical-offset="2166">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/server/views/admin/comentarios.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="54" selection-start="1230" selection-end="1230" vertical-scroll-proportion="0.763986" vertical-offset="57" max-vertical-offset="893">
           <folding />
         </state>
       </provider>

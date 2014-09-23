@@ -12,12 +12,8 @@ app.controller('UsuariosController', function ($scope, $http){
             alert("Ha sucedido algún error. Recargue la página.");
         });
 
-
-
-
-
     $scope.verUsuario = function(id){
-        window.location.href = "/usuarios/" + id;
+        window.location.href = "/admin/usuarios/" + id;
     };
 
     $scope.eliminarUsuario = function(id){

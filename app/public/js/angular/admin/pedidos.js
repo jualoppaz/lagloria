@@ -17,8 +17,8 @@ app.controller('PedidosController', function($scope, $http, $window){
             })
             .error(function(data){
                 alert(data);
-            })
-    }
+            });
+    };
 
     $http.get('/api/orders')
         .success(function(data){
@@ -26,6 +26,10 @@ app.controller('PedidosController', function($scope, $http, $window){
         })
         .error(function(data){
 
-        })
+        });
+
+    $scope.verPedido = function(id){
+        $window.location.href = '/pedidos/' + String(id);
+    };
 
 });

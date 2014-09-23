@@ -4,23 +4,23 @@ div.col-sm-3.col-md-2.sidebar(ng-controller="SidebarController")
             a(href="#") Novedades
                 span.badge(ng-bind-template="{{correosNoLeidos + pedidos + usuariosNuevos}}")
         li.section
-            a(href="/emails") Emails
+            a(href="/admin/emails") Emails
                 span.badge(ng-bind-template="{{correosNoLeidos}}")
         li.section
-            a(href="/pedidos") Pedidos
+            a(href="/admin/pedidos") Pedidos
                 span.badge(ng-bind-template="{{pedidos}}")
         li.section
-            a(href="/usuarios") Usuarios
+            a(href="/admin/usuarios") Usuarios
                 span.badge(ng-bind-template="{{usuariosNuevos}}")
 
     ul.nav.nav-sidebar
         li.header-section
-            a(href="#") Gama propia
+            a(href="#") Productos
         li.section
             a(href="/admin/toffeesYMasticables") Toffees y Masticables
         li.section
-            a(href="#") Duros
+            a(href="/admin/duros") Duros
         li.section
-            a(href="#") Grageados
+            a(href="/admin/grageados") Grageados
         li.section
-            a(href="#") Con palo
+            a(href="/admin/conPalo") Con palo

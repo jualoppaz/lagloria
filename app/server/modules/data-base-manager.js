@@ -575,81 +575,8 @@ exports.editProductComment = function(json, usuario, callback){
     }else{
         callback('category-does-not-exist');
     }
-}
+};
 
-exports.deleteComment = function(json, callback){
-    if(json.category == "Toffees y Masticables"){
-        toffeesYMasticables.update({
-            "_id": getToffeeYMasticableId(json._id)
-        },{
-            $pull: {
-                "comments" : {
-                    "text": json.comentario.text
-                }
-            }
-        }, function(e, res){
-            console.log("Resultado: " + res);
-            if(e || !res){
-                callback("No ha sido borrado");
-            }else{
-                callback(null, res);
-            }
-        });
-    }else if(json.category == "Duros"){
-        duros.update({
-            "_id": getDuroId(json._id)
-        },{
-            $pull: {
-                "comments" : {
-                    "text": json.comentario.text
-                }
-            }
-        }, function(e, res){
-            console.log("Resultado: " + res);
-            if(e || !res){
-                callback("No ha sido borrado");
-            }else{
-                callback(null, res);
-            }
-        });
-    }else if(json.category == "Grageados"){
-        grageados.update({
-            "_id": getGrageadoId(json._id)
-        },{
-            $pull: {
-                "comments" : {
-                    "text": json.comentario.text
-                }
-            }
-        }, function(e, res){
-            console.log("Resultado: " + res);
-            if(e || !res){
-                callback("No ha sido borrado");
-            }else{
-                callback(null, res);
-            }
-        });
-    }else if(json.category == "Con palo"){
-        conPalo.update({
-            "_id": getConPaloId(json._id)
-        },{
-            $pull: {
-                "comments" : {
-                    "text": json.comentario.text
-                }
-            }
-        }, function(e, res){
-            console.log("Resultado: " + res);
-            if(e || !res){
-                callback("No ha sido borrado");
-            }else{
-                callback(null, res);
-            }
-        });
-    }else{
-        callback('category-does-not-exist');
-    }
-}
 
 // Products
 
@@ -698,7 +625,14 @@ exports.getAllProductsByCategoryType = function(categoryType, callback)
 
 exports.getAllProductsByCategory = function(category, callback){
     if(category == "Toffees y Masticables"){
-        toffeesYMasticables.find({$or: [{type: 'Toffee'}, {type:'Masticable'}]}).toArray(
+        toffeesYMasticables.find({
+            $or: [{
+                type: 'Toffee'
+            }, {
+                type:'Masticable'
+            }]
+        })
+        .toArray(
             function(e, res){
                 if(e){
                     callback(e);
@@ -706,6 +640,122 @@ exports.getAllProductsByCategory = function(category, callback){
                     callback(null, res);
                 }
             });
+    }else if(category == "Duros"){
+        duros.find({
+            $or: [{
+                type: 'Gloria'
+            }, {
+                type:'Ponny'
+            },{
+                type: 'Especial'
+            },{
+                type: 'Crystal'
+            }]
+        })
+        .toArray(
+            function(e, res){
+                if(e){
+                    callback(e);
+                }else{
+                    callback(null, res);
+                }
+            });
+    }
+    if(category == "Grageados"){
+        grageados.find({
+            $query: {}
+        })
+        .toArray(
+            function(e, res){
+                if(e){
+                    callback(e);
+                }else{
+                    callback(null, res);
+                }
+            });
+    }
+    if(category == "Con palo"){
+        conPalo.find({
+            $query: {}
+        })
+        .toArray(
+            function(e, res){
+                if(e){
+                    callback(e);
+                }else{
+                    callback(null, res);
+                }
+            });
+    }
+};
+
+exports.getAllProductCommentsByCategoryAndId = function(category, id, callback){
+    if(category == 'Toffees y Masticables'){
+        toffeesYMasticables.find({
+            $query: {
+                _id: getToffeeYMasticableId(id)
+            }
+        },{
+            comments: 1
+        })
+        .toArray(
+            function(e, res){
+                if(e){
+                    callback(e);
+                }else{
+                    callback(null, res);
+                }
+            });
+    }else if(category == 'Duros'){
+        duros.find({
+            $query: {
+                _id: getDuroId(id)
+            }
+        },{
+            comments: 1
+        })
+        .toArray(
+            function(e, res){
+                if(e){
+                    callback(e);
+                }else{
+                    callback(null, res);
+                }
+            });
+    }else if(category == 'Grageados'){
+        grageados.find({
+            $query: {
+                _id: getGrageadoId(id)
+            }
+        },{
+            comments: 1
+        })
+        .toArray(
+            function(e, res){
+                if(e){
+                    callback(e);
+                }else{
+                    callback(null, res);
+                }
+            });
+    }else if(category == 'Con palo'){
+        conPalo.find({
+            $query: {
+                _id: getConPaloId(id)
+            }
+        },{
+            comments: 1
+        })
+        .toArray(
+            function(e, res){
+                if(e){
+                    callback(e);
+                }else{
+                    callback(null, res);
+                }
+            });
+    }else{
+        callback('category-not-found');
     }
 };
 
@@ -759,6 +809,7 @@ exports.addNewEmail = function(newData, callback){
 exports.addNewOrder = function(productos, usuario, direccion, telefono, callback){
     var fecha = new Date();
     orders.insert({
+        leido: false,
         fecha: fecha,
         productos: productos,
         usuario: usuario,
@@ -809,6 +860,15 @@ exports.getAllOrders = function(callback){
         });
 };
 
+exports.getOrderById = function(id, callback){
+    orders.findOne({_id:getOrderId(id)}, function(e, res){
+        if (e){
+            callback(e);
+        }else{
+            callback(null, res);
+        }
+    });
+};
 
 
 exports.getEmailById = function(id, callback){
@@ -859,6 +919,23 @@ exports.setEmailReaded = function(id, callback){
     })
 };
 
+exports.actualizarPedido = function(pedido, callback){
+    orders.findOne({_id: getOrderId(pedido._id)}, function(err, res){
+        if(err){
+            callback(err);
+        }else{
+            res.productos = pedido.productos;
+            orders.save(res, {safe: true}, function(err2){
+                if(err2){
+                    callback(err2);
+                }else{
+                    callback(null, res);
+                }
+            })
+        }
+    })
+};
+
 exports.setOrderReaded = function(id, callback){
     orders.findOne({_id: getOrderId(id)}, function(err, res){
         if(err){
@@ -888,9 +965,112 @@ exports.deleteOrderById = function(id, callback){
     }, callback);
 };
 
+exports.deleteProductByCategoryTypeAndId = function(category, id, callback){
+    if(category == 'Toffees y Masticables'){
+        toffeesYMasticables.remove({
+            _id: getToffeeYMasticableId(id)
+        }, callback);
+
+    }else if(category == 'Duros'){
+        duros.remove({
+            _id: getDuroId(id)
+        }, callback);
+
+    }else if(category == 'Grageados'){
+        grageados.remove({
+            _id: getGrageadoId(id)
+        }, callback);
+
+    }else if(category == 'Con palo'){
+        conPalo.remove({
+            _id: getConPaloId(id)
+        }, callback);
+
+    }
+};
+
+exports.deleteProductCommentByCategoryTypeAndId = function(category, id, comentario, callback){
+    if(category == 'Toffees y Masticables'){
+        console.log("Usuario: " + comentario.user);
+        console.log("Texto: " + comentario.text);
+        toffeesYMasticables.update({
+            _id: getToffeeYMasticableId(id)
+        },{
+            $pull: {
+                comments: {
+                    user: comentario.user,
+                    text: comentario.text
+                }
+            }
+        }, function(e, res){
+            if(e || !res){
+                callback('El comentario no ha sido borrado.');
+            }else{
+                callback(null, res);
+            }
+        });
+
+    }else if(category == 'Duros'){
+        duros.update({
+            _id: getDuroId(id)
+        },{
+            $pull: {
+                comments: {
+                    user: comentario.user,
+                    text: comentario.text
+                }
+            }
+        }, function(e, res){
+            if(e || !res){
+                callback('El comentario no ha sido borrado.');
+            }else{
+                callback(null, res);
+            }
+        });
+
+    }else if(category == 'Grageados'){
+        grageados.update({
+            _id: getGrageadoId(id)
+        },{
+            $pull: {
+                comments: {
+                    user: comentario.user,
+                    text: comentario.text
+                }
+            }
+        }, function(e, res){
+            if(e || !res){
+                callback('El comentario no ha sido borrado.');
+            }else{
+                callback(null, res);
+            }
+        });
+
+    }else if(category == 'Con palo'){
+        conPalo.update({
+            _id: getConPaloId(id)
+        },{
+            $pull: {
+                comments: {
+                    user: comentario.user,
+                    text: comentario.text
+                }
+            }
+        }, function(e, res){
+            if(e || !res){
+                callback('El comentario no ha sido borrado.');
+            }else{
+                callback(null, res);
+            }
+        });
+    }else{
+        callback('category-not-found');
+    }
+};
+
 exports.deleteUser = function(id, callback){
     accounts.remove({_id:getObjectId(id)}, callback);
-}
+};
 
 exports.getNotReadedOrders = function(callback){
     orders.find({
@@ -925,24 +1105,6 @@ exports.getNotActiveUsers = function(callback){
                 callback(null, res);
             }
         });
-};
-
-exports.setOrderReaded = function(id, callback){
-    orders.findOne({_id: getOrderId(id)}, function(err, res){
-        if(err){
-            callback(err);
-        }else{
-            res.leido = true;
-            orders.save(res, {safe: true}, function(err2){
-                if(err2){
-                    callback(err2);
-                }else{
-                    console.log()
-                    callback(null, res)
-                }
-            })
-        }
-    })
 };
 
 exports.addLikeToProduct = function(caramelo, usuario, callback){

@@ -16,20 +16,22 @@ block content
                                     th Eliminar
                                     th Cliente
                                     th Fecha
+                                    th Datos de contacto
                             tbody(ng-repeat="pedido in pedidos")
                                 tr(ng-show="pedido.leido == false").verEmail
                                     td(style="font-weight: bold")
                                         span(ng-click="eliminarPedido(pedido)")
                                             i.fa.fa-trash-o
-                                    td(style="font-weight: bold", ng-click="verEmail(email._id)") {{pedido.usuario}}
-                                    td(style="font-weight: bold", ng-click="verEmail(email._id)") {{pedido.fecha | date:'dd/MM/yyyy'}}
-                                    td(style="font-weight: bold; text-overflow: hidden !important", ng-click="verEmail(email._id)").mensajeEmail {{email.mensaje}}
+                                    td(style="font-weight: bold", ng-click="verPedido(pedido._id)") {{pedido.usuario}}
+                                    td(style="font-weight: bold", ng-click="verPedido(pedido._id)") {{pedido.fecha | date:'dd/MM/yyyy'}}
+                                    td(style="font-weight: bold; text-overflow: hidden !important", ng-click="verPedido(pedido._id)") {{pedido.datosContacto.direccion}} ({{pedido.datosContacto.telefono}})
                                 tr(ng-show="pedido.leido == true").verEmail
                                     td
                                         span(ng-click="eliminarPedido(pedido)")
                                             i.fa.fa-trash-o
                                     td(ng-click="verPedido(pedido._id)") {{pedido.usuario}}
                                     td(ng-click="verPedido(pedido._id)") {{pedido.fecha | date:'dd/MM/yyyy'}}
+                                    td(ng-click="verPedido(pedido._id)") {{pedido.datosContacto.direccion}} ({{pedido.datosContacto.telefono}})
 
                         include ../modals/eliminarPedido
 

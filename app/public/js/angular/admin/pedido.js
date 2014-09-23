@@ -1,8 +1,9 @@
 var app = angular.module('dashboard');
 
-app.controller('PedidoController', function($scope){
+app.controller('PedidoController', function($scope, $http){
 
 
+    /*
     $scope.pedido = {
         "user": "Proveedor",
         "fecha": "01/09/2014",
@@ -17,6 +18,22 @@ app.controller('PedidoController', function($scope){
         }],
         "leido": true
     };
+    */
+
+    $scope.pedido = {};
+    $scope.pedido.productos = {};
+
+    var url = window.location.href;
+    var fragmentos = url.split("/");
+    var id = fragmentos[fragmentos.length-1];
+
+    $http.get('/api/orders/' + String(id))
+        .success(function(data){
+            $scope.pedido = data;
+        })
+        .error(function(data){
+
+        });
 
     $scope.subTotal = function(){
         return (this.cantidad * this.price) || 0;
@@ -55,7 +72,7 @@ app.controller('PedidoController', function($scope){
         }
     };
 
-    /*
+
     $scope.actualizarPrecios = function(producto){
         for(i=0; i<$scope.pedido.productos.length;i++){
             if($scope.pedido.productos[i]==producto){
@@ -64,5 +81,21 @@ app.controller('PedidoController', function($scope){
             }
         }
     };
-    */
+
+    $scope.editarPedido = function(){
+        $http.put('/api/orders', $scope.pedido)
+            .success(function(data){
+                angular.element("#modalTitlePedidoEditadoCorrectamente").text("Edición correcta");
+                angular.element("#modalTextPedidoEditadoCorrectamente").text("El pedido ha sido editado correctamente.");
+                angular.element("#modal-pedidoEditadoCorrectamente").modal('show');
+            })
+            .error(function(data){
+                alert(data);
+            })
+    };
+
+    $scope.redirigirTrasEditar = function(){
+        //$window.location.href = "/pedidos";
+    };
+
 })

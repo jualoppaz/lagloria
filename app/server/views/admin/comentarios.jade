@@ -19,10 +19,13 @@ block content
                             tbody(ng-repeat="comentario in comentarios")
                                 tr.verEmail
                                     td
-                                        span(ng-click="eliminarComentario(comentario._id)")
+                                        span(ng-click="eliminarComentario(comentario)")
                                             i.fa.fa-trash-o
-                                    td(ng-click="verComentario(comentario._id)") {{comentario.user}}
-                                    td.mensajeEmail(ng-click="verComentario(comentario._id)") {{comentario.texto}}
+                                    td(ng-click="verComentario()") {{comentario.user}}
+                                    td.mensajeEmail(ng-click="verComentario()") {{comentario.text}}
+
+                        div.col-xs-12.alert.alert-info(ng-show="comentarios.length == 0 || comentarios == null")
+                            | No hay comentarios.
 
                         include ../modals/eliminarComentario
 

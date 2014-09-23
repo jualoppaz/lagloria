@@ -1,6 +1,6 @@
 var app = angular.module('dashboard');
 
-app.controller('ToffeeController', function ($scope, $http){
+app.controller('ProductoController', function ($scope, $http){
 
     // Este usuario es el actual del sistema
 
@@ -13,14 +13,19 @@ app.controller('ToffeeController', function ($scope, $http){
 
 
     var url = window.location.href;
+
+    var fragmentos = url.split("/");
+
+    var categoria = fragmentos[4];
+
     var productoId = url.split("/")[url.split("/").length-1];
 
-    $http.get('/api/toffees/' + String(productoId))
+    $http.get('/api/' + categoria + '/' + String(productoId))
         .success(function(data){
             $scope.nuevoProducto = data;
 
         })
         .error(function(data){
-
+            alert(data);
         });
 });

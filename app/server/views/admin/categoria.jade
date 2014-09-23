@@ -6,27 +6,31 @@ block content
         div.container-fluid
             div.row
                 include ../adminPartials/sidebar
-                div.col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
-                    h1.page-header Toffees y Masticables
-                    div.col-md-12.col-sm-12(ng-controller="ToffeesYMasticablesController")
+                div.col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main(ng-controller="CategoryController")
+                    h1.page-header {{productos[0].category}}
+                    div.col-md-12.col-sm-12
                         table.table
                             thead
                                 tr
                                     th Eliminar
-                                    th Tipo
+                                    th(ng-show="productos[0].type") Tipo
                                     th Modelo
                                     th Precio / Kg
                                     th Cantidad mínima
+                                    th Valoraciones
                                     th Comentarios
                             tbody(ng-repeat="producto in productos")
                                 tr.verEmail
                                     td
                                         span(ng-click="eliminarProducto(producto)")
                                             i.fa.fa-trash-o
-                                    td(ng-click="verProducto(producto)") {{producto.type}}
+                                    td(ng-click="verProducto(producto)", ng-show="producto.type") {{producto.type}}
                                     td(ng-click="verProducto(producto)") {{producto.model}}
                                     td(ng-click="verProducto(producto)") {{producto.price}}
                                     td.mensajeEmail(ng-click="verProducto(producto)") {{producto.minimumOrder}}
+                                    td
+                                        span(ng-click="verValoraciones(producto)")
+                                            i.fa.fa-pencil-square-o
                                     td
                                         span(ng-click="verComentarios(producto)")
                                             i.fa.fa-comments
@@ -37,6 +41,6 @@ block scripts
     script(src="/js/bootstrap.js")
     script(src="/js/angular.js")
     script(src='/js/angular/admin/app.js')
-    script(src="/js/angular/admin/toffeesYMasticables.js")
+    script(src="/js/angular/admin/category.js")
     script(src="/js/angular/admin/navbar.js")
     script(src="/js/angular/admin/sidebar.js")

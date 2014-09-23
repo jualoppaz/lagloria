@@ -93,7 +93,7 @@ app.controller('UsuarioController', function ($scope, $http, $filter){
     };
 
     $scope.redirigirTrasEditar = function(){
-        window.location.href = '/usuarios';
+        window.location.href = '/admin/usuarios';
     }
 
 });
