@@ -1923,81 +1923,99 @@ module.exports = function(app){
     // Comprar producto
 
     app.post('/api/shoppingCart', function(req, res){
-        var id = req.body.id;
-        var category = req.body.category;
-        var type = req.body.type;
 
-        if(category == "Grageados" || category == "Con palo"){
-            type = category;
-        }
+        if(req.session.user == null){
+            res.send('not-authorized', 400);
+        }else{
+            if(req.session.user.role == 'provider'){
+                var id = req.body.id;
+                var category = req.body.category;
+                var type = req.body.type;
 
-        DBM.getProductByCategoryTypeAndId(type, id, function(err, query){
-            /*if(!req.session.shoppingCart){ // El carrito aún no se ha creado
+                if(category == "Grageados" || category == "Con palo"){
+                    type = category;
+                }
 
-            }*/
-            var productos = req.session.shoppingCartProducts;
-            var productoDuplicado = false;
+                DBM.getProductByCategoryTypeAndId(type, id, function(err, query){
+                    /*if(!req.session.shoppingCart){ // El carrito aún no se ha creado
 
-            console.log("Resultado de la busqueda: " + JSON.stringify(query));
+                     }*/
+                    var productos = req.session.shoppingCartProducts;
+                    var productoDuplicado = false;
 
-            if(productos == undefined){ // El carrito esta vacio
-                console.log("El carrito esta vacio.");
-                req.session.shoppingCartProducts = [];
-                req.session.shoppingCartProducts[0] = query[0];
-                req.session.shoppingCartProducts[0].quantity = query[0].minimumOrder;
-                req.session.shoppingCartProducts[0].total = query[0].minimumOrder * query[0].price;
-                res.send("ok", 200);
-            }else{ // Ya hay productos en el carrito
-                console.log("El carrito tiene productos.");
-                for(i=0;i<productos.length;i++){// Comprobamos si el producto a añadir ya estaba en el carrito
-                    if(productos[i]._id == id){
-                        productoDuplicado = true;
+                    console.log("Resultado de la busqueda: " + JSON.stringify(query));
+
+                    if(productos == undefined){ // El carrito esta vacio
+                        console.log("El carrito esta vacio.");
+                        req.session.shoppingCartProducts = [];
+                        req.session.shoppingCartProducts[0] = query[0];
+                        req.session.shoppingCartProducts[0].quantity = query[0].minimumOrder;
+                        req.session.shoppingCartProducts[0].total = query[0].minimumOrder * query[0].price;
+                        res.send("ok", 200);
+                    }else{ // Ya hay productos en el carrito
+                        console.log("El carrito tiene productos.");
+                        for(i=0;i<productos.length;i++){// Comprobamos si el producto a añadir ya estaba en el carrito
+                            if(productos[i]._id == id){
+                                productoDuplicado = true;
+                            }
+                        }
+                        if(productoDuplicado){
+                            console.log("El producto ya estaba en el carrito.");
+                            res.send("product-already-exists", 400);
+                        }else{
+                            console.log("Añadimos el producto al carrito.");
+                            req.session.shoppingCartProducts[req.session.shoppingCartProducts.length] = query[0];
+                            req.session.shoppingCartProducts[req.session.shoppingCartProducts.length].quantity = query[0].minimumOrder;
+                            req.session.shoppingCartProducts[req.session.shoppingCartProducts.length].total = query[0].minimumOrder * query[0].price;
+                            res.send(query[0], 200);
+                        }
                     }
-                }
-                if(productoDuplicado){
-                    console.log("El producto ya estaba en el carrito.");
-                    res.send("product-already-exists", 400);
-                }else{
-                    console.log("Añadimos el producto al carrito.");
-                    req.session.shoppingCartProducts[req.session.shoppingCartProducts.length] = query[0];
-                    req.session.shoppingCartProducts[req.session.shoppingCartProducts.length].quantity = query[0].minimumOrder;
-                    req.session.shoppingCartProducts[req.session.shoppingCartProducts.length].total = query[0].minimumOrder * query[0].price;
-                    res.send(query[0], 200);
-                }
+                });
+            }else{
+                res.send('not-authorized', 400);
             }
-        });
+        }
     });
 
     app.put('/api/shoppingCart', function(req, res){
-        var productos = req.body.productos;
 
-        var validado = true;
+        if(req.session.user == null){
+            res.send('not-authorized', 400);
+        }else{
+            if(req.session.user.role == 'provider'){
+                var productos = req.body.productos;
 
-        for(i=0;i<req.session.shoppingCartProducts.length;i++){
-            if(Number(req.session.shoppingCartProducts[i].minimumOrder) > Number(productos[i].quantity)){
-                validado = false;
-            }
-        }
+                var validado = true;
 
-        if(validado){
-            console.log("Validado correctamente.");
-
-            req.session.shoppingCartProducts = [];
-            for(i=0;i<productos.length;i++){
-                try{
-                    if(req.session.shoppingCartProducts[i].quantity){
-                        console.log("Cantidad anterior: " + req.session.shoppingCartProducts[i].quantity);
+                for(i=0;i<req.session.shoppingCartProducts.length;i++){
+                    if(Number(req.session.shoppingCartProducts[i].minimumOrder) > Number(productos[i].quantity)){
+                        validado = false;
                     }
-                }catch(Exception){
-                    console.log(Exception);
                 }
 
-                console.log("Cantidad posterior: " + productos[i].quantity);
-                req.session.shoppingCartProducts[i] = productos[i];
+                if(validado){
+                    console.log("Validado correctamente.");
+
+                    req.session.shoppingCartProducts = [];
+                    for(i=0;i<productos.length;i++){
+                        try{
+                            if(req.session.shoppingCartProducts[i].quantity){
+                                console.log("Cantidad anterior: " + req.session.shoppingCartProducts[i].quantity);
+                            }
+                        }catch(Exception){
+                            console.log(Exception);
+                        }
+
+                        console.log("Cantidad posterior: " + productos[i].quantity);
+                        req.session.shoppingCartProducts[i] = productos[i];
+                    }
+                    res.send("saved", 200);
+                }else{
+                    res.send("error", 400);
+                }
+            }else{
+                res.send('not-authorized', 400);
             }
-            res.send("saved", 200);
-        }else{
-            res.send("error", 400);
         }
     });
 
@@ -2599,24 +2617,26 @@ module.exports = function(app){
         }else{
             if(req.session.user.role == 'provider'){
 
-                console.log(JSON.stringify(req.body));
+                console.log("Body recibido (comentar): " + JSON.stringify(req.body, null, 4));
 
                 var comentario  = req.param('comment');
-                var id          = req.param('id');
+                var id          = req.param('_id');
                 var category    = req.param('category');
                 var type        = req.param('type');
 
                 var badRequest = false;
 
-                if(type == undefined){
-                    if(category == undefined){
+                if(type == null || type == ""){
+                    console.log("Type vacio");
+                    if(category == null || category == ""){
                         badRequest = true;
                     }else{
+                        console.log("Type como categoria");
                         type = category;
                     }
                 }
 
-                if(comentario == undefined){
+                if(comentario == null){
                     badRequest = true;
                 }
 
@@ -2627,10 +2647,13 @@ module.exports = function(app){
                         if(err){
                             res.send(err);
                         }else{
+                            console.log("Type: " + type);
                             DBM.getProductByCategoryTypeAndId(type, req.body._id, function(err2, res2){
                                 if(err2){
                                     res.send(err2);
                                 }else{
+                                    console.log("Comentarios actualizados tras comentar:");
+                                    console.log(JSON.stringify(res2[0], null, 4));
                                     res.send(res2[0], 200);
                                 }
                             });
@@ -2652,10 +2675,7 @@ module.exports = function(app){
         }else{
             if(req.session.user.role == 'provider'){
 
-                console.log(JSON.stringify(req.body));
-
-
-                //res.send('ok');
+                console.log("Edicion comentario: " + JSON.stringify(req.body, null, 4));
 
                 var nuevoComentario     = req.param('nuevoComentario');
                 var id                  = req.param('id');
@@ -2664,15 +2684,17 @@ module.exports = function(app){
 
                 var badRequest = false;
 
-                if(type == undefined){
-                    if(category == undefined){
+                if(type == null || type == ""){
+                    console.log("Type vacio");
+                    if(category == null || category == ""){
                         badRequest = true;
                     }else{
+                        console.log("Type como categoria");
                         type = category;
                     }
                 }
 
-                if(nuevoComentario.text == undefined){
+                if(nuevoComentario.text == null){
                     badRequest = true;
                 }
 
@@ -2693,13 +2715,14 @@ module.exports = function(app){
                                console.log("Vamos a editar el comentario");
                                DBM.editProductComment(req.body, req.session.user.user, function(err, result){
                                    if(err){
-                                       res.send(err);
+                                       res.send(err, 400);
                                    }else{
+                                       console.log("Type a buscar: " + type);
                                        DBM.getProductByCategoryTypeAndId(type, req.body._id, function(err2, res2){
                                            if(err2){
                                                res.send(err2);
                                            }else{
-                                               //console.log(res2[0]);
+                                               console.log("Comentarios tras editar: " + JSON.stringify(res2[0], null, 4));
                                                res.send(res2[0], 200);
                                            }
                                        });
@@ -2712,8 +2735,6 @@ module.exports = function(app){
                            }
                        }
                     });
-
-
 
                 }
 
@@ -2737,17 +2758,21 @@ module.exports = function(app){
 
                 //res.send('ok');
 
-                var id                  = req.param('id');
+                console.log("Body recibido (delete): " + JSON.stringify(req.body, null, 4));
+
+                var id                  = req.param('_id');
                 var category            = req.param('category');
                 var type                = req.param('type');
                 var comentario          = req.param('comentario');
 
                 var badRequest = false;
 
-                if(type == undefined){
-                    if(category == undefined){
+                if(type == null || type == ""){
+                    console.log("Type vacio");
+                    if(category == null || category == ""){
                         badRequest = true;
                     }else{
+                        console.log("Type como categoria");
                         type = category;
                     }
                 }
@@ -2761,7 +2786,7 @@ module.exports = function(app){
                 }else{
                     console.log("Usuario: " + req.session.user.user);
                     console.log("Comentario: " + req.body.comentario.text);
-                    DBM.deleteComment(req.body, function(err, result){
+                    DBM.deleteProductCommentByCategoryTypeAndId(category, id, comentario, function(err, result){
                         if(err){
                             res.send(err);
                         }else{
@@ -2769,7 +2794,7 @@ module.exports = function(app){
                                 if(err2){
                                     res.send(err2);
                                 }else{
-                                    //console.log(res2[0]);
+                                    console.log("Comentarios actualizados: " + JSON.stringify(res2[0], null, 4));
                                     res.send(res2[0], 200);
                                 }
                             });

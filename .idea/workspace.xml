@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="10f8a809-813f-448f-8ef1-b4cf12576758" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/modules/data-base-manager.js" afterPath="$PROJECT_DIR$/app/server/modules/data-base-manager.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/router.js" afterPath="$PROJECT_DIR$/app/server/router.js" />
     </list>
     <ignored path="angular-users-api.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,10 +26,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="router.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/server/router.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2726" column="44" selection-start="102076" selection-end="102076" vertical-scroll-proportion="-15.2" vertical-offset="51414" max-vertical-offset="56335">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="data-base-manager.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/server/modules/data-base-manager.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1506" column="8" selection-start="38097" selection-end="38097" vertical-scroll-proportion="1.2546064" vertical-offset="27865" max-vertical-offset="31369">
+            <state line="669" column="21" selection-start="16853" selection-end="16853" vertical-scroll-proportion="-0.68509215" vertical-offset="13120" max-vertical-offset="32490">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="comentarios.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/public/js/angular/comentarios.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="75" column="29" selection-start="2520" selection-end="2520" vertical-scroll-proportion="0.0" vertical-offset="171" max-vertical-offset="1691">
               <folding />
             </state>
           </provider>
@@ -95,9 +113,9 @@
         <option value="$PROJECT_DIR$/app/server/views/admin/producto.jade" />
         <option value="$PROJECT_DIR$/app/public/js/angular/admin/producto.js" />
         <option value="$PROJECT_DIR$/app/public/js/angular/admin/category.js" />
-        <option value="$PROJECT_DIR$/app/server/router.js" />
         <option value="$PROJECT_DIR$/app/public/js/angular/login.js" />
         <option value="$PROJECT_DIR$/app/server/views/login.jade" />
+        <option value="$PROJECT_DIR$/app/server/router.js" />
         <option value="$PROJECT_DIR$/app/server/modules/data-base-manager.js" />
       </list>
     </option>
@@ -690,11 +708,6 @@
         <state line="12" column="30" selection-start="773" selection-end="773" vertical-scroll-proportion="0.0" vertical-offset="228" max-vertical-offset="817" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/public/js/angular/comentarios.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="6" selection-start="1030" selection-end="1030" vertical-scroll-proportion="0.5410385" vertical-offset="285" max-vertical-offset="1691" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/server/views/modals/formularioPedido.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="0" selection-start="1057" selection-end="1057" vertical-scroll-proportion="0.66433567" vertical-offset="0" max-vertical-offset="572" />
@@ -869,16 +882,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/public/js/angular/comentarios.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="75" column="29" selection-start="2520" selection-end="2520" vertical-scroll-proportion="0.0" vertical-offset="171" max-vertical-offset="1691">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/server/router.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1603" column="57" selection-start="61916" selection-end="61916" vertical-scroll-proportion="0.5728643" vertical-offset="30115" max-vertical-offset="55860">
+        <state line="2726" column="44" selection-start="102076" selection-end="102076" vertical-scroll-proportion="-15.2" vertical-offset="51414" max-vertical-offset="56335">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/server/modules/data-base-manager.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1506" column="8" selection-start="38097" selection-end="38097" vertical-scroll-proportion="1.2546064" vertical-offset="27865" max-vertical-offset="31369">
+        <state line="669" column="21" selection-start="16853" selection-end="16853" vertical-scroll-proportion="-0.68509215" vertical-offset="13120" max-vertical-offset="32490">
           <folding />
         </state>
       </provider>

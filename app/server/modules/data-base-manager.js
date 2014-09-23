@@ -553,8 +553,6 @@ exports.addNewCommentToProduct = function(json, user, callback)
 
 exports.getComment = function(usuario, json, callback){
     if(json.category == "Toffees y Masticables"){
-        console.log("Usuario: " + usuario);
-        console.log("Fecha: " + json.nuevoComentario.date);
         toffeesYMasticables.aggregate({
             $unwind: '$comments'
         },{
@@ -576,14 +574,79 @@ exports.getComment = function(usuario, json, callback){
                 callback(null, res);
             }
         });
+    }else if(json.category == "Duros"){
+        duros.aggregate({
+            $unwind: '$comments'
+        },{
+            $match: {
+                'comments.user': usuario,
+                'comments.date': new Date(json.nuevoComentario.date)
+            }
+        },{
+            $group: {
+                _id: '$_id',
+                comments: {
+                    $push: '$comments'
+                }
+            }
+        }, function(e, res){
+            if(e){
+                callback(e);
+            }else{
+                callback(null, res);
+            }
+        });
+    }else if(json.category == "Grageados"){
+        grageados.aggregate({
+            $unwind: '$comments'
+        },{
+            $match: {
+                'comments.user': usuario,
+                'comments.date': new Date(json.nuevoComentario.date)
+            }
+        },{
+            $group: {
+                _id: '$_id',
+                comments: {
+                    $push: '$comments'
+                }
+            }
+        }, function(e, res){
+            if(e){
+                callback(e);
+            }else{
+                callback(null, res);
+            }
+        });
+    }else if(json.category == "Con palo"){
+        conPalo.aggregate({
+            $unwind: '$comments'
+        },{
+            $match: {
+                'comments.user': usuario,
+                'comments.date': new Date(json.nuevoComentario.date)
+            }
+        },{
+            $group: {
+                _id: '$_id',
+                comments: {
+                    $push: '$comments'
+                }
+            }
+        }, function(e, res){
+            if(e){
+                callback(e);
+            }else{
+                callback(null, res);
+            }
+        });
+    }else{
+        callback('la categoria no existe');
     }
 };
 
 exports.editProductComment = function(json, usuario, callback){
     if(json.category == "Toffees y Masticables"){
-        console.log("Usuario: " + usuario);
-        console.log("Fecha: " + json.nuevoComentario.date);
-        console.log("Comentario: " + json.nuevoComentario.text);
         toffeesYMasticables.update({
             "comments.user": usuario,
             "comments.date": new Date(json.nuevoComentario.date)
@@ -599,55 +662,51 @@ exports.editProductComment = function(json, usuario, callback){
             }
         });
     }else if(json.category == "Duros"){
+        console.log("Entramos en el if");
+        console.log("Usuario: " + usuario);
+        console.log("Id del caramelo: " + json._id);
+        console.log("Fecha: " + json.nuevoComentario.date);
+        console.log("Nuevo comentario: " + json.nuevoComentario.text);
         duros.update({
-            _id: getDuroId(json._id)
+            "comments.user": usuario,
+            "comments.date": new Date(json.nuevoComentario.date)
         },{
-            $push: {
-                'comments': {
-                    text: json.comment,
-                    user: user.user,
-                    date: new Date()
-                }
+            $set: {
+                "comments.$.text": json.nuevoComentario.text
             }
         }, function(e, res){
-            if(e){
-                callback(e);
+            if(e || !res){ // El !res es para saber si no se ha actualizado el comentario.
+                callback('Not updated');
             }else{
                 callback(null, res);
             }
         });
     }else if(json.category == "Grageados"){
         grageados.update({
-            _id: getGrageadoId(json._id)
+            "comments.user": usuario,
+            "comments.date": new Date(json.nuevoComentario.date)
         },{
-            $push: {
-                'comments': {
-                    text: json.comment,
-                    user: user.user,
-                    date: new Date()
-                }
+            $set: {
+                "comments.$.text": json.nuevoComentario.text
             }
         }, function(e, res){
-            if(e){
-                callback(e);
+            if(e || !res){ // El !res es para saber si no se ha actualizado el comentario.
+                callback('Not updated');
             }else{
                 callback(null, res);
             }
         });
     }else if(json.category == "Con palo"){
         conPalo.update({
-            _id: getConPaloId(json._id)
+            "comments.user": usuario,
+            "comments.date": new Date(json.nuevoComentario.date)
         },{
-            $push: {
-                'comments': {
-                    text: json.comment,
-                    user: user.user,
-                    date: new Date()
-                }
+            $set: {
+                "comments.$.text": json.nuevoComentario.text
             }
         }, function(e, res){
-            if(e){
-                callback(e);
+            if(e || !res){ // El !res es para saber si no se ha actualizado el comentario.
+                callback('Not updated');
             }else{
                 callback(null, res);
             }
