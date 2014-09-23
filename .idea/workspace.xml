@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10f8a809-813f-448f-8ef1-b4cf12576758" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/views/login.jade" afterPath="$PROJECT_DIR$/app/server/views/login.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/public/js/angular/login.js" afterPath="$PROJECT_DIR$/app/public/js/angular/login.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/router.js" afterPath="$PROJECT_DIR$/app/server/router.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/modules/data-base-manager.js" afterPath="$PROJECT_DIR$/app/server/modules/data-base-manager.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="angular-users-api.iws" />
@@ -28,28 +26,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="router.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/server/router.js">
+      <file leaf-file-name="data-base-manager.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/server/modules/data-base-manager.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1603" column="57" selection-start="61916" selection-end="61916" vertical-scroll-proportion="-13.68" vertical-offset="30115" max-vertical-offset="55860">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.jade" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/server/views/login.jade">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="118" selection-start="3560" selection-end="3560" vertical-scroll-proportion="0.4318182" vertical-offset="627" max-vertical-offset="1425">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/public/js/angular/login.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="105" selection-start="660" selection-end="660" vertical-scroll-proportion="0.0" vertical-offset="57" max-vertical-offset="1881">
+            <state line="1506" column="8" selection-start="38097" selection-end="38097" vertical-scroll-proportion="1.2546064" vertical-offset="27865" max-vertical-offset="31369">
               <folding />
             </state>
           </provider>
@@ -114,11 +94,11 @@
         <option value="$PROJECT_DIR$/app/server/views/modals/productoEditadoCorrectamente.jade" />
         <option value="$PROJECT_DIR$/app/server/views/admin/producto.jade" />
         <option value="$PROJECT_DIR$/app/public/js/angular/admin/producto.js" />
-        <option value="$PROJECT_DIR$/app/server/modules/data-base-manager.js" />
         <option value="$PROJECT_DIR$/app/public/js/angular/admin/category.js" />
         <option value="$PROJECT_DIR$/app/server/router.js" />
         <option value="$PROJECT_DIR$/app/public/js/angular/login.js" />
         <option value="$PROJECT_DIR$/app/server/views/login.jade" />
+        <option value="$PROJECT_DIR$/app/server/modules/data-base-manager.js" />
       </list>
     </option>
   </component>
@@ -536,6 +516,14 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -546,23 +534,15 @@
       <option name="showConsoleOnStdOut" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
-      <option name="VMOptions" />
-      <option name="arguments" />
-      <option name="filePath" />
-      <option name="scope" value="ALL" />
-      <option name="testName" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
-      <envs />
-      <method />
-    </configuration>
     <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
       <setting name="configLocationType" value="CONFIG_FILE" />
       <setting name="settingsFile" value="" />
       <setting name="serverType" value="INTERNAL" />
       <setting name="preferredDebugBrowser" value="CHROME" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
@@ -616,11 +596,11 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -870,21 +850,9 @@
         <state line="60" column="0" selection-start="2101" selection-end="2101" vertical-scroll-proportion="1.9095477" vertical-offset="0" max-vertical-offset="2185" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/server/modules/data-base-manager.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="868" column="34" selection-start="24643" selection-end="24643" vertical-scroll-proportion="0.7307692" vertical-offset="16074" max-vertical-offset="28348" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/server/views/admin/producto.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="0" selection-start="424" selection-end="424" vertical-scroll-proportion="0.3653846" vertical-offset="0" max-vertical-offset="931" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/server/router.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1603" column="57" selection-start="61916" selection-end="61916" vertical-scroll-proportion="-13.68" vertical-offset="30115" max-vertical-offset="55860">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/public/js/angular/login.js">
@@ -896,7 +864,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/server/views/login.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="118" selection-start="3560" selection-end="3560" vertical-scroll-proportion="0.4318182" vertical-offset="627" max-vertical-offset="1425">
+        <state line="46" column="118" selection-start="3560" selection-end="3560" vertical-scroll-proportion="0.41373533" vertical-offset="627" max-vertical-offset="1425">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/server/router.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1603" column="57" selection-start="61916" selection-end="61916" vertical-scroll-proportion="0.5728643" vertical-offset="30115" max-vertical-offset="55860">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/server/modules/data-base-manager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1506" column="8" selection-start="38097" selection-end="38097" vertical-scroll-proportion="1.2546064" vertical-offset="27865" max-vertical-offset="31369">
           <folding />
         </state>
       </provider>

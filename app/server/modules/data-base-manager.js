@@ -60,7 +60,9 @@ var conPalo                 = db.collection('conPalo');
 
 exports.autoLogin = function(user, pass, callback)
 {
-	accounts.findOne({user:user}, function(e, o) {
+	accounts.findOne({
+        user:user
+    }, function(e, o) {
 		if (o){
 			o.pass == pass ? callback(o) : callback(null);
 		}	else{
@@ -71,7 +73,9 @@ exports.autoLogin = function(user, pass, callback)
 
 exports.manualLogin = function(user, pass, callback)
 {
-	accounts.findOne({user:user}, function(e, o) {
+	accounts.findOne({
+        user:user
+    }, function(e, o) {
 		if (o == null){
 			callback('user-not-found');
 		}	else{
@@ -90,7 +94,9 @@ exports.manualLogin = function(user, pass, callback)
 
 exports.addNewAccount = function(newData, callback)
 {
-	accounts.findOne({user:newData.user}, function(e, o) {
+	accounts.findOne({
+        user:newData.user
+    }, function(e, o) {
 		if (o){
 			callback('username-taken');
 		}else{
@@ -154,7 +160,10 @@ exports.updateAccount = function(newData, callback)
 
 exports.actualizarCuenta = function(nuevoUsuario, callback){
     var usernameTaken = false;
-    accounts.find({user: nuevoUsuario.user}).toArray(
+    accounts.find({
+        user: nuevoUsuario.user
+    })
+    .toArray(
         function(err,result){
             if(err){
                 callback(err);
@@ -203,7 +212,9 @@ exports.actualizarCuenta = function(nuevoUsuario, callback){
 
 exports.updatePassword = function(email, newPass, callback)
 {
-	accounts.findOne({email:email}, function(e, o){
+	accounts.findOne({
+        email:email
+    }, function(e, o){
 		if (e){
 			callback(e, null);
 		}	else{
@@ -219,17 +230,28 @@ exports.updatePassword = function(email, newPass, callback)
 
 exports.deleteAccount = function(id, callback)
 {
-	accounts.remove({_id: getObjectId(id)}, callback);
+	accounts.remove({
+        _id: getObjectId(id)
+    }, callback);
 }
 
 exports.getAccountByEmail = function(email, callback)
 {
-	accounts.findOne({email:email}, function(e, o){ callback(o); });
+	accounts.findOne({
+        email:email
+    }, function(e, o){
+        callback(o);
+    });
 }
 
 exports.validateResetLink = function(email, passHash, callback)
 {
-	accounts.find({ $and: [{email:email, pass:passHash}] }, function(e, o){
+	accounts.find({
+        $and: [{
+            email:email,
+            pass:passHash
+        }]
+    }, function(e, o){
 		callback(o ? 'ok' : null);
 	});
 }
@@ -238,21 +260,25 @@ exports.getAllRecords = function(callback)
 {
 	accounts.find().toArray(
 		function(e, res) {
-		if (e) callback(e)
-		else callback(null, res)
-	});
-};
-
-exports.getAccountById = function(id, callback)
-{
-    accounts.findOne({_id: getObjectId(id)},
-        function(e, res) {
-            if (e){
+		    if (e){
                 callback(e);
             }else{
                 callback(null, res);
             }
-        });
+	    });
+};
+
+exports.getAccountById = function(id, callback)
+{
+    accounts.findOne({
+        _id: getObjectId(id)
+    }, function(e, res) {
+        if (e){
+            callback(e);
+        }else{
+            callback(null, res);
+        }
+    });
 }
 
 exports.delAllRecords = function(callback)
@@ -327,10 +353,14 @@ var getOrderId = function(id)
 
 var findById = function(id, callback)
 {
-	accounts.findOne({_id: getObjectId(id)},
-		function(e, res) {
-		if (e) callback(e)
-		else callback(null, res)
+	accounts.findOne({
+        _id: getObjectId(id)
+    }, function(e, res) {
+		if (e){
+            callback(e);
+        }else{
+            callback(null, res);
+        }
 	});
 };
 
@@ -338,12 +368,18 @@ var findById = function(id, callback)
 var findByMultipleFields = function(a, callback)
 {
 // this takes an array of name/val pairs to search against {fieldName : 'value'} //
-	accounts.find( { $or : a } ).toArray(
+	accounts.find({
+        $or : a
+    })
+    .toArray(
 		function(e, results) {
-		if (e) callback(e)
-		else callback(null, results)
-	});
-}
+		    if (e){
+                callback(e);
+            }else{
+                callback(null, results);
+            }
+	    });
+};
 
 // Trips
 
@@ -351,10 +387,19 @@ var trips = db.collection('trips');
 
 exports.findAllTrips = function(callback)
 {
-    trips.find({ $query: {}, $orderby: { moment : 1 } }).toArray(
+    trips.find({
+        $query: {},
+        $orderby: {
+            moment : 1
+        }
+    })
+    .toArray(
         function(e, res) {
-            if (e) callback(e)
-            else callback(null, res)
+            if (e){
+                callback(e);
+            }else{
+                callback(null, res);
+            }
         });
 };
 
@@ -365,110 +410,142 @@ var getTripObjectId = function(id)
 
 exports.findTripById = function(id, callback)
 {
-    trips.findOne({_id: getTripObjectId(id)},
-        function(e, res) {
-            if (e) callback(e)
-            else callback(null, res)
+    trips.findOne({
+        _id: getTripObjectId(id)
+    }, function(e, res) {
+           if (e){
+               callback(e);
+           }else{
+               callback(null, res);
+           }
         });
 };
 
 exports.findUsersByTripId = function(id, callback)
 {
-    trips.find({_id: getTripObjectId(id)}, {users:1, _id:0}).toArray(
+    trips.find({
+        _id: getTripObjectId(id)
+    }, {
+        users:1,
+        _id:0
+    })
+    .toArray(
         function(e, res){
-            if(e) callback(e)
-            else callback(null, res)
+            if(e){
+                callback(e);
+            }else{
+                callback(null, res);
+            }
         });
 };
 
 exports.findUserById = function(id, callback)
 {
-    accounts.findOne({_id: getObjectId(id)},
-        function(e, res) {
-            if (e) callback(e)
-            else callback(null, res)
-        });
+    accounts.findOne({
+        _id: getObjectId(id)
+    }, function(e, res) {
+        if (e){
+            callback(e);
+        }else{
+            callback(null, res);
+        }
+    });
 };
 
 exports.addNewUserToTrip = function(tripId, user, callback)
 {
-    trips.update({_id: getObjectId(tripId)},{$addToSet: {'users': {name: user.name,user: user.user}}},
-        function(e, res){
-            if(e) callback(e)
-            else callback(null, res)
-        });
+    trips.update({
+        _id: getObjectId(tripId)
+    },{
+        $addToSet: {
+            'users': {
+                name: user.name,
+                user: user.user
+            }
+        }
+    }, function(e, res){
+        if(e){
+            callback(e);
+        }else{
+            callback(null, res);
+        }
+    });
 };
 
 exports.addNewCommentToProduct = function(json, user, callback)
 {
     if(json.category == "Toffees y Masticables"){
-        toffeesYMasticables.update({_id: getToffeeYMasticableId(json._id)},
-            {
-                $push: {
-                    'comments': {
-                        text: json.comment,
-                        user: user.user,
-                        date: new Date()
-                    }
+        toffeesYMasticables.update({
+            _id: getToffeeYMasticableId(json._id)
+        },{
+            $push: {
+                'comments': {
+                    text: json.comment,
+                    user: user.user,
+                    date: new Date()
                 }
-            }, function(e, res){
-                if(e){
-                    callback(e);
-                }else{
-                    callback(null, res);
-                }
-            });
+            }
+        }, function(e, res){
+            if(e){
+                callback(e);
+            }else{
+                callback(null, res);
+            }
+        });
     }else if(json.category == "Duros"){
-        duros.update({_id: getDuroId(json._id)},
-            {
-                $push: {
-                    'comments': {
-                        text: json.comment,
-                        user: user.user,
-                        date: new Date()
-                    }
+        duros.update({
+            _id: getDuroId(json._id)
+        },{
+            $push: {
+                'comments': {
+                    text: json.comment,
+                    user: user.user,
+                    date: new Date()
                 }
-            }, function(e, res){
-                if(e){
-                    callback(e);
-                }else{
-                    callback(null, res);
-                }
-            });
+            }
+        }, function(e, res){
+            if(e){
+                callback(e);
+            }else{
+                callback(null, res);
+            }
+        });
     }else if(json.category == "Grageados"){
-        grageados.update({_id: getGrageadoId(json._id)},
-            {
-                $push: {
-                    'comments': {
-                        text: json.comment,
-                        user: user.user,
-                        date: new Date()
-                    }
+        grageados.update({
+            _id: getGrageadoId(json._id)
+        },{
+            $push: {
+                'comments': {
+                    text: json.comment,
+                    user: user.user,
+                    date: new Date()
                 }
-            }, function(e, res){
-                if(e){
-                    callback(e);
-                }else{
-                    callback(null, res);
-                }
-            });
+            }
+        }, function(e, res){
+            if(e){
+                callback(e);
+            }else{
+                callback(null, res);
+            }
+        });
     }else if(json.category == "Con palo"){
-        conPalo.update({_id: getConPaloId(json._id)},
-            {
-                $push: {
-                    'comments': {
-                        text: json.comment,
-                        user: user.user,
-                        date: new Date()
-                    }
+        conPalo.update({
+            _id: getConPaloId(json._id)
+        },{
+            $push: {
+                'comments': {
+                    text: json.comment,
+                    user: user.user,
+                    date: new Date()
                 }
-            }, function(e, res){
-                if(e){
-                    callback(e);
-                }else{
-                    callback(null, res);
-                }
-            });
+            }
+        }, function(e, res){
+            if(e){
+                callback(e);
+            }else{
+                callback(null, res);
+            }
+        });
     }else{
         callback('category-does-not-exist');
     }
@@ -492,14 +569,13 @@ exports.getComment = function(usuario, json, callback){
                     $push: '$comments'
                 }
             }
-        },
-            function(e, res){
-                if(e){
-                    callback(e);
-                }else{
-                    callback(null, res);
-                }
-            });
+        }, function(e, res){
+            if(e){
+                callback(e);
+            }else{
+                callback(null, res);
+            }
+        });
     }
 };
 
@@ -541,39 +617,41 @@ exports.editProductComment = function(json, usuario, callback){
             }
         });
     }else if(json.category == "Grageados"){
-        grageados.update({_id: getGrageadoId(json._id)},
-            {
-                $push: {
-                    'comments': {
-                        text: json.comment,
-                        user: user.user,
-                        date: new Date()
-                    }
+        grageados.update({
+            _id: getGrageadoId(json._id)
+        },{
+            $push: {
+                'comments': {
+                    text: json.comment,
+                    user: user.user,
+                    date: new Date()
                 }
-            }, function(e, res){
-                if(e){
-                    callback(e);
-                }else{
-                    callback(null, res);
-                }
-            });
+            }
+        }, function(e, res){
+            if(e){
+                callback(e);
+            }else{
+                callback(null, res);
+            }
+        });
     }else if(json.category == "Con palo"){
-        conPalo.update({_id: getConPaloId(json._id)},
-            {
-                $push: {
-                    'comments': {
-                        text: json.comment,
-                        user: user.user,
-                        date: new Date()
-                    }
+        conPalo.update({
+            _id: getConPaloId(json._id)
+        },{
+            $push: {
+                'comments': {
+                    text: json.comment,
+                    user: user.user,
+                    date: new Date()
                 }
-            }, function(e, res){
-                if(e){
-                    callback(e);
-                }else{
-                    callback(null, res);
-                }
-            });
+            }
+        }, function(e, res){
+            if(e){
+                callback(e);
+            }else{
+                callback(null, res);
+            }
+        });
     }else{
         callback('category-does-not-exist');
     }
@@ -585,7 +663,15 @@ exports.editProductComment = function(json, usuario, callback){
 exports.getAllProductsByCategoryType = function(categoryType, callback)
 {
     if(categoryType == "Toffee" || categoryType == "Masticable"){
-        toffeesYMasticables.find({ $query: {type:categoryType}, $orderby: {position:1}}).toArray(
+        toffeesYMasticables.find({
+            $query: {
+                type:categoryType
+            },
+            $orderby: {
+                position:1
+            }
+        })
+        .toArray(
             function(e, res) {
                 if (e){
                     callback(e);
@@ -594,7 +680,14 @@ exports.getAllProductsByCategoryType = function(categoryType, callback)
                 }
             });
     }else if(categoryType == "Crystal" || categoryType == "Gloria" || categoryType == "Ponny" || categoryType == "Especial"){
-        duros.find({ $query: {type:categoryType}, $orderby: {position:1}}).toArray(
+        duros.find({
+            $query: {
+                type:categoryType
+            },
+            $orderby: {
+                position:1
+            }
+        }).toArray(
             function(e, res) {
                 if (e){
                     callback(e);
@@ -603,7 +696,13 @@ exports.getAllProductsByCategoryType = function(categoryType, callback)
                 }
             });
     }else if(categoryType == "Grageados"){
-        grageados.find({ $query: {}, $orderby: {position:1}}).toArray(
+        grageados.find({
+            $query: {},
+            $orderby: {
+                position:1
+            }
+        })
+        .toArray(
             function(e, res){
                 if(e){
                     callback(e);
@@ -612,7 +711,13 @@ exports.getAllProductsByCategoryType = function(categoryType, callback)
                 }
             });
     }else if(categoryType == "Con palo"){
-        conPalo.find({ $query: {}, $orderby: {position:1}}).toArray(
+        conPalo.find({
+            $query: {},
+            $orderby: {
+                position:1
+            }
+        })
+        .toArray(
             function(e, res){
                 if(e){
                     callback(e);
@@ -763,7 +868,13 @@ exports.getAllProductCommentsByCategoryAndId = function(category, id, callback){
 
 exports.getProductByCategoryTypeAndId = function(categoryType, id, callback){
     if(categoryType == "Toffee" || categoryType == "Masticable"){
-        toffeesYMasticables.find({ $query: {type:categoryType, _id: getToffeeYMasticableId(id)}}).toArray(
+        toffeesYMasticables.find({
+            $query: {
+                type:categoryType,
+                _id: getToffeeYMasticableId(id)
+            }
+        })
+        .toArray(
             function(e, res){
                 if(e){
                     callback(e);
@@ -772,7 +883,13 @@ exports.getProductByCategoryTypeAndId = function(categoryType, id, callback){
                 }
             });
     }else if(categoryType == "Crystal" || categoryType == "Gloria" || categoryType == "Ponny" || categoryType == "Especial"){
-        duros.find({ $query: {type:categoryType, _id: getDuroId(id)}}).toArray(
+        duros.find({
+            $query: {
+                type:categoryType,
+                _id: getDuroId(id)
+            }
+        })
+        .toArray(
             function(e, res){
                 if(e){
                     callback(e);
@@ -781,7 +898,12 @@ exports.getProductByCategoryTypeAndId = function(categoryType, id, callback){
                 }
             });
     }else if(categoryType == "Grageados"){
-        grageados.find({ $query: {_id: getGrageadoId(id)}}).toArray(
+        grageados.find({
+            $query: {
+                _id: getGrageadoId(id)
+            }
+        })
+        .toArray(
             function(e, res){
                 if(e){
                     callback(e);
@@ -790,7 +912,12 @@ exports.getProductByCategoryTypeAndId = function(categoryType, id, callback){
                 }
             });
     }else if(categoryType == "Con palo"){
-        conPalo.find({ $query: {_id: getConPaloId(id)}}).toArray(
+        conPalo.find({
+            $query: {
+                _id: getConPaloId(id)
+            }
+        })
+        .toArray(
             function(e, res){
                 if(e){
                     callback(e);
@@ -922,7 +1049,8 @@ exports.getAllEmails = function(callback){
         $orderby: {
             fecha: 1
         }
-    }).toArray(
+    })
+    .toArray(
         function(e, res) {
             if (e){
                 callback(e);
@@ -938,7 +1066,8 @@ exports.getAllOrders = function(callback){
         $orderby: {
             fecha: 1
         }
-    }).toArray(
+    })
+    .toArray(
         function(e, res){
             if(e){
                 callback(e);
@@ -949,7 +1078,9 @@ exports.getAllOrders = function(callback){
 };
 
 exports.getOrderById = function(id, callback){
-    orders.findOne({_id:getOrderId(id)}, function(e, res){
+    orders.findOne({
+        _id:getOrderId(id)
+    }, function(e, res){
         if (e){
             callback(e);
         }else{
@@ -960,7 +1091,9 @@ exports.getOrderById = function(id, callback){
 
 
 exports.getEmailById = function(id, callback){
-    mails.findOne({_id:getMailId(id)}, function(e, res){
+    mails.findOne({
+        _id:getMailId(id)
+    }, function(e, res){
         if (e){
             callback(e);
         }else{
@@ -970,7 +1103,9 @@ exports.getEmailById = function(id, callback){
 }
 
 exports.getOrderById = function(id, callback){
-    orders.findOne({_id:getOrderId(id)}, function(e, res){
+    orders.findOne({
+        _id:getOrderId(id)
+    }, function(e, res){
         if (e){
             callback(e);
         }else{
@@ -980,7 +1115,15 @@ exports.getOrderById = function(id, callback){
 }
 
 exports.getNotReadedEmails = function(callback){
-    mails.find({ $query: {leido: false}, $orderby: {fecha:1}}).toArray(
+    mails.find({
+        $query: {
+            leido: false
+        },
+        $orderby: {
+            fecha:1
+        }
+    })
+    .toArray(
         function(e, res) {
             if(e){
                 callback(e);
@@ -988,7 +1131,7 @@ exports.getNotReadedEmails = function(callback){
                 callback(null, res);
             }
         });
-}
+};
 
 exports.setEmailReaded = function(id, callback){
     mails.findOne({
@@ -1010,7 +1153,9 @@ exports.setEmailReaded = function(id, callback){
 };
 
 exports.actualizarPedido = function(pedido, callback){
-    orders.findOne({_id: getOrderId(pedido._id)}, function(err, res){
+    orders.findOne({
+        _id: getOrderId(pedido._id)
+    }, function(err, res){
         if(err){
             callback(err);
         }else{
@@ -1357,7 +1502,9 @@ exports.getNotActiveUsers = function(callback){
 
 exports.addLikeToProduct = function(caramelo, usuario, callback){
     if(caramelo.category == 'Toffees y Masticables'){
-        toffeesYMasticables.update({_id: getToffeeYMasticableId(caramelo._id)}, {
+        toffeesYMasticables.update({
+            _id: getToffeeYMasticableId(caramelo._id)
+        }, {
             $push: {
                 'likes':{
                     'user': usuario
@@ -1389,7 +1536,9 @@ exports.addLikeToProduct = function(caramelo, usuario, callback){
             }
         });
     }else if(caramelo.category == 'Grageados'){
-        grageados.update({_id: getGrageadoId(caramelo._id)}, {
+        grageados.update({
+            _id: getGrageadoId(caramelo._id)
+        }, {
             $push: {
                 'likes':{
                     'user': usuario
@@ -1404,7 +1553,9 @@ exports.addLikeToProduct = function(caramelo, usuario, callback){
             }
         });
     }else if(caramelo.category == 'Con palo'){
-        conPalo.update({_id: getConPaloId(caramelo._id)}, {
+        conPalo.update({
+            _id: getConPaloId(caramelo._id)
+        }, {
             $push: {
                 'likes':{
                     'user': usuario
@@ -1423,7 +1574,9 @@ exports.addLikeToProduct = function(caramelo, usuario, callback){
 
 exports.addDislikeToProduct = function(caramelo, usuario, callback){
     if(caramelo.category == 'Toffees y Masticables'){
-        toffeesYMasticables.update({_id: getToffeeYMasticableId(caramelo._id)}, {
+        toffeesYMasticables.update({
+            _id: getToffeeYMasticableId(caramelo._id)
+        }, {
             $push: {
                 'dislikes':{
                     'user': usuario
@@ -1438,7 +1591,9 @@ exports.addDislikeToProduct = function(caramelo, usuario, callback){
             }
         });
     }else if(caramelo.category == 'Duros'){
-        duros.update({_id: getDuroId(caramelo._id)}, {
+        duros.update({
+            _id: getDuroId(caramelo._id)
+        }, {
             $push: {
                 'dislikes':{
                     'user': usuario
@@ -1453,7 +1608,9 @@ exports.addDislikeToProduct = function(caramelo, usuario, callback){
             }
         });
     }else if(caramelo.category == 'Grageados'){
-        grageados.update({_id: getGrageadoId(caramelo._id)}, {
+        grageados.update({
+            _id: getGrageadoId(caramelo._id)
+        }, {
             $push: {
                 'dislikes':{
                     'user': usuario
@@ -1468,7 +1625,9 @@ exports.addDislikeToProduct = function(caramelo, usuario, callback){
             }
         });
     }else if(caramelo.category == 'Con palo'){
-        conPalo.update({_id: getConPaloId(caramelo._id)}, {
+        conPalo.update({
+            _id: getConPaloId(caramelo._id)
+        }, {
             $push: {
                 'dislikes':{
                     'user': usuario
