@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10f8a809-813f-448f-8ef1-b4cf12576758" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/modules/data-base-manager.js" afterPath="$PROJECT_DIR$/app/server/modules/data-base-manager.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/router.js" afterPath="$PROJECT_DIR$/app/server/router.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/public/js/angular/admin/emails.js" afterPath="$PROJECT_DIR$/app/public/js/angular/admin/emails.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/views/admin/pedido.jade" afterPath="$PROJECT_DIR$/app/server/views/admin/pedido.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/public/js/angular/admin/pedidos.js" afterPath="$PROJECT_DIR$/app/public/js/angular/admin/pedidos.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/views/admin/producto.jade" afterPath="$PROJECT_DIR$/app/server/views/admin/producto.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/public/js/angular/admin/producto.js" afterPath="$PROJECT_DIR$/app/public/js/angular/admin/producto.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/views/admin/usuario.jade" afterPath="$PROJECT_DIR$/app/server/views/admin/usuario.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="angular-users-api.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,28 +31,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="router.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/server/router.js">
+      <file leaf-file-name="producto.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/public/js/angular/admin/producto.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2726" column="44" selection-start="102076" selection-end="102076" vertical-scroll-proportion="-15.2" vertical-offset="51414" max-vertical-offset="56335">
+            <state line="82" column="0" selection-start="2638" selection-end="2638" vertical-scroll-proportion="0.0" vertical-offset="1037" max-vertical-offset="1710">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="data-base-manager.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/server/modules/data-base-manager.js">
+      <file leaf-file-name="producto.jade" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/server/views/admin/producto.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="669" column="21" selection-start="16853" selection-end="16853" vertical-scroll-proportion="-0.68509215" vertical-offset="13120" max-vertical-offset="32490">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="comentarios.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/public/js/angular/comentarios.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="75" column="29" selection-start="2520" selection-end="2520" vertical-scroll-proportion="0.0" vertical-offset="171" max-vertical-offset="1691">
+            <state line="29" column="108" selection-start="1377" selection-end="1377" vertical-scroll-proportion="0.33566433" vertical-offset="359" max-vertical-offset="931">
               <folding />
             </state>
           </provider>
@@ -66,7 +62,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/public/css/jmlp.css" />
         <option value="$PROJECT_DIR$/app/server/views/gamaPropia/toffeesYMasticables/masticables/infoMasticable.jade" />
         <option value="$PROJECT_DIR$/app/server/views/gamaPropia/duros/crystals/infoCrystal.jade" />
         <option value="$PROJECT_DIR$/app/server/views/gamaPropia/duros/glorias/infoGloria.jade" />
@@ -88,10 +83,8 @@
         <option value="$PROJECT_DIR$/app/server/views/modals/productoEliminado.jade" />
         <option value="$PROJECT_DIR$/app/server/views/modals/eliminarProducto.jade" />
         <option value="$PROJECT_DIR$/app/server/views/admin/pedidos.jade" />
-        <option value="$PROJECT_DIR$/app/public/js/angular/admin/pedidos.js" />
         <option value="$PROJECT_DIR$/app/server/views/modals/pedidoEditadoCorrectamente.jade" />
         <option value="$PROJECT_DIR$/app/public/js/angular/admin/pedido.js" />
-        <option value="$PROJECT_DIR$/app/server/views/admin/pedido.jade" />
         <option value="$PROJECT_DIR$/app/server/views/admin/masticable.jade" />
         <option value="$PROJECT_DIR$/app/server/views/admin/toffeesYMasticables.jade" />
         <option value="$PROJECT_DIR$/app/public/js/angular/admin/toffeesYMasticables.js" />
@@ -108,15 +101,18 @@
         <option value="$PROJECT_DIR$/app/server/views/admin/valoraciones.jade" />
         <option value="$PROJECT_DIR$/app/public/js/angular/admin/valoraciones.js" />
         <option value="$PROJECT_DIR$/app.js" />
-        <option value="$PROJECT_DIR$/app/server/views/admin/usuario.jade" />
         <option value="$PROJECT_DIR$/app/server/views/modals/productoEditadoCorrectamente.jade" />
-        <option value="$PROJECT_DIR$/app/server/views/admin/producto.jade" />
-        <option value="$PROJECT_DIR$/app/public/js/angular/admin/producto.js" />
         <option value="$PROJECT_DIR$/app/public/js/angular/admin/category.js" />
         <option value="$PROJECT_DIR$/app/public/js/angular/login.js" />
         <option value="$PROJECT_DIR$/app/server/views/login.jade" />
         <option value="$PROJECT_DIR$/app/server/router.js" />
         <option value="$PROJECT_DIR$/app/server/modules/data-base-manager.js" />
+        <option value="$PROJECT_DIR$/app/public/js/angular/admin/pedidos.js" />
+        <option value="$PROJECT_DIR$/app/public/js/angular/admin/emails.js" />
+        <option value="$PROJECT_DIR$/app/server/views/admin/pedido.jade" />
+        <option value="$PROJECT_DIR$/app/server/views/admin/usuario.jade" />
+        <option value="$PROJECT_DIR$/app/public/js/angular/admin/producto.js" />
+        <option value="$PROJECT_DIR$/app/server/views/admin/producto.jade" />
       </list>
     </option>
   </component>
@@ -273,58 +269,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="caramelos-la-gloria" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="carameloslagloria" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modals" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="caramelos-la-gloria" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="carameloslagloria" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="adminPartials" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -534,14 +478,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
-      <option name="VMOptions" />
-      <option name="arguments" />
-      <option name="filePath" />
-      <option name="scope" value="ALL" />
-      <option name="testName" />
-      <method />
-    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -552,15 +488,23 @@
       <option name="showConsoleOnStdOut" value="false" />
       <method />
     </configuration>
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
       <setting name="configLocationType" value="CONFIG_FILE" />
       <setting name="settingsFile" value="" />
       <setting name="serverType" value="INTERNAL" />
       <setting name="preferredDebugBrowser" value="CHROME" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
@@ -614,11 +558,11 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -638,11 +582,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/server/views/gamaPropia/duros/glorias/infoGloria.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="127" column="44" selection-start="8322" selection-end="8322" vertical-scroll-proportion="0.91083914" vertical-offset="1892" max-vertical-offset="2527" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/server/views/gamaPropia/duros/ponnies/infoPonny.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state line="70" column="57" selection-start="4263" selection-end="4263" vertical-scroll-proportion="0.33272395" vertical-offset="1148" max-vertical-offset="2489" />
@@ -728,16 +667,6 @@
         <state line="10" column="86" selection-start="599" selection-end="599" vertical-scroll-proportion="0.33216783" vertical-offset="0" max-vertical-offset="572" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/public/js/angular/admin/pedidos.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="34" selection-start="872" selection-end="872" vertical-scroll-proportion="0.71967214" vertical-offset="150" max-vertical-offset="760" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/server/views/admin/pedidos.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="58" selection-start="2052" selection-end="2052" vertical-scroll-proportion="0.0" vertical-offset="228" max-vertical-offset="1007" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/server/views/carrito.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state line="66" column="126" selection-start="4231" selection-end="4232" vertical-scroll-proportion="1.3747715" vertical-offset="502" max-vertical-offset="1672" />
@@ -746,11 +675,6 @@
     <entry file="file://$PROJECT_DIR$/app/server/views/modals/pedidoEditadoCorrectamente.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="28" selection-start="205" selection-end="205" vertical-scroll-proportion="-2.28" vertical-offset="0" max-vertical-offset="342" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/server/views/admin/pedido.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="91" selection-start="1547" selection-end="1547" vertical-scroll-proportion="-9.88" vertical-offset="114" max-vertical-offset="1786" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/server/views/admin/masticable.jade">
@@ -838,11 +762,6 @@
         <state line="42" column="54" selection-start="2498" selection-end="2498" vertical-scroll-proportion="-25.4" vertical-offset="163" max-vertical-offset="1216" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/server/views/admin/usuario.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="66" selection-start="2782" selection-end="2808" vertical-scroll-proportion="-13.68" vertical-offset="741" max-vertical-offset="1406" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/public/js/angular/admin/usuario.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="87" column="14" selection-start="1348" selection-end="2240" vertical-scroll-proportion="0.0" vertical-offset="1208" max-vertical-offset="1976" />
@@ -853,33 +772,19 @@
         <state line="12" column="0" selection-start="668" selection-end="668" vertical-scroll-proportion="-9.12" vertical-offset="0" max-vertical-offset="342" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/public/js/angular/admin/producto.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="9" selection-start="2458" selection-end="2458" vertical-scroll-proportion="0.49078727" vertical-offset="1113" max-vertical-offset="1710" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/public/js/angular/admin/category.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="60" column="0" selection-start="2101" selection-end="2101" vertical-scroll-proportion="1.9095477" vertical-offset="0" max-vertical-offset="2185" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/server/views/admin/producto.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="424" selection-end="424" vertical-scroll-proportion="0.3653846" vertical-offset="0" max-vertical-offset="931" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/public/js/angular/login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="105" selection-start="660" selection-end="660" vertical-scroll-proportion="0.0" vertical-offset="57" max-vertical-offset="1881">
-          <folding />
-        </state>
+        <state line="13" column="105" selection-start="660" selection-end="660" vertical-scroll-proportion="0.0" vertical-offset="57" max-vertical-offset="1881" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/server/views/login.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="118" selection-start="3560" selection-end="3560" vertical-scroll-proportion="0.41373533" vertical-offset="627" max-vertical-offset="1425">
-          <folding />
-        </state>
+        <state line="46" column="118" selection-start="3560" selection-end="3560" vertical-scroll-proportion="0.41373533" vertical-offset="627" max-vertical-offset="1425" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/public/js/angular/comentarios.js">
@@ -889,16 +794,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/server/router.js">
+    <entry file="file://$PROJECT_DIR$/app/public/js/angular/admin/pedidos.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2726" column="44" selection-start="102076" selection-end="102076" vertical-scroll-proportion="-15.2" vertical-offset="51414" max-vertical-offset="56335">
+        <state line="31" column="40" selection-start="878" selection-end="878" vertical-scroll-proportion="0.71967214" vertical-offset="150" max-vertical-offset="760">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/server/views/admin/pedidos.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="58" selection-start="2052" selection-end="2052" vertical-scroll-proportion="0.69755244" vertical-offset="228" max-vertical-offset="1007">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/server/views/admin/pedido.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="73" column="66" selection-start="3716" selection-end="3716" vertical-scroll-proportion="0.8304196" vertical-offset="912" max-vertical-offset="1786">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/server/views/admin/usuario.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="63" selection-start="2706" selection-end="2706" vertical-scroll-proportion="0.5646853" vertical-offset="741" max-vertical-offset="1406">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/public/js/angular/admin/emails.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="0" selection-start="684" selection-end="684" vertical-scroll-proportion="0.56393445" vertical-offset="245" max-vertical-offset="855">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/server/modules/data-base-manager.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="669" column="21" selection-start="16853" selection-end="16853" vertical-scroll-proportion="-0.68509215" vertical-offset="13120" max-vertical-offset="32490">
+        <state line="695" column="36" selection-start="17805" selection-end="17805" vertical-scroll-proportion="0.25460637" vertical-offset="13053" max-vertical-offset="32490">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/server/router.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2726" column="44" selection-start="102076" selection-end="102076" vertical-scroll-proportion="0.6365159" vertical-offset="51414" max-vertical-offset="56335">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/public/js/angular/admin/producto.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="82" column="0" selection-start="2638" selection-end="2638" vertical-scroll-proportion="0.0" vertical-offset="1037" max-vertical-offset="1710">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/server/views/admin/producto.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="108" selection-start="1377" selection-end="1377" vertical-scroll-proportion="0.33566433" vertical-offset="359" max-vertical-offset="931">
           <folding />
         </state>
       </provider>

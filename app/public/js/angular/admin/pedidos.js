@@ -29,7 +29,7 @@ app.controller('PedidosController', function($scope, $http, $window){
         });
 
     $scope.verPedido = function(id){
-        $window.location.href = '/pedidos/' + String(id);
+        $window.location.href = '/admin/pedidos/' + String(id);
     };
 
 });

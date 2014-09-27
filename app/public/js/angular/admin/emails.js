@@ -20,7 +20,7 @@ app.controller('EmailsController', function ($scope, $http){
 
 
     $scope.verEmail = function(id){
-        window.location.href = "/emails/" + id;
+        window.location.href = "/admin/emails/" + id;
     };
 
     $scope.eliminarEmail = function(id){
@@ -29,7 +29,6 @@ app.controller('EmailsController', function ($scope, $http){
     };
 
     $scope.eliminarEmailDefinitivamente = function(){
-        alert("Entramos");
         $http.delete('/api/emails/' + String($scope.emailAEliminar))
             .success(function(data){
                 $scope.emails = data;

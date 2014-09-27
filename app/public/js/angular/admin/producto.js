@@ -75,7 +75,7 @@ app.controller('ProductoController', function ($scope, $http, $window){
         }
     };
 
-    $scope.redirigirTrasEditar = function(){
+    $scope.redirigirTrasEditar, $scope.redirigirTrasCancelar = function(){
         var nuevaURL = "/admin/" + categoria;
 
         $window.location.href = nuevaURL;
